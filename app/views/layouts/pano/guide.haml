@@ -1,0 +1,10 @@
+!!! 5
+%html
+  %head
+    = csrf_meta_tag
+    = stylesheet_link_tag    'pano/guide', 'data-turbolinks-track': 'reload', media: 'all'
+    = javascript_include_tag 'pano/guide', 'data-turbolinks-track': 'reload'
+
+    %title Style Guide
+  %body
+    = yield

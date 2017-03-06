@@ -1,0 +1,98 @@
+// =========================================================
+// hero gradient backgrounds
+
+= hero_bg($start-color, $end-color)
+  background-color: $start-color
+  background: image-url('marketing/heros/bg-top-left.svg') no-repeat left top, image-url('marketing/heros/bg-bottom-right.svg') no-repeat right bottom, linear-gradient($start-color, $end-color) no-repeat 0 0
+  background-size: auto, auto, cover
+  background-attachment: fixed
+
+
+// =========================================================
+// base hero section styles
+
+.hero
+  padding: 144px 32px 96px 32px
+  min-height: 480px
+  color: white
+  text-align: center
+  +hero_bg(#0e69a9, #063870)
+
+  &.green-hero
+    +hero_bg(#1AB196, #02715C)
+
+  &.teal-hero
+    +hero_bg(#1A91AD, #045273)
+
+  &.aqua-hero
+    +hero_bg(#1AAEAD, #036E73)
+
+  &.purple-hero
+    +hero_bg(#555EB5, #2C1370)
+
+  &.tan-hero
+    +hero_bg(#B3A290, #725E43)
+
+  &.navy-hero
+    +hero_bg(#245DAD, #0C1E73)
+
+  .hero-contents
+    max-width: 960px
+    margin: 0 auto
+
+  .hero-tag
+    margin: -32px 0 12px 0
+    span
+      display: inline-block
+      padding: 0px 8px
+      font-size: 11px
+      font-weight: 600
+      color: rgba(255,255,255,0.75)
+      background: rgba(0,0,0,0.1)
+      border-radius: 3px
+      text-transform: uppercase
+      letter-spacing: 1px
+    +mobile
+      margin: -24px 0 12px 0
+      span
+        font-size: 10px
+        padding: 0 6px
+
+  h1
+    margin: 0 auto
+    color: white
+    letter-spacing: 0.5px
+  h2
+    margin: 24px auto 0 auto
+    max-width: 640px
+    font-size: 24px
+    color: white
+    font-weight: 200
+    color: rgba(255,255,255,0.5)
+    letter-spacing: 0.5px
+  p
+    margin: 32px auto 0 auto
+
+  .hero-callout
+    background: rgba(0,0,0,0.2)
+    // background: $orange
+    padding: 8px
+    border-radius: 4px
+    margin: 24px auto
+    max-width: 480px
+    a
+      color: white
+      text-decoration: underline
+
+  +mobile
+    padding: 96px 16px 48px 16px
+    min-height: 320px
+    h1
+      font-size: 28px
+    h2
+      margin-top: 16px
+      font-size: 16px
+
+.cta-buttons
+  .btn
+    margin: 0 4px

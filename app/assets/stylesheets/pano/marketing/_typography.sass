@@ -1,0 +1,66 @@
+// note: there should only be ONE h1 tag on any given page
+h1, .h1
+  font-size: 48px
+  line-height: 120%
+  font-weight: 200
+  +mobile
+    font-size: 28px
+  .tm-wrapper
+    display: inline-block
+    position: relative
+    width: 1px
+  .tm
+    position: absolute
+    font-size: 30%
+    line-height: 1px
+    display: block
+    margin-left: -9px
+    margin-top: -34px
+    opacity: 0.5
+    +mobile
+      margin-top: -22px
+      margin-left: -6px
+
+h2, .h2
+  font-size: 32px
+  line-height: 140%
+  font-weight: 300
+  color: #0E66A6
+  +mobile
+    font-size: 24px
+  &.smaller
+    font-size: 28px
+    +mobile
+      font-size: 22px
+
+h4, .h4
+  font-size: 18px
+  line-height: 140%
+  font-weight: 300
+  color: #888
+  margin-top: 16px
+  +mobile
+    font-size: 15px
+
+h5, .h5
+  font-size: 16px
+  line-height: 140%
+  font-weight: 400
+  color: #0E66A6
+  +mobile
+    font-size: 15px
+
+h6, .h6
+  color: $light-gray
+
+p.larger
+  font-size: 15px
+  line-height: 140%
+  font-weight: 300
+  margin-top: 16px
+  +mobile
+    font-size: 14px
+
+.text-left-mobile
+  +mobile
+    text-align: left

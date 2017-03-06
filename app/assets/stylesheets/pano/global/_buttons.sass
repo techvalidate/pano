@@ -1,0 +1,243 @@
+$button-radius:    3px
+
+
+//=========================================
+// base button mixin. used by the .btn class, <button> tags, and also dropdowns
+//=========================================
+
+=btn
+  display: inline-block
+  font-size: $font-size
+  font-weight: normal
+  color: $link-color
+  cursor: pointer
+  padding: 0 12px
+  height: 32px
+  line-height: 30px
+  background-color: $link-color
+  color: white
+  border-radius: $button-radius
+  border: none
+  text-align: center
+  text-decoration: none
+  transition: all 0.2s ease-in-out
+  &:hover
+    text-decoration: none
+    background-color: darken($link-color, 5%)
+    color: white
+  &:active
+    text-decoration: none
+    background-color: darken($link-color,10%)
+  &:focus
+    text-decoration: none
+    outline: none
+  &:disabled, &.disabled
+    opacity: .30 !important
+    pointer-events: none
+
+  // these classes are used mostly for selected buttons in button groups
+  &.selected, &.active
+    background-color: darken(#E5E3E8, 7%)
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.2)
+
+  .material-icons
+    margin-right: 4px
+    vertical-align: text-top
+
+//=========================================
+// button classes
+//=========================================
+
+.btn, input[type='submit'], button
+  +btn
+
+  //=========================================
+  // different colored buttons
+  //=========================================
+
+  &.btn-primary
+    background-color: $primary-color
+    color: white
+    &:hover
+      background-color: darken($primary-color, 5%)
+    &:active
+      background-color: darken($primary-color,10%)
+
+  &.btn-warning
+    color: white
+    background-color: $error-color
+    &:hover
+      text-decoration: none
+      background-color: darken($error-color, 5%)
+    &:active
+      text-decoration: none
+      background-color: darken($error-color, 10%)
+
+  &.btn-orange
+    color: white
+    background-color: $orange
+    &:hover
+      text-decoration: none
+      background-color: darken($orange, 5%)
+    &:active
+      text-decoration: none
+      background-color: darken($orange, 10%)
+
+  &.btn-white
+    color: $link-color
+    background-color: white
+    &:hover
+      text-decoration: none
+      color: darken($link-color, 5%)
+    &:active
+      text-decoration: none
+      color: darken($link-color, 10%)
+
+  &.btn-outline
+    background-color: transparent
+    color: $link-color
+    box-shadow: inset 0 0 0 1px $link-color
+    &:hover
+      color: white
+      background-color: darken($link-color, 5%)
+    &:active
+      color: white
+      background-color: darken($link-color,10%)
+
+  &.btn-outline-white
+    background-color: transparent
+    color: rgba(255,255,255,0.8)
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7)
+    &:hover
+      color: white
+      background-color: rgba(255,255,255,0.1)
+      box-shadow: inset 0 0 0 1px white
+    &:active
+      color: white
+      background-color: rgba(255,255,255,0.2)
+      box-shadow: inset 0 0 0 1px white
+
+  &.btn-cancel
+    border: 1px solid #ccc
+    color: #aaa
+    background: #fff
+
+  &.btn-pill
+    border-radius: 24px
+
+  &.filter-btn
+    background-color: #fff
+    color: $gray
+    font-size: $small-font-size
+    border: none
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2)
+    .dropdown-trigger
+      margin-left: 5px
+
+    .dropdown-trigger:after
+      border-top-color: $gray !important
+    &.jq-dropdown-open .dropdown-trigger:after
+      border-bottom-color: $gray !important
+
+  //=========================================
+  // button sizes
+  //=========================================
+
+  &.btn-large
+    padding: 0 16px
+    height: 40px
+    line-height: 38px
+    font-size: $h4-font-size
+    .material-icons
+      font-size: 20px
+
+  &.btn-small
+    font-size: $small-font-size
+    padding: 0 8px
+    height: 24px
+    line-height: 24px
+    .tv-icon
+      font-size: 16px
+
+  &.btn-tiny
+    font-size: $tiny-font-size
+    padding: 0 4px
+    height: 20px
+    line-height: 20px
+
+  //=========================================
+  // button alignment styles
+  //=========================================
+
+  &.btn-block
+    display: block
+
+  &.btn-block-left
+    display: block
+    text-align: left
+
+  &.centered-wide-btn
+    display: block
+    margin-left: auto
+    margin-right: auto
+    width: 75%
+    +mobile
+      width: 100%
+
+//=========================================
+// button groups
+//=========================================
+
+.btn-group
+  .btn
+    margin-right: -5px
+    border-radius: 0
+    background-color: white
+    color: $text-color
+    border: solid 1px #ddd
+    &:hover
+      color: $text-color
+      background-color: #eee
+    &.selected
+      background-color: $link-color
+      border-color: $link-color
+      color: white
+      box-shadow: none
+  .btn:first-child
+    border-top-left-radius: $button-radius
+    border-bottom-left-radius: $button-radius
+  .btn:last-child
+    margin-right: 0
+    border-top-right-radius: $button-radius
+    border-bottom-right-radius: $button-radius
+
+.vertical-btn-group
+  .btn
+    +btn
+    display: block
+    margin-top: -1px
+    border-radius: 0
+    white-space: nowrap
+    text-align: left
+  .btn:first-child
+    margin-top: 0
+    border-top-left-radius: $button-radius
+    border-top-right-radius: $button-radius
+  .btn:last-child
+    border-bottom-left-radius: $button-radius
+    border-bottom-right-radius: $button-radius
+  .btn-small
+    padding: 6px 10px
+
+  .dropdown
+    display: block
+    margin-top: -1px
+    margin-right: 0
+    .btn
+      +btn
+      display: block
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+    &.dropdown-open
+      border-top-left-radius: 0
+      border-top-right-radius: 0

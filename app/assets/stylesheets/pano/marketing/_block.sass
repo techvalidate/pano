@@ -1,0 +1,64 @@
+// =========================================================
+// "blocks" are for the big blocks of content on pages.
+// .block is usually applied to a <section> element.
+// =========================================================
+
+.block
+  padding: 96px 32px
+  background: white
+  +mobile
+    padding: 40px 24px
+    text-align: center
+
+  &.gray-bg
+    background-color: #f7f8fa
+    border-top: solid 1px rgba(0,0,0,0.05)
+    border-bottom: solid 1px rgba(0,0,0,0.05)
+
+  h2 + h4, h2 + .h4
+    margin-top: 8px
+
+  .block-header
+    max-width: 720px
+    margin: 0 auto 64px auto
+    +clearfix
+    +mobile
+      margin-bottom: 32px
+
+    &.with-icon
+      margin-top: -24px
+      +mobile
+        margin-top: 0
+
+  .block-contents
+    max-width: 1140px
+    margin: 0 auto
+    +clearfix
+
+
+// =========================================================
+// "split-row" blocks
+//
+// These are special blocks with two equal-sized, vertically-aligned
+// columns that go full-width on mobile. Only supports .col as the selector
+// for a column. To reverse column order (on desktop), add .reversed
+// to the .split-row element.
+// =========================================================
+
+.split-row
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  flex-wrap: nowrap
+  align-items: center
+  &.reversed
+    flex-direction: row-reverse
+  .col
+    width: 46%
+  +mobile
+    display: block
+    .col
+      width: 100%
+      margin-top: 32px
+.split-row + .split-row
+  margin-top: 48px

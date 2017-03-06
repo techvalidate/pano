@@ -1,0 +1,130 @@
+// ------------------------------------------
+// font family & size
+// ------------------------------------------
+
+html, body
+  font-family: $font-stack
+  font-size: $font-size
+  line-height: $line-height
+
+// ------------------------------------------
+// links
+// ------------------------------------------
+
+a
+  color: $link-color
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+// ------------------------------------------
+// heading and paragraph styles
+// ------------------------------------------
+
+h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6, .p
+  margin: $line-height 0 0 0
+  color: $text-color
+  &:first-child
+    margin-top: 0
+
+h1, .h1
+  font-size: $h1-font-size
+  font-weight: 300
+  color: $gray
+
+h2, .h2
+  font-size: $h2-font-size
+  font-weight: 300
+
+h3, .h3
+  font-size: $h3-font-size
+  font-weight: 500
+
+h4, .h4
+  font-size: $h4-font-size
+  font-weight: 300
+  color: $gray
+
+h5, .h5
+  font-size: $h5-font-size
+  font-weight: 500
+
+h6, .h6
+  font-size: $h6-font-size
+  font-weight: 500
+  color: $gray
+  text-transform: uppercase
+
+p, .p
+  font-weight: normal
+  line-height: 20px
+
+// ------------------------------------------
+// text sizes -- for when you can't just use headings
+// ------------------------------------------
+
+.normal-size
+  font-size: $font-size !important // todo: is the important on this class needed?
+  line-height: $line-height
+
+.small
+  font-size: $small-font-size
+  line-height: $line-height
+
+.very-small
+  font-size: $tiny-font-size
+  line-height: $line-height
+
+.huge
+  font-size: 48px !important
+  line-height: 48px !important
+
+// ------------------------------------------
+// closer paragraph spacing
+// ------------------------------------------
+
+p.closer
+  margin-top: 8px
+
+
+// ------------------------------------------
+// font weights
+// ------------------------------------------
+
+.normal-weight
+  font-weight: normal
+
+.thin
+  font-weight: 300
+
+.semibold
+  font-weight: 400
+
+.strong, strong
+  font-weight: bold
+
+.uppercase
+  text-transform: uppercase
+
+// ------------------------------------------
+// blockquote
+// ------------------------------------------
+
+blockquote
+  margin: 32px 0
+  padding: 24px
+  background: $very-light-gray
+  border-left: solid 3px $light-gray
+
+// ------------------------------------------
+// misc. stuff
+// ------------------------------------------
+
+.note
+  color: $gray
+
+span.trademark
+  font-size: 70%
+  display: inline-block
+  vertical-align: super
+  line-height: 1px

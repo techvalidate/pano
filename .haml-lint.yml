@@ -1,0 +1,19 @@
+linters:
+
+  ClassesBeforeIds:
+    enabled: false
+
+  ConsecutiveComments:
+    enabled: false
+
+  LeadingCommentSpace:
+    enabled: false
+
+  LineLength:
+    enabled: false
+
+  SpaceInsideHashAttributes:
+    enabled: false
+
+  UnnecessaryStringOutput:
+    enabled: false
