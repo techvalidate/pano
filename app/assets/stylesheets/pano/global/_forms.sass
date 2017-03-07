@@ -14,7 +14,6 @@
     left: 10px
     top: 39px
     color: #999
-    z-index: 100
     pointer-events: none
 
     & + input,
@@ -360,17 +359,16 @@ textarea:focus + .charcounter
 
       i:after
         content: 'check_circle'
-
-    &:last-of-type
-    float: right
-    text-align: right
-
     +mobile
       float: none
       text-align: center
       white-space: nowrap
       width: 100%
       margin: 0 auto 8px auto
+      
+  .min-letters
+    float: right
+    text-align: right
 
   .material-icons
     display: inline
