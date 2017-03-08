@@ -2,7 +2,7 @@
 
 This Rails engine encapsulates the Javascript, CSS, and Ruby helpers shared across SurveyMonkey Business Solutions applications.
 
-[pano image]: http://www.childrensclassics.com.au/media/ccp0/prodlg/pano-train-golden-book.jpg
+![pano image]: (http://www.childrensclassics.com.au/media/ccp0/prodlg/pano-train-golden-book.jpg)
 
 ## Lay of the Land
 
