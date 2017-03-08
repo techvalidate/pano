@@ -2,6 +2,8 @@
 
 This Rails engine encapsulates the Javascript, CSS, and Ruby helpers shared across SurveyMonkey Business Solutions applications.
 
+[pano image]: http://www.childrensclassics.com.au/media/ccp0/prodlg/pano-train-golden-book.jpg
+
 ## Lay of the Land
 
 This is a Rails engine, initialized by Rails 5.0.2. If you are unfamiliar with engines, you'll notice the layout is very similar to a standard Rails applications. The main difference is that most of the code directories are one level deeper in an `pano` folder. This is how the `Pano` namespace is maintained.
