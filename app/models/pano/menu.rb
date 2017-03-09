@@ -37,14 +37,6 @@ module Pano
       content_tag :ul, html_options do
         (searchable? ? render_search_field : '') + items.collect(&:render).join("\n")
       end
-      # tag_options not available in Rails 5.1
-      # output = "<ul #{tag_options html_options}>"
-      # output += render_search_field if searchable?
-      # items.each do |item|
-      #   output += item.render
-      # end
-      # output += "</ul>"
-      # s output
     end
 
     def remote?
