@@ -1,0 +1,112 @@
+%p Overview page content here...
+
+= box 'Tables' do
+
+  %h5 Standard Table
+
+  %table
+    %tr
+      %th Table Header
+      %th Table Header
+      %th Table Header
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+
+  %h5 Grid Table (%table.grid)
+
+  %table.grid
+    %tr
+      %th Table Header
+      %th Table Header
+      %th Table Header
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+
+  %h5 Alternating Table With Small Text (%table.alternating.small)
+
+  %table.small.alternating
+    %tr
+      %th Table Header
+      %th Table Header
+      %th Table Header
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+    %tr
+      %td Table Cell
+      %td Table Cell
+      %td Table Cell
+
+
+%h2 TODO
+
+%h3 Controller Stuff
+%p stuff you need to define for every page, like:
+%p page title
+%p window title
+%p breadcrumbs
+%p @nav
+
+%h3 Page Layout
+%p nav width, main column width, etc
+
+%h3 Partials
+
+%h3 Modals
+
+%h3 Flash Messages
+
+%h3 On-page Messages
+
+%h3 Tooltips
+%p when and where to use 'tipsy-style tooltips, and how'
+
+%h3 Images
+%p best practices around image sizing and alt tags
+
+%h3 separators (hr tags)
+
+%h3 tag lists
+
+%h3 progress bars
+
+%h3 toggle links
+
+%h3 Dropdowns
+.dropdown
+  = small_icon_btn_to 'cog', "More Actions&nbsp;&nbsp;<span class='dropdown-trigger'></span>", '#', class: 'dropdown-link dropdown-btn', 'data-dropdown' => "#dropdown1"
+  %ul.dropdown-menu{id:'dropdown1'}
+    -# %li= tv_icon_to 'check', 'Item 1', '#'
+    -# %li= tv_icon_to 'check', 'Item 2', '#'
+    -# %li= tv_icon_to 'check', 'Item 3', '#'
+
+%h3 Labels
+
+%h3 Badges
+
+%h3 CSS Utilities

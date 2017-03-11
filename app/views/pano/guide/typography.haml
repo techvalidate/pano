@@ -1,0 +1,107 @@
+:ruby
+  @page_title = 'Typography'
+  @nav        = :ui
+  @subnav     = :typography
+
+%p todo: in-page navigation...
+
+%hr
+
+%h2 Headings
+
+%p There are 6 heading sizes, in decreasing size, from H1 - H6. Use p tags for paragraphs.
+
+.styleguide-example
+  .tabs
+    = link_to 'Example', '.rendered-example', class: 'selected'
+    = link_to 'Code', '.code-example'
+  .body
+    .panel.rendered-example
+      %h1 This is a H1 tag
+      %h2 This is a H2 tag
+      %h3 This is a H3 tag
+      %h4 This is a H4 tag
+      %h5 This is a H5 tag
+      %h6 This is a H6 tag
+      %p This is a paragraph -- use this for body text.
+    .panel.code-example.hidden
+      %pre
+        :plain
+          %h1 This is a H1 tag
+          %h2 This is a H2 tag
+          %h3 This is a H3 tag
+          %h4 This is a H4 tag
+          %h5 This is a H5 tag
+          %h6 This is a H6 tag
+          %p This is a paragraph -- use this for body text.
+
+%hr
+
+%h2 CSS Classes for Headings
+%p You can make a p tag or another heading masquerade as another by using css classes named after each heading. For example, to make a h4 look like a h2, do this:
+.code-example
+  %pre
+    :plain
+      %h4.h2 This h4 looks like a h2
+
+= box 'Page Titles' do
+  %p Usually, the only H1 tag on the page should be the page title.
+  %p The page title is almost always set at the top of a view file with the title() helper method, like so:
+  .code-example
+    %pre
+      :plain
+        = title 'Page Title Here'
+
+= box 'Text Sizes and Styles' do
+  %p In addition to sizing text by using headings, you can use css classes named after all of the font size variables defined in stylesheets/variables/_app.sass.
+  %h5 Examples of text using the different sizes:
+  %h2.normal-size I am a H2 tag with the .normal-size class
+  %p.small I am a small p tag with the .small class
+  %p.very-small I am a very small p tag with the .very-small class
+
+  %hr
+
+  %h3 Text Styles
+  %p Some commonly-used text styles:
+
+  .code-example
+    %p
+      %strong I am strong text
+    %p
+      %em I am italics text
+    %p.note I am text that looks de-emphasized by using the .note class.
+    %p.thin I am text using the .thin class.
+    %blockquote
+      %p I am a blockquote. Lorem Ipsum dolor sit amet.
+    %pre
+      :plain
+        %strong I am strong text
+        %em I am italics text
+        %p.note I am text that looks de-emphasized by using the .note class.
+        %p.thin I am text using the .thin class.
+        %blockquote
+          %p I am a blockquote. Lorem Ipsum dolor sit amet.
+
+= box 'Lists' do
+  %h5 Unordered list
+  %ul
+    %li Item 1
+    %li Item 2
+    %li Item 3
+  %h5 Ordered list
+  %ol
+    %li Item 1
+    %li Item 2
+    %li Item 3
+  %h5 Unstyled Lists
+  .code-example
+    %ul.plain
+      %li Item 1
+      %li Item 2
+      %li Item 3
+    %pre
+      :plain
+        %ul.plain
+          %li Item 1
+          %li Item 2
+          %li Item 3

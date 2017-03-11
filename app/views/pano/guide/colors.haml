@@ -1,0 +1,85 @@
+= partial 'subnav', selected_tab: :colors
+
+= box 'App Colors' do
+  %h5 Where Colors Are Defined
+  %p The colors in use in the app are defined in stylesheets/variables/_app.sass.
+  %hr
+
+  %h5 CSS Variables and Classes
+  %p
+    The colors are defined as css variables, and each color also has a css class named after it.
+    So, if you're defining styles you can reference the css variable in your SASS, but if you just want
+    to color something in your HAML, you can add the appropriate css class.
+  %h6 Referencing a CSS Variable in SASS
+  .code-example
+    %pre
+      :preserve
+        .foo
+          color: $primary-color
+  %h6 Using a CSS Color Class in HAML
+  .code-example
+    %pre
+      :preserve
+        .foo.primary-color Lorem ipsum...
+
+  %hr
+  %h5 Choosing or Adding Colors
+  %p If you need to choose a color for an element, first look here, and try to use an existing color.
+  %p If you need to add a new color, you need to add it in 3 places:
+  %ol.numbered
+    %li A css variable in stylesheets/variables/_app.sass
+    %li A css class named after the color in stylesheets/variables/_app.sass
+    %li A color swatch here
+
+= box 'Color Swatches' do
+
+  %h5 Basic Colors
+  .cf
+    = color_swatch 'white'
+    = color_swatch 'blue'
+    = color_swatch 'green'
+    = color_swatch 'orange'
+
+  %h5 Secondary Colors
+  .cf
+    = color_swatch 'light-blue'
+    = color_swatch 'dark-blue'
+    = color_swatch 'yellow'
+    = color_swatch 'red'
+    = color_swatch 'brown'
+
+  %h5 Grays
+  .cf
+    = color_swatch 'very-light-gray'
+    = color_swatch 'lighter-gray'
+    = color_swatch 'light-gray'
+    = color_swatch 'gray'
+    = color_swatch 'medium-gray'
+    = color_swatch 'dark-gray'
+
+  %hr
+
+  %h5 Semantic Colors
+  %p These colors are defined in terms of the colors above. For instance, $error-color is defined as $red.
+  .cf
+    = color_swatch 'text-color'
+    = color_swatch 'link-color'
+    = color_swatch 'primary-color'
+    = color_swatch 'secondary-color'
+    = color_swatch 'error-color'
+    = color_swatch 'border-color'
+
+  %h5 Semantic Colors for NPS
+  .cf
+    = color_swatch 'promoters'
+    = color_swatch 'passives'
+    = color_swatch 'detractors'
+
+
+  %h5 Semantic Colors for assets
+  .cf
+    = color_swatch 'techfact-color'
+    = color_swatch 'chart-color'
+    = color_swatch 'case-study-color'
+    = color_swatch 'collection-color'
+    = color_swatch 'portal-color'
