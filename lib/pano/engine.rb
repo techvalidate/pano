@@ -10,6 +10,7 @@ module Pano
     initializer 'pano.assets.precompile' do |app|
       app.config.assets.precompile += %w(
         pano/guide.css
+        pano/mailers.css
         pano/marketing.css
 
         pano/guide.js
