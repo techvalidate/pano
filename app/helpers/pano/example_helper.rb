@@ -1,17 +1,41 @@
 module Pano
   module ExampleHelper
-    def haml_example(rendered_classes, code_classes, &block)
-      # Re-render the plain code text
-      rendered = div_tag class: ['panel', *rendered_classes] do
-        text = capture(&block)
-        Haml::Engine.new(text).render
-      end
-      # Format the plain code text
-      code = div_tag class: ['panel', *code_classes] { content_tag :pre, &block }
-      div_tag do
-        concat rendered
-        concat code
+
+    # Takes a HAML code block wrapped in the :plain prefix and renders it both
+    # as HTML and as sample code. Example usage:
+    #
+    # = haml_example do
+    #   :plain
+    #     %h1 This is a H1 tag
+    #    
+    def haml_example(&block)
+      div_tag class: 'styleguide-example' do
+
+        tabs = div_tag class: 'tabs' do
+          safe_join [
+            link_to('Example', '.rendered-example', class: 'selected'),
+            link_to('Code', '.code-example')
+          ]
+        end
+
+        body = div_tag class: 'body' do
+
+          # render the passed plain text as HAML
+          rendered_code = div_tag class: 'panel rendered-example' do
+            Haml::Engine.new(capture(&block)).render
+          end
+
+          # Format the plain code text in a pre tag
+          plain_code = div_tag class: 'panel code-example hidden' do
+            content_tag :pre, &block
+          end
+
+          rendered_code + plain_code
+        end
+
+        tabs + body
       end
     end
+
   end
 end

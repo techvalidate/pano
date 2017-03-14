@@ -11,20 +11,16 @@
 
 %p There are 6 heading sizes, in decreasing size, from H1 - H6. Use p tags for paragraphs.
 
-.styleguide-example
-  .tabs
-    = link_to 'Example', '.rendered-example', class: 'selected'
-    = link_to 'Code', '.code-example'
-  .body
-    = haml_example 'rendered-example', ['code-example', 'hidden'] do
-      :plain
-        %h1 This is a H1 tag
-        %h2 This is a H2 tag
-        %h3 This is a H3 tag
-        %h4 This is a H4 tag
-        %h5 This is a H5 tag
-        %h6 This is a H6 tag
-        %p This is a paragraph -- use this for body text.
+= haml_example do
+  :plain
+    %h1 This is a H1 tag
+    %h2 This is a H2 tag
+    %h3 This is a H3 tag
+    %h4 This is a H4 tag
+    %h5 This is a H5 tag
+    %h6 This is a H6 tag
+    %p This is a paragraph -- use this for body text.
+
 %hr
 
 %h2 CSS Classes for Headings
