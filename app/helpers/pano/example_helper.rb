@@ -7,7 +7,7 @@ module Pano
     # = haml_example do
     #   :plain
     #     %h1 This is a H1 tag
-    #    
+    #
     def haml_example(&block)
       div_tag class: 'styleguide-example' do
 
@@ -22,7 +22,7 @@ module Pano
 
           # render the passed plain text as HAML
           rendered_code = div_tag class: 'panel rendered-example' do
-            Haml::Engine.new(capture(&block)).render
+            Haml::Engine.new(capture(&block)).render(self)
           end
 
           # Format the plain code text in a pre tag
