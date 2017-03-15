@@ -1,6 +1,6 @@
 module Pano
   class Menu
-    include ActionView::Helpers::TagHelper, ContentHelper, IconHelper
+    include ActionView::Helpers::TagHelper, Pano::ContentHelper, Pano::IconHelper
 
     attr_accessor :items, :name, :output_buffer, :single_select, :remote, :searchable
 

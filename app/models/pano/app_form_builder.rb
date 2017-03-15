@@ -1,6 +1,6 @@
 module Pano
   class AppFormBuilder < ActionView::Helpers::FormBuilder
-    include ActionView::Helpers::FormTagHelper, ContentHelper, IconHelper
+    include ActionView::Helpers::FormTagHelper, Pano::ContentHelper, Pano::IconHelper
 
     delegate :content_tag, :capture, to: :@template
 

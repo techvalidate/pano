@@ -1,7 +1,7 @@
 module Pano
   class MenuItem
     include ERB::Util, ActionView::Helpers::UrlHelper, ActionView::Helpers::NumberHelper
-    include ContentHelper, IconHelper, LinkHelper, NumberHelper
+    include Pano::ContentHelper, Pano::IconHelper, Pano::LinkHelper, Pano::NumberHelper
 
     attr_accessor :menu, :name, :output_buffer, :url, :selected, :count, :options
 
