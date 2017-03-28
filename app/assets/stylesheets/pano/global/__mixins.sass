@@ -14,8 +14,11 @@
 // easy mixin for mobile styles
 
 =mobile
-  @media all and (max-width: 768px)
+  @if $force-mobile
     @content
+  @else
+    @media all and (max-width: 768px)
+      @content
 
 // =========================================================
 // easy mixin for wide-screen styles

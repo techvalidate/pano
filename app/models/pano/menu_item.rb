@@ -3,7 +3,7 @@ module Pano
     include ERB::Util, ActionView::Helpers::UrlHelper, ActionView::Helpers::NumberHelper
     include Pano::ContentHelper, Pano::IconHelper, Pano::LinkHelper, Pano::NumberHelper
 
-    attr_accessor :menu, :name, :output_buffer, :url, :selected, :count, :options
+    attr_accessor :count, :menu, :name, :options, :output_buffer, :selected, :url
 
     # During initialization, these option keys are exctracted to init attr_accessors:
     #
@@ -30,10 +30,14 @@ module Pano
     # and html attributes. We ask the parent menu whether we should be a
     # remote link, unless that's been overridden for this menu item.
     def render
-      link_text =  s "<span class='item-icon'>#{render_icon}</span>"
-      link_text += s " <span class='item-text'>#{h @name}</span>"
-      link_text += s " <span class='item-count'>#{delimit @count}</span>" if count
-      s "<li>#{s_link_to link_text, @url, @options.selected_if(selected?)}</li>"
+      link_text =   s "<span class='item-icon'>#{render_icon}</span>"
+      link_text +=  s "<span class='descriptor-icon'>#{options[:descriptor_icon]}</span>" if options[:descriptor_icon]
+      link_text +=  s " <span class='item-text'>#{h @name}</span>"
+      link_text +=  s " <span class='item-count'>#{delimit @count}</span>" if count
+      item = ''
+      item +=  "<li>#{s_link_to link_text, @url, @options.selected_if(selected?)}</li>" if count.nil? || count.positive?
+
+      item
     end
 
     def render_icon
