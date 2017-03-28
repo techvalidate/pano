@@ -3,7 +3,7 @@ module Pano
 
     def app_form_for(record_or_name_or_array, *args, &proc)
       options = args.extract_options!
-      form_for(record_or_name_or_array, *(args << options.merge(builder: AppFormBuilder)), &proc)
+      form_for(record_or_name_or_array, *(args << options.merge(builder: Pano::AppFormBuilder)), &proc)
     end
 
     # For embedding a search object into a form

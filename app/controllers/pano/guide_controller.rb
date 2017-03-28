@@ -1,8 +1,7 @@
-require_dependency 'pano/application_controller'
-
 module Pano
   class GuideController < ApplicationController
     def index
+      # The home page
     end
   end
 end

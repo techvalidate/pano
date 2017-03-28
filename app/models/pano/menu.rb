@@ -1,8 +1,8 @@
 module Pano
   class Menu
-    include ActionView::Helpers::TagHelper, ContentHelper, IconHelper
+    include ActionView::Helpers::TagHelper, Pano::ContentHelper, Pano::IconHelper
 
-    attr_accessor :items, :name, :output_buffer, :single_select, :remote, :searchable
+    attr_accessor :filtered, :items, :name, :output_buffer, :single_select, :remote, :searchable
 
     # During initialization, these option keys are exctracted to init attr_accessors:
     #
@@ -15,6 +15,7 @@ module Pano
     def initialize(name, options = {})
       self.items         = []
       self.name          = name
+      self.filtered      = options.delete :filtered
       self.single_select = options.delete :single_select
       self.remote        = options.delete :remote
       self.searchable    = options.delete :searchable
@@ -35,16 +36,18 @@ module Pano
     def render(html_options = {})
       return if empty?
       content_tag :ul, html_options do
-        (searchable? ? render_search_field : '') + items.collect(&:render).join("\n")
+        (searchable? ? render_search_field : '') +
+        (empty? ? render_empty_message : items.collect(&:render).join("\n"))
       end
-      # tag_options not available in Rails 5.1
-      # output = "<ul #{tag_options html_options}>"
-      # output += render_search_field if searchable?
-      # items.each do |item|
-      #   output += item.render
-      # end
-      # output += "</ul>"
-      # s output
+    end
+
+    def render_empty_message
+      qualifier = filtered ? 'matching' : ''
+      output = '<li class="empty-menu-message">'
+      output += icon(:filter_list)
+      output += "<h3>Can't filter by #{name.singularize}</h3><p>No #{qualifier} survey responses have #{name.singularize.down_articleize}.</p>"
+      output += '</li>'
+      output
     end
 
     def remote?
@@ -60,9 +63,8 @@ module Pano
     end
 
     def search_field_length
-      l = items.map(&:length).max
-      l = 5 if l < 5
-      l
+      return 0 if empty?
+      [items.map(&:length).max, 5].min
     end
 
     def selected

@@ -2,6 +2,8 @@
 
 This Rails engine encapsulates the Javascript, CSS, and Ruby helpers shared across SurveyMonkey Business Solutions applications.
 
+![pano image](https://cloud.githubusercontent.com/assets/5140/23720921/0a679a30-03f5-11e7-86df-4826c02ffcd6.jpg)
+
 ## Lay of the Land
 
 This is a Rails engine, initialized by Rails 5.0.2. If you are unfamiliar with engines, you'll notice the layout is very similar to a standard Rails applications. The main difference is that most of the code directories are one level deeper in an `pano` folder. This is how the `Pano` namespace is maintained.
@@ -45,5 +47,9 @@ bundle config local.pano ~/dev/pano
 ```
 
 You will need to run `bundle update` and `rails restart` (or `rails update`) in the host application to pick up changes. Updating bundle will also set the `Gemfile.lock` to that commit hash, so remember to push up any changes to Pano before deploying the host application.
+
+## Design Assets
+
+https://www.dropbox.com/sh/esapsev12igl95f/AAAtknkC-FekF90KK5Dl2W8ya?dl=0
 
 ### TODO: Maintaining versions, what goes in the engine, and the magic of the style guide

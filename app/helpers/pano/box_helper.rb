@@ -16,7 +16,7 @@ module Pano
         concat top_link
       end
 
-      div_tag class: [options[:class], 'box'] do
+      div_tag options.add_class('box') do
         header + capture(&block)
       end
     end
@@ -30,5 +30,4 @@ module Pano
     end
 
   end
-
 end

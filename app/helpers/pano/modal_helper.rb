@@ -63,7 +63,7 @@ module Pano
 
     def modal_footer_submit(btn_label, options_for_btn = {})
       content_tag(:div, class: 'form-footer modal-footer') do
-        safe_join([submit_tag(btn_label, options_plus_class(options_for_btn, 'btn')), link_to('Cancel', '', class: 'btn btn-cancel js-close-modal')])
+        safe_join([submit_tag(btn_label, options_for_btn.add_class('btn')), link_to('Cancel', '', class: 'btn btn-cancel js-close-modal')])
       end
     end
 
