@@ -52,7 +52,7 @@ module Pano
       qualifier = filtered ? 'matching' : ''
       output = '<li class="empty-menu-message">'
       output += icon(:filter_list)
-      output += "<h3>Can't filter by #{name.singularize.html_escape}</h3><p>No #{qualifier} survey responses have #{name.singularize.down_articleize.html_escape}.</p>"
+      output += "<h3>Can't filter by #{name.sanitize.singularize}</h3><p>No #{qualifier} survey responses have #{name.sanitize.singularize.down_articleize}.</p>"
       output += '</li>'
       s output
     end
