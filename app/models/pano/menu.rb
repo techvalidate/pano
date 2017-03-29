@@ -38,7 +38,7 @@ module Pano
       content_tag :ul, html_options do
         (searchable? ? render_search_field : '') +
         (empty? ? render_empty_message : s(items.collect(&:render).join("\n")))
-      end
+      end.html_safe
     end
 
     def render_empty_message
