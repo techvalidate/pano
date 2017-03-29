@@ -1,6 +1,6 @@
 module Pano
   class Menu
-    include ActionView::Helpers::TagHelper, Pano::ContentHelper, Pano::IconHelper
+    include ActionView::Helpers::TagHelper, ERB::Util, Pano::ContentHelper, Pano::IconHelper
 
     attr_accessor :filtered, :items, :name, :output_buffer, :single_select, :remote, :searchable
 
@@ -52,7 +52,7 @@ module Pano
       qualifier = filtered ? 'matching' : ''
       output = '<li class="empty-menu-message">'
       output += icon(:filter_list)
-      output += "<h3>Can't filter by #{name.sanitize.singularize}</h3><p>No #{qualifier} survey responses have #{name.sanitize.singularize.down_articleize}.</p>"
+      output += "<h3>Can't filter by #{ActionController::Base.helpers.sanitize name.singularize}</h3><p>No #{qualifier} survey responses have #{ActionController::Base.helpers.sanitize name.singularize.down_articleize}.</p>"
       output += '</li>'
       s output
     end
