@@ -1,6 +1,6 @@
 module Pano
   class Menu
-    include ActionView::Helpers::TagHelper, Pano::ContentHelper, Pano::IconHelper
+    include ActionView::Helpers::TagHelper, ERB::Util, Pano::ContentHelper, Pano::IconHelper
 
     attr_accessor :filtered, :items, :name, :output_buffer, :single_select, :remote, :searchable
 
@@ -34,20 +34,27 @@ module Pano
     end
 
     def render(html_options = {})
-      return if empty?
-      content_tag :ul, html_options do
-        (searchable? ? render_search_field : '') +
-        (empty? ? render_empty_message : items.collect(&:render).join("\n"))
+      output = "<ul #{tag_options html_options}>"
+      output += render_search_field if searchable?
+      if empty?
+        output += render_empty_message
+      else
+        items.each do |item|
+          output += item.render
+        end
       end
+
+      output += "</ul>"
+      s output
     end
 
     def render_empty_message
       qualifier = filtered ? 'matching' : ''
       output = '<li class="empty-menu-message">'
       output += icon(:filter_list)
-      output += "<h3>Can't filter by #{name.singularize}</h3><p>No #{qualifier} survey responses have #{name.singularize.down_articleize}.</p>"
+      output += "<h3>Can't filter by #{ActionController::Base.helpers.sanitize name.singularize}</h3><p>No #{qualifier} survey responses have #{ActionController::Base.helpers.sanitize name.singularize.down_articleize}.</p>"
       output += '</li>'
-      output
+      s output
     end
 
     def remote?

@@ -30,6 +30,6 @@ module Pano
         </v:roundrect>
         <![endif]-->"
     end
-    
+
   end
 end
