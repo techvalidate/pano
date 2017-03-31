@@ -1,0 +1,5 @@
+- Pano::Engine.helpers.included_modules.each do |mod|
+  %h3= mod
+  %ul
+    - mod.instance_methods.each do |method|
+      %li= method
