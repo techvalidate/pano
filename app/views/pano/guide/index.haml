@@ -2,13 +2,3 @@
   @page_title = 'Style Guide Home'
   @nav = :ui
   @subnav = :overview
-
-
-
-
-%h2 Helpers
-- Pano::Engine.helpers.included_modules.each do |mod|
-  %h3= mod
-  %ul
-    - mod.instance_methods.each do |method|
-      %li= method
