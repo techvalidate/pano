@@ -4,7 +4,7 @@ module Pano
 
     attr_accessor :element_name, :data
 
-    def initialize(element_name, data, options)
+    def initialize(element_name, data, options={})
       self.element_name = element_name
       self.data = data
       self.options = options
