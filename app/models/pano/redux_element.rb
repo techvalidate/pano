@@ -8,11 +8,10 @@ module Pano
       self.element_name = element_name
       self.data = data
       self.options = options
-      self.id = self.generate_id
     end
 
     def render(html_options = {})
-      data[:id] = id
+      data[:id] = self.generate_id
       opts = {data: data}.merge(options)
       opts.merge(html_options)
 
