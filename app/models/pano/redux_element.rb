@@ -22,7 +22,7 @@ module Pano
     def generate_id
       t = DateTime
       @id = t.now.strftime("%Y%m%d%k%M%S%L") # Get current date to the milliseconds
-      @id = id.to_i.to_s(36)
+      @id = @id.to_i.to_s(36)
       element_name + '_' + @id
     end
   end
