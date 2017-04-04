@@ -11,16 +11,19 @@ module Pano
       self.id = self.generate_id
     end
 
-    def render
+    def render(html_options = {})
       data[:id] = id
-      element element_name, data, options
+      opts = {data: data}.merge(options)
+      opts.merge(html_options)
+
+      tag element_name, opts
     end
 
     def generate_id
       t = DateTime
       @id = t.now.strftime("%Y%m%d%k%M%S%L") # Get current date to the milliseconds
       @id = id.to_i.to_s(36)
-      element_name + @id
+      element_name + '_' + @id
     end
   end
 end
