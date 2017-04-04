@@ -2,9 +2,9 @@ module Pano
   include Pano::ElementHelper
   class ReduxElement
 
-    attr_accessor :element_name, :data
+    attr_accessor :data, :element_name, :options
 
-    def initialize(element_name, data, options={})
+    def initialize(element_name, data, options = {})
       self.element_name = element_name
       self.data = data
       self.options = options
