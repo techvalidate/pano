@@ -38,6 +38,7 @@ module Pano
       check_box: 'check_box_outline_blank',
       check_box_checked: 'check_box',
       company: 'location_city',
+      email_outline: 'mail_outline',
       enterprise: 'domain',
       filters: 'tune',
       funnel: 'filter_list',
