@@ -1,7 +1,7 @@
 @import "../global/index"
 
 body, html
-  background: $lightest-gray
+  background: $bg-gray
 
 #top-nav
   position: fixed
@@ -32,13 +32,13 @@ body, html
     line-height: 48px
     padding: 0 16px
     font-size: 13px
-    color: $gray
+    color: $slate
     transition: all 0.2s ease-in-out
-    border-bottom: solid 1px transparent
+    border-bottom: solid 2px transparent
 
     &:hover
       text-decoration: none
-      background: $lightest-gray
+      background: $lighter-gray
       border-bottom-color: $link-color
     &.selected
       border-bottom-color: $link-color
@@ -70,7 +70,7 @@ body, html
     display: block
     padding: 4px 16px
     // border-top: solid 1px $border-color
-    color: $dark-gray
+    color: $slate
     font-weight: 500
     border-radius: 3px
     transition: all 0.2s ease-in-out
@@ -92,34 +92,22 @@ body, html
 #page-title
   margin: 4px 0 32px 0
 
-#page-content
-  padding: 32px
-  background: white
-  border: solid 1px #eee
+// #page-content
+//   padding: 32px
+//   background: white
+//   border: solid 1px #eee
 
 
 .styleguide-example
-  .body
-    // border: solid 1px $border-color
-    // border-top: none
-  .rendered-example
-    padding: 32px
-    border-radius: 6px
-    border-top-left-radius: 0
-    border-top-right-radius: 0
-    box-shadow: 0 1px 3px rgba(0,0,0,0.15)
+  margin-top: $p-spacing
+  .tabs
+    border-bottom: none
+    margin-left: 32px
+  .rendered-example, .code-example
+    +box
+    margin-top: 0
+    box-shadow: none
   .code-example
-    padding: 32px
-    border-radius: 6px
-    border-top-left-radius: 0
-    border-top-right-radius: 0
-    background: $lightest-gray
-    box-shadow: inset 0 0 3px rgba(0,0,0,0.15)
-
-// .code-example
-//   margin-top: 16px
-//   pre
-//     margin-top: 16px
-//     padding: 16px 24px
-//     background: $very-light-gray
-//     border-left: solid 2px $link-color
+    background: $bg-gray
+    pre
+      margin: 0
