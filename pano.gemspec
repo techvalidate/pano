@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", 'Rakefile', 'README.md']
 
-  s.add_dependency 'bourbon', '4.2.7'
+  s.add_dependency 'bourbon', '4.3.4'
   s.add_dependency 'coffee-rails', '4.2.1'
   s.add_dependency 'haml', '4.0.7'
   s.add_dependency 'jquery-rails', '4.1.1'

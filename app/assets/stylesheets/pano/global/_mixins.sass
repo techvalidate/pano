@@ -1,4 +1,32 @@
 // =========================================================
+// Mixins for defining styles at different viewport widths.
+//
+//  mobile: under 768px wide
+//  tablet: under 1024px wide
+//  large:  >= 1344px wide (1280px + 32px gutter on each side)
+//
+// =========================================================
+
+// this is a compile-time flag to force mobile styles. it's
+// useful for previewing mobile surveys.
+$force-mobile: false
+
+=mobile
+  @if $force-mobile
+    @content
+  @else
+    @media all and (max-width: 767px)
+      @content
+
+=tablet
+  @media all and (max-width: 1023px)
+    @content
+
+=large
+  @media all and (min-width: 1344px)
+    @content
+
+// =========================================================
 // clearfix
 //
 // The double-colon notation used by the Bourbon clearfix
@@ -9,40 +37,6 @@
     clear: both
     content: ''
     display: table
-
-
-// =========================================================
-// compile-time flag to force mobile styles
-
-$force-mobile: false
-
-// =========================================================
-// easy mixin for mobile styles
-
-=mobile
-  @if $force-mobile
-    @content
-  @else
-    @media all and (max-width: 768px)
-      @content
-
-// =========================================================
-// easy mixin for tablet styles
-
-=tablet
-  @media all and (max-width: 1024px)
-    @content
-
-// =========================================================
-// easy mixin for wide-screen styles
-
-=standard-screen
-  @media all and (max-width: 900px)
-    @content
-
-=wide-screen
-  @media all and (min-width: 1200px)
-    @content
 
 // =========================================================
 // mixin to target IE 10+ & Edge (IE 11 & Edge don't support
