@@ -48,6 +48,13 @@ bundle config local.pano ~/dev/pano
 
 You will need to run `bundle update` and `rails restart` (or `rails update`) in the host application to pick up changes. Updating bundle will also set the `Gemfile.lock` to that commit hash, so remember to push up any changes to Pano before deploying the host application.
 
+To revert back to the GitHub engine, use:
+```
+bundle config --delete local.pano
+
+```
+Again, you will need to run `bundle update` and `rails restart` (or `rails update`) in the host application to pick up changes.
+
 ## Design Assets
 
 https://www.dropbox.com/sh/esapsev12igl95f/AAAtknkC-FekF90KK5Dl2W8ya?dl=0
