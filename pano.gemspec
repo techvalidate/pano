@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'bourbon', '4.3.4'
   s.add_dependency 'coffee-rails', '4.2.1'
+  s.add_dependency 'erubis', '2.7.0'
   s.add_dependency 'haml', '4.0.7'
   s.add_dependency 'jquery-rails', '4.3.1'
   s.add_dependency 'rails', '5.1.1'
