@@ -1,13 +1,41 @@
 //============================================
+// font-face rules
+//============================================
+
+@font-face
+  font-family: 'san-francisco'
+  src: url('/fonts/sf-ui-text-light.woff2') format('woff2'),url('/fonts/sf-ui-text-light.woff') format('woff')
+  font-weight: 300
+  font-style: normal
+
+@font-face
+  font-family: 'san-francisco'
+  src: url('/fonts/sf-ui-text-regular.woff2') format('woff2'),url('/fonts/sf-ui-text-regular.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'san-francisco'
+  src: url('/fonts/sf-ui-text-medium.woff2') format('woff2'),url('/fonts/sf-ui-text-medium.woff') format('woff')
+  font-weight: 500
+  font-style: normal
+
+@font-face
+  font-family: 'san-francisco'
+  src: url('/fonts/sf-ui-text-semibold.woff2') format('woff2'),url('/fonts/sf-ui-text-semibold.woff') format('woff')
+  font-weight: 600
+  font-style: normal
+
+//============================================
 // typography variables
 //============================================
 
-$font-stack:       -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif
+$font-stack:       'san-francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif
 $line-height:      24px
-$p-spacing:        12px
+$p-spacing:        16px
 $font-size:        13px
 $small-font-size:  12px
-$tiny-font-size:   10px
+$tiny-font-size:   11px
 
 // ------------------------------------------
 // font family & size
@@ -17,16 +45,6 @@ html, body
   font-family: $font-stack
   font-size: $font-size
   line-height: $line-height
-
-// ------------------------------------------
-// links
-// ------------------------------------------
-
-a
-  color: $link-color
-  text-decoration: none
-  &:hover
-    text-decoration: underline
 
 // ------------------------------------------
 // heading and paragraph styles
@@ -57,7 +75,7 @@ h3, .h3
   font-weight: 500
 
 h4, .h4
-  font-size: 18px
+  font-size: 20px
   font-weight: 300
   color: $slate
 
@@ -66,7 +84,7 @@ h5, .h5
   font-weight: 500
 
 h6, .h6
-  font-size: $small-font-size
+  font-size: 13px
   font-weight: 300
   color: $gray
   text-transform: uppercase
@@ -98,13 +116,6 @@ p, .p
   line-height: $line-height
 
 // ------------------------------------------
-// closer spacing
-// ------------------------------------------
-
-.closer
-  margin-top: 8px
-
-// ------------------------------------------
 // font weights
 // ------------------------------------------
 
@@ -115,7 +126,7 @@ p, .p
   font-weight: 300
 
 .semibold
-  font-weight: 400
+  font-weight: 500
 
 .strong, strong
   font-weight: bold

@@ -1,0 +1,88 @@
+:ruby
+  @page_title = 'CSS Utilities'
+  @nav        = :ui
+  @subnav     = :utilities
+
+= box 'Display & Position' do
+  %p Utlity classes for display and position
+  = haml_example do
+    :plain
+      %p.hidden I am invisible
+      %span.block I am display block
+      %span.inline-block I am display inline-block
+      %p.relative I am position: relative
+      %p.absolute I am position: absolute
+
+= box 'Floating Elements' do
+  %p Contain floats within an element with either the .cf class or that uses the +clearfix mixin.
+  = haml_example do
+    :plain
+      .cf
+        .fl I am floated left
+        .fr I am floated right
+
+= box 'Horizontal Centering' do
+  %p Horizontal centering can be assisted by the .centered class or mixin, which applies left and right margin of auto.
+  %p Note: it's up to you to indicate a width of max-width!
+  = haml_example do
+    :plain
+      .box.centered{style: 'max-width: 400px'} I am a centered box with max-width 400px
+
+= box 'Padding' do
+  %p Utility classes for commonly-used padding sizes. The thicker padding sizes automatically get thinner on mobile.
+  = haml_example do
+    :plain
+      .grid
+        .col-2
+          .box.p-s Small Padding
+        .col-2
+          .box.p-m Medium Padding
+        .col-2
+          .box.p-l Large Padding
+        .col-2
+          .box.p-xl XL Padding
+        .col-2
+          .box.p-xxl XXL Padding
+
+= box 'Top Margins' do
+  %p Utility classes for commonly-used top-margin sizes. The bigger margins automatically get thinner on mobile.
+  = haml_example do
+    :plain
+      .grid
+        .col-2
+          .box.mt-s Small Top Margin
+        .col-2
+          .box.mt-m Medium Top Margin
+        .col-2
+          .box.mt-l Large Top Margin
+        .col-2
+          .box.mt-xl XL Top Margin
+        .col-2
+          .box.mt-xxl XXL Top Margin
+
+-# // ------------------------------------------
+-# // margins
+-# // ------------------------------------------
+-#
+-# .t
+-#   margin-top: 0 !important
+-#
+-# .b
+-#   margin-bottom: 0 !important
+-#
+-# .closer
+-#   margin-top: 8px
+-#
+-# // .mt
+-# //
+-# // .mt-thin
+-#
+-# // 0
+-# // 4
+-# // 8
+-# // 16
+-# // 24
+-# // 32
+-# // 48
+-# // 64
+-#

@@ -15,6 +15,10 @@ a, a:visited
     color: darken($link-color, 7%)
     text-decoration: none
 
+img
+  outline: none
+  -ms-interpolation-mode: bicubic
+
 .btn, .btn:visited
   +btn
   width: 218px
@@ -35,7 +39,7 @@ h1
   font-family: $font-stack
   font-size: 24px
   font-weight: normal
-  color: #0A508B
+  color: #05467E
 
   @media only screen and (max-width: 480px)
     font-size: 18px !important
@@ -46,7 +50,7 @@ h2
   font-family: $font-stack
   font-size: 20px
   font-weight: normal
-  color: #0A508B
+  color: #05467E
 
   @media only screen and (max-width: 480px)
     font-size: 18px !important
@@ -99,12 +103,11 @@ h2
   font-size: 13px
 
   img
-    height: 37px
-    width: 141px
+    max-height: 37px
+    width: auto
 
     @media only screen and (max-width: 480px)
-      height: 32px !important
-      width: 119px !important
+      max-height: 32px !important
 
 #content
   font-family: $font-stack

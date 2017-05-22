@@ -14,82 +14,92 @@
 // functions and mixins for defining grids
 // =========================================================
 
-$totalColumns: 12
+// $totalColumns: 12
 
-@function columnRatio($columnUnits)
-  @return $columnUnits / $totalColumns
 
-@function gutterAdjustment($columnUnits, $gutterWidth)
-  @return $gutterWidth - ($gutterWidth * columnRatio($columnUnits))
+// use this to define a column grid
 
-@function columnWidth($columnUnits, $gutterWidth)
-  @return unquote("#{percentage(columnRatio($columnUnits))} - #{gutterAdjustment($columnUnits, $gutterWidth)}")
-
-=column($columnUnits, $gutterWidth)
-  float: left
-  display: block
-  width: calc(#{columnWidth($columnUnits, $gutterWidth)})
-  margin-right: $gutterWidth
-  &:last-child
-    margin-right: 0
-
-=shiftColumns($columnUnits, $gutterWidth)
-  margin-left: calc(#{percentage(columnRatio($columnUnits))} + #{$gutterWidth - gutterAdjustment($columnUnits, $gutterWidth)})
-
-=columnGrid($gutterWidth)
+=columnGrid($gutterWidth, $totalColumns: 12)
   +clearfix
 
   @for $i from 1 through ($totalColumns - 1)
 
     .col-#{$i}
-      +column($i, $gutterWidth)
+      +column($i, $gutterWidth, $totalColumns)
 
     .shift-#{$i}
-      +shiftColumns($i, $gutterWidth)
+      +shiftColumns($i, $gutterWidth, $totalColumns)
 
   &.outer-gutters
     margin-left: $gutterWidth
     margin-right: $gutterWidth
 
+// utility functions and mixins for the columnGrid mixin
+
+@function columnRatio($columnUnits, $totalColumns)
+  @return $columnUnits / $totalColumns
+
+@function gutterAdjustment($columnUnits, $gutterWidth, $totalColumns)
+  @return $gutterWidth - ($gutterWidth * columnRatio($columnUnits, $totalColumns))
+
+@function columnWidth($columnUnits, $gutterWidth, $totalColumns)
+  @return unquote("#{percentage(columnRatio($columnUnits, $totalColumns))} - #{gutterAdjustment($columnUnits, $gutterWidth, $totalColumns)}")
+
+=column($columnUnits, $gutterWidth, $totalColumns)
+  float: left
+  display: block
+  width: calc(#{columnWidth($columnUnits, $gutterWidth, $totalColumns)})
+  margin-right: $gutterWidth
+  &:last-child
+    margin-right: 0
+
+=shiftColumns($columnUnits, $gutterWidth, $totalColumns)
+  margin-left: calc(#{percentage(columnRatio($columnUnits, $totalColumns))} + #{$gutterWidth - gutterAdjustment($columnUnits, $gutterWidth, $totalColumns)})
+
 
 // =========================================================
-// grids with different width gutters (32px is default)
+// grids with different width gutters (16px is default)
 // =========================================================
 
 .grid
-  +columnGrid(32px)
-
-.grid-8
-  +columnGrid(8px)
-
-.grid-16
   +columnGrid(16px)
 
-.grid-48
-  +columnGrid(48px)
+  &.g8
+    +columnGrid(8px)
 
-.grid-64
-  +columnGrid(64px)
+  &.g32
+    +columnGrid(32px)
+
+  &.g48
+    +columnGrid(48px)
+
+  &.g64
+    +columnGrid(64px)
 
 // =========================================================
 // Responsive Columns
 //
-// They simply become full-width on mobile or tablet screens.
+// Apply these classes to .col-x elements. They simply
+// become full-width on mobile or tablet screens.
 // =========================================================
 
-+mobile
-  .stack-on-mobile
-    width: 100%
-    margin-left: 0
-  .stack-on-mobile + .stack-on-mobile
-    margin-top: 32px
+.grid
 
-+tablet
-  .stack-on-tablet
-    width: 100%
-    margin-left: 0
-  .stack-on-tablet + .stack-on-tablet
-    margin-top: 32px
+  +mobile
+    .stack-on-mobile
+      float: none
+      width: 100%
+      margin-left: 0
+    .stack-on-mobile + .stack-on-mobile
+      margin-top: 32px
+
+  +tablet
+    .stack-on-tablet
+      float: none
+      width: 100%
+      margin-left: 0
+    .stack-on-tablet + .stack-on-tablet
+      margin-top: 32px
 
 // =========================================================
 // Tables
@@ -98,9 +108,10 @@ $totalColumns: 12
 // =========================================================
 
 table.grid
-  @for $i from 1 through ($totalColumns - 1)
+  width: 100%
+  @for $i from 1 through 11
     .col-#{$i}
       float: none
       display: table-cell
       margin: 0
-      width: columnRatio($i) * 100%
+      width: columnRatio($i, 12) * 100%

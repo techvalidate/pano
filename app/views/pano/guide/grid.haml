@@ -3,192 +3,128 @@
   @nav        = :ui
   @subnav     = :grid
 
--# .grid-16
--#   .col-2.shift-10
--#     .box
--#       %h4 Hi
+= box 'Overview' do
 
-.grid-8
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
-  .col-1.stack-on-tablet
-    .box
-      %h4 Hi
+  %p
+    Our grids are divided up into 12 "units", with gutters in-between.
+    Each grid expands to the full width of its container.
+    You can nest grids inside each other.
+  %p
+    To create a grid, create a .grid container element. Then, create columns inside, with the .col-1 -- .col-11 classes,
+    where the number specifies how many "units" wide a column is.
 
-.grid-16
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
+  = haml_example do
+    :plain
+      .grid
+        .col-2
+          .box.flat-box .col-2
+        .col-2
+          .box.flat-box .col-2
+        .col-3
+          .box.flat-box .col-3
+        .col-5
+          .box.flat-box .col-5
 
-.grid
-  .col-2
-    .box
-      %h4 Hi
-  .col-2
-    .box
-      %h4 Hi
-  .col-2
-    .box
-      %h4 Hi
-  .col-2
-    .box
-      %h4 Hi
-  .col-2
-    .box
-      %h4 Hi
-  .col-2
-    .box
-      %h4 Hi
+= box 'Gutters' do
 
-.grid-64
-  .col-3
-    .box
-      %h4 Hi
-  .col-3
-    .box
-      %h4 Hi
-  .col-3
-    .box
-      %h4 Hi
-  .col-3
-    .box
-      %h4 Hi
+  %p
+    The default gutter width is 16px. 8px, 32px, 48px, and 64px gutters are also available off the shelf
+    with the .g8, .g32, .g48, and .g64 classes. If you need to create your own custom grids with custom gutter
+    widths or custom number of columns, use the columnGrid mixin.
 
-.grid
-  .col-4
-    .box
-      %h4 Hi
-  .col-4
-    .box
-      %h4 Hi
-  .col-4
-    .box
-      %h4 Hi
+  = haml_example do
+    :plain
+      .grid.g8
+        .col-6
+          .box.flat-box 8px gutters
+        .col-6
+          .box.flat-box 8px gutters
+      .grid.g32
+        .col-6
+          .box.flat-box 32px gutters
+        .col-6
+          .box.flat-box 32px gutters
+      .grid.g48
+        .col-6
+          .box.flat-box 48px gutters
+        .col-6
+          .box.flat-box 48px gutters
+      .grid.g64
+        .col-6
+          .box.flat-box 64px gutters
+        .col-6
+          .box.flat-box 64px gutters
 
-.grid
-  .col-5
-    .box
-      %h4 Hi
-  .col-7
-    .box
-      %h4 Hi
+= box 'Outer Gutters' do
 
-.grid
-  .col-6
-    .box
-      %h4 Hi
-  .col-6
-    .box
-      %h4 Hi
+  %p To include outside gutters, simply add a .outer-gutters class to the .grid container.
 
-.grid
-  .col-7
-    .box
-      %h4 Hi
-  .col-5
-    .box
-      %h4 Hi
+  = haml_example do
+    :plain
+      .grid.outer-gutters
+        .col-6
+          .box.flat-box with outer gutters
+        .col-6
+          .box.flat-box with outer gutters
 
-.grid
-  .col-8
-    .box
-      %h4 Hi
-  .col-4
-    .box
-      %h4 Hi
+= box 'Shifting Columns' do
 
-.grid
-  .col-9
-    .box
-      %h4 Hi
-  .col-3
-    .box
-      %h4 Hi
+  %p
+    You can shift columns over by 1-11 "units" with the .shift-1 -- .shift-11 classes.
 
-.grid
-  .col-10
-    .box
-      %h4 Hi
-  .col-2
-    .box
-      %h4 Hi
+  = haml_example do
+    :plain
+      .grid
+        .col-6.shift-6
+          .box.flat-box shifted over 6 units
 
-.grid
-  .col-11
-    .box
-      %h4 Hi
-  .col-1
-    .box
-      %h4 Hi
+= box 'Responsive Grids' do
 
-%table.grid.wide
-  %tr
-    %td.col-1 hi
-    %td.col-2 hi
-    %td.col-3 hi
-    %td.col-4 hi
-    %td.col-2 hi
+  %p
+    To force columns to go full-width at tablet or mobile breakpoints, add .stack-on-mobile or .stack-on-tablet to column elements.
+    Also applies to shifted columns.
+
+  = haml_example do
+    :plain
+      .grid
+        .col-6.stack-on-tablet
+          .box.flat-box stacks on tablet
+        .col-6.stack-on-tablet
+          .box.flat-box stacks on tablet
+      .grid
+        .col-6.stack-on-mobile
+          .box.flat-box stacks on mobile
+        .col-6.stack-on-mobile
+          .box.flat-box stacks on mobile
+      .grid
+        .col-6.shift-6.stack-on-mobile
+          .box.flat-box shifted over, still stacks on mobile
+
+= box 'HTML Tips' do
+
+  %p General guidelines:
+  %ul
+    %li Don't combine .grid with other classes. For example, if you need a grid inside a .box, nest a .grid element inside the .box
+    %li Don't combine .col-x classes with other classes. For example, if you need a .box inside a .col-4, nest the .box element inside the column.
+
+= box 'Table-based Grids' do
+
+  %p
+    Table cells (td and th) can also be set to be 1-12 "units" wide.
+    Apply the .grid class to the table, and then the .col-x classes to the table cells.
+  %p
+    %strong Note:
+    table.grid will go to 100% width by default
+  %p
+    %strong Note:
+    The responsive classes don't yet work on tables
+
+  = haml_example do
+    :plain
+      %table.grid
+        %tr
+          %td.col-1 .col-1
+          %td.col-2 .col-2
+          %td.col-3 .col-3
+          %td.col-4 .col-4
+          %td.col-2 .col-2

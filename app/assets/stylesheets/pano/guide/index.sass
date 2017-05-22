@@ -1,10 +1,19 @@
 @import "../global/index"
 
+//============================================
+// body
+//============================================
+
 body, html
   background: $bg-gray
 
-#top-nav
+//============================================
+// top nav
+//============================================
+
+#nav
   position: fixed
+  z-index: 100
   background: white
   left: 0
   right: 0
@@ -12,6 +21,11 @@ body, html
   height: 48px
   box-shadow: 0 0 3px rgba(0,0,0,0.15)
   +clearfix
+
+  .inner
+    max-width: 1344px
+    padding: 0 32px
+    margin: 0 auto
 
   .nav-logo a
     float: left
@@ -51,34 +65,39 @@ body, html
     font-size: 13px
     color: $gray
 
+//============================================
+// #main, contains left-hand subnav and #main-column with all content
+//============================================
 
 #main
-  margin-top: 48px
+  max-width: 1344px
+  margin: 48px auto
   padding: 32px
+  position: relative
+
+//============================================
+// left-hand subnav
+//============================================
 
 #subnav
-  position: fixed
-  top: 80px
-  left: 32px
-  bottom: 0
-  width: 200px
-  // background: white
-  // border-radius: 3px
-  overflow-y: scroll
-  // box-shadow: 0 1px 3px rgba(0,0,0,0.15)
+  .inner
+    position: fixed
+    top: 64px
+    bottom: 0
+    width: 200px
+    overflow-y: scroll
   a
     display: block
     padding: 4px 16px
-    // border-top: solid 1px $border-color
     color: $slate
-    font-weight: 500
+    font-weight: 600
     border-radius: 3px
     transition: all 0.2s ease-in-out
     &:hover
       background: rgba(0,0,0,0.05)
       text-decoration: none
     &.secondary
-      color: $gray
+      color: $slate
       margin-left: 16px
       font-weight: normal
 
@@ -86,28 +105,47 @@ body, html
       background: $link-color
       color: white
 
+//============================================
+// #main-column contains all page content
+//============================================
+
 #main-column
   margin-left: 232px
 
 #page-title
-  margin: 4px 0 32px 0
 
-// #page-content
-//   padding: 32px
-//   background: white
-//   border: solid 1px #eee
+#page-content
+  margin-top: 32px
 
+//============================================
+// examples with sample code
+//============================================
 
 .styleguide-example
   margin-top: $p-spacing
-  .tabs
-    border-bottom: none
-    margin-left: 32px
-  .rendered-example, .code-example
+  .rendered-example
+    padding: 24px 0
+  .code-example
     +box
     margin-top: 0
     box-shadow: none
-  .code-example
     background: $bg-gray
     pre
       margin: 0
+
+//============================================
+// color swatches
+//============================================
+
+.color-swatch
+  margin-top: 24px
+  line-height: 48px
+  .color
+    vertical-align: top
+    font-size: 48px
+  .label
+    display: inline-block
+    margin-left: 8px
+    vertical-align: middle
+    font-size: 16px
+    color: $gray

@@ -1,26 +1,25 @@
 =box
   +clearfix
-  background: #fff
-  padding: 32px
   margin-top: 32px
-  // box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.03)
-
+  padding: 24px 32px
+  background: #fff
   border-radius: 3px
+  background-clip: border-box
   +border
-  box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.03)
+  +shadow
 
-  // &:first-child
-  //   margin-top: 0
+.box
+  +box
 
   .box-header
     position: relative
+    +clearfix
     // padding-bottom: 16px
     // margin-bottom: 24px
-    padding-bottom: 32px
-    margin-bottom: 32px
+    // padding-bottom: 24px
+    margin-bottom: 24px
 
-    +border-bottom
-    +clearfix
+    // +border-bottom
 
     .box-title
       margin-bottom: 0
@@ -28,43 +27,95 @@
 
     .top-link
       float: right
-      line-height: 28px
+      line-height: 32px
 
       .btn
-        // buttons are vertically aligned in header, without breaking standard links vertical alignment
+        // buttons are vertically aligned in box headers, without breaking standard links vertical alignment
         position: relative
-        top: -3px
+        // top: -3px
 
+      // todo: test
       input[type="search"]
         margin-top: -8px
         width: 240px
 
-.box
-  +box
 
-  &.divided-box
-    padding: 0
-    .box-section
-      position: relative
-      padding: 24px
-      border-bottom: solid 1px #ddd
-      &:last-child
-        border-bottom: none
-    .section-icon
-      position: absolute
-    .section-contents
-      margin-left: 72px
-      margin-right: 72px
-    .section-switch
-      position: absolute
-      right: 24px
-      top: 24px
+// normal, thick-shadow, mega-shadow
+// no border
+// box-shadow
+// 2px radius
+//
+// flat
+//   border
+//   no shadow
+//   less 1px padding?
+//   3px radius
 
-  &.centered-box
-    .box-header
-      text-align: center
+
+.box.flat
+  box-shadow: none
+
+.box.thick-shadow
+  +thick-shadow
+  border: none
+  border-radius: 2px
+
+.box.mega-shadow
+  +mega-shadow
+  border: none
+  border-radius: 2px
+
+
+.thick
+
+.thicker
+
+.box-title
+
+.box.big-padding.big-margin
+
+
+.box.rounded
+
+.no-top-margin
+
+.thin-top-margin
+
+.normal-top-margin
+
+.thick-top-margin
+
+.huge-top-margin
+
+
+
+// todo: rename?
+.box.centered-box
+  .box-header
+    text-align: center
+    border-bottom: none
+    padding-bottom: 0
+    .box-title
+      float: none
+      margin-top: 8px
+
+
+
+// todo: relegate this to cx-only, or refactor?
+.box.divided-box
+  padding: 0
+  .box-section
+    position: relative
+    padding: 24px
+    +border-bottom
+    &:last-child
       border-bottom: none
-      padding-bottom: 0
-      .box-title
-        float: none
-        margin-top: 8px
+  .section-icon
+    position: absolute
+  .section-contents
+    margin-left: 72px
+    margin-right: 72px
+  .section-switch
+    position: absolute
+    right: 24px
+    top: 24px
