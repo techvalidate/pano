@@ -1,0 +1,68 @@
+:ruby
+  @page_title = 'Boxes'
+  @nav        = :ui
+  @subnav     = :boxes
+
+
+box styles: normal, flat, inset (well), strong, clickable
+padding levels
+margins
+
+.box
+  %h4 normal box
+
+.box.p48.thick-shadow
+  %h4 48px padding
+
+.box.p64.m64.mega-shadow
+  %h4 64px top margin
+
+= box "hi" do
+  %p I am in the box
+
+= box do
+  %p I am in the box
+
+= box "hi", top_link: 'foo' do
+  %p I am in the box
+
+
+
+= box "hi", top_link: 'foo', style: 'border-color: red' do
+  %p I am in the box
+
+- top_link = btn_to 'foo', '#'
+= box "hi", top_link: top_link do
+  %p I am in the box
+
+
+- top_link = small_btn_to 'foo', '#'
+= box "hi", top_link: top_link do
+  %p I am in the box
+
+
+.box
+  .box-title
+    %h2 I am a box
+    .top-link= btn_to 'click me', '#'
+
+
+.box.divided-box
+  .box-section
+    .section-icon= image_tag 'webhook-circle-gray.svg', size: '48x48', alt: 'list'
+    .section-contents
+      %h3 Section Title
+      %p.gray.closer Section text here lorem ipsum dolor sit amet.
+    .section-switch blah
+  .box-section
+    .section-icon= image_tag 'webhook-circle-gray.svg', size: '48x48', alt: 'list'
+    .section-contents
+      %h3 Section Title
+      %p.gray.closer Section text here lorem ipsum dolor sit amet.
+    .section-switch blah
+  .box-section
+    .section-icon= image_tag 'webhook-circle-gray.svg', size: '48x48', alt: 'list'
+    .section-contents
+      %h3 Section Title
+      %p.gray.closer Section text here lorem ipsum dolor sit amet.
+    .section-switch blah
