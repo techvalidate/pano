@@ -4,130 +4,134 @@
 
 = box 'Button Types' do
 
-  %p Standard and Primary are the most-commonly used button colors.
+	%p Standard and Primary are the most-commonly used button colors.
 
-  %hr
+	%hr
 
-  %h5 Standard
-  .code-example
-    = btn_to 'Default Button', '#'
-    %pre
-      :preserve
-        = btn_to 'Default Button', '#'
+	%h5 Standard
+	.code-example
+		= btn_to 'Default Button', '#'
+		%pre
+			:preserve
+				= btn_to 'Default Button', '#'
 
-  %hr
+	%hr
 
-  %h5 Primary
-  .code-example
-    = primary_btn_to 'Primary Button', '#'
-    %pre
-      :preserve
-        = primary_btn_to 'Primary Button', '#'
+	%h5 Primary
+	.code-example
+		= primary_btn_to 'Primary Button', '#'
+		%pre
+			:preserve
+				= primary_btn_to 'Primary Button', '#'
 
-  %hr
+	%hr
 
-  %h5 Warning
-  .code-example
-    = btn_to 'Delete Me', '#', class: 'btn-warning'
-    %pre
-      :preserve
-        = btn_to 'Delete Me', '#', class: 'btn-warning'
+	%h5 Warning
+	.code-example
+		= btn_to 'Delete Me', '#', class: 'btn-warning'
+		%pre
+			:preserve
+				= btn_to 'Delete Me', '#', class: 'btn-warning'
 
 = box 'Button Sizes' do
 
-  %p There are 3 button sizes, and each has a helper method for convenience.
-  %p All button helpers can take an options hash just like link_to so you can specify custom css classes and attributes.
-  %p These button sizes can also be achieved by adding classess like .btn-small or .btn-tiny.
+	%p There are 3 button sizes, and each has a helper method for convenience.
+	%p All button helpers can take an options hash just like link_to so you can specify custom css classes and attributes.
+	%p These button sizes can also be achieved by adding classess like .btn-small or .btn-tiny.
 
-  %hr
+	%hr
 
-  %h5 Standard Button
-  .code-example
-    = btn_to 'Click Me', '#'
-    %pre
-      :preserve
-        = btn_to 'Click Me', '#'
+	%h5 Huge Button
+	.code-example
+		:preserve
+			= btn_to 'Click Me', '#'
+	%h5 Default Button
+	.code-example
+		= btn_to 'Click Me', '#'
+		%pre
+			:preserve
+				= btn_to 'Click Me', '#'
 
-  %h5 Small Button
-  .code-example
-    = small_btn_to 'Click Me', '#'
-    %pre
-      :preserve
-        = small_btn_to 'Click Me', '#'
+	%h5 Small Button
+	.code-example
+		= small_btn_to 'Click Me', '#'
+		%pre
+			:preserve
+				= small_btn_to 'Click Me', '#'
 
-  %h5 Tiny Button
-  .code-example
-    = tiny_btn_to 'Click Me', '#'
-    %pre
-      :preserve
-        = tiny_btn_to 'Click Me', '#'
+	%h5 Tiny Button
+	.code-example
+		= tiny_btn_to 'Click Me', '#'
+		%pre
+			:preserve
+				= tiny_btn_to 'Click Me', '#'
 
 
 = box 'Buttons With Icons' do
 
-  %h5 Icon on the left
-  .code-example
-    = icon_btn_to 'plus', 'Left Icon', '#'
-    %pre
-      :preserve
-        = icon_btn_to 'plus', 'Left Icon', '#'
+	%h5 Icon on the left
+	.code-example
+		= icon_btn_to 'plus', 'Left Icon', '#'
+		%pre
+			:preserve
+				= icon_btn_to 'plus', 'Left Icon', '#'
 
-  %h5 Primary button with icon on the left
-  .code-example
-    = primary_icon_btn_to 'plus', 'Click Me', '#'
-    %pre
-      :preserve
-        = primary_icon_btn_to 'plus', 'Click Me', '#'
+	%h5 Primary button with icon on the left
+	.code-example
+		= primary_icon_btn_to 'plus', 'Click Me', '#'
+		%pre
+			:preserve
+				= primary_icon_btn_to 'plus', 'Click Me', '#'
 
-  %h5 Icon on the right
-  .code-example
-    -# = btn_to "Click Me #{tv_icon 'chevron-right'}", '#'
-    -# %pre
-    -#   :preserve
-    -#     = btn_to "Click Me #{tv_icon 'chevron-right'}", '#'
+	%h5 Icon on the right
+	.code-example
+		-# = btn_to "Click Me #{tv_icon 'chevron-right'}", '#'
+		-# %pre
+		-#   :preserve
+		-#     = btn_to "Click Me #{tv_icon 'chevron-right'}", '#'
 
-  %p.red more to add here...
+	%p.red more to add here...
 
 = box 'Button Groups' do
-  %h5 Horizontal
-  .code-example
-    .btn-group
-      = btn_to "Click Me", '#'
-      = btn_to "Click Me", '#', class: 'selected'
-      = btn_to "Click Me", '#'
-    %pre
-      :preserve
-        .btn-group
-          = btn_to "Click Me", '#'
-          = btn_to "Click Me", '#', class: 'selected'
-          = btn_to "Click Me", '#'
+	%h5 Horizontal
+	.code-example
+		.btn-group
+			= btn_to "Click Me", '#'
+			= btn_to "Click Me", '#', class: 'selected'
+			= btn_to "Click Me", '#'
+		%pre
+			:preserve
+				.btn-group
+					= btn_to "Click Me", '#'
+					= btn_to "Click Me", '#', class: 'selected'
+					= btn_to "Click Me", '#'
 
-  %h5 Vertical
-  .code-example
-    .cf
-      .vertical-btn-group.two-columns
-        = btn_to "Click Me", '#'
-        = btn_to "Click Me", '#', class: 'selected'
-        = btn_to "Click Me", '#'
-    %pre
-      :preserve
-        .cf
-          .vertical-btn-group.two-columns
-            = btn_to "Click Me", '#'
-            = btn_to "Click Me", '#', class: 'selected'
-            = btn_to "Click Me", '#'
+	%h5 Vertical
+	.code-example
+		.cf
+			.vertical-btn-group.two-columns
+				= btn_to "Click Me", '#'
+				= btn_to "Click Me", '#', class: 'selected'
+				= btn_to "Click Me", '#'
+		%pre
+			:preserve
+				.cf
+					.vertical-btn-group.two-columns
+						= btn_to "Click Me", '#'
+						= btn_to "Click Me", '#', class: 'selected'
+						= btn_to "Click Me", '#'
 
 = box 'Other Button Styles' do
-  %h5 Full-width Buttons (display: block)
-  .code-example
-    = btn_to "Click Me", '#', class: 'btn-block'
-    %pre
-      :preserve
-        = btn_to "Click Me", '#', class: 'btn-block'
+	%h5 Full-width Buttons (display: block)
+	.code-example
+		= btn_to "Click Me", '#', class: 'btn-block'
+		%pre
+			:preserve
+				= btn_to "Click Me", '#', class: 'btn-block'
 
-  %h5 Centered Wide Buttons
-  .code-example
-    = btn_to "Click Me", '#', class: 'centered-wide-btn'
-    %pre
-      :preserve
-        = btn_to "Click Me", '#', class: 'centered-wide-btn'
+	%h5 Centered Wide Buttons
+	.code-example
+		= btn_to "Click Me", '#', class: 'centered-wide-btn'
+		%pre
+			:preserve
+				= btn_to "Click Me", '#', class: 'centered-wide-btn'
