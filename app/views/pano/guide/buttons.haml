@@ -9,29 +9,23 @@
 	%hr
 
 	%h5 Standard
-	.code-example
-		= btn_to 'Default Button', '#'
-		%pre
-			:preserve
-				= btn_to 'Default Button', '#'
+	=haml_example do
+		:plain
+			= btn_to 'Default Button', '#'
 
 	%hr
 
 	%h5 Primary
-	.code-example
-		= primary_btn_to 'Primary Button', '#'
-		%pre
-			:preserve
-				= primary_btn_to 'Primary Button', '#'
+	= haml_example do
+		:plain
+			= primary_btn_to 'Primary Button', '#'
 
 	%hr
 
 	%h5 Warning
-	.code-example
-		= btn_to 'Delete Me', '#', class: 'btn-warning'
-		%pre
-			:preserve
-				= btn_to 'Delete Me', '#', class: 'btn-warning'
+	= haml_example do
+		:plain
+			= btn_to 'Delete Me', '#', class: 'btn-warning'
 
 = box 'Button Sizes' do
 
@@ -42,96 +36,53 @@
 	%hr
 
 	%h5 Huge Button
-	.code-example
-		:preserve
+	= haml_example do
+		:plain
 			= btn_to 'Click Me', '#'
 	%h5 Default Button
-	.code-example
-		= btn_to 'Click Me', '#'
-		%pre
-			:preserve
-				= btn_to 'Click Me', '#'
+	= haml_example do
+		:plain
+			= btn_to 'Click Me', '#'
 
 	%h5 Small Button
-	.code-example
-		= small_btn_to 'Click Me', '#'
-		%pre
-			:preserve
-				= small_btn_to 'Click Me', '#'
+	= haml_example do
+		:plain
+			= small_btn_to 'Click Me', '#'
 
 	%h5 Tiny Button
-	.code-example
-		= tiny_btn_to 'Click Me', '#'
-		%pre
-			:preserve
-				= tiny_btn_to 'Click Me', '#'
-
-
-= box 'Buttons With Icons' do
-
-	%h5 Icon on the left
-	.code-example
-		= icon_btn_to 'plus', 'Left Icon', '#'
-		%pre
-			:preserve
-				= icon_btn_to 'plus', 'Left Icon', '#'
-
-	%h5 Primary button with icon on the left
-	.code-example
-		= primary_icon_btn_to 'plus', 'Click Me', '#'
-		%pre
-			:preserve
-				= primary_icon_btn_to 'plus', 'Click Me', '#'
-
-	%h5 Icon on the right
-	.code-example
-		-# = btn_to "Click Me #{tv_icon 'chevron-right'}", '#'
-		-# %pre
-		-#   :preserve
-		-#     = btn_to "Click Me #{tv_icon 'chevron-right'}", '#'
-
-	%p.red more to add here...
+	= haml_example do
+		:plain
+			= tiny_btn_to 'Click Me', '#'
 
 = box 'Button Groups' do
 	%h5 Horizontal
-	.code-example
-		.btn-group
-			= btn_to "Click Me", '#'
-			= btn_to "Click Me", '#', class: 'selected'
-			= btn_to "Click Me", '#'
-		%pre
-			:preserve
-				.btn-group
-					= btn_to "Click Me", '#'
-					= btn_to "Click Me", '#', class: 'selected'
-					= btn_to "Click Me", '#'
+	= haml_example do
+		:plain
+			.btn-group
+				= btn_to "Option 1", '#'
+				= btn_to "Option 2", '#', class: 'selected'
+				= btn_to "Option 3", '#'
 
 	%h5 Vertical
-	.code-example
-		.cf
-			.vertical-btn-group.two-columns
-				= btn_to "Click Me", '#'
-				= btn_to "Click Me", '#', class: 'selected'
-				= btn_to "Click Me", '#'
-		%pre
-			:preserve
-				.cf
-					.vertical-btn-group.two-columns
-						= btn_to "Click Me", '#'
-						= btn_to "Click Me", '#', class: 'selected'
-						= btn_to "Click Me", '#'
+	= haml_example do    
+		:plain
+			.cf
+				.vertical-btn-group.two-columns
+					= btn_to "Option 1", '#'
+					= btn_to "Option 2", '#', class: 'selected'
+					= btn_to "Option 3", '#'
+= box '"Pill" Buttons' do 
+	%p Some buttons, especially on login/signup pages, and in emails, currently use a pill shape. This style can be applied to all colors and sizes of buttons. 
+	%p Extra minimum left/right padding is applied, and these buttons are often also made fixed-width.
+
 
 = box 'Other Button Styles' do
 	%h5 Full-width Buttons (display: block)
-	.code-example
-		= btn_to "Click Me", '#', class: 'btn-block'
-		%pre
-			:preserve
-				= btn_to "Click Me", '#', class: 'btn-block'
+	= haml_example do
+		:plain
+			= btn_to "Click Me", '#', class: 'btn-block'
 
 	%h5 Centered Wide Buttons
-	.code-example
-		= btn_to "Click Me", '#', class: 'centered-wide-btn'
-		%pre
-			:preserve
-				= btn_to "Click Me", '#', class: 'centered-wide-btn'
+	= haml_example do
+		:plain
+			= btn_to "Click Me", '#', class: 'centered-wide-btn'
