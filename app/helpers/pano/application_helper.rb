@@ -1,12 +1,6 @@
 module Pano
   module ApplicationHelper
 
-    # From CX::AppHelper
-
-    def color_swatch(color_name)
-      s "<div class='color-swatch #{color_name}'><span class='square'>&#9632;</span><span class='label'>#{color_name}</span></div>"
-    end
-
     def header_title
       @nav.to_s.titleize
     end

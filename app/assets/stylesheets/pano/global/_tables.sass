@@ -1,0 +1,64 @@
+table
+  width: 100%
+  margin-top: $line-height
+
+  th, td
+    text-align: left
+    padding: 16px
+    border-bottom: solid 1px #f3f3f3 //rgba(0,0,0,0.03) //$border-color
+  th
+    font-weight: normal
+    font-size: $small-font-size
+    line-height: 130%
+    color: $light-gray
+    text-transform: uppercase
+    font-size: 10px
+    padding: 16px 12px
+
+  th:first-child, td:first-child
+    padding-left: 0
+  th:last-child, td:last-child
+    padding-right: 0
+  // tr:last-child
+  //   th, td
+  //     border-bottom: none
+
+  th.top, td.top
+    vertical-align: top
+  .narrow
+    white-space: nowrap
+    width: 1%
+  .flush-left
+    padding-left: 0
+  .flush-right
+    padding-right: 0
+
+  &.alternating
+    th, td
+      padding: 12px !important
+    tr:nth-child(even)
+      th, td
+        background: $lighter-gray
+
+  &.gridded
+    th, td
+      padding: 16px !important
+      border-right: solid 1px $border-color !important
+      border-bottom: solid 1px $border-color !important
+    tr:first-child
+      th, td
+        border-top: solid 1px $border-color
+    th:first-child, td:first-child
+      padding-left: 12px
+      border-left: solid 1px $border-color
+
+  // tr.clickable
+  //   &:hover
+  //     th, td
+  //       background: rgb(246,255,244) !important
+
+  td.date
+    font-size: 11px
+    color: $light-gray
+  td.avatar
+    width: 32px
