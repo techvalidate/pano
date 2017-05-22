@@ -21,8 +21,8 @@
   border: dashed $width $color
   border-radius: 10px
 
-=rounded
-  border-radius: 8px !important
+=rounded($width: 8px)
+  border-radius: $width !important
 
 // =========================================================
 // css classes based on mixins
@@ -48,3 +48,6 @@
 
 .rounded
   +rounded
+
+.slightly-rounded
+  +rounded(3px)
