@@ -9,3 +9,9 @@ test/dummy/log/*.log
 test/dummy/tmp/
 
 /pano.iml
+
+tags
+**/tags
+*.swp
+*.swo
+*.swn
