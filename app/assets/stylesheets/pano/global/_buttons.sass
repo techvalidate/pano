@@ -38,7 +38,7 @@ $button-radius:    3px
     margin-right: 4px
     vertical-align: text-top
 
-@mixin btn_hover($color)
+=btn_hover($color)
   transition: none
   &:hover
     text-decoration: none
@@ -49,7 +49,7 @@ $button-radius:    3px
     background-color: $color
     background-image: linear-gradient($color, darken($color, 5%))
     box-shadow: inset 0px 0px 4px 1px rgba(0, 0, 0, 0.2)
- 
+
 
 //=========================================
 // button classes
@@ -69,7 +69,7 @@ $button-radius:    3px
   &.btn-warning
     color: white
     background-color: $error-color
-    +btn_hover($error-color) 
+    +btn_hover($error-color)
   &.btn-white
     color: $link-color
     background-color: white
@@ -93,14 +93,14 @@ $button-radius:    3px
     color: rgba(255,255,255,0.8)
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7)
     +btn_hover(rgba(255,255,255,0.1))
-   
+
   &.btn-outline-gray
     background-color: transparent
     color: $text-color
-    border: 1px solid $border-color 
+    border: solid 1px $border-color
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7)
     +btn_hover(rgba(255,255,255,0.1))
- 
+
   &.btn-cancel
     border: 1px solid #ccc
     color: #aaa
@@ -186,7 +186,7 @@ $button-radius:    3px
     border-radius: 0
     background-color: white
     color: $text-color
-    border: solid 1px #9DA5AA
+    border: solid 1px $gray
     +btn_hover(#eee)
     &:hover
       box-shadow: none
