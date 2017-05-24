@@ -1,0 +1,22 @@
+:ruby
+  @page_title = 'Links'
+  @nav        = :ui
+  @subnav     = :links
+
+= box 'Standard Links' do
+  = haml_example do
+    :plain
+      = link_to 'I am a normal link', '#'
+
+= box 'Customizing Link Colors' do
+  = haml_example do
+    :plain
+      %p= link_to 'I am a gray link', '#', class: 'gray'
+      %p= link_to 'I am a red link', '#', class: 'red'
+      .box.bg-dark-blue
+        %p= link_to 'I am a white link', '#', class: 'white'
+
+= box 'Overriding text-decoration: underline' do
+  = haml_example do
+    :plain
+      %p= link_to 'I am a link without underlining', '#', class: 'plain'

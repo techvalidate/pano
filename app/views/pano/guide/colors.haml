@@ -56,3 +56,32 @@
       = color_swatch 'promoter-color'
       = color_swatch 'passive-color'
       = color_swatch 'detractor-color'
+
+= box 'Background-color Classes' do
+  %p Several of the named colors also have utility CSS classes for setting background colors.
+  = haml_example do
+    :plain
+      .box.bg-dark-blue
+        %p.white .bg-dark-blue: dark-blue bg
+      .box.bg-blue
+        %p.white .bg-blue: blue bg
+      .box.bg-green
+        %p.white .bg-green: green bg
+      .box.bg-red
+        %p.white .bg-red: red bg
+      .box.bg-yellow
+        %p.white .bg-yellow: yellow bg
+      .box.bg-charcoal
+        %p.white .bg-charcoal: charcoal bg
+      .box.bg-slate
+        %p.white .bg-slate: slate bg
+      .box.bg-gray
+        %p.white .bg-gray: gray bg
+      .box.bg-light-gray
+        %p .bg-light-gray: light-gray bg
+      .box.bg-lighter-gray
+        %p .bg-lighter-gray: lighter-gray bg
+      .box.bg-bg-gray
+        %p .bg-bg-gray: bg-gray bg
+      .box.bg-white
+        %p .bg-white: white bg

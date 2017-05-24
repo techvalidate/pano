@@ -14,11 +14,9 @@
 // functions and mixins for defining grids
 // =========================================================
 
-// $totalColumns: 12
-
-
+//
 // use this to define a column grid
-
+//
 =columnGrid($gutterWidth, $totalColumns: 12)
   +clearfix
 
@@ -34,7 +32,10 @@
     margin-left: $gutterWidth
     margin-right: $gutterWidth
 
+
+//
 // utility functions and mixins for the columnGrid mixin
+//
 
 @function columnRatio($columnUnits, $totalColumns)
   @return $columnUnits / $totalColumns

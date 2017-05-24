@@ -1,0 +1,18 @@
+:ruby
+  @page_title = 'Shadows'
+  @nav        = :ui
+  @subnav     = :shadows
+
+= box 'Box Shadows' do
+  %h4 Mixins
+  %p
+    The +thin-shadow, +thick-shadow, and +mega-shadow mixins are useful for applying standard shadow styles.
+    Use +no-shadow to turn off shadows on an element that has box shadows.
+  %h4 CSS Classes
+  %p There are convenience CSS classes named after the mixins.
+  = haml_example do
+    :plain
+      .box.no-shadow I have the .no-shadow class
+      .box.thin-shadow I have the .thin-shadow class
+      .box.thick-shadow I have the .thick-shadow class
+      .box.mega-shadow I have the .mega-shadow class

@@ -7,15 +7,35 @@
 box styles: normal, flat, inset (well), strong, clickable
 padding levels
 margins
+centered headers, with and without icons
 
 .box
   %h4 normal box
 
-.box.p48.thick-shadow
-  %h4 48px padding
+.box.thick-shadow
+  %h4 thick shadow
 
-.box.p64.m64.mega-shadow
-  %h4 64px top margin
+.box.mega-shadow
+  %h4 mega shadow
+
+.box.flat
+  %h4 flat box
+
+.box.inset
+  %h4 inset box
+
+.box{'data-behavior': 'clickable', 'data-href': '#'}
+  %h4 clickable box
+
+.box.rounded
+  %h4 rounded box
+
+%hr
+
+= box "I am a centered box", class: 'centered-box' do
+  %p I am in a centered box
+
+%hr
 
 = box "hi" do
   %p I am in the box
@@ -52,17 +72,17 @@ margins
     .section-icon= image_tag 'webhook-circle-gray.svg', size: '48x48', alt: 'list'
     .section-contents
       %h3 Section Title
-      %p.gray.closer Section text here lorem ipsum dolor sit amet.
+      %p.gray.mt-s Section text here lorem ipsum dolor sit amet.
     .section-switch blah
   .box-section
     .section-icon= image_tag 'webhook-circle-gray.svg', size: '48x48', alt: 'list'
     .section-contents
       %h3 Section Title
-      %p.gray.closer Section text here lorem ipsum dolor sit amet.
+      %p.gray.mt-s Section text here lorem ipsum dolor sit amet.
     .section-switch blah
   .box-section
     .section-icon= image_tag 'webhook-circle-gray.svg', size: '48x48', alt: 'list'
     .section-contents
       %h3 Section Title
-      %p.gray.closer Section text here lorem ipsum dolor sit amet.
+      %p.gray.mt-s Section text here lorem ipsum dolor sit amet.
     .section-switch blah

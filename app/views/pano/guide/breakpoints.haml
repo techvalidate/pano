@@ -1,0 +1,25 @@
+:ruby
+  @page_title = 'Responsive Breakpoints'
+  @nav        = :ui
+  @subnav     = :breakpoints
+
+= box 'Sass Mixins' do
+
+  %h4 +mobile
+  %p Use this mixin to target styles for mobile screens (<768px wide)
+
+  %h4 +tablet
+  %p Use this mixin to target styles for tablets in portrait mode (<1024px wide)
+
+  %h4 +widescreen
+  %p Use this mixin to target styles for large desktop screens (>=1344px wide)
+
+= box '$force-mobile' do
+  %p This variable can be used to force mobile styles to be rendered at non-mobile sizes.
+  %p
+    Set the flag to true, and all subsequent calls to the +mobile mixin will force
+    the mobile styles to be output without a media query.
+  %p
+    Since this is a compile-time flag, you need to use it only in contexts where
+    you can define a separate stylesheet to be compiled. For example, previewing how
+    surveys look on mobile devices.
