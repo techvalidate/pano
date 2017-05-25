@@ -1,61 +1,72 @@
-= box 'Tables' do
+:ruby
+  @page_title = 'Tables'
+  @nav        = :ui
+  @subnav     = :tables
 
-  %h5 Standard Table
+%p
+  %strong.red Note:
+  There are several useful utility classes for table cells that aren't documented here yet: .flush-left, .flush-right, .narrow, .date, .avatar
 
-  %table
-    %tr
-      %th Table Header
-      %th Table Header
-      %th Table Header
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
+= box 'Standard Tables' do
 
-  %h5 Grid Table (%table.grid)
+  = haml_example do
+    :plain
+      %table
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
 
-  %table.grid
-    %tr
-      %th Table Header
-      %th Table Header
-      %th Table Header
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
+= box 'Divided Table' do
+  = haml_example do
+    :plain
+      %table.divided
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
 
-  %h5 Alternating Table With Small Text (%table.alternating.small)
-
-  %table.small.alternating
-    %tr
-      %th Table Header
-      %th Table Header
-      %th Table Header
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
-    %tr
-      %td Table Cell
-      %td Table Cell
-      %td Table Cell
+= box 'Alternating Table With Small Text' do
+  = haml_example do
+    :plain
+      %table.alternating.small
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td Table Cell
