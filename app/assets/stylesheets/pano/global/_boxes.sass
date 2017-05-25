@@ -1,5 +1,4 @@
 =box
-  +clearfix
   margin-top: 32px
   padding: 24px 32px
   background: #fff
@@ -7,6 +6,7 @@
   background-clip: border-box
   +border
   +thin-shadow
+  +clearfix
 
 .box
   +box
@@ -14,15 +14,9 @@
   .box-header
     position: relative
     +clearfix
-    // padding-bottom: 16px
-    // margin-bottom: 24px
-    // padding-bottom: 24px
     margin-bottom: 24px
 
-    // +border-bottom
-
     .box-title
-      margin-bottom: 0
       float: left
 
     .top-link
@@ -32,9 +26,8 @@
       .btn
         // buttons are vertically aligned in box headers, without breaking standard links vertical alignment
         position: relative
-        // top: -3px
 
-      // todo: test
+      // todo: test this out
       input[type="search"]
         margin-top: -8px
         width: 240px
@@ -65,7 +58,7 @@
     transform: scale(1.03)
 
 
-// todo: rename?
+// todo: relegate this to cx-only, or refactor?
 .box.centered-box
   .box-header
     text-align: center
@@ -74,7 +67,6 @@
     .box-title
       float: none
       margin-top: 8px
-
 
 
 // todo: relegate this to cx-only, or refactor?
