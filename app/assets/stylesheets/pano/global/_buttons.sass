@@ -20,7 +20,7 @@ $button-radius:    3px
   border: none
   text-align: center
   text-decoration: none
-  transition: all 0.15s ease-in-out
+  transition: all 0.2s ease-in-out
   +btn_hover($link-color)
   &:focus
     text-decoration: none
@@ -38,7 +38,8 @@ $button-radius:    3px
     margin-right: 4px
     vertical-align: text-top
 
-=btn_hover($color)
+@mixin btn_hover($color)
+  transition: none
   &:hover
     text-decoration: none
     background-color: $color
@@ -47,7 +48,8 @@ $button-radius:    3px
   &:active
     background-color: $color
     background-image: linear-gradient($color, darken($color, 5%))
-    box-shadow: inset 0px 0px 4px 1px rgba(0, 0, 0, 0.25)
+    box-shadow: inset 0px 0px 4px 1px rgba(0, 0, 0, 0.2)
+ 
 
 //=========================================
 // button classes
@@ -71,9 +73,11 @@ $button-radius:    3px
   &.btn-white
     color: $link-color
     background-color: white
+    border: 1px solid $gray
     +btn_hover(#fff)
   &.btn-gray
-    color: $gray
+    color: white
+    border: 1px solid $gray
     background-color: $light-gray
     +btn_hover($light-gray)
 
@@ -182,14 +186,9 @@ $button-radius:    3px
   .btn
     margin-right: -5px
     border-radius: 0
-    background-color: white
-    color: $text-color
-    border: solid 1px #9DA5AA
-    +btn_hover(#eee)
     &:hover
       box-shadow: none
     &.selected, &:active
-      background-color: #eee
       background-image: linear-gradient(#eee, darken(#eee, 5%))
       box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2)
   .btn:first-child
@@ -202,16 +201,12 @@ $button-radius:    3px
 
 .vertical-btn-group
   .btn
-    +btn
     display: block
     margin-top: -1px
     border-radius: 0
     white-space: nowrap
     text-align: left
-    background-color: #fff
     border: solid 1px #9da5aa
-    color: $text-color
-    +btn_hover(#eee)
     &:hover
       box-shadow: none
     &.selected, &:active

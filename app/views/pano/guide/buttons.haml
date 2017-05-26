@@ -20,7 +20,7 @@
 	%h5 Primary
 	= haml_example do
 		:plain
-			= primary_btn_to 'Primary Button', '#'
+			= btn_to 'Primary Button', '#', class: 'btn-primary'
 
 	%hr
 
@@ -45,7 +45,13 @@
 	%h5 Huge Button
 	= haml_example do
 		:plain
-			= btn_to 'Click Me', '#'
+			= btn_to 'Click Me', '#', class: 'btn-huge'
+	
+	%h5 Large Button
+	= haml_example do
+		:plain
+			= btn_to 'Click Me', '#', class: 'btn-large'
+
 	%h5 Default Button
 	= haml_example do
 		:plain
@@ -66,26 +72,26 @@
 	= haml_example do
 		:plain
 			.btn-group
-				= btn_to "Option 1", '#'
-				= btn_to "Option 2", '#', class: 'selected'
-				= btn_to "Option 3", '#'
-	
+				= btn_to "Option 1", '#', class: 'btn-white'
+				= btn_to "Option 2", '#', class: 'selected btn-white'
+				= btn_to "Option 3", '#', class: 'btn-white'
+
 	%h5 Vertical
 	= haml_example do    
 		:plain
 			.cf
 				.vertical-btn-group.two-columns
-					= btn_to "Option 1", '#'
-					= btn_to "Option 2", '#', class: 'selected'
-					= btn_to "Option 3", '#'
+					= btn_to "Option 1", '#', class: 'btn-white'
+					= btn_to "Option 2", '#', class: 'selected btn-white'
+					= btn_to "Option 3", '#', class: 'btn-white'
 
 	%h5 Gray Button Group
 	= haml_example do
 		:plain
 			.btn-group
-			 	= btn_to "Option 1", '#', class: 'btn-gray'
-				= btn_to "Option 2", '#', class: 'selected'
-				= btn_to "Option 3", '#'
+				= btn_to "Option 1", '#', class: 'btn-gray'
+				= btn_to "Option 2", '#', class: 'selected btn-gray'
+				= btn_to "Option 3", '#', class: 'btn-gray'
 
 
 = box '"Pill" Buttons' do 
@@ -104,7 +110,7 @@
 	%p Buttons can have icons in them, either on the right or the left.
 	%p Icons in buttons use the same oolor as the button text.
 	%p Buttons can even have only an icon inside. In this case, use a tooltip to explain the button.
-	
+
 	= haml_example do
 		:plain
 			= icon_btn_to 'add', 'New Survey', '#', class: 'btn-primary'
