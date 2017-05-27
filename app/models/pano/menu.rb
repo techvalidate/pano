@@ -34,7 +34,7 @@ module Pano
     end
 
     def render(html_options = {})
-      output = ''
+      output = "<ul #{tag_options html_options}>"
       output += render_search_field if searchable?
       if empty?
         output += render_empty_message
@@ -44,7 +44,8 @@ module Pano
         end
       end
 
-      content_tag :ul, output, html_options
+      output += "</ul>"
+      s output
     end
 
     def render_empty_message
