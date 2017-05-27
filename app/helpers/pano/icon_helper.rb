@@ -16,7 +16,7 @@ module Pano
     def icon(icon_name, options = {})
       klass = options[:class] ? (options.delete :class) : ''
       klass += ' material-icons'
-      s "<i #{tag_options options.add_class(klass)}>#{material_icon_for icon_name}</i>"
+      content_tag :i, material_icon_for(icon_name), options.add_class(klass)
     end
 
     def large_icon(icon_name, options = {})
