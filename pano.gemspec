@@ -16,9 +16,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'bourbon', '4.3.4'
   s.add_dependency 'coffee-rails', '4.2.1'
-  s.add_dependency 'haml', '4.0.7'
-  s.add_dependency 'jquery-rails', '4.1.1'
-  s.add_dependency 'rails', '5.0.2'
+  s.add_dependency 'haml', '5.0.1'
+  s.add_dependency 'jquery-rails', '4.3.1'
+  s.add_dependency 'rails', '5.1.1'
   s.add_dependency 'sass-rails', '5.0.6'
   s.add_dependency 'turbolinks', '5.0.1'
 
