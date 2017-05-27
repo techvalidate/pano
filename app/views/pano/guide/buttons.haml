@@ -33,7 +33,6 @@
 	= haml_example do
 		:plain
 			= btn_to 'Outline Button', '#', class: 'btn-outline'
-			= btn_to 'Primary Outline', '#', class: 'btn-outline '
 = box 'Button Sizes' do
 
 	%p There are 3 button sizes, and each has a helper method for convenience.
@@ -45,28 +44,31 @@
 	%h5 Huge Button
 	= haml_example do
 		:plain
-			= btn_to 'Click Me', '#', class: 'btn-huge'
+			= huge_btn_to 'Click Me', '#'
+			= huge_btn_to 'Click Me', '#', class: 'btn-primary'
 	
 	%h5 Large Button
 	= haml_example do
 		:plain
-			= btn_to 'Click Me', '#', class: 'btn-large'
+			= large_btn_to 'Click Me', '#'
+			= large_btn_to 'Click Me', '#', class: 'btn-primary'
 
 	%h5 Default Button
 	= haml_example do
 		:plain
 			= btn_to 'Click Me', '#'
+			= btn_to 'Click Me', '#', class: 'btn-primary'
 
 	%h5 Small Button
 	= haml_example do
 		:plain
 			= small_btn_to 'Click Me', '#'
-
+			= small_btn_to 'Click Me', '#', class: 'btn-primary'
 	%h5 Tiny Button
 	= haml_example do
 		:plain
 			= tiny_btn_to 'Click Me', '#'
-
+			= tiny_btn_to 'Click Me', '#', class: 'btn-primary'
 = box 'Button Groups' do
 	%h5 Horizontal
 	= haml_example do
@@ -114,7 +116,9 @@
 	= haml_example do
 		:plain
 			= icon_btn_to 'add', 'New Survey', '#', class: 'btn-primary'
-			= icon_btn_to 'sort', 'Sort', '#', class: 'btn-outline-gray'
+			= icon_btn_to 'sort', 'Sort', '#', class: 'btn-white'
+			= icon_btn_to 'keyboard_arrow_right', 'Continue', '#', right: true
+			= icon_btn 'file_download', '#', class: 'btn-white'
 
 = box 'Other Button Styles' do
 	%h5 Full-width Buttons (display: block)

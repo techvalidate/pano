@@ -35,6 +35,7 @@ $button-radius:    3px
     box-shadow: inset 0 0 1px rgba(0,0,0,0.2)
 
   .material-icons
+    margin-top: 1px
     margin-right: 4px
     vertical-align: text-top
 
@@ -71,15 +72,15 @@ $button-radius:    3px
     background-color: $error-color
     +btn_hover($error-color) 
   &.btn-white
-    color: $link-color
+    color: $text-color
     background-color: white
     border: 1px solid $gray
     +btn_hover(#fff)
   &.btn-gray
-    color: white
+    color: $text-color
     border: 1px solid $gray
-    background-color: $light-gray
-    +btn_hover($light-gray)
+    background-color: $lighter-gray
+    +btn_hover($lighter-gray)
 
   &.btn-outline
     background-color: transparent
@@ -88,7 +89,6 @@ $button-radius:    3px
     +btn_hover($link-color)
     &:hover, &:active
       color: #fff
-
 
   &.btn-outline-white
     background-color: transparent
@@ -106,8 +106,8 @@ $button-radius:    3px
   &.btn-cancel
     border: 1px solid #ccc
     color: #aaa
-    background: #fff
-
+    background: #fff  
+  
   &.btn-pill
     border-radius: 24px
 
@@ -124,6 +124,20 @@ $button-radius:    3px
       border-top-color: $gray !important
     &.jq-dropdown-open .dropdown-trigger:after
       border-bottom-color: $gray !important
+  
+  //=========================================
+  // helper classes for buttons with icons
+  //=========================================
+
+  &.icon-only
+    padding: 0 5px
+    width: 32px
+    .material-icons
+      margin-right: 0
+  &.icon-rt
+    .material-icons
+      margin: 2px 0 4px 0
+
 
   //=========================================
   // button sizes
@@ -177,6 +191,8 @@ $button-radius:    3px
     width: 75%
     +mobile
       width: 100%
+
+
 
 //=========================================
 // button groups
