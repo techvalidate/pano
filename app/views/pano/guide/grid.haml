@@ -28,28 +28,33 @@
 = box 'Gutters' do
 
   %p
-    The default gutter width is 16px. 8px, 32px, 48px, and 64px gutters are also available off the shelf
-    with the .g8, .g32, .g48, and .g64 classes. If you need to create your own custom grids with custom gutter
+    The default gutter width is 32px. 8px, 16px, 48px, and 64px gutters are also available off the shelf
+    with the .g-8, .g-16, .g-48, and .g-64 classes. If you need to create your own custom grids with custom gutter
     widths or custom number of columns, use the columnGrid mixin.
 
   = haml_example do
     :plain
-      .grid.g8
+      .grid.g-8
         .col-6
           .box.flat-box 8px gutters
         .col-6
           .box.flat-box 8px gutters
-      .grid.g32
+      .grid.g-16
         .col-6
-          .box.flat-box 32px gutters
+          .box.flat-box 16px gutters
         .col-6
-          .box.flat-box 32px gutters
-      .grid.g48
+          .box.flat-box 16px gutters
+      .grid
+        .col-6
+          .box.flat-box 32px gutters (default)
+        .col-6
+          .box.flat-box 32px gutters (default)
+      .grid.g-48
         .col-6
           .box.flat-box 48px gutters
         .col-6
           .box.flat-box 48px gutters
-      .grid.g64
+      .grid.g-64
         .col-6
           .box.flat-box 64px gutters
         .col-6
@@ -75,30 +80,33 @@
   = haml_example do
     :plain
       .grid
+        .col-6.shift-3
+          .box.flat-box shifted over 3 units
+      .grid
         .col-6.shift-6
           .box.flat-box shifted over 6 units
 
 = box 'Responsive Grids' do
 
   %p
-    To force columns to go full-width at tablet or mobile breakpoints, add .stack-on-mobile or .stack-on-tablet to column elements.
-    Also applies to shifted columns.
+    To force columns to go full-width at tablet or mobile breakpoints, add .t-stack or .m-stack to grid elements.
+    Also applies to shifted columns. You don't need to use both .t-stack and .m-stack -- a grid with .t-stack will already be stacked at mobile resolutions.
 
   = haml_example do
     :plain
-      .grid
-        .col-6.stack-on-tablet
+      .grid.t-stack
+        .col-6
           .box.flat-box stacks on tablet
-        .col-6.stack-on-tablet
+        .col-6
           .box.flat-box stacks on tablet
-      .grid
-        .col-6.stack-on-mobile
+      .grid.m-stack
+        .col-6
           .box.flat-box stacks on mobile
-        .col-6.stack-on-mobile
+        .col-6
           .box.flat-box stacks on mobile
-      .grid
-        .col-6.shift-6.stack-on-mobile
-          .box.flat-box shifted over, still stacks on mobile
+      .grid.m-stack
+        .col-6.shift-6
+          .box.flat-box shifted column, still flush left on mobile
 
 = box 'HTML Tips' do
 

@@ -1,8 +1,7 @@
 // =========================================================
 // Grid System
 //
-// Put all columns in a .grid element (unless they're
-// just table cells, then the .grid element is unnecessary).
+// Put all columns in a .grid element.
 // By default, grids don't have outer gutters. If you want
 // outer gutters, apply .outer-gutters to your grid.
 //
@@ -14,28 +13,19 @@
 // functions and mixins for defining grids
 // =========================================================
 
-//
 // use this to define a column grid
-//
 =columnGrid($gutterWidth, $totalColumns: 12)
   +clearfix
 
   @for $i from 1 through ($totalColumns - 1)
-
     .col-#{$i}
       +column($i, $gutterWidth, $totalColumns)
-
     .shift-#{$i}
       +shiftColumns($i, $gutterWidth, $totalColumns)
 
   &.outer-gutters
     margin-left: $gutterWidth
     margin-right: $gutterWidth
-
-
-//
-// utility functions and mixins for the columnGrid mixin
-//
 
 @function columnRatio($columnUnits, $totalColumns)
   @return $columnUnits / $totalColumns
@@ -57,50 +47,50 @@
 =shiftColumns($columnUnits, $gutterWidth, $totalColumns)
   margin-left: calc(#{percentage(columnRatio($columnUnits, $totalColumns))} + #{$gutterWidth - gutterAdjustment($columnUnits, $gutterWidth, $totalColumns)})
 
+=stackColumns($topMargin: 32px, $totalColumns: 12)
+  // make all columns stack rather than float
+  @for $i from 1 through ($totalColumns - 1)
+    .col-#{$i}
+      float: none
+      width: 100%
+      margin-left: 0
+      margin-top: $topMargin
+      &:first-child
+        margin-top: 0
+    .shift-#{$i}
+      margin-left: 0
+  // remove any outer gutters
+  &.outer-gutters
+    margin-left: 0
+    margin-right: 0
+
 
 // =========================================================
-// grids with different width gutters (16px is default)
+// grids with different width gutters (32px is default)
 // =========================================================
 
 .grid
-  +columnGrid(16px)
+  +columnGrid(32px)
 
-  &.g8
+  &.g-8
     +columnGrid(8px)
 
-  &.g32
-    +columnGrid(32px)
+  &.g-16
+    +columnGrid(16px)
 
-  &.g48
+  &.g-48
     +columnGrid(48px)
 
-  &.g64
+  &.g-64
     +columnGrid(64px)
 
-// =========================================================
-// Responsive Columns
-//
-// Apply these classes to .col-x elements. They simply
-// become full-width on mobile or tablet screens.
-// =========================================================
+  &.m-stack
+    +mobile
+      +stackColumns
 
-.grid
-
-  +mobile
-    .stack-on-mobile
-      float: none
-      width: 100%
-      margin-left: 0
-    .stack-on-mobile + .stack-on-mobile
-      margin-top: 32px
-
-  +tablet
-    .stack-on-tablet
-      float: none
-      width: 100%
-      margin-left: 0
-    .stack-on-tablet + .stack-on-tablet
-      margin-top: 32px
+  &.t-stack
+    +tablet
+      +stackColumns
 
 // =========================================================
 // Tables
