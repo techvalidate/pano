@@ -23,7 +23,13 @@ module Pano
       klass = if anchor.nil? then "jq-dropdown jq-dropdown-relative" else "jq-dropdown jq-dropdown-relative jq-dropdown-anchor-#{anchor}" end
 
       options.add_class klass
-      s "<div id='#{options[:custom_id] ? options[:custom_id] : menu.dom_id}' #{tag_options options}>#{menu.render class: 'jq-dropdown-menu'}</div>"
+      options[:id] = options[:custom_id] ? options[:custom_id] : menu.dom_id
+
+      # s "<div id='#{options[:custom_id] ? options[:custom_id] : menu.dom_id}' #{tag_options options}>#{menu.render class: 'jq-dropdown-menu'}</div>"
+
+      content_tag :div, options do
+        menu.render class: 'jq-dropdown-menu'
+      end
     end
 
   end
