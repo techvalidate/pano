@@ -30,14 +30,24 @@ module Pano
     # and html attributes. We ask the parent menu whether we should be a
     # remote link, unless that's been overridden for this menu item.
     def render
-      link_text  =  "<span class='item-icon'>#{render_icon}</span>"
-      link_text +=  "<span class='descriptor-icon'>#{options[:descriptor_icon]}</span>" if options[:descriptor_icon]
-      link_text +=  "<span class='item-text'>#{h @name}</span>"
-      link_text +=  "<span class='item-count'>#{delimit @count}</span>" if count
-      item = ''
-      item +=  "<li>#{s_link_to link_text, @url, @options.selected_if(selected?)}</li>" if count.nil? || count.positive?
+      # link_text  =  "<span class='item-icon'>#{render_icon}</span>"
+      # link_text +=  "<span class='descriptor-icon'>#{options[:descriptor_icon]}</span>" if options[:descriptor_icon]
+      # link_text +=  "<span class='item-text'>#{h @name}</span>"
+      # link_text +=  "<span class='item-count'>#{delimit @count}</span>" if count
+      # item = ''
+      # item +=  "<li>#{s_link_to link_text, @url, @options.selected_if(selected?)}</li>" if count.nil? || count.positive?
+      #
+      # s item
 
-      s item
+      link_text  = content_tag(:span, render_icon, class: 'item-icon')
+      link_text += content_tag(:span, options[:descriptor_icon], class: 'descriptor-icon') if options[:descriptor_icon]
+      link_text += content_tag(:span, @name, class: 'item-text')
+      link_text += content_tag(:span, delimit(@count), class: 'item-count') if count
+
+      content_tag :li do
+        link_to link_text, @url, @options.selected_if(selected?)
+      end
+
     end
 
     def render_icon
