@@ -1,0 +1,22 @@
+
+// this mixin centers an element, with max width of 1280px for the content area
+// and 16px of padding on the side. use on the container around your page content
+// or anything that you want to constrain to the same width as the main content
+// area of your page
+
+=page-width
+  margin: 0 auto
+  padding: 0 16px
+  transition: max-width 0.2s ease-in-out
+  max-width: 1056px
+  +widescreen
+    max-width: 1312px
+  +tablet
+    max-width: 100%
+  +mobile
+    padding: 0 8px
+
+// css class for when you just want to apply this behavior to an element
+
+.page-width
+  +page-width

@@ -21,10 +21,11 @@ module Pano
 
     def nav_link(name, url, options = {})
       key = options.delete(:key) || name.parameterize.underscore.to_sym
+      options = options.selected_if(@nav == key).add_class 'nav-link'
       if icon = options.delete(:icon)
-        icon_to icon, name, url, options.selected_if(@nav == key)
+        icon_to icon, name, url, options
       else
-        link_to name, url, options.selected_if(@nav == key)
+        link_to name, url, options
       end
     end
 
