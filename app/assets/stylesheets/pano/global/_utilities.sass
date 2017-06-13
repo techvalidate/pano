@@ -37,10 +37,10 @@
   +clearfix
 
 .fl
-  float: left
+  float: left !important
 
 .fr
-  float: right
+  float: right !important
 
 // ------------------------------------------
 // horizontal centering
@@ -85,17 +85,6 @@
 // margins
 // ------------------------------------------
 
-// todo: remove these from CX code
-
-// .t
-//   margin-top: 0 !important
-//
-// .b
-//   margin-bottom: 0 !important
-//
-// .closer
-//   margin-top: 8px
-
 .mt-0
   margin-top: 0 !important
 
@@ -107,15 +96,15 @@
 
 .mt-l
   margin-top: 32px !important
-  +mobile
-    margin-top: 16px !important
+  // +mobile
+  //   margin-top: 16px !important
 
 .mt-xl
   margin-top: 48px !important
   +mobile
-    margin-top: 16px !important
+    margin-top: 32px !important
 
 .mt-xxl
   margin-top: 64px !important
   +mobile
-    margin-top: 16px !important
+    margin-top: 32px !important
