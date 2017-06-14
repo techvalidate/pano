@@ -25,12 +25,12 @@ module Pano
       header_icon = ''
       header_description = ''
       unless icon.nil?
-        header_icon =  content_tag(:p, class:'light-gray') do
+        header_icon =  content_tag(:p, class:'slate') do
           large_icon(icon)
         end
       end
       unless description.nil?
-        header_description = p_tag class: 'light-gray' do
+        header_description = p_tag class: 'slate' do
           description
         end
       end

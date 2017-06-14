@@ -2,7 +2,7 @@ module Pano
   module SubnavHelper
 
     def subnav_header(&block)
-      content_for :subnav do
+      content_for :subnav_header do
         div_tag id: 'subnav-header' do
           div_tag class: 'header-contents' do
             capture(&block)
