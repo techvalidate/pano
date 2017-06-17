@@ -5,8 +5,7 @@
   position: fixed
   z-index: 199
   left: 0
-  // top: 48px
-  right: 0
+  width: 100vw
   height: 40px
   color: white
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1)
@@ -32,9 +31,19 @@
       padding-bottom: 8px
       color: $dark-blue
       font-size: 12px
-      // font-weight: normal
       &.selected
         color: $blue
+
++mobile
+  #subnav
+    white-space: nowrap
+    overflow-x: auto
+    .tabs
+      a
+        float: none
+        display: inline-block
+        font-size: 11px
+        padding: 8px
 
 
 #subnav-header
