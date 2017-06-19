@@ -1,30 +1,51 @@
-// // -----------------------------------------------
-// // footer
-// // -----------------------------------------------
-//
-// #footer
-//   position: absolute
-//   left: 0
-//   right: 0
-//   bottom: 0
-//   margin: 0 32px
-//   padding: 16px 0
-//   +border-top
-//   font-size: $small-font-size
-//   +clearfix
-//   color: $light-gray
-//   line-height: 24px
-//
-//   a
-//     color: #0090DC
-//
-//   img
-//     vertical-align: middle
-//
-//   .footer-legal
-//     font-size: 10px
-//     line-height: 14px
-//     color: $light-gray
-//     text-align: center
-//     max-width: 600px
-//     margin: 32px auto 0 auto
+// -----------------------------------------------
+// footer for App pages
+// -----------------------------------------------
+
+
+#footer
+  margin-top: 48px
+  margin-bottom: 60px
+
+  #footer-logo
+    text-align: center
+    border-top: solid 1px $border-color
+    margin-bottom: 16px
+    a
+      display: inline-block
+      vertical-align: middle
+      margin-top: -16px
+      padding: 0 32px
+      background: $bg-gray
+    img
+      vertical-align: middle
+
+  .support-links, .legal-links
+    a
+      display: inline-block
+      margin-right: 24px
+      &:last-child
+        margin-right: 0
+
+  .support-links
+    float: left
+    width: 33%
+
+  .meta
+    width: 33%
+    margin: 0 auto
+    text-align: center
+
+  .legal-links
+    float: right
+    text-align: right
+    width: 33%
+
+  +mobile
+    .support-links, .meta, .legal-links
+      float: none
+      width: 100%
+      text-align: center
+      a
+        display: block
+        margin: 16px 0
