@@ -63,6 +63,10 @@ module Pano
       end
     end
 
+    def obfuscate_name(name)
+     "#{name.chars.first}****"
+    end
+
     # Shorthand for html_safe
     def s(string)
       string.try :html_safe

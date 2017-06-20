@@ -31,5 +31,10 @@ module Pano
         <![endif]-->"
     end
 
+    def obfuscate_email(address)
+      chunks = address.split('@')
+      "#{chunks[0].chars.first}****@#{chunks[1]}"
+    end
+
   end
 end

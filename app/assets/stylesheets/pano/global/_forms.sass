@@ -373,3 +373,25 @@ textarea:focus + .charcounter
     display: inline
     line-height: 16px
     font-size: 16px
+
+
+// ------------------------------------------
+// divide big forms up into sections
+// ------------------------------------------
+
+.form-section
+  +clearfix
+  margin-top: 32px
+  .section-info
+    float: left
+    width: 45%
+    padding-right: 48px
+    margin-top: 32px
+  .section-fields
+    float: left
+    width: 55%
+  +mobile
+    .section-info, .section-fields
+      float: none
+      width: auto
+      padding-right: none

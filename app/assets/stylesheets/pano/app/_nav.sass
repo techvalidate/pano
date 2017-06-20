@@ -87,7 +87,7 @@
 
   a.right-icon-link
     float: right
-    width: 40px
+    width: 48px
     padding: 0
     text-align: center
 
@@ -219,6 +219,10 @@
       left: 0
       a.nav-link
         float: none
+        &.selected
+          background: $bg-gray
+          color: $text-color
+          font-weight: bold
 
     .nav-dropdown
       top: 40px
@@ -233,7 +237,8 @@
       right: 0
 
     a.right-icon-link
-      display: none
+      height: 40px
+      line-height: 40px
 
     #cur-user-dropdown-trigger
       max-width: 40px
