@@ -1,0 +1,268 @@
+
+// WORK IN PROGRESS
+
+// ------------------------------------------
+// global top nav
+// ------------------------------------------
+
+#nav
+  position: fixed
+  z-index: 200
+  left: 0
+  top: 0
+  right: 0
+  height: 48px
+  color: white
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1)
+  background: $dark-blue
+  background-image: linear-gradient(to right, rgba(20,121,214,0.5), rgba(29,73,127,0.5))
+
+  .nav-links
+    +page-width
+
+  a.nav-link
+    position: relative
+    display: block
+    float: left
+    height: 48px
+    padding: 0 20px
+    font-size: 11px
+    // font-weight: 300
+    line-height: 48px
+    color: rgba(255,255,255,0.7)
+    letter-spacing: 0.4px
+
+    +tablet
+      padding: 0 10px
+
+    &:hover
+      text-decoration: none
+      color: white
+
+    &.selected
+      color: white
+      &:after
+        content: ''
+        position: absolute
+        top: 40px
+        left: calc(50% - 8px)
+        +arrow(up, 8px, white)
+
+  #nav-logo
+    display: block
+    float: left
+    width: 96px
+    height: 40px
+    position: relative
+    z-index: 10
+    text-indent: -1000px
+    background: image-url('logos/cx-logo-white.svg') no-repeat 0 12px
+    background-size: 79px 24px
+
+    // &:hover
+    //   background-color: rgba(255,255,255,0.1)
+
+  #cur-user-dropdown
+    float: right
+    position: relative
+    width: 180px
+    height: 48px
+    padding-right: 60px
+    .user-name
+      text-align: right
+      color: white
+      font-size: 11px
+      line-height: 11px
+      margin-top: 12px
+      text-overflow: ellipsis
+    .org-name
+      text-align: right
+      font-size: 11px
+      line-height: 11px
+      margin-top: 3px
+      color: rgba(255,255,255,0.5)
+      text-overflow: ellipsis
+    .user-avatar
+      width: 32px
+      position: absolute
+      right: 16px
+      top: 8px
+    &:after
+      content: ''
+      position: absolute
+      right: 0
+      top: 21px
+      +arrow(down, 5px, white)
+
+
+#nav-shim
+  height: 48px
+
+// // ------------------------------------------
+// // global left nav bar
+// // ------------------------------------------
+//
+// #nav
+//   position: fixed
+//   z-index: 200
+//   left: 0
+//   top: 0
+//   bottom: 0
+//   width: 160px
+//   overflow-x: hidden
+//   overflow-y: auto
+//   box-shadow: 0 0 5px rgba(0,0,0,0.4)
+//   background: #063870
+//   background-image: linear-gradient(#0A518C, #063870)
+//   +accelerated-transforms-base
+//   transform: translateX(-160px)
+//   transition: all 0.2s ease-in-out
+//   color: white
+//   font-size: $small-font-size
+//   white-space: nowrap
+//
+//   a
+//     overflow: visible
+//     display: block
+//     min-height: 56px
+//     padding: 0 20px
+//     font-size: 12px
+//     line-height: 56px
+//     color: rgba(255,255,255,0.75)
+//
+//     &:hover
+//       text-decoration: none
+//       color: white
+//       background-color: rgba(255,255,255,0.1)
+//
+//     &.selected
+//       color: white
+//       background-color: rgba(0,0,0,0.1)
+//
+//     span
+//       display: inline-block
+//       overflow: visible
+//
+//   i
+//     margin-right: 20px
+//
+//   #nav-logo
+//     position: relative
+//     z-index: 10
+//     margin-bottom: 32px
+//     text-indent: -1000px
+//     background: image-url('logos/cx-only-logo-white.svg') no-repeat 8px 17px
+//     background-size: 40px 22px
+//
+//     &:hover
+//       background-color: rgba(255,255,255,0.1)
+//
+//   .nav-trigger
+//     color: #fff
+//     background: transparent
+//     width: 56px
+//     padding: 0
+//
+//     &:hover
+//       background-color: rgba(255,255,255,0.1)
+//
+//   #nav-footer
+//     position: absolute
+//     bottom: 0
+//     left: 0
+//     right: 0
+//
+//     #cur-user
+//       position: relative
+//       width: 160px
+//       padding-left: 12px
+//       white-space: nowrap
+//       overflow: hidden
+//       text-overflow: ellipsis
+//
+//       .user-avatar
+//         margin-right: 12px
+//
+//       i
+//         position: absolute
+//         top: 20px
+//         left: 140px
+//
+//     #cur-user-options
+//       display: none
+//       position: absolute
+//       bottom: 56px
+//       left: 8px
+//       width: 144px
+//       box-shadow: 0 0 5px rgba(0,0,0,0.4)
+//       background: white
+//
+//       a
+//         display: block
+//         min-height: 32px
+//         line-height: 32px
+//         padding: 0 12px
+//         color: $gray
+//         text-decoration: none
+//         i
+//           margin-right: 12px
+//         &:hover
+//           color: $link-color
+//           transition: color 0.2s ease-in-out
+//
+//     #cur-user-options:after, #cur-user-options:before
+//       top: 100%
+//       left: 50%
+//       border: solid transparent
+//       content: " "
+//       height: 0
+//       width: 0
+//       position: absolute
+//       pointer-events: none
+//
+//     #cur-user-options:after
+//       border-color: rgba(255, 255, 255, 0)
+//       border-top-color: #fff
+//       border-width: 8px
+//       margin-left: -8px
+//
+//     #cur-user-options:before
+//       border-color: rgba(102, 102, 102, 0)
+//       border-top-color: #666
+//       border-width: 9px
+//       margin-left: -9px
+//
+//   &.with-subnav
+//     width: 56px
+//
+//     #cur-user-options
+//       visibility: hidden
+//
+//     &:hover
+//       width: 160px
+//
+//       #cur-user-options
+//         visibility: visible
+//
+//   &.with-demo-banner
+//     top: $demo-banner-height
+//
+//   +widescreen
+//     transform: translateX(0px)
+//
+//     #nav-logo
+//       margin-left: 0 !important
+//
+//     .nav-trigger
+//       opacity: 0 !important
+//       z-index: 0 !important
+//
+//   &.slide-out
+//     transform: translateX(0px)
+//     width: 56px
+//
+//     &:hover
+//       width: 160px
+//
+//     + #subnav
+//       display: block

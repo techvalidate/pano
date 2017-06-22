@@ -21,13 +21,7 @@ $button-radius:    3px
   text-align: center
   text-decoration: none
   transition: all 0.2s ease-in-out
-  &:hover
-    text-decoration: none
-    background-color: darken($link-color, 5%)
-    color: white
-  &:active
-    text-decoration: none
-    background-color: darken($link-color,10%)
+  +btn_hover($link-color)
   &:focus
     text-decoration: none
     outline: none
@@ -44,6 +38,19 @@ $button-radius:    3px
     margin-right: 4px
     vertical-align: text-top
 
+@mixin btn_hover($color)
+  transition: none
+  &:hover
+    text-decoration: none
+    background-color: $color
+    background-image: linear-gradient($color, darken($color, 5%))
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2)
+  &:active
+    background-color: $color
+    background-image: linear-gradient($color, darken($color, 5%))
+    box-shadow: inset 0px 0px 4px 1px rgba(0, 0, 0, 0.2)
+ 
+
 //=========================================
 // button classes
 //=========================================
@@ -56,67 +63,46 @@ $button-radius:    3px
   //=========================================
 
   &.btn-primary
-    background-color: $primary-color
+    background-color: $green
     color: white
-    &:hover
-      background-color: darken($primary-color, 5%)
-    &:active
-      background-color: darken($primary-color,10%)
-
+    +btn_hover($green)
   &.btn-warning
     color: white
     background-color: $error-color
-    &:hover
-      text-decoration: none
-      background-color: darken($error-color, 5%)
-    &:active
-      text-decoration: none
-      background-color: darken($error-color, 10%)
-
-  &.btn-orange
-    color: white
-    background-color: $orange
-    &:hover
-      text-decoration: none
-      background-color: darken($orange, 5%)
-    &:active
-      text-decoration: none
-      background-color: darken($orange, 10%)
-
+    +btn_hover($error-color) 
   &.btn-white
     color: $link-color
     background-color: white
-    &:hover
-      text-decoration: none
-      color: darken($link-color, 5%)
-    &:active
-      text-decoration: none
-      color: darken($link-color, 10%)
+    border: 1px solid $gray
+    +btn_hover(#fff)
+  &.btn-gray
+    color: white
+    border: 1px solid $gray
+    background-color: $light-gray
+    +btn_hover($light-gray)
 
   &.btn-outline
     background-color: transparent
     color: $link-color
     box-shadow: inset 0 0 0 1px $link-color
-    &:hover
-      color: white
-      background-color: darken($link-color, 5%)
-    &:active
-      color: white
-      background-color: darken($link-color,10%)
+    +btn_hover($link-color)
+    &:hover, &:active
+      color: #fff
+
 
   &.btn-outline-white
     background-color: transparent
     color: rgba(255,255,255,0.8)
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7)
-    &:hover
-      color: white
-      background-color: rgba(255,255,255,0.1)
-      box-shadow: inset 0 0 0 1px white
-    &:active
-      color: white
-      background-color: rgba(255,255,255,0.2)
-      box-shadow: inset 0 0 0 1px white
-
+    +btn_hover(rgba(255,255,255,0.1))
+      
+  &.btn-outline-gray
+    background-color: transparent
+    color: $text-color
+    border: 1px solid $border-color 
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7)
+    +btn_hover(rgba(255,255,255,0.1))
+ 
   &.btn-cancel
     border: 1px solid #ccc
     color: #aaa
@@ -147,7 +133,7 @@ $button-radius:    3px
     padding: 0 16px
     height: 48px
     line-height: 46px
-    font-size: $h3-font-size
+    font-size: 20px
     .material-icons
       font-size: 24px
 
@@ -155,7 +141,7 @@ $button-radius:    3px
     padding: 0 16px
     height: 40px
     line-height: 38px
-    font-size: $h4-font-size
+    font-size: 18px
     .material-icons
       font-size: 20px
 
@@ -200,17 +186,11 @@ $button-radius:    3px
   .btn
     margin-right: -5px
     border-radius: 0
-    background-color: white
-    color: $text-color
-    border: solid 1px #ddd
     &:hover
-      color: $text-color
-      background-color: #eee
-    &.selected
-      background-color: $link-color
-      border-color: $link-color
-      color: white
       box-shadow: none
+    &.selected, &:active
+      background-image: linear-gradient(#eee, darken(#eee, 5%))
+      box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2)
   .btn:first-child
     border-top-left-radius: $button-radius
     border-bottom-left-radius: $button-radius
@@ -221,12 +201,18 @@ $button-radius:    3px
 
 .vertical-btn-group
   .btn
-    +btn
     display: block
     margin-top: -1px
     border-radius: 0
     white-space: nowrap
     text-align: left
+    border: solid 1px #9da5aa
+    &:hover
+      box-shadow: none
+    &.selected, &:active
+      background-color: #eee
+      background-image: linear-gradient(#eee, darken(#eee, 5%))
+      box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2)
   .btn:first-child
     margin-top: 0
     border-top-left-radius: $button-radius

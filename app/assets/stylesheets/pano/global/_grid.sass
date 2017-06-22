@@ -1,157 +1,111 @@
-//-----------------------------------------------------------------------------
+// =========================================================
 // Grid System
 //
-// The grid is 12 units wide.
-//-----------------------------------------------------------------------------
+// Put all columns in a .grid element.
+// By default, grids don't have outer gutters. If you want
+// outer gutters, apply .outer-gutters to your grid.
+//
+// Columns: .col-1...col-12 to make columns 1-12 units wide.
+//
+// =========================================================
 
-//-----------------------------------------------------------------------------
-// Variables
-//-----------------------------------------------------------------------------
+// =========================================================
+// functions and mixins for defining grids
+// =========================================================
 
-$gutter-width: 1.5
-$column-width: (100 - $gutter-width * 11) / 12
+// use this to define a column grid
+=columnGrid($gutterWidth, $totalColumns: 12)
+  +clearfix
 
-//-----------------------------------------------------------------------------
-// Mixins
-//-----------------------------------------------------------------------------
+  @for $i from 1 through ($totalColumns - 1)
+    .col-#{$i}
+      +column($i, $gutterWidth, $totalColumns)
+    .shift-#{$i}
+      +shiftColumns($i, $gutterWidth, $totalColumns)
 
-=columns($n)
+  &.outer-gutters
+    margin-left: $gutterWidth
+    margin-right: $gutterWidth
+
+@function columnRatio($columnUnits, $totalColumns)
+  @return $columnUnits / $totalColumns
+
+@function gutterAdjustment($columnUnits, $gutterWidth, $totalColumns)
+  @return $gutterWidth - ($gutterWidth * columnRatio($columnUnits, $totalColumns))
+
+@function columnWidth($columnUnits, $gutterWidth, $totalColumns)
+  @return unquote("#{percentage(columnRatio($columnUnits, $totalColumns))} - #{gutterAdjustment($columnUnits, $gutterWidth, $totalColumns)}")
+
+=column($columnUnits, $gutterWidth, $totalColumns)
   float: left
   display: block
-  width: percentage(($column-width * $n + $gutter-width * ($n - 1)) / 100)
-  margin-right: percentage($gutter-width / 100)
+  width: calc(#{columnWidth($columnUnits, $gutterWidth, $totalColumns)})
+  margin-right: $gutterWidth
   &:last-child
     margin-right: 0
 
-=shift-columns($n)
-  margin-left: percentage(($column-width + $gutter-width) * $n / 100)
+=shiftColumns($columnUnits, $gutterWidth, $totalColumns)
+  margin-left: calc(#{percentage(columnRatio($columnUnits, $totalColumns))} + #{$gutterWidth - gutterAdjustment($columnUnits, $gutterWidth, $totalColumns)})
 
-=table-columns($n)
-  float: none
-  display: table-cell
-  width: percentage($column-width * $n / 100)
+=stackColumns($topMargin: 32px, $totalColumns: 12)
+  // make all columns stack rather than float
+  @for $i from 1 through ($totalColumns - 1)
+    .col-#{$i}
+      float: none
+      width: 100%
+      margin-left: 0
+      margin-top: $topMargin
+      &:first-child
+        margin-top: 0
+    .shift-#{$i}
+      margin-left: 0
+  // remove any outer gutters
+  &.outer-gutters
+    margin-left: 0
+    margin-right: 0
 
-//-----------------------------------------------------------------------------
-// Row
-//
-// Put all columns in a .row element (unless they're just table cells, then
-// the .row element is unnecessary). If you don't want the top/bottom margin,
-// you can just put the columns in a .cf (clearfix) element. For a centered
-// clearfix element, use .cf.centered.
-//-----------------------------------------------------------------------------
 
-.row
-  +clearfix
-  margin: 32px auto
+// =========================================================
+// grids with different width gutters (32px is default)
+// =========================================================
 
-//-----------------------------------------------------------------------------
-// Columns
-//
-// .col-1...col-12 to make columns 1-12 units wide.
-//-----------------------------------------------------------------------------
+.grid
+  +columnGrid(32px)
 
-.col-1
-  +columns(1)
-.col-2
-  +columns(2)
-.col-3
-  +columns(3)
-.col-4
-  +columns(4)
-.col-5
-  +columns(5)
-.col-6
-  +columns(6)
-.col-7
-  +columns(7)
-.col-8
-  +columns(8)
-.col-9
-  +columns(9)
-.col-10
-  +columns(10)
-.col-11
-  +columns(11)
-.col-12
-  +columns(12)
+  &.no-gutters
+    +columnGrid(0px)
 
-//-----------------------------------------------------------------------------
-// Shifting
-//
-// Shift columns over to the right by 1-11 units. Does not work on table cells.
-//-----------------------------------------------------------------------------
+  &.g-8
+    +columnGrid(8px)
 
-.shift-1
-  +shift-columns(1)
-.shift-2
-  +shift-columns(2)
-.shift-3
-  +shift-columns(3)
-.shift-4
-  +shift-columns(4)
-.shift-5
-  +shift-columns(5)
-.shift-6
-  +shift-columns(6)
-.shift-7
-  +shift-columns(7)
-.shift-8
-  +shift-columns(8)
-.shift-9
-  +shift-columns(9)
-.shift-10
-  +shift-columns(10)
-.shift-11
-  +shift-columns(11)
+  &.g-16
+    +columnGrid(16px)
 
-//-----------------------------------------------------------------------------
+  &.g-48
+    +columnGrid(48px)
+
+  &.g-64
+    +columnGrid(64px)
+
+  &.m-stack
+    +mobile
+      +stackColumns
+
+  &.t-stack
+    +tablet
+      +stackColumns
+
+// =========================================================
 // Tables
 //
-// Grid-aligned table cells 1-12 units wide.
-//-----------------------------------------------------------------------------
+// Grid-aligned table cells 1-12 units wide. no gutters.
+// =========================================================
 
-table
-  .col-1
-    +table-columns(1)
-  .col-2
-    +table-columns(2)
-  .col-3
-    +table-columns(3)
-  .col-4
-    +table-columns(4)
-  .col-5
-    +table-columns(5)
-  .col-6
-    +table-columns(6)
-  .col-7
-    +table-columns(7)
-  .col-8
-    +table-columns(8)
-  .col-9
-    +table-columns(9)
-  .col-10
-    +table-columns(10)
-  .col-11
-    +table-columns(11)
-  .col-12
-    +table-columns(12)
-
-//-----------------------------------------------------------------------------
-// Responsive Columns
-//
-// They simply become full-width on narrow screens.
-//-----------------------------------------------------------------------------
-
-+mobile
-  .responsive-col
-    width: 100%
-    margin-left: 0
-  .responsive-col + .responsive-col
-    margin-top: 32px
-
-+tablet
-  .responsive-col
-    width: 100%
-    margin-left: 0
-  .responsive-col + .responsive-col
-    margin-top: 32px
+table.grid
+  width: 100%
+  @for $i from 1 through 11
+    .col-#{$i}
+      float: none
+      display: table-cell
+      margin: 0
+      width: columnRatio($i, 12) * 100%

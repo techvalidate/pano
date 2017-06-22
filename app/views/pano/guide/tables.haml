@@ -1,0 +1,123 @@
+:ruby
+  @page_title = 'Tables'
+  @nav        = :ui
+  @subnav     = :tables
+
+%p
+  %strong.red Note:
+  There are several useful utility classes for table cells that aren't documented here yet: .flush-left, .flush-right, .narrow, .date, .avatar
+
+= box 'Table Utility Classes' do
+  %ul
+    %li .flush-left: table cell with no padding on left
+    %li .flush-right: table cell with no padding on right
+    %li .narrow: table cell with minimum width
+    %li .date: use on cells with dates inside
+    %li .avatar: use on cells with 32px avatars -- makes cells 32px wide
+    %li .align-top/middle/bottom: vertical align top/middle/bottom (default is middle)
+
+= box 'Standard Tables' do
+
+  = haml_example do
+    :plain
+      %table
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+
+= box 'Divided Table' do
+  = haml_example do
+    :plain
+      %table.divided
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+
+= box 'Alternating Table' do
+  = haml_example do
+    :plain
+      %table.alternating
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+
+= box 'Table Without Lines' do
+  = haml_example do
+    :plain
+      %table.plain
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+
+= box 'Table Without Lines or Padding' do
+  = haml_example do
+    :plain
+      %table.plain.p-0
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17

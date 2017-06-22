@@ -10,24 +10,22 @@
     %title= "Pano: #{@page_title}"
   %body
 
-    %nav#top-nav
+    #nav
+      .inner
+        .nav-logo= icon_to :directions_railway, 'Pano', root_path
+        .nav-links
+          = nav_link 'UI Components', root_path,          key: :ui
+          = nav_link 'CSS',           guide_css_path,     key: :css
+          = nav_link 'Javascript',    guide_js_path,      key: :js
+          = nav_link 'Helpers',       guide_helpers_path, key: :helpers
+        .nav-version
+          version:
+          = Pano::VERSION
 
-      .nav-logo= icon_to :directions_railway, 'Pano', root_path
+    #main
 
-      .nav-links
-        = nav_link 'UI Components', root_path,          key: :ui
-        = nav_link 'CSS',           guide_css_path,     key: :css
-        = nav_link 'Javascript',    guide_js_path,      key: :js
-        = nav_link 'Helpers',       guide_helpers_path, key: :helpers
-
-      .nav-version
-        version:
-        = Pano::VERSION
-
-
-    %main#main
-
-      = partial "pano/guide/subnavs/#{@nav}" if @nav
+      #subnav
+        .inner= partial "pano/guide/subnavs/#{@nav}" if @nav
 
       %section#main-column
 

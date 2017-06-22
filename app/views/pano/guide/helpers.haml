@@ -1,5 +1,12 @@
+:ruby
+  @page_title = 'Helper Methods'
+  @nav = :helpers
+
+%p.intro Documentation needs to be written, but here are all the helper methods Pano defines:
+
 - Pano::Engine.helpers.included_modules.each do |mod|
-  %h3= mod
+  %hr
+  %h4= mod
   %ul
     - mod.instance_methods.each do |method|
       %li= method

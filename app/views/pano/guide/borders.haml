@@ -1,0 +1,28 @@
+:ruby
+  @page_title = 'Borders'
+  @nav        = :ui
+  @subnav     = :borders
+
+= box 'Standard Borders' do
+  %h4 Mixins
+  %p
+    The +border, +border-left, etc. mixins are useful for defining border styles.
+    They default to $border-color with 1px width, but you can override the color and the width when calling the mixins.
+  %h4 CSS Classes
+  = haml_example do
+    :plain
+      %p.p-m.border I have the .border class
+      %p.p-m.border-top I have the .border-top class
+      %p.p-m.border-right I have the .border-right class
+      %p.p-m.border-bottom I have the .border-bottom class
+      %p.p-m.border-left I have the .border-left class
+      %p.p-m.dashed-border I have the .dashed-border class
+
+= box 'Rounded Corners' do
+  %h4 Mixin
+  %p The +rounded mixin can save you some typing. Defaults to 8px rounding.
+  %h4 CSS Classes
+  = haml_example do
+    :plain
+      %p.p-m.border.rounded I have the .rounded class
+      %p.p-m.border.slightly-rounded I have the .slightly-rounded class

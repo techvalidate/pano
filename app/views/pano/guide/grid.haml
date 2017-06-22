@@ -1,5 +1,138 @@
-= partial 'pano/guide/subnavs/ui', selected_tab: :grid
+:ruby
+  @page_title = 'Grid System'
+  @nav        = :ui
+  @subnav     = :grid
 
-= box 'Grid System' do
-  %p laying out columns
-  %p exceptions?
+= box 'Overview' do
+
+  %p
+    Our grids are divided up into 12 "units", with gutters in-between.
+    Each grid expands to the full width of its container.
+    You can nest grids inside each other.
+  %p
+    To create a grid, create a .grid container element. Then, create columns inside, with the .col-1 -- .col-11 classes,
+    where the number specifies how many "units" wide a column is.
+
+  = haml_example do
+    :plain
+      .grid
+        .col-2
+          .box.flat-box .col-2
+        .col-2
+          .box.flat-box .col-2
+        .col-3
+          .box.flat-box .col-3
+        .col-5
+          .box.flat-box .col-5
+
+= box 'Gutters' do
+
+  %p
+    The default gutter width is 32px. 8px, 16px, 48px, and 64px gutters are also available off the shelf
+    with the .g-8, .g-16, .g-48, and .g-64 classes. If you need to create your own custom grids with custom gutter
+    widths or custom number of columns, use the columnGrid mixin.
+
+  = haml_example do
+    :plain
+      .grid.g-8
+        .col-6
+          .box.flat-box 8px gutters
+        .col-6
+          .box.flat-box 8px gutters
+      .grid.g-16
+        .col-6
+          .box.flat-box 16px gutters
+        .col-6
+          .box.flat-box 16px gutters
+      .grid
+        .col-6
+          .box.flat-box 32px gutters (default)
+        .col-6
+          .box.flat-box 32px gutters (default)
+      .grid.g-48
+        .col-6
+          .box.flat-box 48px gutters
+        .col-6
+          .box.flat-box 48px gutters
+      .grid.g-64
+        .col-6
+          .box.flat-box 64px gutters
+        .col-6
+          .box.flat-box 64px gutters
+
+= box 'Outer Gutters' do
+
+  %p To include outside gutters, simply add a .outer-gutters class to the .grid container.
+
+  = haml_example do
+    :plain
+      .grid.outer-gutters
+        .col-6
+          .box.flat-box with outer gutters
+        .col-6
+          .box.flat-box with outer gutters
+
+= box 'Shifting Columns' do
+
+  %p
+    You can shift columns over by 1-11 "units" with the .shift-1 -- .shift-11 classes.
+
+  = haml_example do
+    :plain
+      .grid
+        .col-6.shift-3
+          .box.flat-box shifted over 3 units
+      .grid
+        .col-6.shift-6
+          .box.flat-box shifted over 6 units
+
+= box 'Responsive Grids' do
+
+  %p
+    To force columns to go full-width at tablet or mobile breakpoints, add .t-stack or .m-stack to grid elements.
+    Also applies to shifted columns. You don't need to use both .t-stack and .m-stack -- a grid with .t-stack will already be stacked at mobile resolutions.
+
+  = haml_example do
+    :plain
+      .grid.t-stack
+        .col-6
+          .box.flat-box stacks on tablet
+        .col-6
+          .box.flat-box stacks on tablet
+      .grid.m-stack
+        .col-6
+          .box.flat-box stacks on mobile
+        .col-6
+          .box.flat-box stacks on mobile
+      .grid.m-stack
+        .col-6.shift-6
+          .box.flat-box shifted column, still flush left on mobile
+
+= box 'HTML Tips' do
+
+  %p General guidelines:
+  %ul
+    %li Don't combine .grid with other classes. For example, if you need a grid inside a .box, nest a .grid element inside the .box
+    %li Don't combine .col-x classes with other classes. For example, if you need a .box inside a .col-4, nest the .box element inside the column.
+
+= box 'Table-based Grids' do
+
+  %p
+    Table cells (td and th) can also be set to be 1-12 "units" wide.
+    Apply the .grid class to the table, and then the .col-x classes to the table cells.
+  %p
+    %strong Note:
+    table.grid will go to 100% width by default
+  %p
+    %strong Note:
+    The responsive classes don't yet work on tables
+
+  = haml_example do
+    :plain
+      %table.grid
+        %tr
+          %td.col-1 .col-1
+          %td.col-2 .col-2
+          %td.col-3 .col-3
+          %td.col-4 .col-4
+          %td.col-2 .col-2

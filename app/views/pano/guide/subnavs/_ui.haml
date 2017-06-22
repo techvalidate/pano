@@ -1,29 +1,37 @@
-%nav#subnav
+= subnav_link 'Global', root_path
 
-  = subnav_link 'Overview', root_path, key: :overview
-  = subnav_link 'Global', '#'
-  = subnav_link 'Colors', guide_colors_path, class: 'secondary'
-  = subnav_link 'Typography', guide_typography_path, class: 'secondary', key: :typography
-  = subnav_link 'Grid System', guide_grid_path, class: 'secondary'
-  = subnav_link 'Buttons', guide_buttons_path, class: 'secondary'
-  = subnav_link 'Icons', guide_icons_path, class: 'secondary'
-  = subnav_link 'Forms', guide_forms_path, class: 'secondary'
-  = subnav_link 'Tabs', guide_tabs_path, class: 'secondary'
-  = subnav_link 'Boxes', '#', class: 'secondary'
-  = subnav_link 'Modals', '#', class: 'secondary'
-  = subnav_link 'Popovers', '#', class: 'secondary'
-  = subnav_link 'Cards', '#', class: 'secondary'
-  = subnav_link 'Lists', '#', class: 'secondary'
-  = subnav_link 'Spinners', '#', class: 'secondary'
-  = subnav_link 'Banners', '#', class: 'secondary'
-  = subnav_link 'Tooltips', '#', class: 'secondary'
-  = subnav_link 'Badges', '#', class: 'secondary'
-  = subnav_link 'Tags' , '#', class: 'secondary'
-  = subnav_link 'Miscellaneous', '#', class: 'secondary'
+:ruby
+  links = [
+    {key: :utilities,      label: 'CSS Utilities'},
+    {key: :breakpoints,    label: 'Breakpoints'},
+    {key: :grid,           label: 'Grid System'},
+    {key: :typography,     label: 'Typography'},
+    {key: :colors,         label: 'Colors'},
+    {key: :links,          label: 'Links'},
+    {key: :borders,        label: 'Borders'},
+    {key: :shadows,        label: 'Shadows'},
+    {key: :buttons,        label: 'Buttons'},
+    {key: :lists,          label: 'Lists'},
+    {key: :icons,          label: 'Icons'},
+    {key: :tabs,           label: 'Tabs'},
+    {key: :boxes,          label: 'Boxes'},
+    {key: :tables,         label: 'Tables'},
+    {key: :forms,          label: 'Forms (todo)'},
+    {key: :arrows,         label: 'Arrows (todo)'},
+    {key: :banners,        label: 'Banners (todo)'},
+    {key: :flash_messages, label: 'Flash Messages (todo)'},
+    {key: :spinners,       label: 'Spinners (todo)'},
+    {key: :transforms,     label: 'CSS Transforms (todo)'},
+    {key: :browsers,       label: 'Browser Targeting'},
+  ]
 
-  = subnav_link 'App', '#'
-  = subnav_link 'Admin', '#'
-  = subnav_link 'Collect', '#'
-  = subnav_link 'Marketing', '#'
-  = subnav_link 'Login', '#'
-  = subnav_link 'Basic', '#'
+- links.each do |link|
+  = subnav_link link[:label], eval("guide_#{link[:key]}_path"), key: link[:key], class: :secondary
+
+= subnav_link 'App (todo)',       '#'
+= subnav_link 'Admin (todo)',     '#'
+= subnav_link 'Collect (todo)',   '#'
+= subnav_link 'Marketing (todo)', '#'
+= subnav_link 'Login (todo)',     '#'
+= subnav_link 'Basic (todo)',     '#'
+= subnav_link 'Email (todo)',     '#'

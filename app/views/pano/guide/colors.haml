@@ -1,8 +1,12 @@
-= partial 'pano/guide/subnavs/ui', selected_tab: :colors
+:ruby
+  @page_title = 'Colors'
+  @nav        = :ui
+  @subnav     = :colors
 
-= box 'App Colors' do
+= box 'Global Color Variables and CSS Classes' do
+
   %h5 Where Colors Are Defined
-  %p The colors in use in the app are defined in stylesheets/variables/_app.sass.
+  %p global colors are defined in global/_colors.sass
   %hr
 
   %h5 CSS Variables and Classes
@@ -10,76 +14,73 @@
     The colors are defined as css variables, and each color also has a css class named after it.
     So, if you're defining styles you can reference the css variable in your SASS, but if you just want
     to color something in your HAML, you can add the appropriate css class.
-  %h6 Referencing a CSS Variable in SASS
-  .code-example
-    %pre
-      :preserve
-        .foo
-          color: $primary-color
-  %h6 Using a CSS Color Class in HAML
-  .code-example
-    %pre
-      :preserve
-        .foo.primary-color Lorem ipsum...
-
-  %hr
-  %h5 Choosing or Adding Colors
-  %p If you need to choose a color for an element, first look here, and try to use an existing color.
-  %p If you need to add a new color, you need to add it in 3 places:
-  %ol.numbered
-    %li A css variable in stylesheets/variables/_app.sass
-    %li A css class named after the color in stylesheets/variables/_app.sass
-    %li A color swatch here
 
 = box 'Color Swatches' do
 
-  %h5 Basic Colors
-  .cf
-    = color_swatch 'white'
-    = color_swatch 'blue'
-    = color_swatch 'green'
-    = color_swatch 'orange'
+  .grid
+    .col-3
+      %h4 Basic Colors
+      = color_swatch 'dark-blue'
+      = color_swatch 'blue'
+      = color_swatch 'green'
+      = color_swatch 'yellow'
+      = color_swatch 'red'
 
-  %h5 Secondary Colors
-  .cf
-    = color_swatch 'light-blue'
-    = color_swatch 'dark-blue'
-    = color_swatch 'yellow'
-    = color_swatch 'red'
-    = color_swatch 'brown'
+    .col-3
+      %h4 Neutrals
+      = color_swatch 'charcoal'
+      = color_swatch 'slate'
+      = color_swatch 'gray'
+      = color_swatch 'light-gray'
+      = color_swatch 'lighter-gray'
+      = color_swatch 'white'
 
-  %h5 Grays
-  .cf
-    = color_swatch 'very-light-gray'
-    = color_swatch 'lighter-gray'
-    = color_swatch 'light-gray'
-    = color_swatch 'gray'
-    = color_swatch 'medium-gray'
-    = color_swatch 'dark-gray'
+    .col-3
+      %h4 Accent Colors
+      = color_swatch 'orange'
+      = color_swatch 'magenta'
+      = color_swatch 'purple'
+      = color_swatch 'teal'
+      = color_swatch 'apple-green'
 
-  %hr
+    .col-3
+      %h4 Semantic Colors
+      %h6 (based on colors to left)
+      = color_swatch 'text-color'
+      = color_swatch 'link-color'
+      = color_swatch 'note-color'
+      = color_swatch 'warning-color'
+      = color_swatch 'error-color'
+      = color_swatch 'border-color'
+      = color_swatch 'promoter-color'
+      = color_swatch 'passive-color'
+      = color_swatch 'detractor-color'
 
-  %h5 Semantic Colors
-  %p These colors are defined in terms of the colors above. For instance, $error-color is defined as $red.
-  .cf
-    = color_swatch 'text-color'
-    = color_swatch 'link-color'
-    = color_swatch 'primary-color'
-    = color_swatch 'secondary-color'
-    = color_swatch 'error-color'
-    = color_swatch 'border-color'
-
-  %h5 Semantic Colors for NPS
-  .cf
-    = color_swatch 'promoters'
-    = color_swatch 'passives'
-    = color_swatch 'detractors'
-
-
-  %h5 Semantic Colors for assets
-  .cf
-    = color_swatch 'techfact-color'
-    = color_swatch 'chart-color'
-    = color_swatch 'case-study-color'
-    = color_swatch 'collection-color'
-    = color_swatch 'portal-color'
+= box 'Background-color Classes' do
+  %p Several of the named colors also have utility CSS classes for setting background colors.
+  = haml_example do
+    :plain
+      .box.no-shadow.bg-dark-blue
+        %p.white .bg-dark-blue: dark-blue bg
+      .box.no-shadow.bg-blue
+        %p.white .bg-blue: blue bg
+      .box.no-shadow.bg-green
+        %p.white .bg-green: green bg
+      .box.no-shadow.bg-red
+        %p.white .bg-red: red bg
+      .box.no-shadow.bg-yellow
+        %p.white .bg-yellow: yellow bg
+      .box.no-shadow.bg-charcoal
+        %p.white .bg-charcoal: charcoal bg
+      .box.no-shadow.bg-slate
+        %p.white .bg-slate: slate bg
+      .box.no-shadow.bg-gray
+        %p.white .bg-gray: gray bg
+      .box.no-shadow.bg-light-gray
+        %p .bg-light-gray: light-gray bg
+      .box.no-shadow.bg-lighter-gray
+        %p .bg-lighter-gray: lighter-gray bg
+      .box.no-shadow.bg-bg-gray
+        %p .bg-bg-gray: bg-gray bg
+      .box.no-shadow.bg-white
+        %p .bg-white: white bg

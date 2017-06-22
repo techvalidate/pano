@@ -1,16 +1,46 @@
-= partial 'pano/guide/subnavs/ui', selected_tab: :icons
+:ruby
+  @page_title = 'Icons'
+  @nav        = :ui
+  @subnav     = :icons
 
-= box 'Icon Helpers' do
-  %p icon
-  %p icon_to
-  %p icon_btn_to
-  %p info_icon_to
+= box 'Material Icons' do
+  %p
+    The small icons we sprinkle into our pages use the Material icon font.
+    They can be specified in HTML manually, or via :before content, but usually they're inserted with one of our helper methods.
 
-= box 'Icon Styles' do
-  %p basic icons
-  %p big icons
-  %p spinning icons
+  %h4 Icon Helpers
 
-= box 'All the Icons' do
-  %p list all the icons here
-  %p say how we use some of them?
+  %h5 icon
+  %p Use this when you just want to output an icon.
+  = haml_example do
+    :plain
+      = icon :survey
+      = icon :person, class: 'green'
+
+  %h5 icon_to
+  %p
+    Use this when you want to prepend an icon onto a text link.
+  %p.red
+    Note: Do not use this when you just want to hyperlink an icon. In that case, just wrap the call to icon() in a link, eg. link_to icon(:survey).
+  = haml_example do
+    :plain
+      = icon_to :survey, 'Survey', '#'
+
+  %h5 large_icon
+  %p Makes a bigger icon.
+  = haml_example do
+    :plain
+      = large_icon :survey
+      = large_icon :person, class: 'green'
+
+= box 'Named Material Icons' do
+  %p Many Material icons have confusing names, so we have defined our own less-confusing names for some of them in icon_helper.rb:
+  %ul
+    - Pano::IconHelper::MaterialIcons.each_key do |i|
+      %li
+        = icon i
+        %span.note= i
+
+= box 'TODO: Larger Icons (SVG)' do
+  %p Give examples
+  %p discuss which icon libraries we use

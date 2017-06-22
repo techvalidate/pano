@@ -1,0 +1,77 @@
+:ruby
+  @page_title = 'CSS Utilities'
+  @nav        = :ui
+  @subnav     = :utilities
+
+= box 'Display & Position' do
+  %p Utlity classes for display and position
+  = haml_example do
+    :plain
+      .grid
+        .col-4
+          %h5 Display: none (.hidden)
+          %p.hidden I am invisible
+        .col-4
+          %h5 Display: block
+          %span.block I am display block
+        .col-4
+          %h5 Display: inline-block
+          %span.inline-block I am display inline-block
+      .grid.mt-l
+        .col-4
+          %h5 Position: relative
+          %p.relative I am position: relative
+        .col-4
+          %h5 Position: absolute
+          %p.absolute I am position: absolute
+
+= box 'Floating Elements' do
+  %p Contain floats within an element with either the .cf class or that uses the +clearfix mixin.
+  = haml_example do
+    :plain
+      .cf
+        .fl I am floated left
+        .fr I am floated right
+
+= box 'Horizontal Centering' do
+  %p Horizontal centering can be assisted by the .centered class or mixin, which applies left and right margin of auto.
+  %p Note: it's up to you to indicate a width of max-width!
+  = haml_example do
+    :plain
+      .box.centered{style: 'max-width: 400px'} I am a centered element with max-width 400px
+
+= box 'Padding' do
+  %p Utility classes for commonly-used padding sizes. The thicker padding sizes automatically get thinner on mobile.
+  = haml_example do
+    :plain
+      .grid
+        .col-2
+          .box.p-0 .p-0: No Padding
+        .col-2
+          .box.p-s .p-s: Small Padding
+        .col-2
+          .box.p-m .p-m: Medium Padding
+        .col-2
+          .box.p-l .p-l: Large Padding
+        .col-2
+          .box.p-xl .p-xl: XL Padding
+        .col-2
+          .box.p-xxl .p-xxl: XXL Padding
+
+= box 'Top Margins' do
+  %p Utility classes for commonly-used top-margin sizes. The bigger margins automatically get thinner on mobile.
+  = haml_example do
+    :plain
+      .grid
+        .col-2
+          .box.mt-0 .mt-0: No Top Margin
+        .col-2
+          .box.mt-s .mt-s: Small Top Margin
+        .col-2
+          .box.mt-m .mt-m: Medium Top Margin
+        .col-2
+          .box.mt-l .mt-l: Large Top Margin
+        .col-2
+          .box.mt-xl .mt-xl: XL Top Margin
+        .col-2
+          .box.mt-xxl .mt-xxl: XXL Top Margin

@@ -3,12 +3,11 @@
   +border-bottom
   a
     float: left
-    font-size: $font-size
-    line-height: $line-height
-    padding: 12px 12px 9px 12px
+    padding: 0 16px 6px 16px
     color: $gray
-    border-bottom: solid transparent 3px
-    transition: all 0.1s ease-in-out
+    border-bottom: solid transparent 2px
+    transition: all 0.2s ease-in-out
+    letter-spacing: 0.2px
     &:hover
       border-bottom-color: rgba(0,0,0,0.1)
       text-decoration: none
@@ -27,21 +26,21 @@
 
 .button-tabs
   +clearfix
+  display: table
   width: 100%
-  margin-top: 32px
-  border-radius: 2px
+  border-radius: 3px
   overflow: hidden
   background: #fff
-  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2)
-  display: table
+  +border
+  +thin-shadow
 
   a
     +border-right
     display: table-cell
     position: relative
-    padding: 24px
+    padding: 16px
     text-align: center
-    color: $dark-gray
+    color: $slate
     font-size: 13px
     font-weight: medium
     line-height: 18px
@@ -60,11 +59,25 @@
 
     &:hover
       text-decoration: none
-      background: lighten($very-light-gray, 2%)
+      background: lighten($lighter-gray, 2%)
 
     &:last-child
       border-right: none
 
-  &.eight-across
-    a
-      width: 12.5%
+.pill-tabs
+  +clearfix
+  +border-bottom
+  a
+    float: left
+    margin-bottom: 4px
+    margin-right: 16px
+    padding: 0 16px
+    border-radius: 64px
+    color: $gray
+    transition: all 0.3s ease-in-out
+    &:hover
+      background-color: $lighter-gray
+      text-decoration: none
+    &.selected
+      color: white
+      background-color: $link-color
