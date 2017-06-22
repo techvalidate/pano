@@ -1,3 +1,5 @@
+#= require rome
+
 UI.click '[show-calendar-modal]', (e, el) ->
   e.preventDefault()
   e.stopPropagation()

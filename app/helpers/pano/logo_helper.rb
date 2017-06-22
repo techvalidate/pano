@@ -11,6 +11,8 @@ module Pano
 
       options[:style] = 'outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;'
 
+      options.add_class 'logo'
+
       image_tag logo.url(size), options
     end
 

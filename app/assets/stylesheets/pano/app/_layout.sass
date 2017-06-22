@@ -19,6 +19,7 @@ html, body
 
 #main
   +page-width
+  position: relative
   min-height: 100vh
 
 // -----------------------------------------------
@@ -29,3 +30,44 @@ section
   margin: 32px 0
   +mobile
     margin: 16px 0
+
+
+// -----------------------------------------------
+// page headers
+// -----------------------------------------------
+
+.centered-page-header
+  text-align: center
+  margin: 64px auto 24px auto
+  padding-bottom: 24px
+  position: relative
+  .btn-back
+    position: absolute
+    left: 0
+    top: 12px
+  .btn-right
+    position: absolute
+    right: 0
+    top: 12px
+  .header-icon
+    width: 64px
+    height: 64px
+  h1
+    max-width: 640px
+    margin-left: auto
+    margin-right: auto
+  p.intro
+    max-width: 640px
+    margin-top: 8px
+    margin-left: auto
+    margin-right: auto
+  +mobile
+    margin: 48px auto 32px auto
+    +border-bottom
+    .btn-back, .btn-right
+      top: -32px
+    .header-icon
+      width: 48px
+      height: 48px
+    h1
+      margin-top: 0

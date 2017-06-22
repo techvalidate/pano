@@ -59,6 +59,10 @@ module Pano
       end
     end
 
+    def plain_check_box(name, options = {})
+      ActionView::Helpers::FormBuilder.instance_method(:check_box).bind(self).call(name, options)
+    end
+
     def plain_text_field(name, options = {})
       ActionView::Helpers::FormBuilder.instance_method(:text_field).bind(self).call(name, options)
     end
