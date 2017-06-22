@@ -12,9 +12,9 @@ One key difference between a standard Rails application is the `pano.gemspec` fi
 
 ## The dummy
 
-Because an Engine is not designed to be run on its own, there is a special 'dummy' application that lives inside the `test/` directory. This dummy application loads the engine.
+Because an Engine is not designed to be run on its own, there is a special 'dummy' application that lives inside the `spec/` directory. This test application loads the engine.
 
-For local development, you'll actually want to mount the dummy application via pow, rather than the engine. The command would be something like `ln -s /Users/username/dev/pano/test/dummy/ /Users/username/.pow/pano`. That will load the application at http://pano.dev. Remember! You must run `bundle install` from WITHIN the dummy application.
+For local development, you'll actually want to mount the test application via pow, rather than the engine. The command would be something like `ln -s /Users/username/dev/pano/spec/test_app/ /Users/username/.pow/pano`. That will load the application at http://pano.dev. Remember! You must run `bundle install` from WITHIN the dummy application.
 
 ## Mount Up!
 
