@@ -1,12 +1,67 @@
 
 // WORK IN PROGRESS
 
+// todo: is this only going to be used for surveys? if so, change name and move out of Pano.
+#subnav-header
+  height: 80px
+  +border-bottom
+  background: white
+
+  .header-contents
+    +page-width
+    height: 80px
+    position: relative
+
+    h1
+      font-size: 20px
+      margin-top: 2px
+      display: inline-block
+
+    .status-badge
+      display: inline-block
+      vertical-align: text-top
+      margin-left: 8px
+
+  .subnav-header-title
+    padding-top: 16px
+
+  .subnav-header-tabs
+    position: absolute
+    height: 80px
+    top: 0
+    right: 0
+    a
+      height: 80px
+      line-height: 80px
+      &.selected
+        background: $bg-gray
+
+  +mobile
+    .header-contents
+      h1
+        white-space: nowrap
+        max-width: 400px
+        text-overflow: ellipsis
+        overflow: hidden
+        font-size: 15px
+        max-width: 220px
+      .status-badge
+        display: none
+
+    .subnav-header-title
+      padding-top: 20px
+
+    .subnav-header-tabs
+      a
+        font-size: 12px
+        padding: 0 4px
+
+
 #subnav
   position: fixed
   z-index: 199
   left: 0
-  // top: 48px
-  right: 0
+  width: 100vw
   height: 40px
   color: white
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1)
@@ -16,170 +71,52 @@
     position: static
     width: 100%
 
+
+  #subnav-contents
+    +page-width
+    .tabs
+      border-bottom: none
+
+  a.subnav-link
+    height: 40px
+    line-height: 24px
+    padding-top: 8px
+    padding-bottom: 8px
+    color: $dark-blue
+    font-size: 12px
+    position: relative
+    &.selected
+      color: $blue
+    &.with-right-arrow
+      &:after
+        content: 'chevron_right'
+        position: absolute
+        margin-left: 8px
+        font-size: 18px
+        pointer-events: none
+        font-family: 'Material Icons'
+        color: $gray
+
+  #show-filters-btn
+    padding: 8px
+    &:hover
+      text-decoration: none
+      background: $lighter-gray
+
++mobile
+  #subnav
+    white-space: nowrap
+    overflow-x: auto
+    overflow-y: hidden
+    .tabs
+      a
+        float: none
+        display: inline-block
+        font-size: 11px
+        padding: 8px
+      a.with-right-arrow
+        &:after
+          margin-left: 1px
+
 #subnav-shim
   height: 40px
-
-#subnav-links
-  +page-width
-  border-bottom: none
-
-#subnav
-  .tabs
-    a
-      height: 40px
-      line-height: 24px
-      padding-top: 8px
-      padding-bottom: 8px
-      color: $dark-blue
-      font-size: 12px
-      // font-weight: normal
-      &.selected
-        color: $blue
-
-
-#subnav-header
-  height: 80px
-  +border-bottom
-  background: white
-
-  .header-contents
-    height: 80px
-    +page-width
-    padding-top: 16px
-
-  h1
-    font-size: 20px
-    margin-top: 2px
-    i
-      margin-top: -2px
-    .status-badge
-      margin-left: 8px
-
-  .subnav-header-buttons
-    text-align: right
-    margin-top: 8px
-
-// #subnav.with-header + #subnav-shim
-//   height: 120px
-
-
-//
-// a.subnav-link
-//   display: block
-//   min-height: 32px
-//   padding: 0 32px
-//   line-height: 32px
-//   color: #666
-//   font-size: 12px
-//   font-weight: normal
-//   text-decoration: none
-//
-//   &.selected
-//     color: $blue
-
-
-
-//
-// #subnav
-//   position: fixed
-//   z-index: 199
-//   left: 56px
-//   width: 224px
-//   top: 0
-//   bottom: 0
-//   padding-top: 100px
-//   padding-bottom: 32px
-//   background: #fff
-//   color: $gray
-//   // transition: padding 0.2s ease-in-out
-//   display: none
-//   box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.05)
-//   overflow-y: auto
-//
-//   .nav-trigger
-//     position: absolute
-//     left: 0
-//     width: 56px
-//     height: 56px
-//     display: block
-//     padding: 0
-//     color: #b2b2b2
-//     background: transparent
-//
-//     &:hover
-//       background-color: rgba(255,255,255,0.1)
-//
-//   .subnav-icon
-//     position: absolute
-//     margin: -36px 0 0 32px
-//     font-size: 32px
-//     color: rgba(0,0,0,0.3)
-//
-//   .status-badge
-//     position: absolute
-//     margin: -24px 0 0 32px
-//
-//   h2
-//     margin: 0 32px 26px 32px
-//     font-size: 20px
-//     &.smaller
-//       font-size: 16px
-//       line-height: 28px
-//
-//   a.subnav-link
-//     display: block
-//     min-height: 32px
-//     padding: 0 32px
-//     line-height: 32px
-//     color: #666
-//     font-size: 12px
-//     font-weight: normal
-//     text-decoration: none
-//
-//     &.selected
-//       color: $blue
-//
-//     &:hover
-//       background: rgba(0,0,0,0.03)
-//       transition: background 0.2s ease-in-out
-//
-//   .subnav-steps
-//     position: relative
-//     &:before
-//       content: ''
-//       position: absolute
-//       width: 3px
-//       background: $lighter-gray
-//       top: 10px
-//       left: 39px
-//       bottom: 10px
-//     a
-//       padding-left: 52px
-//       &:before
-//         content: ''
-//         width: 13px
-//         height: 13px
-//         background: $lighter-gray
-//         border: solid 3px white
-//         border-radius: 50%
-//         position: absolute
-//         margin-left: -18px
-//         margin-top: 9px
-//       &.selected
-//         &:before
-//           background: $link-color
-//
-//   .tabs
-//     margin: 0 24px 24px 24px
-//     a
-//       width: 50%
-//       text-align: center
-//
-//   i
-//     color: $light-gray
-//
-//   +widescreen
-//     display: block
-//
-//     .nav-trigger
-//       display: none

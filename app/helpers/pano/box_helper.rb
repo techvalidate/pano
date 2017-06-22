@@ -21,10 +21,10 @@ module Pano
       end
     end
 
-    def filters_box(*args, &block)
+    def filter_bar(*args, &block)
       options = args.extract_options!
 
-      div_tag class: [options[:class], 'filter-bar'] do
+      div_tag class: [options[:class], 'filter-bar'], id: 'sticky-filter-bar' do
         capture(&block)
       end
     end

@@ -49,7 +49,7 @@ $button-radius:    3px
     background-color: $color
     background-image: linear-gradient($color, darken($color, 5%))
     box-shadow: inset 0px 0px 4px 1px rgba(0, 0, 0, 0.2)
- 
+
 
 //=========================================
 // button classes
@@ -69,17 +69,17 @@ $button-radius:    3px
   &.btn-warning
     color: white
     background-color: $error-color
-    +btn_hover($error-color) 
+    +btn_hover($error-color)
   &.btn-white
-    color: $link-color
+    color: $text-color
+    border: 1px solid $light-gray
     background-color: white
-    border: 1px solid $gray
-    +btn_hover(#fff)
+    +btn_hover(white)
   &.btn-gray
-    color: white
+    color: $text-color
     border: 1px solid $gray
-    background-color: $light-gray
-    +btn_hover($light-gray)
+    background-color: $lighter-gray
+    +btn_hover($lighter-gray)
 
   &.btn-outline
     background-color: transparent
@@ -90,19 +90,22 @@ $button-radius:    3px
       color: #fff
 
 
+  // todo: is this necessary?
   &.btn-outline-white
     background-color: transparent
     color: rgba(255,255,255,0.8)
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7)
     +btn_hover(rgba(255,255,255,0.1))
-      
+
+  // todo: is this necessary?
   &.btn-outline-gray
     background-color: transparent
     color: $text-color
-    border: 1px solid $border-color 
+    border: 1px solid $gray
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7)
     +btn_hover(rgba(255,255,255,0.1))
- 
+
+  // todo: is this necessary?
   &.btn-cancel
     border: 1px solid #ccc
     color: #aaa
@@ -111,6 +114,7 @@ $button-radius:    3px
   &.btn-pill
     border-radius: 24px
 
+  // todo: is this necessary?
   &.filter-btn
     background-color: #fff
     color: $gray
@@ -141,7 +145,7 @@ $button-radius:    3px
     padding: 0 16px
     height: 40px
     line-height: 38px
-    font-size: 18px
+    font-size: 16px
     .material-icons
       font-size: 20px
 
@@ -178,6 +182,14 @@ $button-radius:    3px
     +mobile
       width: 100%
 
+  // todo: consolidate with the above, and document
+  &.btn-wide
+    min-width: 320px
+    +mobile
+      min-width: 0
+      width: 100%
+
+
 //=========================================
 // button groups
 //=========================================
@@ -198,6 +210,20 @@ $button-radius:    3px
     margin-right: 0
     border-top-right-radius: $button-radius
     border-bottom-right-radius: $button-radius
+  &.m-stack
+    +mobile
+      .btn
+        margin: 0
+        margin-top: -1px
+        display: block
+        border-radius: 0
+      .btn:first-child
+        margin-top: 0
+        border-top-left-radius: $button-radius
+        border-top-right-radius: $button-radius
+      .btn:last-child
+        border-bottom-left-radius: $button-radius
+        border-bottom-right-radius: $button-radius
 
 .vertical-btn-group
   .btn

@@ -59,6 +59,10 @@ module Pano
       end
     end
 
+    def plain_check_box(name, options = {})
+      ActionView::Helpers::FormBuilder.instance_method(:check_box).bind(self).call(name, options)
+    end
+
     def plain_text_field(name, options = {})
       ActionView::Helpers::FormBuilder.instance_method(:text_field).bind(self).call(name, options)
     end
@@ -190,15 +194,15 @@ module Pano
       group_for name, label_text, group_options do
         case picker_type
         when :datetime
-          wrapper_options            = {class: 'date-picker-wrapper'}
+          wrapper_options             = {class: 'date-picker-wrapper'}
           input_options[:class]       = !input_options.key?(:optional) ? 'required date-picker' :'date-picker'
           input_options['data-datepicker'] = ''
         when :date
-          wrapper_options            = {class: 'date-picker-wrapper'}
+          wrapper_options             = {class: 'date-picker-wrapper'}
           input_options[:class]       = !input_options.key?(:optional) ? 'required date-picker' :'date-picker'
           input_options['data-datepicker'] = 'date-only'
         when :time
-          wrapper_options            = {class: 'time-picker-wrapper'}
+          wrapper_options             = {class: 'time-picker-wrapper'}
           input_options[:class]       = !input_options.key?(:optional) ? 'required time-picker' :'time-picker'
           input_options['data-datepicker'] = 'time-only'
         end

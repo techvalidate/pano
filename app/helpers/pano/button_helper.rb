@@ -45,6 +45,14 @@ module Pano
       end
     end
 
+    # ------------------------------------------------------------
+    # back button
+    # ------------------------------------------------------------
+
+    def back_btn_to(label, options = {}, html_options = {})
+      icon_btn_to(:back, label, options, html_options.add_class('btn-white btn-back'))
+    end
+
   end
 
 end

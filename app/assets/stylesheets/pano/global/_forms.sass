@@ -12,7 +12,7 @@
   .material-icons
     position: absolute
     left: 10px
-    top: 39px
+    top: 36px
     color: #999
     pointer-events: none
 
@@ -61,6 +61,7 @@
 .form-footer
   margin-top: 24px
   padding-top: 24px
+  text-align: right
   +border-top
   +clearfix
   .btn, .btn-primary, input[type="submit"]
@@ -119,7 +120,8 @@ input[type="tel"],
 input[type="color"]
   +input-base
 
-
+label
+  cursor: pointer
 
 // ------------------------------------------
 // text inputs
@@ -373,3 +375,43 @@ textarea:focus + .charcounter
     display: inline
     line-height: 16px
     font-size: 16px
+
+
+// ------------------------------------------
+// divide big forms up into sections
+// ------------------------------------------
+
+.form-section
+  +clearfix
+  margin-top: 48px
+  .section-info
+    float: left
+    width: calc(50% - 24px)
+    p
+      color: $slate
+  .section-fields
+    float: right
+    width: calc(50% - 24px)
+  .box
+    margin-top: 0
+    .form-group:first-of-type // this shouldn't work, but it does in Chrome...
+      margin-top: 0
+    .form-group:last-of-type // this shouldn't work, but it does in Chrome...
+      margin-bottom: 8px
+
+  +tablet
+    .section-info
+      width: calc(40% - 16px)
+    .section-fields
+      width: calc(60% - 16px)
+
+  +mobile
+    margin-top: 32px
+    .section-info, .section-fields
+      float: none
+      width: auto
+    .section-info
+      p:first-of-type
+        margin-top: 0
+    .box
+      margin-top: 16px

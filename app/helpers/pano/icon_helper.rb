@@ -19,8 +19,16 @@ module Pano
       content_tag :i, material_icon_for(icon_name), options.add_class(klass)
     end
 
+    def med_icon(icon_name, options = {})
+      icon icon_name, options.add_class('med-icon')
+    end
+
     def large_icon(icon_name, options = {})
       icon icon_name, options.add_class('large-icon')
+    end
+
+    def xl_icon(icon_name, options = {})
+      icon icon_name, options.add_class('xl-icon')
     end
 
     # material icons are often named badly, hence this translation layer

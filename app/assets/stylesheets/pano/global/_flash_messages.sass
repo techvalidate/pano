@@ -14,6 +14,10 @@
   +accelerated-transforms-base
   transition: all 0.2s ease-in-out
   background: rgba(10,80,139,0.8)
+
+  +mobile
+    font-size: 13px
+
   &:hover
     background: rgba(10,80,139,1.0)
     cursor: pointer
@@ -69,9 +73,9 @@
     margin: 0
     max-width: 440px
     min-width: 240px
-    background: rgba(35,211,133, 0.8)
+    background: $green
     &:hover
-      background: rgba(35,211,133, 1.0)
+      background: darken($green, 10%)
     animation-name: noticeSlideUp
     &.hiding
       animation-name: noticeFadeOut

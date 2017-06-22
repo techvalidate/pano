@@ -31,7 +31,7 @@
 //============================================
 
 $font-stack:       'san-francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Droid Sans', 'Helvetica Neue', sans-serif
-$line-height:      24px
+$line-height:      20px
 $p-spacing:        16px
 $font-size:        13px
 $small-font-size:  12px
@@ -62,32 +62,51 @@ h1, .h1
   line-height: 40px
   font-weight: 300
   color: $dark-blue
+  +mobile
+    font-size: 24px
+    line-height: 32px
 
 h2, .h2
   font-size: 24px
   line-height: 32px
   font-weight: 300
   color: $dark-blue
+  +mobile
+    font-size: 20px
+    line-height: 28px
 
 h3, .h3
   font-size: 20px
   line-height: 28px
   font-weight: 500
+  +mobile
+    font-size: 16px
+    line-height: 24px
 
 h4, .h4
   font-size: 20px
+  line-height: 24px
   font-weight: 300
   color: $slate
+  +mobile
+    font-size: 16px
+    line-height: 24px
 
 h5, .h5
   font-size: 15px
   font-weight: 500
+  +mobile
+    font-size: 13px
+    line-height: 20px
 
 h6, .h6
   font-size: 13px
   font-weight: 300
   color: $gray
   text-transform: uppercase
+  +mobile
+    font-size: 12px
+    line-height: 20px
 
 p, .p
   font-weight: normal
@@ -161,6 +180,8 @@ hr
 .intro
   font-size: 15px
   color: $slate
+  +mobile
+    font-size: $font-size
 
 .note
   color: $note-color
