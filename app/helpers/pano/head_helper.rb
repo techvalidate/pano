@@ -1,6 +1,11 @@
 module Pano
   module HeadHelper
 
+    # todo: would be nice not to have to do this... research how.
+    def disable_turbolinks_cache
+      s "<meta name='turbolinks-cache-control' content='no-cache'>"
+    end
+
     def ie_meta_tags
       s <<-EOF
       <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">

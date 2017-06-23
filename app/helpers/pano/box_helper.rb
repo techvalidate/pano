@@ -21,13 +21,5 @@ module Pano
       end
     end
 
-    def filter_bar(*args, &block)
-      options = args.extract_options!
-
-      div_tag class: [options[:class], 'filter-bar'], id: 'sticky-filter-bar' do
-        capture(&block)
-      end
-    end
-
   end
 end
