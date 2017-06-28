@@ -55,6 +55,15 @@ bundle config --delete local.pano
 ```
 Again, you will need to run `bundle update` and `rails restart` (or `rails update`) in the host application to pick up changes.
 
+## Tests
+
+Test specs are available in the `~/dev/pano/spec` directory, alongside the test app. 
+
+To run the Pano test suite, in the root directory, use:
+```
+rake spec
+```
+
 ## Design Assets
 
 https://www.dropbox.com/sh/esapsev12igl95f/AAAtknkC-FekF90KK5Dl2W8ya?dl=0
