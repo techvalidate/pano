@@ -17,7 +17,17 @@ module Pano
         concat tag :meta, content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'
         concat tag :meta, content: 'IE=edge', 'http-equiv': 'X-UA-Compatible'
         concat tag :meta, charset: 'utf-8'
+        concat outlook_96_dpi_tags
       end
+    end
+
+    def outlook_96_dpi_tags
+        s "<!--[if gte mso 9]><xml>
+          <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+          </xml><![endif]-->"
     end
 
     def outlook_button(button_text:, button_url:, height: '40px', width: '200px', text_color: '#fff', fill_color: '#00a8ff', stroke_color: '#00a8ff', font_size: '16px')
