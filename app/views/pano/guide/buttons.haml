@@ -1,133 +1,132 @@
 :ruby
-	@page_title = 'Buttons'
-	@nav        = :ui
-	@subnav     = :buttons
+  @page_title = 'Buttons'
+  @nav        = :ui
+  @subnav     = :buttons
 
 = box 'Button Types' do
 
-	%p Standard and Primary are the most-commonly used button colors.
+  %p The default and Primary are the most-commonly used button colors.
 
-	%hr
+  %hr
 
-	%h5 Standard
-	=haml_example do
-		:plain
-			// comment
-			= btn_to 'Default Button', '#'
+  = haml_example do
+    :plain
+      = btn_to 'Default Button', '#'
+      = btn_to 'Primary Button', '#', class: 'btn-primary'
+      = btn_to 'Warning Button', '#', class: 'btn-warning'
+      = btn_to 'White Button', '#', class: 'btn-white'
+      = btn_to 'Gray Button', '#', class: 'btn-gray'
+      = btn_to 'Outline Button', '#', class: 'btn-outline'
+      .box.bg-dark-blue
+        = btn_to 'Outline White Button', '#', class: 'btn-outline-white'
+        %span.white
+          &larr; use this one only on a dark bg
 
-	%hr
-
-	%h5 Primary
-	= haml_example do
-		:plain
-			= btn_to 'Primary Button', '#', class: 'btn-primary'
-
-	%hr
-
-	%h5 Warning
-	= haml_example do
-		:plain
-			= btn_to 'Delete Me', '#', class: 'btn-warning'
-
-	%h5 Outline
-	= haml_example do
-		:plain
-			= btn_to 'Outline Button', '#', class: 'btn-outline'
 = box 'Button Sizes' do
 
-	%p There are 3 button sizes, and each has a helper method for convenience.
-	%p All button helpers can take an options hash just like link_to so you can specify custom css classes and attributes.
-	%p These button sizes can also be achieved by adding classess like .btn-small or .btn-tiny.
+  %p There are 3 button sizes, and each has a helper method for convenience.
+  %p All button helpers can take an options hash just like link_to so you can specify custom css classes and attributes.
+  %p These button sizes can also be achieved by adding classess like .btn-small or .btn-tiny.
 
-	%hr
+  %hr
 
-	%h5 Huge Button
-	= haml_example do
-		:plain
-			= huge_btn_to 'Click Me', '#'
-			= huge_btn_to 'Click Me', '#', class: 'btn-primary'
-	
-	%h5 Large Button
-	= haml_example do
-		:plain
-			= large_btn_to 'Click Me', '#'
-			= large_btn_to 'Click Me', '#', class: 'btn-primary'
+  = haml_example do
+    :plain
+      = huge_btn_to 'Huge Button', '#'
+      = large_btn_to 'Large Button', '#'
+      = btn_to 'Default Button', '#'
+      = small_btn_to 'Small Button', '#'
+      = tiny_btn_to 'Tiny Button', '#'
 
-	%h5 Default Button
-	= haml_example do
-		:plain
-			= btn_to 'Click Me', '#'
-			= btn_to 'Click Me', '#', class: 'btn-primary'
-
-	%h5 Small Button
-	= haml_example do
-		:plain
-			= small_btn_to 'Click Me', '#'
-			= small_btn_to 'Click Me', '#', class: 'btn-primary'
-	%h5 Tiny Button
-	= haml_example do
-		:plain
-			= tiny_btn_to 'Click Me', '#'
-			= tiny_btn_to 'Click Me', '#', class: 'btn-primary'
 = box 'Button Groups' do
-	%h5 Horizontal
-	= haml_example do
-		:plain
-			.btn-group
-				= btn_to "Option 1", '#', class: 'btn-white'
-				= btn_to "Option 2", '#', class: 'selected btn-white'
-				= btn_to "Option 3", '#', class: 'btn-white'
+  = haml_example do
+    :plain
+      %p
+        .btn-group.m-stack
+          = btn_to "Option 1", '#'
+          = btn_to "Option 2", '#', class: 'selected'
+          = btn_to "Option 3", '#'
+      %p
+        .btn-group.btn-slate.m-stack
+          = btn_to "Option 1", '#'
+          = btn_to "Option 2", '#', class: 'selected'
+          = btn_to "Option 3", '#'
+      %p
+        .btn-group.btn-gray.m-stack
+          = btn_to "Option 1", '#'
+          = btn_to "Option 2", '#', class: 'selected'
+          = btn_to "Option 3", '#'
+      %p
+        .btn-group.m-stack
+          = icon_btn_to :edit, "Option 1", '#'
+          = icon_btn_to :add, "Option 2", '#', class: 'selected'
+          = icon_btn_to :delete, "Option 3", '#'
+      %p
+        .btn-group.btn-gray.m-stack
+          = small_btn_to "Option 1", '#'
+          = small_btn_to "Option 2", '#', class: 'selected'
+          = small_btn_to "Option 3", '#'
+      .box.bg-dark-blue
+        %p.white use this one only on a dark bg
+        %p.btn-group.btn-outline-white.m-stack
+          = icon_btn_to :edit, "Option 1", '#'
+          = icon_btn_to :add, "Option 2", '#', class: 'selected'
+          = icon_btn_to :delete, "Option 3", '#'
 
-	%h5 Vertical
-	= haml_example do    
-		:plain
-			.cf
-				.vertical-btn-group.two-columns
-					= btn_to "Option 1", '#', class: 'btn-white'
-					= btn_to "Option 2", '#', class: 'selected btn-white'
-					= btn_to "Option 3", '#', class: 'btn-white'
+= box '"Pill" Buttons' do
+  %p Some buttons, especially on login/signup pages, and in emails, currently use a pill shape. This style can be applied to all colors and sizes of buttons.
+  %p Extra minimum left/right padding is applied, and these buttons are often also made fixed-width.
 
-	%h5 Gray Button Group
-	= haml_example do
-		:plain
-			.btn-group
-				= btn_to "Option 1", '#', class: 'btn-gray'
-				= btn_to "Option 2", '#', class: 'selected btn-gray'
-				= btn_to "Option 3", '#', class: 'btn-gray'
-
-
-= box '"Pill" Buttons' do 
-	%p Some buttons, especially on login/signup pages, and in emails, currently use a pill shape. This style can be applied to all colors and sizes of buttons. 
-	%p Extra minimum left/right padding is applied, and these buttons are often also made fixed-width.
-
-	= haml_example do
-		:plain
-			= btn_to 'Primary Button', '#', class: 'btn-primary btn-pill'
-			= btn_to 'Standard Button', '#', class: 'btn-pill'
-			= btn_to 'Outline Button', '#', class: 'btn-outline btn-pill'
-			= btn_to 'Tiny Button', '#', class: 'btn-tiny btn-pill'
+  = haml_example do
+    :plain
+      = btn_to 'Primary Button', '#', class: 'btn-primary btn-pill'
+      = btn_to 'Standard Button', '#', class: 'btn-pill'
+      = btn_to 'Outline Button', '#', class: 'btn-outline btn-pill'
+      = btn_to 'Tiny Button', '#', class: 'btn-tiny btn-pill'
 
 
 = box 'Buttons with Icons' do
-	%p Buttons can have icons in them, either on the right or the left.
-	%p Icons in buttons use the same oolor as the button text.
-	%p Buttons can even have only an icon inside. In this case, use a tooltip to explain the button.
+  %p Buttons can have icons in them, either on the right or the left.
+  %p Icons in buttons use the same oolor as the button text.
+  %p Buttons can even have only an icon inside. In this case, use the icon_btn helper.
 
-	= haml_example do
-		:plain
-			= icon_btn_to 'add', 'New Survey', '#', class: 'btn-primary'
-			= icon_btn_to 'sort', 'Sort', '#', class: 'btn-white'
-			= icon_btn_to 'keyboard_arrow_right', 'Continue', '#', right: true
-			= icon_btn 'file_download', '#', class: 'btn-white'
+  = haml_example do
+    :plain
+      %p buttons with icons AND text labels
+      %p
+        = icon_btn_to 'add', 'New Survey', '#', class: 'btn-primary'
+        = icon_btn_to 'sort', 'Sort', '#', class: 'btn-white'
+        = icon_btn_to 'keyboard_arrow_right', 'Continue', '#', right: true
+      %p buttons that are icons only
+      %p
+        = icon_btn :file_download, '#', class: 'btn-white', title: 'Download'
+        = icon_btn :delete, '#', class: 'btn-gray', title: 'Delete item'
+      %p buttons groups that are icons only
+      %p
+        .btn-group
+          = icon_btn :file_download, '#', class: 'btn-white', title: 'Download'
+          = icon_btn :delete, '#', class: 'btn-white', title: 'Delete item'
+      %p
+        .btn-group.btn-slate
+          = icon_btn :file_download, '#', title: 'Download'
+          = icon_btn :delete, '#', title: 'Delete item'
+      %p
+        .btn-group.btn-gray
+          = icon_btn :file_download, '#', title: 'Download'
+          = icon_btn :delete, '#', title: 'Delete item'
 
 = box 'Other Button Styles' do
-	%h5 Full-width Buttons (display: block)
-	= haml_example do
-		:plain
-			= btn_to "Click Me", '#', class: 'btn-block'
+  %h5 Full-width Buttons (display: block)
+  = haml_example do
+    :plain
+      = btn_to "Click Me", '#', class: 'btn-block'
 
-	%h5 Centered Wide Buttons
-	= haml_example do
-		:plain
-			= btn_to "Click Me", '#', class: 'centered-wide-btn'
+  %h5 "Wide" Buttons
+  = haml_example do
+    :plain
+      = btn_to "Click Me", '#', class: 'btn-wide'
 
+  %h5 "Centered Wide" Buttons
+  = haml_example do
+    :plain
+      = btn_to "Click Me", '#', class: 'centered-wide-btn'
