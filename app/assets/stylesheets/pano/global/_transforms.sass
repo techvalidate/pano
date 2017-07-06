@@ -1,5 +1,6 @@
 // =========================================================
 // base styles to apply to try to ensure hw-accelerated css transforms
+// =========================================================
 
 =accelerated-transforms-base
   -webkit-font-smoothing: subpixel-antialiased
@@ -25,3 +26,21 @@
 // -moz-backface-visibility: hidden
 // -ms-backface-visibility: hidden
 // backface-visibility: hidden
+
+
+// =========================================================
+// horizontal and vertical centering
+// =========================================================
+
+=v-center
+  top: 50%
+  transform: translateY(-50%)
+
+=h-center
+  left: 50%
+  transform: translateX(-50%)
+
+=vh-center
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)

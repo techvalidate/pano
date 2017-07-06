@@ -10,6 +10,10 @@ UI.click 'form .js-submit-on-click', (e, el) ->
     e.stopPropagation()
     f.submit()
 
+UI.click 'form .js-submit-on-click-with-propagation', (e, el) ->
+  if f = el.closest('form')
+    f.submit()
+  true
 
 # =====================================================
 # fields that auto-focus on page load
