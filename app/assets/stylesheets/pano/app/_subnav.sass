@@ -25,6 +25,22 @@
   .subnav-header-title
     padding-top: 16px
 
+    &.with-dropdown
+      +mobile
+        h1
+          max-width: 330px !important
+  .jq-dropdown-link
+    display: inline-block
+    float: none
+    padding: 0
+    color: $blue
+    text-overflow: ellipsis
+    &:after
+      position: relative
+      top: 4px
+      font-size: 20px
+
+
   .subnav-header-tabs
     position: absolute
     height: 80px
@@ -77,6 +93,9 @@
     .tabs
       border-bottom: none
 
+    .cf
+      position: relative
+
   a.subnav-link
     height: 40px
     line-height: 24px
@@ -85,6 +104,8 @@
     color: $dark-blue
     font-size: 12px
     position: relative
+    +less-than-widescreen
+      font-size: 10px
     &.selected
       color: $blue
     &.with-right-arrow
@@ -96,6 +117,8 @@
         pointer-events: none
         font-family: 'Material Icons'
         color: $gray
+    span
+      display: inline-block
 
   #show-filters-btn
     padding: 8px
