@@ -56,9 +56,9 @@ bundle config --delete local.pano
 Again, you will need to run `bundle update` and `rails restart` (or `rails update`) in the host application to pick up changes.
 
 ## Updating projects that depend on your Pano changes
-After working with Pano locally, your project (CX, Engage) will need to use the latest revision of Pano before your next project merge. To do so, make sure your Pano commits are merged to master. Use the local development steps to revert from Pano local development to the Github engine. After doing so, your `bundle install` will reinstall the Pano engine in the project, updating your `Gemfile` and `Gemfile.lock`. These need to be merged in with any commits that are dependent upon that Pano revision. 
+After working with Pano locally, your project (CX, Engage) will need to use the latest revision of Pano before your next project merge. To do so, make sure your Pano commits are merged to master. Use the [local development](#local-development) steps to revert from Pano local development to the Github engine. After doing so, your `bundle install` will reinstall the Pano engine in the project, updating your `Gemfile` and `Gemfile.lock`. These need to be merged in with any commits that are dependent upon that Pano revision. 
 
-In other words, do not merge commits for CX or Engage that depend on your changes to Pano until your changes to Pano have been merged into pano/master
+In other words, do not merge commits for CX or Engage that depend on your changes to Pano until your changes to Pano have been merged into [pano/master](/techvalidate/pano)
 
 ## Tests
 

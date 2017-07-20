@@ -26,8 +26,9 @@
     padding-top: 16px
 
     &.with-dropdown
-      h1
-        max-width: 330px !important
+      +mobile
+        h1
+          max-width: 330px !important
   .jq-dropdown-link
     display: inline-block
     float: none
@@ -124,6 +125,10 @@
     &:hover
       text-decoration: none
       background: $lighter-gray
+
+  // make the date range filter dropdown in the subnav appear above the available filters bar
+  #dropdown-menu-range
+    z-index: 255
 
 +mobile
   #subnav
