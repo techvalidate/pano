@@ -26,8 +26,9 @@
     padding-top: 16px
 
     &.with-dropdown
-      h1
-        max-width: 330px !important
+      +mobile
+        h1
+          max-width: 330px
   .jq-dropdown-link
     display: inline-block
     float: none
