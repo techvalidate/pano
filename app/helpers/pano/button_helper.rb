@@ -33,12 +33,17 @@ module Pano
     # buttons with icons
     # ------------------------------------------------------------
 
+    # this is for icon-only buttons. if you give the button an title attribute,
+    # it will automatically be made into a tooltip
     def icon_btn(icon_name, options = {}, html_options = {})
-      link_to icon(icon_name), options, html_options.add_class('btn icon-only')
+      css_classes = 'btn icon-only'
+      css_classes += ' js-tooltip' if html_options[:title]
+      link_to icon(icon_name), options, html_options.add_class(css_classes)
     end
 
+    # this is for buttons with icons and text
     def icon_btn_to(icon_name, label, options = {}, html_options = {})
-      if html_options[:right] 
+      if html_options[:right]
         btn_to safe_join([label, icon(icon_name)]), options, html_options.add_class('icon-rt')
       else
         btn_to safe_join([icon(icon_name), label]),  options, html_options
