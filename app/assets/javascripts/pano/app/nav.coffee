@@ -64,4 +64,4 @@ UI.click '#cur-user-dropdown-trigger', (e, el) ->
 # ===================================================
 
 UI.load ->
-  $("#subnav.sticky-subnav").stick_in_parent(offset_top: $('#nav').height())
+  $("#subnav.sticky-subnav").stick_in_parent(bottoming: false, offset_top: $('#nav').height())
