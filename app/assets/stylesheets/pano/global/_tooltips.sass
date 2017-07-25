@@ -1,3 +1,11 @@
+=tip-arrow($size)
+  content: ""
+  position: absolute
+  height: #{$size}px
+  width: #{$size}px
+  content: ''
+
+  
 .tooltip
   min-width: 165px
   position: relative
@@ -9,33 +17,44 @@
   color: #fff
   font-size: 12px
   z-index: 100
-  &:before
-    position: absolute
-    bottom: -8px
-    width: 16px
-    height: 16px
-    left: 0
-    right: 0
-    margin: 0 auto
-    background: #fff
-    transform: rotate(45deg)
-    /* Prefixes... */
-    content: ''
-    z-index: 2
-  &:after
-    content: ""
-    position: absolute
-    width: 15px
-    height: 15px
-    left: 0
-    right: 0
-    bottom: -9px
-    margin: 0 auto
-    background: #cecece
-    transform: rotate(45deg)
-    /* Prefixes... */
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4)
-    z-index: 0
+  .tooltip-body
+    z-index: 3
+    &:before
+      +tip-arrow(15)
+      left: 0
+      right: 0
+      bottom: -8px
+      margin: auto
+      background: #fff
+      transform: rotate(45deg)
+      z-index: 2
+    &:after
+      +tip-arrow(15)
+      left: 0
+      right: 0
+      bottom: -9px
+      margin: auto
+      background: #cecece
+      transform: rotate(45deg)
+      /* Prefixes... */
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4)
+      z-index: 0
+  &.align-right
+    .tooltip-body
+      &:before
+        right: auto
+        bottom: 0
+        top: 0
+        left: -8px
+        background: #fff
+        transform: rotate(135deg)
+      &:after
+        right: auto
+        bottom: 0
+        top: 0
+        left: -9px
+        background: #cecece
+        transform: rotate(135deg)
 
 .tooltip .tooltip-header
   padding: 5px 8px
@@ -47,6 +66,7 @@
   line-height: 15px
 
 .tooltip .tooltip-body
+  position: relative
   padding: 14px
   z-index: 2
   color: $text-color
