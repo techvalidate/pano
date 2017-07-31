@@ -1,4 +1,5 @@
 # =====================================================
+# 
 # UI
 #
 # This is a singleton class to make it simpler to write
@@ -94,7 +95,7 @@ class @UI
 # callback returns true.
 
   @click: (selector, callback) ->
-    $(document).on 'click', selector, (e) ->
+    $(document).on 'click touch', selector, (e) ->
       el = $(e.currentTarget)
       unless callback(e, el) == true
         e.preventDefault()
