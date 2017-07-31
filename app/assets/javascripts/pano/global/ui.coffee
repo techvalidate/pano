@@ -1,5 +1,4 @@
 # =====================================================
-# 
 # UI
 #
 # This is a singleton class to make it simpler to write
