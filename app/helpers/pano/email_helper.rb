@@ -1,8 +1,8 @@
 module Pano
   module EmailHelper
 
-    def email_button(button_text:, button_url:, height: '40px', width: '200px', text_color: '#fff', fill_color: '#00a8ff', stroke_color: '#00a8ff', font_size: '16px', css_class: 'btn', style: nil)
-      buttons = outlook_button button_text: button_text, button_url: button_url, height: height, width: width, text_color: text_color, fill_color: fill_color, stroke_color: stroke_color, font_size: font_size
+    def email_button(button_text:, button_url:, height: '40px', width: '200px', text_color: '#fff', fill_color: '#00a8ff', stroke_color: '#00a8ff', font_size: '16px', css_class: 'btn', style: nil, arc_size: 100)
+      buttons = outlook_button button_text: button_text, button_url: button_url, height: height, width: width, text_color: text_color, fill_color: fill_color, stroke_color: stroke_color, font_size: font_size, arc_size: arc_size
       buttons += link_to button_text, button_url, class: css_class, style: style
       buttons
     end
@@ -30,9 +30,9 @@ module Pano
           </xml><![endif]-->"
     end
 
-    def outlook_button(button_text:, button_url:, height: '40px', width: '200px', text_color: '#fff', fill_color: '#00a8ff', stroke_color: '#00a8ff', font_size: '16px')
+    def outlook_button(button_text:, button_url:, height: '40px', width: '200px', text_color: '#fff', fill_color: '#00a8ff', stroke_color: '#00a8ff', font_size: '16px', arc_size: 100)
       s "<!--[if mso]>
-        <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" href=\"#{button_url}\" style=\"height:#{height};width:#{width};v-text-anchor:middle;\" arcsize=\"60px\" strokecolor=\"#{stroke_color}\" fillcolor=\"#{fill_color}\">
+        <v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" href=\"#{button_url}\" style=\"height:#{height};width:#{width};v-text-anchor:middle;\" arcsize=\"#{arc_size}%\" strokecolor=\"#{stroke_color}\" fillcolor=\"#{fill_color}\">
         <w:anchorlock/>
         <v:textbox inset=\"0,0,0,0\">
           <center style='color:#{text_color}; #{email_font_stack} font-size:#{font_size};mso-line-height-rule:exactly;'>#{button_text}</center>
