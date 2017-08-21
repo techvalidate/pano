@@ -4,15 +4,15 @@ module Pano
     # shortcuts for hardcoded absolute URLs
 
     def privacy_url
-      'https://www.surveymonkey.com/mp/policy/privacy-policy/#respondents'
+      "https://#{I18n.locale}.surveymonkey.com/mp/policy/privacy-policy/#respondents"
     end
 
     def terms_of_use_url
-      'https://www.surveymonkey.com/mp/policy/terms-of-use/'
+      "https://#{I18n.locale}.surveymonkey.com/mp/policy/terms-of-use/"
     end
 
     def trial_terms_of_use_url
-      'https://www.surveymonkey.com/mp/policy/surveymonkey-trial-account-terms-service/'
+      "https://#{I18n.locale}.surveymonkey.com/mp/policy/surveymonkey-trial-account-terms-service/"
     end
 
     def mark_if_current(options)
