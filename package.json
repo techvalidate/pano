@@ -1,0 +1,8 @@
+{
+  "name": "pano",
+  "version": "3.0.0",
+  "main": "app/assets/javascripts/pano/global/index.coffee",
+  "repository": "git@github.com:techvalidate/pano.git",
+  "author": "Jordan McKible <jordan@mckible.com>",
+  "license": "MIT"
+}
