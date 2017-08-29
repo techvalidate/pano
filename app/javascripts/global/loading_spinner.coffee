@@ -1,5 +1,3 @@
-#= require ./ui
-
 # =====================================================
 # Show a loading spinner overlay on successful form
 # submission and during AJAX events.
@@ -28,8 +26,9 @@ $(document).ajaxStop ->
   hideLoadingSpinner()
 
 # this is for a firefox "feature"
-$(window).unload ->
-  hideLoadingSpinner()
+# TODO commented out with webpack conversion
+# $(window).unload ->
+#   hideLoadingSpinner()
 
 # prevents spinner from showing when back button is used, since Safari would otherwise cache the spinner state
 $(window).bind 'pageshow', (evt) ->

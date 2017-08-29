@@ -1,5 +1,3 @@
-#= require ./ui
-
 # =====================================================
 # Show a loading spinner overlay inline when the spinner event is received
 # =====================================================

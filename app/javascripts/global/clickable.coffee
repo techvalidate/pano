@@ -1,5 +1,3 @@
-#= require ./ui
-
 # handle clicks on elements with data-behavior='clickable'.
 # these elements need a data-href attribute.
 

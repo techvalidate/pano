@@ -1,5 +1,3 @@
-#= require switchery
-
 # =====================================================
 # iOS-style checkbox switches (via http://abpetkov.github.io/switchery/)
 # =====================================================

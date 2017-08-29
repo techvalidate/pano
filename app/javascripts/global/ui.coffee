@@ -10,7 +10,7 @@
 #
 # =====================================================
 
-class @UI
+class UI
 
   # =====================================================
   # Page Load
@@ -89,6 +89,9 @@ class @UI
   @blur: (selector, callback) ->
     @on 'blur', selector, callback
 
+  @focus: (selector, callback) ->
+    @on 'focus', selector, callback
+
 # Most click handlers want to prevent event bubbling,
 # so this click event handler does that unless your
 # callback returns true.
@@ -104,3 +107,5 @@ class @UI
       el = $(e.currentTarget)
       unless callback(e, el) == true
         e.preventDefault()
+
+module.exports = UI
