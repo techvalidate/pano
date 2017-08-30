@@ -57,3 +57,10 @@ UI.click '#cur-user-dropdown-trigger', (e, el) ->
     hideCurUserDropdown()
   else
     showCurUserDropdown()
+
+# ===================================================
+# sticky version of subnavs
+# ===================================================
+
+UI.load ->
+  $("#subnav.sticky-subnav").stick_in_parent(bottoming: false, offset_top: $('#nav').height())

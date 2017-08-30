@@ -26,9 +26,8 @@ $(document).ajaxStop ->
   hideLoadingSpinner()
 
 # this is for a firefox "feature"
-# TODO commented out with webpack conversion
-# $(window).unload ->
-#   hideLoadingSpinner()
+$(window).on 'unload', (e) ->
+  hideLoadingSpinner()
 
 # prevents spinner from showing when back button is used, since Safari would otherwise cache the spinner state
 $(window).bind 'pageshow', (evt) ->
