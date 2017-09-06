@@ -4,7 +4,7 @@ module Pano
     # shortcuts for hardcoded absolute URLs
 
     def privacy_url
-      "https://#{I18n.locale}.surveymonkey.com/mp/policy/privacy-policy/#respondents"
+      "https://#{I18n.locale}.surveymonkey.com/mp/policy/privacy-policy/"
     end
 
     def terms_of_use_url
