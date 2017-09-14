@@ -1,5 +1,3 @@
-#= require jquery.powertip.min
-
 UI.load ->
   # setup powertips options for the tooltips
   tooltipOptions =

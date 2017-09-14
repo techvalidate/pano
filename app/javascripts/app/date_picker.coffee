@@ -16,7 +16,7 @@ UI.load ->
     initialVal = null
 
     if $(datepicker).val().length
-      initialVal = moment($(datepicker).val()).format('MM/DD/YYYY h:mm A')
+      initialVal = moment(new Date($(datepicker).val())).format('MM/DD/YYYY h:mm A')
 
     # * OUR * date picker default options
     options = {

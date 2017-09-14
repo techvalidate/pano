@@ -1,5 +1,3 @@
-#= require dropzone
-
 Dropzone.autoDiscover = false
 
 UI.load ->

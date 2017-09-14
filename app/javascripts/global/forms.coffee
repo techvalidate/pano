@@ -1,6 +1,3 @@
-#= require ./ui
-#= require jquery.validate.min
-
 # =====================================================
 # links that submit containing form on click
 # =====================================================

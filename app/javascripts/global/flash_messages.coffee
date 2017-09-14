@@ -1,5 +1,3 @@
-#= require ./ui
-
 # click on flash messages to dismiss them
 UI.click '.flash', (e, msg) ->
   hideFlashMessage msg

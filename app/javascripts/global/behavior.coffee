@@ -6,11 +6,11 @@ $.behavior = (target, refineSelector) ->
 
 $.fn.disable = ->
   this.each ->
-    $(this).prop('disabled', true)
+    $(this).addClass('disabled').prop('disabled', true)
 
 $.fn.enable = ->
   this.each ->
-    $(this).prop('disabled', false)
+    $(this).removeClass('disabled').prop('disabled', false)
 
 $.fn.exists = ->
   this.length > 0
