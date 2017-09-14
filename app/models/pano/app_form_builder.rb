@@ -188,8 +188,9 @@ module Pano
 
     # implements date/time pickers based on Rome jquery plugin
     def date_or_time_picker(picker_type, name, label_text, options = {})
-      input_options = options.clone
       group_options = options.key?(:data) ? options[:data].except(:rule_dateRangeValidate, :rule_dateIsInFuture) : options
+      group_options[:icon] = options[:icon]
+      input_options = options.clone.except(:icon)
 
       group_for name, label_text, group_options do
         case picker_type
