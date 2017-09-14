@@ -55,7 +55,7 @@ UI.load ->
         trgHeight: thmbHeight
       }
 
-    # find elements that need dropzones
+    # find image form elements that need dropzones
     $('.dropzone-image-form').each(->
       dzForm = $ this
       param = dzForm.data 'dropzone-param'
@@ -82,7 +82,7 @@ UI.load ->
         onProgress file, progress, byesSent
     )
 
-    # find elements that need dropzones
+    # find csv form elements that need dropzones
     $('.dropzone-csv-form').each(->
       dzForm = $ this
       param = dzForm.data 'dropzone-param'
@@ -91,6 +91,31 @@ UI.load ->
         headers: {"Accept": "text/javascript"},
         paramName: param,
         acceptedFiles: "text/csv,.csv",
+        uploadMultiple: false,
+        clickable: true,
+        maxFiles: 1
+      })
+
+      # event handlers
+      dropzone.on 'success', (file, responseText) ->
+        dropSuccess responseText
+
+      dropzone.on 'uploadprogress', (file, progress, byesSent) ->
+        onProgress file, progress, byesSent
+
+      dropzone.on 'error', (file, message) ->
+        dropError file, message, this
+    )
+
+    # find PO file form elements that need dropzones
+    $('.dropzone-po-form').each(->
+      dzForm = $ this
+      param = dzForm.data 'dropzone-param'
+      # instantiate csv uploaders
+      dropzone = new Dropzone('.dropzone-po-form', {
+        headers: {"Accept": "text/javascript"},
+        paramName: param,
+        acceptedFiles: "text/x-gettext-translation, application/x-po, text/x-po, application/octet-stream, .po",
         uploadMultiple: false,
         clickable: true,
         maxFiles: 1

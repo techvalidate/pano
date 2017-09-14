@@ -14,6 +14,7 @@ UI.click('.modal-bg', (e, el) ->
 UI.click '.js-modal', (e, el) ->
   e.preventDefault()
   href = el.attr('href')
+  $('body').css('overflow', 'hidden')
   if href.indexOf('#') == 0
     data = $(el).data()
 
@@ -24,6 +25,7 @@ UI.click '.js-modal', (e, el) ->
 UI.click '.js-close-modal', (e, el) ->
   $target = $(e.target)
   modal = $target.closest('.modal-container')
+  $('body').css('overflow', 'auto')
   Modals.close(modal)
 
 
