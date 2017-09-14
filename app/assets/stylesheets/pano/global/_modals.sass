@@ -8,16 +8,11 @@ $z: 1000
   display: none
   position: fixed
   z-index: $z
-  margin-bottom: 50%
-  left: 0
-  right: 0
-  top: 0
-  bottom: 0
   .modal
     z-index: $z+2
     top: 50%
-    left: 0
-    right: 0
+    transform: translateY(-50%) translateX(-50%)
+    left: 50%
 
   .modal-bg
     position: fixed
@@ -33,15 +28,22 @@ $z: 1000
     opacity: 0.5
 
 =modal
-  position: relative
+  position: fixed
   max-width: 560px
+  max-height: 51%
   margin: 0 auto
+  overflow: auto
   padding: 24px
   font-family: $font-stack
   font-size: $font-size
   background: #FFFFFF
   color: $text-color
   box-shadow: 0px 4px 16px 0 rgba(0, 0, 0, 0.2)
+
+  +mobile
+    width: 90%
+    max-width: 90%
+    max-height: 90%
 
 .modal
   +modal
