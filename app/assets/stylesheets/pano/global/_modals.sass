@@ -10,9 +10,6 @@ $z: 1000
   z-index: $z
   .modal-wrapper
     position: fixed
-    left: 50%
-    top: 50%
-    transform: translate3d(-50%, -50%, 0)
     z-index: $z+2
     +mobile
       left: 0
@@ -40,6 +37,7 @@ $z: 1000
   position: relative
   max-width: 560px
   max-height: 90%
+  margin: 0
   overflow: auto
   padding: 24px
   font-family: $font-stack

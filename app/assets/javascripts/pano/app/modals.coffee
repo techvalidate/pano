@@ -16,32 +16,16 @@ UI.click '.js-modal', (e, el) ->
   href = el.attr('href')
   $('body').css('overflow', 'hidden')
 
-  #// snapPixels allows us to fix the fuzzy text caused by 3d transformations on Safari and Chrome
-  #// this can be removed when and if these browser bugs are fixed
-  snapPixels = (el) ->
-    modal = $(el).find('.modal-wrapper')
-    top = modal.position().top
-    newY = Math.round(top)
-    left = modal.position().left
-    newX = Math.round(left)
-
-    if left != newX && top != newY
-      leftCorrection = left - parseInt(left)
-      topCorrection = top - parseInt(top)
-      modal.css('transform', 'translate3d(calc(-50% - ' + leftCorrection + 'px), calc(-50% - ' + topCorrection + 'px), 0)')
-    else if left != newX
-      leftCorrection = left - parseInt(left)
-      modal.css('transform', 'translate3d(calc(-50% - ' + leftCorrection + 'px), 50%, 0)')
-    else if top != newY
-      topCorrection = top - parseInt(top)
-      modal.css('transform', 'translate3d(-50%, calc(-50% - ' + topCorrection + 'px), 0)')
+  addResizeListener = (el) ->
+    $(window).resize ->
+      centerModal(el)
 
   if href.indexOf('#') == 0
     data = $(el).data()
 
-    Modals.show $(href), data, [snapPixels]
+    Modals.show $(href), data, [centerModal, addResizeListener]
   else
-    Modals.showAjax(href, null, [$.bindFormValidation, snapPixels])
+    Modals.showAjax(href, null, [$.bindFormValidation, centerModal, addResizeListener])
 
 
 UI.click '.js-close-modal', (e, el) ->
@@ -75,6 +59,8 @@ window.Modals =
 
       if modal.hasClass('js-ajax-modal')
         modal.remove()
+
+      $(window).off('resize', centerModal )
 
   currentModals: []
 
@@ -117,6 +103,13 @@ window.Modals =
 # =====================================================
 #  Modal Helpers
 # =====================================================
+#//  poisitions modal vertical and hortizontal center, since CSS positioning causes blurry text in some cases on OS X Chrome and Safari
+centerModal = (el) ->
+  modal = $(el).find('.modal-wrapper')
+  top = ($(window).height() - modal.height()) / 2
+  left = ($(window).width() - modal.width()) / 2
+
+  modal.css('top', top).css('left', left)
 
 setModalTop = (modal) ->
   #modal.css('top', "#{$(window).scrollTop() + ($(window).height() / 10)}px")
