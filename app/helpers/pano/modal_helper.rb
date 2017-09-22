@@ -9,11 +9,14 @@ module Pano
       # s_capture won't work in that case, so fall back to capture
       inner_content = capture(&block)
       div_tag class: 'modal-container', id: id do
-        output = div_tag options do
-          close_modal_icon + modal_header(title, icon, description) + inner_content
+        modal = div_tag class: 'modal-wrapper' do
+          div_tag options do
+            close_modal_icon + modal_header(title, icon, description) + inner_content
+          end
         end
-        output += s "<div class='modal-bg'></div>"
-        h output
+        modal_bg = div_tag class: 'modal-bg' do
+        end
+        modal + modal_bg
       end
     end
 
