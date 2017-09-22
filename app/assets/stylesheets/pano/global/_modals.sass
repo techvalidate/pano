@@ -12,6 +12,7 @@ $z: 1000
     position: fixed
     left: 50%
     top: 50%
+    transform: translate3d(-50%, -50%, 0)
     z-index: $z+2
     +mobile
       left: 0
@@ -39,7 +40,6 @@ $z: 1000
   position: relative
   max-width: 560px
   max-height: 90%
-  margin: -50% 0 0 -50%
   overflow: auto
   padding: 24px
   font-family: $font-stack
@@ -123,7 +123,7 @@ $z: 1000
   &.calendar
     max-width: 600px
   &.color-picker-modal
-    min-height: 340px
+    display: inline-table
   +mobile
     max-width: 100%
     min-height: 100%

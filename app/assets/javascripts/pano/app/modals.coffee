@@ -15,12 +15,34 @@ UI.click '.js-modal', (e, el) ->
   e.preventDefault()
   href = el.attr('href')
   $('body').css('overflow', 'hidden')
+
+  #// snapPixels allows us to fix the fuzzy text caused by 3d transformations on Safari and Chrome
+  #// this can be removed when and if these browser bugs are fixed
+  snapPixels = (el) ->
+    modal = $(el).find('.modal-wrapper')
+    top = modal.position().top
+    newY = Math.round(top)
+    left = modal.position().left
+    newX = Math.round(left)
+
+    if left != newX && top != newY
+      leftCorrection = left - parseInt(left)
+      topCorrection = top - parseInt(top)
+      modal.css('transform', 'translate3d(calc(-50% - ' + leftCorrection + 'px), calc(-50% - ' + topCorrection + 'px), 0)')
+    else if left != newX
+      leftCorrection = left - parseInt(left)
+      modal.css('transform', 'translate3d(calc(-50% - ' + leftCorrection + 'px), 50%, 0)')
+    else if top != newY
+      topCorrection = top - parseInt(top)
+      modal.css('transform', 'translate3d(-50%, calc(-50% - ' + topCorrection + 'px), 0)')
+
   if href.indexOf('#') == 0
     data = $(el).data()
 
-    Modals.show $(href), data
+    Modals.show $(href), data, [snapPixels]
   else
-    Modals.showAjax(href, null, [$.bindFormValidation])
+    Modals.showAjax(href, null, [$.bindFormValidation, snapPixels])
+
 
 UI.click '.js-close-modal', (e, el) ->
   $target = $(e.target)
@@ -40,6 +62,11 @@ window.Modals =
       setModalTop(modal)
       modal.fadeIn 200
       Modals.currentModals.push modal
+
+      if callbacks
+        for callback in callbacks
+          do ->
+            callback(modal)
 
   close: (modal) ->
     if modal
