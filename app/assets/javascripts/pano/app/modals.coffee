@@ -14,24 +14,18 @@ UI.click('.modal-bg', (e, el) ->
 UI.click '.js-modal', (e, el) ->
   e.preventDefault()
   href = el.attr('href')
-  $('body').css('overflow', 'hidden')
-
-  addResizeListener = (el) ->
-    $(window).resize ->
-      centerModal(el)
 
   if href.indexOf('#') == 0
     data = $(el).data()
 
-    Modals.show $(href), data, [centerModal, addResizeListener]
+    Modals.show $(href), data
   else
-    Modals.showAjax(href, null, [$.bindFormValidation, centerModal, addResizeListener])
+    Modals.showAjax(href, null, [$.bindFormValidation])
 
 
 UI.click '.js-close-modal', (e, el) ->
   $target = $(e.target)
   modal = $target.closest('.modal-container')
-  $('body').css('overflow', 'auto')
   Modals.close(modal)
 
 
@@ -42,15 +36,23 @@ UI.click '.js-close-modal', (e, el) ->
 window.Modals =
 
   show: (modal, data, callbacks) ->
+
     if modal
-      setModalTop(modal)
-      modal.fadeIn 200
+      $('body').css('overflow', 'hidden')
+      # // need to center during the fadeIn animation
+      modal.fadeIn duration: 200,
+      progress: ->
+        centerModal(modal)
+      ,done: ->
+        addModalResizeListener(modal)
+
       Modals.currentModals.push modal
 
       if callbacks
         for callback in callbacks
           do ->
             callback(modal)
+
 
   close: (modal) ->
     if modal
@@ -60,6 +62,7 @@ window.Modals =
       if modal.hasClass('js-ajax-modal')
         modal.remove()
 
+      $('body').css('overflow', 'auto')
       $(window).off('resize', centerModal )
 
   currentModals: []
@@ -69,7 +72,6 @@ window.Modals =
     $.get(url, (data, textStatus, jqXHR) ->
 # this is the success callback. it gets called after normal responses AND redirects.
       if jqXHR.getResponseHeader('REQUIRES_AUTH') == '1'
-
         window.location = "https://" + window.location.hostname + "/login" # send the person to the login page
       else
         htmlResponse = $(data)
@@ -82,6 +84,10 @@ window.Modals =
 
         if callbacks && callbacks.length
           callbacks.forEach((callback) -> if _.isFunction(callback) then callback(htmlResponse))
+
+        $('body').css('overflow', 'hidden')
+        centerModal(modal)
+        addModalResizeListener(modal)
 
     ).fail((jqXHR, textStatus, errorThrown) ->
 
@@ -110,6 +116,10 @@ centerModal = (el) ->
   left = ($(window).width() - modal.width()) / 2
 
   modal.css('top', top).css('left', left)
+
+addModalResizeListener = (el) ->
+  $(window).resize ->
+    centerModal(el)
 
 setModalTop = (modal) ->
   #modal.css('top', "#{$(window).scrollTop() + ($(window).height() / 10)}px")
