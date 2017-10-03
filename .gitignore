@@ -12,6 +12,8 @@ spec/test_app/tmp/
 
 /pano.iml
 
+/node_modules
+
 tags
 **/tags
 *.swp
