@@ -9,10 +9,10 @@ module Pano
       # s_capture won't work in that case, so fall back to capture
       inner_content = capture(&block)
 
-      if title.any?
-        header = modal_header(title, icon, description)
-      else
+      if title.nil?
         header = ''
+      else
+        header = modal_header(title, icon, description)
       end
 
       div_tag class: 'modal', id: id do
