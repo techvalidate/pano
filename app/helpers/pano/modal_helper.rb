@@ -2,14 +2,14 @@ module Pano
   module ModalHelper
 
     def modal(id, title, options = {}, &block)
-      options[:class] = [options[:class], 'modal box'].join(' ')
+      options[:class] = [options[:class], 'modal-content'].join(' ')
       icon = options[:icon]
       description = options[:description]
       # If assigns is undefined we're outside of rails controller (e.g. in asset pipeline or pdf rendering context)
       # s_capture won't work in that case, so fall back to capture
       inner_content = capture(&block)
-      div_tag class: 'modal-container', id: id do
-        modal = div_tag class: 'modal-wrapper' do
+      div_tag class: 'modal', id: id do
+        modal = div_tag class: 'modal-dialog' do
           div_tag options do
             close_modal_icon + modal_header(title, icon, description) + inner_content
           end

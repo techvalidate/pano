@@ -7,7 +7,7 @@
 
 UI.click('.modal-bg', (e, el) ->
   $target = $(e.target)
-  modal = $target.closest('.modal-container')
+  modal = $target.closest('.modal')
   Modals.close(modal)
 )
 
@@ -25,7 +25,7 @@ UI.click '.js-modal', (e, el) ->
 
 UI.click '.js-close-modal', (e, el) ->
   $target = $(e.target)
-  modal = $target.closest('.modal-container')
+  modal = $target.closest('.modal')
   Modals.close(modal)
 
 
@@ -43,7 +43,7 @@ window.Modals =
       modal.fadeIn duration: 200,
       progress: ->
         centerModal(modal)
-      ,done: ->
+      done: ->
         addModalResizeListener(modal)
 
       Modals.currentModals.push modal
