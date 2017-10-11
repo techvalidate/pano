@@ -58,7 +58,6 @@ window.Modals =
         modal.remove()
 
       $('body').css('overflow', 'auto')
-      $(window).off('resize', centerModal )
 
   currentModals: []
 
