@@ -6,7 +6,7 @@ module Pano
     end
 
     def pagination_numbers_for(collection)
-      return '0-0 of 0' if collection.nil? || collection.empty?
+      return '0-0 of 0' if collection.blank?
 
       if collection.last_page?
         "#{delimit(collection.total_count - collection.size + 1)}-#{delimit collection.total_count} of #{delimit collection.total_count}"
