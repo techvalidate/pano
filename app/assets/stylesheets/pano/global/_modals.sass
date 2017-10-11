@@ -4,22 +4,28 @@
 
 $z: 1000
 
-.modal-container
+.modal
   display: none
   position: fixed
   z-index: $z
-  .modal-wrapper
-    position: fixed
+  top: 0 
+  left: 0
+  bottom: 0
+  right: 0
+  text-align: center
+  &:before
+    content: ''
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+  .modal-dialog
+    position: relative
     z-index: $z+2
+    display: inline-block
+    vertical-align: middle
+    text-align: center
     +mobile
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
-
-    .modal
-      z-index: $z+2
-
+     
   .modal-bg
     position: fixed
     z-index: $z+1
@@ -28,8 +34,6 @@ $z: 1000
     right: 0
     bottom: 0
     text-align: center
-    // background: #fff
-    // opacity: 0.6
     background: #03182b //$dark-blue
     opacity: 0.5
 
@@ -37,7 +41,6 @@ $z: 1000
   position: relative
   max-width: 560px
   max-height: 90%
-  margin: 0
   overflow: auto
   padding: 24px
   font-family: $font-stack
@@ -57,9 +60,8 @@ $z: 1000
     max-height: 100%
     margin: 0
 
-.modal
+.modal-content
   +modal
-
   &.wide-modal
     max-width: 640px
   .close-icon
@@ -94,6 +96,7 @@ $z: 1000
   //   margin-top: 12px
 
 .modal-body
+  width: 100%
   position: relative // helps contain absolutely-positioned elements inside
   padding: 24px 0
 

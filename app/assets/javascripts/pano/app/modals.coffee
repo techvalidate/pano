@@ -7,7 +7,7 @@
 
 UI.click('.modal-bg', (e, el) ->
   $target = $(e.target)
-  modal = $target.closest('.modal-container')
+  modal = $target.closest('.modal')
   Modals.close(modal)
 )
 
@@ -25,7 +25,7 @@ UI.click '.js-modal', (e, el) ->
 
 UI.click '.js-close-modal', (e, el) ->
   $target = $(e.target)
-  modal = $target.closest('.modal-container')
+  modal = $target.closest('.modal')
   Modals.close(modal)
 
 
@@ -40,12 +40,7 @@ window.Modals =
     if modal
       $('body').css('overflow', 'hidden')
       # // need to center during the fadeIn animation
-      modal.fadeIn duration: 200,
-      progress: ->
-        centerModal(modal)
-      ,done: ->
-        addModalResizeListener(modal)
-
+      modal.fadeIn duration: 200
       Modals.currentModals.push modal
 
       if callbacks
@@ -86,8 +81,6 @@ window.Modals =
           callbacks.forEach((callback) -> if _.isFunction(callback) then callback(htmlResponse))
 
         $('body').css('overflow', 'hidden')
-        centerModal(modal)
-        addModalResizeListener(modal)
 
     ).fail((jqXHR, textStatus, errorThrown) ->
 
@@ -105,26 +98,6 @@ window.Modals =
         <h2>Loading...</h2>
       </div>
     """
-
-# =====================================================
-#  Modal Helpers
-# =====================================================
-#//  poisitions modal vertical and hortizontal center, since CSS positioning causes blurry text in some cases on OS X Chrome and Safari
-centerModal = (el) ->
-  modal = $(el).find('.modal-wrapper')
-  top = ($(window).height() - modal.height()) / 2
-  left = ($(window).width() - modal.width()) / 2
-
-  modal.css('top', top).css('left', left)
-
-addModalResizeListener = (el) ->
-  $(window).resize ->
-    centerModal(el)
-
-setModalTop = (modal) ->
-  #modal.css('top', "#{$(window).scrollTop() + ($(window).height() / 10)}px")
-
-
 
 ##Override the default confirm dialog by rails
 #$.rails.allowAction = (link) ->
