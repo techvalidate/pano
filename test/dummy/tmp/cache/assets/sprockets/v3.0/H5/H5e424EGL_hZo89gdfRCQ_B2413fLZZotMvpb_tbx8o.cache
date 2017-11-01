@@ -1,0 +1,44 @@
+I"y(function() {
+  var createFallbackInlineSpinner, hideInlineSpinner, showInlineSpinner, unfreezeIEInlineAnimation;
+
+  $(document).on('inline-spinner:show', function(evt, el) {
+    return showInlineSpinner(el);
+  });
+
+  $(document).on('inline-spinner:hide', function(evt, el) {
+    return hideInlineSpinner(el);
+  });
+
+  showInlineSpinner = function(el) {
+    var transitionSupport;
+    transitionSupport = $.isCSSFeatureSupported('transition');
+    if (!transitionSupport) {
+      UI.load(function() {});
+      createFallbackInlineSpinner(el);
+      unfreezeIEInlineAnimation(el);
+    }
+    return $(el + ' #inline-progress').addClass('visible');
+  };
+
+  hideInlineSpinner = function(el) {
+    return $(el + ' #inline-progress').removeClass('visible');
+  };
+
+  unfreezeIEInlineAnimation = function(el) {
+    $(el + ' .fallback-spinner').innerHTML = '';
+    $(el + ' .fallback-spinner').css('display', '');
+    return $(el + ' .fallback-spinner').css('background', $(el + ' .fallback-spinner').css('background'));
+  };
+
+  createFallbackInlineSpinner = function(el) {
+    var fallbackSpinner, transitionSupport;
+    transitionSupport = $.isCSSFeatureSupported('transition');
+    if (!transitionSupport) {
+      $(el + ' inline-progress').remove();
+      fallbackSpinner = '<div class="fallback-spinner"></div>';
+      return $(el + ' inline-progress').append(fallbackSpinner);
+    }
+  };
+
+}).call(this);
+:ET

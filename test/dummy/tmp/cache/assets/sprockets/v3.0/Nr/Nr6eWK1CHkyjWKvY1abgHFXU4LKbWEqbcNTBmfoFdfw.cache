@@ -1,0 +1,9 @@
+I"›(function() {
+  if (Turbolinks && Turbolinks.supported) {
+    $(window).unload(function(e) {
+      return this.scrollTo(0, 0);
+    });
+  }
+
+}).call(this);
+:ET

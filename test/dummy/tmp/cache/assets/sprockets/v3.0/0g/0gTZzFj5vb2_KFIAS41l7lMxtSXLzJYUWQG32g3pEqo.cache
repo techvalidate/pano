@@ -1,0 +1,82 @@
+I"Y	(function() {
+  var createFallbackLoadingSpinner, hideLoadingSpinner, showLoadingSpinner, spinnerHiddenDuringTimeout, timeoutPending, unfreezeIELoadingAnimation;
+
+  UI.submit('form', function(e, el) {
+    if ($(el).valid() && !$(el).data('remote')) {
+      showLoadingSpinner();
+      return true;
+    }
+  });
+
+  UI.on('ajax:send', document, function(e, el) {
+    return showLoadingSpinner();
+  });
+
+  $(document).ajaxStop(function() {
+    return hideLoadingSpinner();
+  });
+
+  $(window).unload(function() {
+    return hideLoadingSpinner();
+  });
+
+  $(window).bind('pageshow', function(evt) {
+    if (evt.originalEvent.persisted) {
+      return hideLoadingSpinner();
+    }
+  });
+
+  UI.load(function() {
+    createFallbackLoadingSpinner();
+    return hideLoadingSpinner();
+  });
+
+  timeoutPending = false;
+
+  spinnerHiddenDuringTimeout = false;
+
+  showLoadingSpinner = function() {
+    var transitionSupport;
+    transitionSupport = $.isCSSFeatureSupported('transition');
+    if (!transitionSupport) {
+      unfreezeIELoadingAnimation();
+    }
+    timeoutPending = true;
+    return setTimeout((function() {
+      if (!spinnerHiddenDuringTimeout) {
+        $('#loading-overlay-container').removeClass('hidden').addClass('visible');
+        setTimeout((function() {
+          return $('#loading-overlay').addClass('visible');
+        }), 1);
+        timeoutPending = false;
+        return spinnerHiddenDuringTimeout = false;
+      }
+    }), 200);
+  };
+
+  hideLoadingSpinner = function() {
+    $('#loading-overlay-container').addClass('hidden');
+    $('#loading-overlay').removeClass('visible');
+    if (timeoutPending) {
+      return spinnerHiddenDuringTimeout = true;
+    }
+  };
+
+  unfreezeIELoadingAnimation = function() {
+    $('#loading-overlay-container .fallback-spinner').innerHTML = '';
+    $('#loading-overlay-container .fallback-spinner').css('display', '');
+    return $('#loading-overlay-container .fallback-spinner').css('background', $('#loading-overlay-container .fallback-spinner').css('background'));
+  };
+
+  createFallbackLoadingSpinner = function() {
+    var fallbackSpinner, transitionSupport;
+    transitionSupport = $.isCSSFeatureSupported('transition');
+    if (!transitionSupport) {
+      $('.loading-spinner').remove();
+      fallbackSpinner = '<div class="fallback-spinner"></div>';
+      return $('#loading-overlay').append(fallbackSpinner);
+    }
+  };
+
+}).call(this);
+:ET

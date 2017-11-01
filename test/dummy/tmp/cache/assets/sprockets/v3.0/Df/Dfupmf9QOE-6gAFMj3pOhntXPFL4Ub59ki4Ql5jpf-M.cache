@@ -1,0 +1,98 @@
+I"»	(function() {
+  this.UI = (function() {
+    function UI() {}
+
+    UI.load = function(callback) {
+      if ((typeof Turbolinks !== "undefined" && Turbolinks !== null) && Turbolinks.supported) {
+        return $(document).on('turbolinks:load', function() {
+          return callback();
+        });
+      } else {
+        return $(function() {
+          return callback();
+        });
+      }
+    };
+
+    UI.ujsSend = function(selector, callback) {
+      return $(document).ajaxSend(function(event, request, options) {
+        return callback(event, request, options);
+      });
+    };
+
+    UI.ujsSuccess = function(callback) {
+      return $(document).ajaxSuccess(function(event, xhr, options) {
+        return callback(event, xhr, options);
+      });
+    };
+
+    UI.ujsComplete = function(callback) {
+      return $(document).ajaxComplete(function(event, xhr, options) {
+        return callback(event, xhr, options);
+      });
+    };
+
+    UI.ujsStart = function(callback) {
+      return $(document).ajaxStart(function() {
+        return callback();
+      });
+    };
+
+    UI.ujsStop = function(callback) {
+      return $(document).ajaxStop(function() {
+        return callback();
+      });
+    };
+
+    UI.ujsError = function(callback) {
+      return $(document).ajaxError(function(event, jqxhr, options, thrownError) {
+        return callback(event, jqxhr, options, thrownError);
+      });
+    };
+
+    UI.on = function(eventName, selector, callback) {
+      return $(document).on(eventName, selector, function(e) {
+        var el;
+        el = $(e.currentTarget);
+        return callback(e, el);
+      });
+    };
+
+    UI.input = function(selector, callback) {
+      return this.on('input', selector, callback);
+    };
+
+    UI.change = function(selector, callback) {
+      return this.on('change', selector, callback);
+    };
+
+    UI.blur = function(selector, callback) {
+      return this.on('blur', selector, callback);
+    };
+
+    UI.click = function(selector, callback) {
+      return $(document).on('click', selector, function(e) {
+        var el;
+        el = $(e.currentTarget);
+        if (callback(e, el) !== true) {
+          return e.preventDefault();
+        }
+      });
+    };
+
+    UI.submit = function(selector, callback) {
+      return $(document).on('submit', selector, function(e) {
+        var el;
+        el = $(e.currentTarget);
+        if (callback(e, el) !== true) {
+          return e.preventDefault();
+        }
+      });
+    };
+
+    return UI;
+
+  })();
+
+}).call(this);
+:ET

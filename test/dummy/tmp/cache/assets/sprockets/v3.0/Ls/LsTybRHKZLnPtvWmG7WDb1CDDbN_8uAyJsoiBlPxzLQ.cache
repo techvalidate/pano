@@ -1,0 +1,101 @@
+I"è(function() {
+  UI.click('form .js-submit-on-click', function(e, el) {
+    var f;
+    if (f = el.closest('form')) {
+      e.stopPropagation();
+      return f.submit();
+    }
+  });
+
+  UI.load(function() {
+    return $('input.js-focus-on-load').focus();
+  });
+
+  UI.load(function() {
+    return $.bindFormValidation($('body'));
+  });
+
+  $.bindFormValidation = function(html) {
+    return html.find('form').each(function() {
+      var f;
+      f = $(this);
+      if (!f.hasClass('js-novalidate')) {
+        return f.validate();
+      }
+    });
+  };
+
+  $.passwordComplexityValidationMessage = function(element) {
+    var value;
+    value = $(element).val();
+    if (value.length >= 8 && $('.min-chars')) {
+      $('.min-chars').addClass('valid');
+    } else {
+      $('.min-chars').removeClass('valid');
+    }
+    if (/\d/.test(value) && $('.min-nums')) {
+      $('.min-nums').addClass('valid');
+    } else {
+      $('.min-nums').removeClass('valid');
+    }
+    if (value.match(/[a-z]/i) && $('.min-letters')) {
+      return $('.min-letters').addClass('valid');
+    } else {
+      return $('.min-letters').removeClass('valid');
+    }
+  };
+
+  $.validator.addMethod('passwordComplexityMatch', function(value) {
+    return /[a-z].*[0-9]|[0-9].*[a-z]/i.test(value) && value.length >= 8;
+  }, '8 characters minimum, 1 number and 1 letter');
+
+  $.validator.addMethod('dateRangeValidate', function(value, el) {
+    var compareDate, currentDate, dtField, isValid, newValue;
+    isValid = true;
+    dtField = $(el).attr('data-rule-dateRangeValidate');
+    compareDate = moment(new Date($(dtField).val()));
+    newValue = moment(new Date(value));
+    currentDate = moment(new Date());
+    if ($(el).attr('data-datepicker') === 'date-only' && newValue.diff(currentDate, 'days') === 0) {
+      newValue.set({
+        'hour': currentDate.get('hour'),
+        'minute': currentDate.get('minute') + 20,
+        'second': currentDate.get('second')
+      });
+      compareDate.set({
+        'hour': currentDate.get('hour'),
+        'minute': currentDate.get('minute') + 20,
+        'second': currentDate.get('second')
+      });
+    }
+    if (compareDate) {
+      isValid = newValue.isSameOrBefore(compareDate);
+    }
+    return isValid;
+  }, 'Start must come before End');
+
+  $.validator.addMethod('dateIsInFuture', function(value, el) {
+    var currentDate, newValue;
+    newValue = moment(new Date(value));
+    currentDate = moment(new Date());
+    if ($(el).attr('data-datepicker') === 'date-only' && newValue.diff(currentDate, 'days') === 0) {
+      newValue.set({
+        'hour': currentDate.get('hour'),
+        'minute': currentDate.get('minute') + 20,
+        'second': currentDate.get('second')
+      });
+    }
+    return newValue.isSameOrAfter(currentDate);
+  }, 'Current or future date required');
+
+  $.customRomeValidators = function(field) {
+    var relatedField;
+    $(field.associated).valid();
+    relatedField = $(field.associated).attr('data-validate-related');
+    if (relatedField) {
+      return $(relatedField).valid();
+    }
+  };
+
+}).call(this);
+:ET

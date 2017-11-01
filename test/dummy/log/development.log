@@ -1,0 +1,48 @@
+Started GET "/" for 127.0.0.1 at 2017-06-01 11:49:07 -0700
+Processing by Pano::GuideController#index as HTML
+  Rendering /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/index.haml within layouts/pano/guide
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/index.haml within layouts/pano/guide (1.7ms)
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/subnavs/_ui.haml (77.3ms)
+Completed 200 OK in 4322ms (Views: 4312.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guide/forms" for 127.0.0.1 at 2017-06-01 11:49:24 -0700
+Processing by Pano::GuideController#forms as HTML
+  Rendering /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/forms.haml within layouts/pano/guide
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/subnavs/_ui.haml (3.4ms)
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/forms.haml within layouts/pano/guide (7.8ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guide/forms" for 127.0.0.1 at 2017-06-01 11:49:25 -0700
+Processing by Pano::GuideController#forms as HTML
+  Rendering /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/forms.haml within layouts/pano/guide
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/subnavs/_ui.haml (18.5ms)
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/forms.haml within layouts/pano/guide (24.2ms)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guide/forms" for 127.0.0.1 at 2017-06-01 11:49:25 -0700
+Processing by Pano::GuideController#forms as HTML
+  Rendering /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/forms.haml within layouts/pano/guide
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/subnavs/_ui.haml (5.2ms)
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/forms.haml within layouts/pano/guide (10.5ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guide/forms" for 127.0.0.1 at 2017-06-01 11:50:04 -0700
+Processing by Pano::GuideController#forms as HTML
+  Rendering /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/forms.haml within layouts/pano/guide
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/subnavs/_ui.haml (6.1ms)
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/forms.haml within layouts/pano/guide (12.5ms)
+Completed 200 OK in 87ms (Views: 82.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-01 12:30:18 -0700
+Processing by Pano::GuideController#index as HTML
+  Rendering /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/index.haml within layouts/pano/guide
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/index.haml within layouts/pano/guide (2.9ms)
+  Rendered /Users/courtkizer/Documents/techvalidate/repos/surveymonkey/pano/app/views/pano/guide/subnavs/_ui.haml (171.3ms)
+Completed 200 OK in 1032ms (Views: 1002.6ms | ActiveRecord: 0.0ms)
+
+

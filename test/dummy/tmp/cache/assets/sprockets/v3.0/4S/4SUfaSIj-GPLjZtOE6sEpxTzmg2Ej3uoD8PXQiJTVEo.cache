@@ -1,0 +1,12 @@
+I"Ž(function() {
+  var tz;
+
+  tz = jstz.determine();
+
+  Cookies.set('timezone', tz.name(), {
+    expires: 7,
+    path: '/'
+  });
+
+}).call(this);
+:ET
