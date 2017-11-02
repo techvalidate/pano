@@ -12,7 +12,7 @@ module Pano
     end
 
     def trial_terms_of_use_url
-      "https://#{I18n.locale}.surveymonkey.com/mp/policy/surveymonkey-trial-account-terms-service/"
+      'https://www.surveymonkey.com/mp/policy/surveymonkey-trial-account-terms-service/'
     end
 
     def mark_if_current(options)
