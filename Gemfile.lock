@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pano (3.0.0)
+    pano (3.0.1)
       bourbon (= 4.3.4)
       coffee-rails (= 4.2.1)
       haml (= 5.0.1)
