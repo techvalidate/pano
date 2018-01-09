@@ -17,6 +17,6 @@
     "moment": "^2.18.1",
     "rome": "^2.1.22",
     "switchery": "^0.0.2",
-    "turbolinks": "^5.1.0"
+    "turbolinks": "^5.1.1"
   }
 }

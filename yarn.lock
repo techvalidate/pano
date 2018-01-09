@@ -122,6 +122,6 @@ ticky@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ticky/-/ticky-1.0.0.tgz#e87f38ee0491ea32f62e8f0567ba9638b29f049c"
 
-turbolinks@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/turbolinks/-/turbolinks-5.1.0.tgz#ad5af7849171973fd445a8fc089dcdec6e50e8c1"
+turbolinks@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/turbolinks/-/turbolinks-5.1.1.tgz#3d418a2d8172edbde5e787bf74cb7bef151ae43f"
