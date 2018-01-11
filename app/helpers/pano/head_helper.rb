@@ -6,6 +6,10 @@ module Pano
       s "<meta name='turbolinks-cache-control' content='no-cache'>"
     end
 
+    def disable_turbolinks_preview
+      s "<meta name='turbolinks-cache-control' content='no-preview'>"
+    end
+
     def ie_meta_tags
       s <<-EOF
       <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
