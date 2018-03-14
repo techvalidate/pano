@@ -1,0 +1,9 @@
+require('./behavior');
+require('./browser');
+require('./clickable');
+require('./flash_messages');
+require('./forms');
+require('./inline_spinner');
+require('./loading_spinner');
+require('./timezone');
+require('./tooltips');

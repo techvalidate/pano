@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '5.1.4'
   s.add_dependency 'sass-rails', '5.0.6'
   s.add_dependency 'turbolinks', '5.1.0'
-
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'sqlite3'
 end

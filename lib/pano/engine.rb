@@ -2,7 +2,7 @@ require 'bourbon'
 require 'haml'
 require 'jquery-rails'
 require 'turbolinks'
-
+require 'webpacker'
 require 'pano/version' # So the version number is available in the mounted style guide
 
 module Pano
