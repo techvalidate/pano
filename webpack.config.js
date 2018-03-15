@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
@@ -10,6 +11,12 @@ module.exports = {
     path: __dirname + '/javascript/dist'
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      _: 'lodash',
+      $: 'jquery',
+      jQuery: 'jquery',
+      jquery: 'jquery'
+    }),
     new UglifyJsPlugin({
       test: /\.js$/,
       exclude: /node_modules/
