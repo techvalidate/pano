@@ -7,7 +7,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: __dirname + '/app/javascripts/packs'
+    path: __dirname + '/javascript/dist'
   },
   plugins: [
     new UglifyJsPlugin({
