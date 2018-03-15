@@ -1,6 +1,6 @@
-import load from './ui'
+import { load as onLoad } from './ui'
 
-load(function() {
+onLoad(function() {
   // setup powertips options for the tooltips
   const tooltipOptions = {
     placement: 'n',

@@ -23,37 +23,9 @@ module.exports = {
       sourceMap: true
     })
   ],
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env']
-          }
-        }
-      },
-      {
-        test: require.resolve('jquery'),
-        use: [{
-          loader: 'expose-loader',
-          options: '$'
-        },
-        {
-          loader: 'expose-loader',
-          options: 'jquery'
-        },
-        {
-          loader: 'expose-loader',
-          options: 'jQuery'
-        }]
-      }
-    ]
-  },
   resolve: {
     alias: {
+      '$': 'jquery',
       'sticky-kit': 'sticky-kit/dist/sticky-kit',
       dropzone: 'dropzone/src/dropzone'
     }
