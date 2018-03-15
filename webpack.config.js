@@ -10,6 +10,7 @@ module.exports = {
     filename: '[name].js',
     path: __dirname + '/javascript/dist'
   },
+  devtool: 'inline-source-map',
   plugins: [
     new webpack.ProvidePlugin({
       _: 'lodash',
