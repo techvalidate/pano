@@ -17,4 +17,13 @@ RSpec.describe User do
     expect(user).to be_valid
   end
 
+  it 'prevents emails with newline characters' do
+    user = User.new email: "name1@gmail.com; \nname2@hotmail.com"
+    expect(user).not_to be_valid
+  end
+
+  it 'prevents emails with semicolons' do
+    user = User.new email: "name1@gmail.com; name2@hotmail.com"
+    expect(user).not_to be_valid
+  end
 end
