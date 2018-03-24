@@ -54,7 +54,14 @@ module Pano
     # back button
     # ------------------------------------------------------------
 
+    # Use Rails special :back token when a referrer is available
+    # AND it will not send you to the same page
+    # If that default logic still doesn't work, accepts an override :force option
+
     def back_btn_to(label, options = {}, html_options = {})
+      unless html_options[:force]
+        options = :back if request.referer.present? && url_for(options) != request.referer
+      end
       icon_btn_to(:back, label, options, html_options.add_class('btn-white btn-back'))
     end
 
