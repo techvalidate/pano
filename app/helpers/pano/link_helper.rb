@@ -19,6 +19,10 @@ module Pano
       current_page?(options) ? 'selected' : ''
     end
 
+    def js_void
+      'Javascript:void(0)'
+    end
+
     def nav_link(name, url, options = {})
       key = options.delete(:key) || name.parameterize.underscore.to_sym
       options = options.selected_if(@nav == key).add_class 'nav-link'

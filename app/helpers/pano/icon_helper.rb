@@ -12,11 +12,17 @@ module Pano
     #--------------------
     # render an icon
     #--------------------
-
     def icon(icon_name, options = {})
-      klass = options[:class] ? (options.delete :class) : ''
-      klass += ' material-icons'
-      content_tag :i, material_icon_for(icon_name), options.add_class(klass)
+      futuro_icon = futuro_icon_for(icon_name)
+
+      if futuro_icon
+        size = options.delete :size || '32'
+        image_tag futuro_icon, options.merge({size: size})
+      else
+        klass = options[:class] ? (options.delete :class) : ''
+        klass += ' material-icons'
+        content_tag :i, material_icon_for(icon_name), options.add_class(klass)
+      end
     end
 
     def med_icon(icon_name, options = {})
@@ -36,6 +42,16 @@ module Pano
       return MaterialIcons[i.to_sym] if MaterialIcons.key? i.to_sym
       i.to_s
     end
+
+    def futuro_icon_for(i)
+      return FuturoIcons[i.to_sym] if FuturoIcons.key? i.to_sym
+      false
+    end
+
+    futuro_path = 'pano/icons/'
+    FuturoIcons = {
+      'take_a_break': futuro_path + 'take_a_break.svg'
+    }
 
     MaterialIcons = {
       angle_up: 'keyboard_arrow_up',

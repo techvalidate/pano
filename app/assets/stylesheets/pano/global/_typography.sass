@@ -93,7 +93,7 @@ h1, .h1
   line-height: 40px
   font-weight: 300
   letter-spacing: $heading-letter-spacing
-  color: $dark-blue
+  color: $charcoal
   +mobile
     font-size: 24px
     line-height: 32px
@@ -104,7 +104,7 @@ h2, .h2
   line-height: 32px
   font-weight: 300
   letter-spacing: $heading-letter-spacing
-  color: $dark-blue
+  color: $charcoal
   +mobile
     font-size: 20px
     line-height: 28px
@@ -150,6 +150,54 @@ h6, .h6
 
 p, .p
   font-weight: normal
+
+
+// -----------------------------
+// Title styles
+// -----------------------------
+
+=page-title
+  font-family: $font-stack
+  font-size: 24px
+  color: $charcoal
+  line-height: 40px
+  font-weight: bold
+
+.page-title
+  +page-title
+  h1
+    +page-title
+
+
+.card-title, .table-title
+  font-family: $font-stack
+  font-size: 18px
+  color: $charcoal
+  letter-spacing: 0
+  line-height: 28px
+  font-weight: bold
+
+.small-card-title
+  font-family: $font-stack
+  font-size: 15px
+  color: $stone
+  letter-spacing: 0
+  line-height: 24px
+
+.modal-title
+  font-family: $font-stack
+  font-size: 22px
+  color: #333E48
+  line-height: 32px
+  font-weight: bold
+  margin: 8px 0
+
+.section-title
+  font-family: $font-stack
+  font-size: 20px
+  color: #6B787F
+  letter-spacing: 0
+  line-height: 28px
 
 // ------------------------------------------
 // text sizes -- for when you can't just use headings
@@ -223,8 +271,17 @@ hr
   color: $slate
   +mobile
     font-size: $font-size
+=intro
+  font-size: 15px
+  font-weight: 300
+  color: $slate
+  +mobile
+    font-size: $font-size
+
 
 .note
+  color: $note-color
+=note
   color: $note-color
 
 span.trademark

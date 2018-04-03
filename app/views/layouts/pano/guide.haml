@@ -5,10 +5,9 @@
 
     = material_icons
     = stylesheet_link_tag    'pano/guide', 'data-turbolinks-track': 'reload', media: 'all'
-    = javascript_include_tag 'pano/guide', 'data-turbolinks-track': 'reload'
-
+    = javascript_pack_tag     'application', 'data-turbolinks-track': 'reload'
     %title= "Pano: #{@page_title}"
-  %body
+  %body{data: {controller: 'application'}}
 
     #nav
       .inner

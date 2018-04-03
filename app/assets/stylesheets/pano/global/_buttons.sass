@@ -1,4 +1,4 @@
-$button-radius: 3px
+$button-radius: 2px
 
 //=========================================
 // base button mixin. used by the .btn class, <button> tags, and also dropdowns
@@ -14,9 +14,10 @@ $button-radius: 3px
   transition: all 0.2s ease-in-out
   border: solid 1px transparent
   border-radius: $button-radius
+  text-transform: uppercase
 
-  +btn_dimensions(32px, 12px, $font-size)
-  +btn_colors($blue, transparent, white)
+  +btn_dimensions(32px, 8px, $font-size)
+  +btn_colors($sabeus, transparent, white)
 
   // button spacing
   margin-right: 4px
@@ -88,7 +89,7 @@ $button-radius: 3px
   //=========================================
 
   &.btn-primary
-    +btn_colors($green, transparent, white)
+    +btn_colors($sabeus, transparent, white)
 
   &.btn-warning
     +btn_colors($error-color, transparent, white)
@@ -100,14 +101,13 @@ $button-radius: 3px
     +btn_colors($lighter-gray, $gray, $text-color)
 
   &.btn-outline
-    +btn_colors(transparent, $link-color, $link-color)
+    +btn_colors(transparent, $charcoal, $charcoal)
     &:hover
-      background-color: $link-color
-      color: white
+      border: 1px solid #899AA3
+      color: #57697A
     &:active
-      background-color: darken($link-color, 10%)
-      border-color: darken($link-color, 10%)
-      color: white
+      border: 1px solid #424B4F
+      color: #21272E
 
   // for when you want a white outline button on a dark bg
   &.btn-outline-white

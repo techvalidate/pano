@@ -1,13 +1,15 @@
 {
-  "name": "pano",
-  "version": "3.0.0",
-  "main": "app/javascripts/global/index.coffee",
+  "name": "pano-dummy",
+  "version": "0.0.0",
   "repository": "git@github.com:techvalidate/pano.git",
   "author": "Jordan McKible <jordan@techvalidate.com>",
   "license": "MIT",
   "dependencies": {
     "@rails/webpacker": "^3.4.1",
-    "pano-js": "git+ssh://git@github.com:techvalidate/pano-js"
+    "core-js": "^2.5.4",
+    "element-closest": "^2.0.2",
+    "pano-js": "git+ssh://git@github.com:techvalidate/pano-js",
+    "stimulus": "^1.0.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.1"

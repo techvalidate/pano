@@ -16,6 +16,7 @@ module Pano
         pano/marketing.css
 
         pano/guide.js
+        pano/icons/*.svg
       )
     end
 

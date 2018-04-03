@@ -22,6 +22,7 @@ Pano::Engine.routes.draw do
     :hr,
     :arrows,
     :banners,
+    :modals,
     :flash_messages,
     :spinners,
 
