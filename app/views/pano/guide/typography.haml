@@ -18,7 +18,7 @@
       %h2.modal-title This is a Modal Title. It should be an H2
       %h3.card-title This is a Card Title. It should be an H3
       %h3.table-title This is a Table Title. It should be an H3
-      %h4.small-card-title This is a Small Card Title. It should be an H4
+      %h4.card-title--small This is a Small Card Title. It should be an H4
       %p.featured--large This is Large Featured Text
       %p.featured This is Featured Text
       %p.note This is Note Text - often used for module descriptions under titles
@@ -54,16 +54,6 @@
       %p.indented .indented: indented 32px
       %p.nowrap .nowrap: white-space: nowrap
 
-= card 'Text Sizes' do
-  %p In addition to sizing text by using headings, you can use css classes.
-  = haml_example do
-    :plain
-      %p.huge I am a p tag with the .huge class
-      %p.larger I am a p tag with the .larger class
-      %h2.normal-size I am a H2 tag with the .normal-size class
-      %p.small I am a small p tag with the .small class
-      %p.tiny I am a very small p tag with the .tiny class
-
 = card 'Weights' do
   = haml_example do
     :plain
@@ -74,20 +64,6 @@
       %p
         %strong I am a strong tag inside a p
       %p.uppercase I am a p tag with the .uppercase class
-
-= card 'Overriding Colors and Weights' do
-  %p You can override the color, size and weights of different text elements in several ways.
-  %ul
-    %li Make one element look like a certain heading with styles named after a particular heading (ex: add .h3 to make something look like a h3 tag)
-    %li Override the color of an element with one of the color classes from __sass (ex: %h4.blue)
-    %li Override the weight of an element with one of the font-weight classes (ex: %h4.semibold)
-    %li Override the size of an element with one of the text size classes (ex: %h2.normal-size)
-  = haml_example do
-    :plain
-      %h4.strong.blue I am a strong blue h4 tag
-      %h1.larger.red.semibold I am a h1 tag with overridden size, weight, and color
-      %h2.h5 I am a h2 masquerading as a h5 tag
-      %h4.h2 This h4 looks like a h2
 
 = card 'Misc' do
   %h4 HR tags

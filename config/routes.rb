@@ -16,7 +16,7 @@ Pano::Engine.routes.draw do
     :links,
     :buttons,
     :tabs,
-    :boxes,
+    :cards,
     :tables,
     :forms,
     :hr,
@@ -25,7 +25,6 @@ Pano::Engine.routes.draw do
     :modals,
     :flash_messages,
     :spinners,
-
     :css,
     :js,
     :helpers

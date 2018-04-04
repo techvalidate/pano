@@ -89,7 +89,7 @@ module Pano
       end
 
       if tertiary_args
-        btns.append action_btn(tertiary_args, {class: 'fl btn-warning'})
+        btns.append action_btn(tertiary_args, {class: 'fl btn--warning'})
       end
 
       content_tag :div, class: 'modal-footer' do
@@ -114,19 +114,6 @@ module Pano
       content_tag :div, class: 'modal-footer' do
          safe_join(btns)
       end
-    end
-
-    def action_btn(args, options = {})
-      text, url, opts = args
-      klass = options.delete :class
-
-      btn_to text, (url || js_void), (opts || {}).add_class("modal-action #{klass}")
-    end
-
-    def action_submit_btn(*args)
-      form, text, opts = args
-
-      form.submit (text || 'Submit'), (opts || {}).add_class('modal-action')
     end
 
     def close_drawer_icon(controller)

@@ -36,6 +36,8 @@ $button-radius: 2px
   .material-icons
     margin-right: 4px
     vertical-align: text-top
+    font-size: 1.5em
+    line-height: 0.75em
   &.icon-rt
     .material-icons
       margin-right: 0
@@ -54,7 +56,7 @@ $button-radius: 2px
 = btn_dimensions($height, $side-padding, $font-size)
   height: $height
   min-width: $height
-  line-height: $height - 2px // accounts for the border width
+  line-height: $height
   padding: 0 $side-padding
   font-size: $font-size
 
@@ -137,16 +139,6 @@ $button-radius: 2px
       background-color: auto
       border-color: auto
 
-
-
-  //=========================================
-  // pill buttons
-  //=========================================
-
-  &.btn-pill
-    border-radius: 100px
-    &.btn-tiny
-      padding: 0 8px
 
   //=========================================
   // button sizes
@@ -248,7 +240,9 @@ $button-radius: 2px
         color: white
         border-color: white
 
-// todo: is this necessary?
+
+
+  // todo: is this necessary?
 .dropdown-btn-group
   +clearfix
   display: inline-block

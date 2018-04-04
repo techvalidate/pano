@@ -1,5 +1,43 @@
+@card-padding: 32px
+=card
+  margin-top: 32px
+  padding: 32px
+  background: #fff
+  border-radius: 3px
+  background-clip: border-box
+  border: 1px solid $pebble
+  +clearfix
+  +mobile
+    padding: 16px
+    margin-top: 16px
+
 .card
-  +box
+  +card
+
+  .card-header
+    position: relative
+    margin-bottom: 16px
+    .card-icon
+      display: block
+      width: 32px
+    .card-title
+      display: inline-block
+    .card-tertiary-action
+      position: absolute
+      right: 0
+      top: 0
+      text-align: right
+      a
+        .material-icons
+          font-size: 24px
+          color: $sabeus
+
+  .card-footer
+    margin-top: 24px
+    text-align: right
+
+
+
 
 
 .settings-cards-container

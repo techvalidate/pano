@@ -57,6 +57,29 @@ module Pano
     def back_btn_to(label, options = {}, html_options = {})
       icon_btn_to(:back, label, options, html_options.add_class('btn-white btn-back'))
     end
-  end
 
+    # ------------------------------------------------------------
+    # Modal and Card Action Buttons
+    # ------------------------------------------------------------
+
+    def action_btn(args, options = {})
+      text, url, opts = args
+      klass = options.delete :class
+
+      btn_to text, (url || js_void), (opts || {}).add_class(klass)
+    end
+
+    def action_submit_btn(*args)
+      form, text, opts = args
+
+      form.submit (text || 'Submit'), (opts || {})
+    end
+
+    def action_link(args, options = {})
+      text, url, opts = args
+      klass = options.delete :class
+
+      link_to text, url, (opts || {}).add_class(klass)
+    end
+  end
 end
