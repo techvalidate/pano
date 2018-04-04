@@ -11,7 +11,7 @@
         = modal_body_text 'This is modal body text'
         = modal_footer_actions primary: ['Save', '#'], secondary: ['Cancel', '#']
 
-  = btn_to 'Launch Modal', '#basic-modal', data: {action: 'click->application#openModal'}, class: 'mt-m'
+  = btn_to 'Launch Modal', '#basic-modal', data: {action: 'click->modal#open'}, class: 'mt-m'
 
 = card 'Modal with Icon' do
   = haml_example do
@@ -20,7 +20,7 @@
         = modal_body_text 'This is modal body text'
         = modal_footer_actions primary: ['Save', '#'], secondary: ['Skip', '#'], tertiary: ['Delete', '#']
 
-  = btn_to 'Launch Modal with Icon', '#icon-modal', data: {action: 'click->application#openModal'}, class: 'mt-m'
+  = btn_to 'Launch Modal with Icon', '#icon-modal', data: {action: 'click->modal#open'}, class: 'mt-m'
 
 = card 'Modal with CTA' do
   = haml_example do
@@ -29,4 +29,4 @@
         = modal_body_text 'This is modal body text'
         = modal_footer_cta 'CTA', '#'
 
-  = btn_to 'Launch Modal with CTA', '#cta-modal', data: {action: 'click->application#openModal'}, class: 'mt-m'
+  = btn_to 'Launch Modal with CTA', '#cta-modal', data: {action: 'click->modal#open'}, class: 'mt-m'

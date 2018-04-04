@@ -11,14 +11,12 @@
 
   = haml_example do
     :plain
-      = btn_to 'Default Button', '#'
-      = btn_to 'Primary Button', '#', class: 'btn-primary'
-      = btn_to 'Warning Button', '#', class: 'btn-warning'
-      = btn_to 'White Button', '#', class: 'btn-white'
-      = btn_to 'Gray Button', '#', class: 'btn-gray'
-      = btn_to 'Outline Button', '#', class: 'btn-outline'
-      .box.bg-dark-blue
-        = btn_to 'Outline White Button', '#', class: 'btn-outline-white'
+      = btn_to 'Default Button',  '#'
+      = btn_to 'Warning Button',  '#', class: 'btn-warning'
+      = btn_to 'Outline Button',  '#', class: 'btn-outline'
+      = btn_to 'Disabled Button', '#', class: 'btn-disabled'
+      .box.bg-slate
+        = btn_to 'Outline White Button', '#', class: 'btn-outline--white'
         %span.white
           &larr; use this one only on a dark bg
 
@@ -32,11 +30,9 @@
 
   = haml_example do
     :plain
-      = huge_btn_to 'Huge Button', '#'
       = large_btn_to 'Large Button', '#'
       = btn_to 'Default Button', '#'
       = small_btn_to 'Small Button', '#'
-      = tiny_btn_to 'Tiny Button', '#'
 
 = box 'Button Groups' do
   = haml_example do

@@ -68,12 +68,16 @@ $button-radius: 2px
   border-color: $border-color
   &:hover
     text-decoration: none
-    background-color: darken($bg-color, 5%)
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2)
+    color: lighten($text_color, 10%)
+    border-color: lighten($border-color, 10%)
+    background-color: lighten($bg-color, 10%)
   &:active, &.selected
     transition: none
     background-color: darken($bg-color, 10%)
-    box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.2)
+    border-color: darken($border-color, 10%)
+    color: darken($text_color, 10%)
+    cursor: grab
+
 
 
 
@@ -92,7 +96,7 @@ $button-radius: 2px
     +btn_colors($sabeus, transparent, white)
 
   &.btn-warning
-    +btn_colors($error-color, transparent, white)
+    +btn_colors(transparent, $warning-color, $warning-color)
 
   &.btn-white
     +btn_colors(white, $light-gray, $text-color)
@@ -101,25 +105,39 @@ $button-radius: 2px
     +btn_colors($lighter-gray, $gray, $text-color)
 
   &.btn-outline
-    +btn_colors(transparent, $charcoal, $charcoal)
+    +btn_colors(transparent, $slate, $charcoal)
     &:hover
-      border: 1px solid #899AA3
-      color: #57697A
-    &:active
-      border: 1px solid #424B4F
-      color: #21272E
+      text-decoration: none
+      color: lighten($charcoal, 30%)
+      border-color: lighten($slate, 30%)
+    &:active, &.selected
+      border-color: darken($slate, 10%)
+      color: darken($charcoal, 10%)
+
 
   // for when you want a white outline button on a dark bg
-  &.btn-outline-white
-    +btn_colors(transparent, rgba(255,255,255,0.7), rgba(255,255,255,0.8))
+  &.btn-outline--white
+    +btn_colors(transparent, rgba(255,255,255,0.7), white)
     &:hover, &:active
-      background-color: rgba(255,255,255,0.3)
       color: white
       border-color: white
+    &:active
+      color: rgba(255,255,255,0.8)
 
   // todo: is this necessary?
   &.btn-cancel
     +btn_colors(white, $light-gray, $slate)
+
+  &.btn-disabled
+    opacity: 0.3
+    cursor: not-allowed
+    transition: none
+    &:hover, &:active
+      color: auto
+      background-color: auto
+      border-color: auto
+
+
 
   //=========================================
   // pill buttons
@@ -134,21 +152,14 @@ $button-radius: 2px
   // button sizes
   //=========================================
 
-  &.btn-huge
-    +btn_dimensions(48px, 16px, 20px)
-    .material-icons
-      font-size: 24px
-
   &.btn-large
     +btn_dimensions(40px, 16px, 16px)
+
     .material-icons
       font-size: 20px
 
   &.btn-small
     +btn_dimensions(24px, 8px, $small-font-size)
-
-  &.btn-tiny
-    +btn_dimensions(20px, 4px, $tiny-font-size)
 
   //=========================================
   // button alignment styles

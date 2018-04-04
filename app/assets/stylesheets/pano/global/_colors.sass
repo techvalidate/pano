@@ -3,6 +3,7 @@
 //============================================
 
 // basic colors
+
 $sabeus: #00BF6F
 $midnight: #001756
 $concord: #671E75
@@ -11,13 +12,6 @@ $bumblebee: #F9BE00
 $bengal: #F05B24
 $raspberry: #AC145A
 $link: #00A8FF
-
-// deprecated
-$dark-blue:    #05467e
-$blue:         #00a8ff
-$green:        #23D385
-$yellow:       #f9be00
-$red:          #d22953
 
 // neutrals
 $black:       #000000
@@ -28,10 +22,119 @@ $flint:       #d0d2d3
 $pebble:      #edeeee
 $canvas:      #f7f8fa
 
-$gray:          #9da5aa
-$light-gray:    #d0d2d3
-$lighter-gray:  #edeeee
-$bg-gray:       #f7f8fa
+$gray:          $stone
+$light-gray:    $flint
+$lighter-gray:  $pebble
+$bg-gray:       $canvas
+
+// semantic colors
+$text-color:      $charcoal
+$link-color:      $link
+$note-color:      $slate
+$success-color:   $sabeus
+$warning-color:   $bengal
+$error-color:     $bengal
+$disabled-color:   $stone
+
+
+//============================================
+// css classes based on color variables
+//============================================
+
+.sabeus
+  color: $sabeus !important
+.midnight
+  color: $midnight !important
+.concord
+  color: $concord !important
+.arctic
+  color: $arctic !important
+.bumblebee
+  color: $bumblebee !important
+.bengal
+  color: $bengal !important
+.raspberry
+  color: $raspberry !important
+.link
+  color: $link !important
+
+
+// neutrals
+.charcoal
+  color: $charcoal !important
+.slate
+  color: $slate !important
+.stone
+  color: $stone !important
+.flint
+  color: $flint !important
+.pebble
+  color: $pebble !important
+.canvas
+  color: $canvas !important
+.white
+  color: white !important
+
+
+.bg-sabeus
+  background-color: $sabeus !important
+.bg-midnight
+  background-color: $midnight !important
+.bg-concord
+  background-color: $concord !important
+.bg-arctic
+  background-color: $arctic !important
+.bg-bumblebee
+  background-color: $bumblebee !important
+.bg-bengal
+  background-color: $bengal !important
+.bg-raspberry
+  background-color: $raspberry !important
+.bg-link
+  background-color: $link !important
+
+
+// neutrals
+.bg-charcoal
+  background-color: $charcoal !important
+.bg-slate
+  background-color: $slate !important
+.bg-stone
+  background-color: $stone !important
+.bg-flint
+  background-color: $flint !important
+.bg-pebble
+  background-color: $pebble !important
+.bg-canvas
+  background-color: $canvas !important
+.bg-white
+  background-color: white !important
+
+
+// semantic colors
+.text-color
+  color: $text-color !important
+.link-color
+  color: $link !important
+.note-color
+  color: $note-color !important
+.success-color
+  color: $success-color !important
+.warning-color
+  color: $warning-color !important
+.error-color
+  color: $error-color !important
+
+
+//=====================
+//  DEPRECATED COLORS
+//=====================
+
+$dark-blue:    #05467e
+$blue:         #00a8ff
+$green:        #23D385
+$yellow:       #f9be00
+$red:          #d22953
 
 // accent colors
 $orange:       #f05b24
@@ -40,20 +143,10 @@ $purple:       #671e75
 $teal:         #2dccd3
 $apple-green:  #88b81c
 
-// semantic colors
-$text-color:      $charcoal
-$link-color:      $link
-$note-color:      $slate
-$warning-color:   $orange
-$error-color:     $red
 $border-color:    #E0E0E0
 $promoter-color:  $green
 $passive-color:   $yellow
 $detractor-color: $red
-
-//============================================
-// css classes based on color variables
-//============================================
 
 // basic colors
 .dark-blue
@@ -66,21 +159,6 @@ $detractor-color: $red
   color: $yellow !important
 .red
   color: $red !important
-
-// neutrals
-.charcoal
-  color: $charcoal !important
-.slate
-  color: $slate !important
-.gray
-  color: $gray !important
-.light-gray
-  color: $light-gray !important
-.lighter-gray
-  color: $lighter-gray !important
-.white
-  color: white !important
-
 // accent colors
 .orange
   color: $orange !important
@@ -93,25 +171,12 @@ $detractor-color: $red
 .apple-green
   color: $apple-green !important
 
-// semantic colors
-.text-color
-  color: $text-color !important
-.link-color
-  color: $link-color !important
-.note-color
-  color: $note-color !important
-.warning-color
-  color: $warning-color !important
-.error-color
-  color: $error-color !important
-.border-color
-  color: $border-color !important
-.promoter-color
-  color: $promoter-color !important
-.passive-color
-  color: $passive-color !important
-.detractor-color
-  color: $detractor-color !important
+.gray
+  color: $gray !important
+.light-gray
+  color: $light-gray !important
+.lighter-gray
+  color: $lighter-gray !important
 
 // basic color backgrounds
 .bg-dark-blue
@@ -140,3 +205,12 @@ $detractor-color: $red
   background-color: $bg-gray !important
 .bg-white
   background-color: white !important
+
+.border-color
+  color: $border-color !important
+.promoter-color
+  color: $promoter-color !important
+.passive-color
+  color: $passive-color !important
+.detractor-color
+  color: $detractor-color !important

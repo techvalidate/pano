@@ -18,32 +18,28 @@
 = box 'Color Swatches' do
 
   .grid
-    .col-3
+    .col-4
       %h4 Basic Colors
-      = color_swatch 'dark-blue'
-      = color_swatch 'blue'
-      = color_swatch 'green'
-      = color_swatch 'yellow'
-      = color_swatch 'red'
+      = color_swatch 'sabeus'
+      = color_swatch 'midnight'
+      = color_swatch 'concord'
+      = color_swatch 'arctic'
+      = color_swatch 'bumblebee'
+      = color_swatch 'bengal'
+      = color_swatch 'raspberry'
+      = color_swatch 'link'
 
-    .col-3
+    .col-4
       %h4 Neutrals
       = color_swatch 'charcoal'
       = color_swatch 'slate'
-      = color_swatch 'gray'
-      = color_swatch 'light-gray'
-      = color_swatch 'lighter-gray'
+      = color_swatch 'stone'
+      = color_swatch 'flint'
+      = color_swatch 'pebble'
+      = color_swatch 'canvas'
       = color_swatch 'white'
 
-    .col-3
-      %h4 Accent Colors
-      = color_swatch 'orange'
-      = color_swatch 'magenta'
-      = color_swatch 'purple'
-      = color_swatch 'teal'
-      = color_swatch 'apple-green'
-
-    .col-3
+    .col-4
       %h4 Semantic Colors
       %h6 (based on colors to left)
       = color_swatch 'text-color'
@@ -51,36 +47,36 @@
       = color_swatch 'note-color'
       = color_swatch 'warning-color'
       = color_swatch 'error-color'
-      = color_swatch 'border-color'
-      = color_swatch 'promoter-color'
-      = color_swatch 'passive-color'
-      = color_swatch 'detractor-color'
 
 = box 'Background-color Classes' do
   %p Several of the named colors also have utility CSS classes for setting background colors.
   = haml_example do
     :plain
-      .box.no-shadow.bg-dark-blue
-        %p.white .bg-dark-blue: dark-blue bg
-      .box.no-shadow.bg-blue
-        %p.white .bg-blue: blue bg
-      .box.no-shadow.bg-green
-        %p.white .bg-green: green bg
-      .box.no-shadow.bg-red
-        %p.white .bg-red: red bg
-      .box.no-shadow.bg-yellow
-        %p.white .bg-yellow: yellow bg
+      .box.no-shadow.bg-sabeus
+        %p.white .bg-sabeus: dark-sabeus bg
+      .box.no-shadow.bg-midnight
+        %p.white .bg-midnight: midnight bg
+      .box.no-shadow.bg-concord
+        %p.white .bg-concord: concord bg
+      .box.no-shadow.bg-arctic
+        %p.white .bg-arctic: arctic bg
+      .box.no-shadow.bg-bumblebee
+        %p.white .bg-bumblebee: bumblebee bg
+      .box.no-shadow.bg-bengal
+        %p.white .bg-bengal: bengal bg
+      .box.no-shadow.bg-raspberry
+        %p.white .bg-raspberry: raspberry bg
       .box.no-shadow.bg-charcoal
         %p.white .bg-charcoal: charcoal bg
       .box.no-shadow.bg-slate
         %p.white .bg-slate: slate bg
-      .box.no-shadow.bg-gray
-        %p.white .bg-gray: gray bg
-      .box.no-shadow.bg-light-gray
-        %p .bg-light-gray: light-gray bg
-      .box.no-shadow.bg-lighter-gray
-        %p .bg-lighter-gray: lighter-gray bg
-      .box.no-shadow.bg-bg-gray
-        %p .bg-bg-gray: bg-gray bg
+      .box.no-shadow.bg-stone
+        %p.white .bg-stone: stone bg
+      .box.no-shadow.bg-flint
+        %p .bg-flint: flint bg
+      .box.no-shadow.bg-pebble
+        %p .bg-pebble: pebble bg
+      .box.no-shadow.bg-canvas
+        %p .bg-canvas: canvas bg
       .box.no-shadow.bg-white
         %p .bg-white: white bg
