@@ -22,7 +22,7 @@
       width: 32px
     .card-title
       display: inline-block
-    .card-tertiary-action
+    .card-header-action
       position: absolute
       right: 0
       top: 0
@@ -37,8 +37,14 @@
     text-align: right
 
 
-
-
+.card--divided
+  padding: 0
+  .card-header, .card-body, .card-footer
+    padding: 8px 24px
+  .card-header
+    border-bottom: 1px solid $pebble
+  .card-footer
+    border-top: 1px solid $pebble
 
 .settings-cards-container
   max-width: 1056px
@@ -47,6 +53,7 @@
   @media all and (max-width: 1056px)
     max-width: 682px
 
+// TODO - 3.x Card, do we still need?
 .settings-card
   padding: 40px 32px 16px 32px
   text-align: center

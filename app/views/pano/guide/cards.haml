@@ -16,12 +16,10 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
             = card_footer_with_action ['Primary CTA', '#']
 
-          = card 'Card with Subtitle Text', small_title: true do
+          = small_card 'Card with Subtitle Text' do
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
-            = card_footer_with_actions primary: ['Save', '#'], secondary: ['Skip', '#']
-
         .col-6
-          = card 'Card with Title and Right Action', tertiary_action: icon_to(:file_download, '', '#') do
+          = card 'Card with Title and Right Action', header_action: icon_to(:file_download, '', '#') do
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
             = card_footer_with_action ['Primary CTA', '#']
 
@@ -30,3 +28,9 @@
             = card_footer_with_actions primary: ['Save', '#'], secondary: ['Skip', '#']
 
 
+= card 'Other Cards' do
+  = haml_example do
+    :plain
+      = divided_card 'Divided Card' do
+        .card-body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
+        = card_footer_with_actions primary: ['Save', '#'], secondary: ['Skip', '#']

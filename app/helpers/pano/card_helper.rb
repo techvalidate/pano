@@ -1,23 +1,44 @@
 module Pano
   module CardHelper
+
     def card(title = '', options = {}, &block)
+      klass = options.delete :class
       if title.nil?
         header = ''
       else
         header = card_header(title, options)
       end
 
-      content = content_tag(:div, class: 'card-content') do
-        capture(&block)
+      content = capture(&block)
+
+      content_tag :div, class: "card #{klass}" do
+        header + content
       end
+    end
+
+    def small_card(title, options = {}, &block)
+      options[:small_title] = true
+
+      header = card_header(title, options)
+
+      content = capture(&block)
 
       content_tag :div, class: 'card' do
         header + content
       end
     end
 
+    def divided_card(*args, &block)
+      title, opts = args
+      opts = opts || {}
+
+      opts.add_class ' card--divided'
+
+      card(title, opts, &block)
+    end
+
     def card_header(title, options = {})
-      action      = options.delete :tertiary_action
+      action      = options.delete :header_action
       icon_name   = options.delete :icon
       small_title = options.delete  :small_title || false
 
@@ -34,7 +55,7 @@ module Pano
 
       tertiary_action = ''
       unless action.nil?
-        tertiary_action = content_tag :span, class: 'card-tertiary-action' do
+        tertiary_action = content_tag :span, class: 'card-header-action' do
           action
         end
       end
