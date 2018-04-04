@@ -76,80 +76,10 @@ html, body
   font-size: $font-size
   line-height: $line-height
 
-// ------------------------------------------
-// heading and paragraph styles
-// ------------------------------------------
-
-h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6, .p
-  margin: $p-spacing 0 0 0
-  line-height: $line-height
-  color: $text-color
-  &:first-child
-    margin-top: 0
-
-h1, .h1
-  font-family: $heading-font-stack
-  font-size: 32px
-  line-height: 40px
-  font-weight: 300
-  letter-spacing: $heading-letter-spacing
-  color: $charcoal
-  +mobile
-    font-size: 24px
-    line-height: 32px
-
-h2, .h2
-  font-family: $heading-font-stack
-  font-size: 24px
-  line-height: 32px
-  font-weight: 300
-  letter-spacing: $heading-letter-spacing
-  color: $charcoal
-  +mobile
-    font-size: 20px
-    line-height: 28px
-
-h3, .h3
-  font-family: $heading-font-stack
-  font-size: 20px
-  line-height: 28px
-  font-weight: 500
-  letter-spacing: $heading-letter-spacing
-  +mobile
-    font-size: 16px
-    line-height: 24px
-
-h4, .h4
-  font-family: $heading-font-stack
-  font-size: 20px
-  line-height: 24px
-  font-weight: 300
-  letter-spacing: $heading-letter-spacing
-  color: $slate
-  +mobile
-    font-size: 16px
-    line-height: 24px
-
-h5, .h5
-  font-size: 15px
-  font-weight: 500
-  letter-spacing: $heading-letter-spacing
-  +mobile
-    font-size: 13px
-    line-height: 20px
-
-h6, .h6
-  font-size: 13px
-  font-weight: 300
-  color: $slate
-  text-transform: uppercase
-  letter-spacing: $heading-letter-spacing
-  +mobile
-    font-size: 12px
-    line-height: 20px
 
 p, .p
   font-weight: normal
+
 
 
 // -----------------------------
@@ -163,28 +93,10 @@ p, .p
   line-height: 40px
   font-weight: bold
 
-.page-title
+h1.page-title
   +page-title
-  h1
-    +page-title
 
-
-.card-title, .table-title
-  font-family: $font-stack
-  font-size: 18px
-  color: $charcoal
-  letter-spacing: 0
-  line-height: 28px
-  font-weight: bold
-
-.small-card-title
-  font-family: $font-stack
-  font-size: 15px
-  color: $stone
-  letter-spacing: 0
-  line-height: 24px
-
-.modal-title
+h2.modal-title
   font-family: $font-stack
   font-size: 22px
   color: #333E48
@@ -192,13 +104,56 @@ p, .p
   font-weight: bold
   margin: 8px 0
 
-.section-title
+h3.card-title, h3.table-title
+  font-family: $font-stack
+  font-size: 18px
+  color: $charcoal
+  letter-spacing: 0
+  line-height: 28px
+  font-weight: bold
+
+h4.small-card-title
+  font-family: $font-stack
+  font-size: 15px
+  color: $stone
+  letter-spacing: 0
+  line-height: 24px
+  font-weight: 30
+
+h5.section-title
   font-family: $font-stack
   font-size: 20px
   color: #6B787F
   letter-spacing: 0
   line-height: 28px
+  font-weight: normal
 
+// -------------------------
+// Body Text Styles
+// -------------------------
+
+
+.note
+  color: $slate
+=note
+  @extend .note
+.small
+  font-size: $small-font-size
+
+.muted
+  color: $slate
+
+.featured
+  font-size: 16px
+  font-weight: normal
+  color: $body-paragraph-color
+
+.featured--large
+  font-size: 20px
+
+p
+  line-height: 18px
+  color: $body-paragraph-color
 // ------------------------------------------
 // text sizes -- for when you can't just use headings
 // ------------------------------------------
@@ -206,10 +161,6 @@ p, .p
 .normal-size
   font-size: $font-size
   line-height: $line-height
-
-.huge
-  font-size: 48px
-  line-height: 64px
 
 .larger
   font-size: 15px
@@ -279,11 +230,6 @@ hr
     font-size: $font-size
 
 
-.note
-  color: $note-color
-=note
-  color: $note-color
-
 span.trademark
   font-size: 70%
   display: inline-block
@@ -317,3 +263,78 @@ span.trademark
 
 .indented
   margin-left: 32px
+
+// ---------------
+// Deprecated
+// ---------------
+// ------------------------------------------
+// heading and paragraph styles
+// ------------------------------------------
+
+h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6, .p
+  margin: $p-spacing 0 0 0
+  line-height: $line-height
+  color: $body-paragraph-color
+  &:first-child
+    margin-top: 0
+
+h1, .h1
+  font-family: $heading-font-stack
+  font-size: 32px
+  line-height: 40px
+  font-weight: 300
+  letter-spacing: $heading-letter-spacing
+  color: $charcoal
+  +mobile
+    font-size: 24px
+    line-height: 32px
+
+h2, .h2
+  font-family: $heading-font-stack
+  font-size: 24px
+  line-height: 32px
+  font-weight: 300
+  letter-spacing: $heading-letter-spacing
+  color: $charcoal
+  +mobile
+    font-size: 20px
+    line-height: 28px
+
+h3, .h3
+  font-family: $heading-font-stack
+  font-size: 20px
+  line-height: 28px
+  font-weight: 500
+  letter-spacing: $heading-letter-spacing
+  +mobile
+    font-size: 16px
+    line-height: 24px
+
+h4, .h4
+  font-family: $heading-font-stack
+  font-size: 20px
+  line-height: 24px
+  font-weight: 300
+  letter-spacing: $heading-letter-spacing
+  color: $slate
+  +mobile
+    font-size: 16px
+    line-height: 24px
+
+h5, .h5
+  font-size: 15px
+  font-weight: 500
+  letter-spacing: $heading-letter-spacing
+  +mobile
+    font-size: 13px
+    line-height: 20px
+
+h6, .h6
+  font-size: 13px
+  font-weight: 300
+  color: $slate
+  text-transform: uppercase
+  letter-spacing: $heading-letter-spacing
+  +mobile
+    font-size: 12px
+    line-height: 20px

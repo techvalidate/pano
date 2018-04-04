@@ -99,10 +99,10 @@ $button-radius: 2px
     +btn_colors(transparent, $warning-color, $warning-color)
 
   &.btn-white
-    +btn_colors(white, $light-gray, $text-color)
+    +btn_colors(white, $light-gray, $body-paragraph-color)
 
   &.btn-gray
-    +btn_colors($lighter-gray, $gray, $text-color)
+    +btn_colors($lighter-gray, $gray, $body-paragraph-color)
 
   &.btn-outline
     +btn_colors(transparent, $slate, $charcoal)
@@ -192,7 +192,7 @@ $button-radius: 2px
 
 .btn-group
   .btn
-    +btn_colors(white, $light-gray, $text-color)
+    +btn_colors(white, $light-gray, $body-paragraph-color)
     margin-right: -5px
     border-radius: 0
     &:hover
@@ -226,7 +226,7 @@ $button-radius: 2px
   // gray
   &.btn-gray
     .btn
-      +btn_colors($lighter-gray, $gray, $text-color)
+      +btn_colors($lighter-gray, $gray, $body-paragraph-color)
       &:hover
         box-shadow: none
 
@@ -302,4 +302,4 @@ $button-radius: 2px
           border-bottom: 1px solid rgba(0,0,0,0.10)
           &:hover
             background: $lighter-gray
-            color: $text-color
+            color: $body-paragraph-color
