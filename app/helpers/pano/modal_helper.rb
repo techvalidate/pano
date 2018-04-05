@@ -27,6 +27,27 @@ module Pano
       end
     end
 
+    def flyout_modal(id, options = {}, &block)
+      options.add_class 'modal-content'
+
+      options[:data] ||= {}
+      controller = options[:data][:controller] || 'modals--flyout'
+      options[:data][:controller] = controller
+
+      div_tag class: 'drawer modal', id: id, data: options[:data] do
+        modal = div_tag class: 'modal-dialog' do
+          div_tag class: options[:class] do
+            close_drawer_icon(controller) + capture(controller, &block)
+          end
+        end
+        modal +  div_tag('', class: 'modal-bg', data: { action: "click->#{controller}#close" })
+      end
+    end
+
+    def close_drawer_icon(controller)
+      link_to '', js_void, class: 'close-icon', data: { action: "click->#{controller}#close" }
+    end
+
     def modal_header(title, ic = nil, description = nil)
       return '' if title.blank?
 

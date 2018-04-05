@@ -16,6 +16,5 @@ module Pano
     def helpers
       # Rails Helpers
     end
-
   end
 end

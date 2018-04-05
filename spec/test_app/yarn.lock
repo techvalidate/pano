@@ -3965,7 +3965,7 @@ pako@~1.0.5:
 
 "pano-js@git+ssh://git@github.com:techvalidate/pano-js":
   version "3.0.0"
-  resolved "git+ssh://git@github.com:techvalidate/pano-js#83fc0359c697091a2ee7c5703c0860384b618c04"
+  resolved "git+ssh://git@github.com:techvalidate/pano-js#b517b13c68962564b39b89acaacd6ccecb9e8d25"
   dependencies:
     dropzone "^5.4.0"
     fullpage.js "^2.9.6"
