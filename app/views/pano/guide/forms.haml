@@ -12,7 +12,7 @@
             .form-group
               = f.label :first_name
               = f.text_field :first_name, value: 'Lisa'
-            .form-group.form-group--optional
+            .form-group.form-group-optional
               = f.label :last_name
               = f.text_field :last_name, placeholder: 'Optional Last Name'
             .form-group
@@ -36,7 +36,7 @@
       = form_with scope: User.new do |f|
         .grid
           .col-6
-            .form-group.form-group--optional
+            .form-group.form-group-optional
               = f.label :title
               = f.select :title, options_for_select([['Select a title'], ['Director', 1], ['Manager', 2], ['Founder', 3]])
               .form-helper-text Helper text
@@ -59,29 +59,29 @@
   = haml_example do
     :plain
       = form_with scope: User.new, data: {controller: 'form'} do |f|
-        .form-group.form-group--focus
+        .form-group.form-group-focus
           = f.label :password
           = f.password_field :password, value: '1234'
           .form-helper-text Your password must be 8-10 characters
-        .form-group.form-group--error
+        .form-group.form-group-error
           = f.label :email
           = f.email_field :email, value: 'lisa@freshgreen,demo'
           .form-helper-text Error!
-        .form-group.form-group--disabled
+        .form-group.form-group-disabled
           = f.label :disabled
           = f.text_field :disabled, value: 'Disabled input'
           .form-helper-text This input is disabled
-        .form-group.form-group--disabled
+        .form-group.form-group-disabled
           = f.label 'Disabled Select'
           = f.select :title, options_for_select([['Select a title'], ['Director', 1], ['Manager', 2], ['Founder', 3]])
-        .form-group.form-group--disabled
+        .form-group.form-group-disabled
           .radio
             = f.radio_button :choice, 1
             = f.label :choice, 'Disabled Choice 1'
           .radio
             = f.radio_button :choice, 1
             = f.label :choice, 'Disabled Choice 2'
-        .form-group.form-group--disabled
+        .form-group.form-group-disabled
           .checkbox
             = f.check_box :choice_1
             = f.label :choice_1, 'Disabled Checkbox 1'

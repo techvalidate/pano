@@ -32,7 +32,7 @@ module Pano
       title, opts = args
       opts = opts || {}
 
-      opts.add_class ' card--divided'
+      opts.add_class ' card-divided'
 
       card(title, opts, &block)
     end
@@ -43,7 +43,7 @@ module Pano
       small_title = options.delete  :small_title || false
 
       if small_title
-        title = h4_tag title, class: 'card-title--small'
+        title = h4_tag title, class: 'card-title-small'
       else
         title = h3_tag title, class: 'card-title'
       end
