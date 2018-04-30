@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="64px" viewBox="0 0 50 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 49.1 (51145) - http://www.bohemiancoding.com/sketch -->
+    <title>knowledge-base-blue</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="CX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-pt-lines-size-48px-and-up" transform="translate(-60.000000, -409.000000)" fill="#00BF6F" fill-rule="nonzero">
+            <g id="knowledge-base-blue" transform="translate(60.000000, 409.000000)">
+                <polygon id="Shape" points="26 63 26 36 24 36 24 63"></polygon>
+                <g id="Group" transform="translate(10.000000, 44.000000)">
+                    <path d="M26,6 C27.1037153,6 28,5.10371525 28,4 L28,2 L22,2 C20.8962847,2 20,2.89628475 20,4 L20,6 L26,6 Z M30,4 C30,6.20828475 28.2082847,8 26,8 L18,8 L18,4 C18,1.79171525 19.7917153,0 22,0 L30,0 L30,4 Z M0,9 L0,5 L8,5 C10.2082847,5 12,6.79171525 12,9 L12,13 L4,13 C1.79171525,13 0,11.2082847 0,9 Z M2,7 L2,9 C2,10.1037153 2.89628475,11 4,11 L10,11 L10,9 C10,7.89628475 9.10371525,7 8,7 L2,7 Z" id="Shape"></path>
+                </g>
+                <path d="M6,2 L6,36 L44,36 L44,2 L6,2 Z M5,0 L45,0 C45.5522847,0 46,0.44771525 46,1 L46,37 C46,37.5522847 45.5522847,38 45,38 L5,38 C4.44771525,38 4,37.5522847 4,37 L4,1 C4,0.44771525 4.44771525,0 5,0 Z" id="Shape"></path>
+                <polygon id="Shape" points="24 6 24 32 26 32 26 6"></polygon>
+                <polygon id="Shape" points="8 22 22 22 22 20 8 20"></polygon>
+                <polygon id="Shape" points="8 26 22 26 22 24 8 24"></polygon>
+                <polygon id="Shape" points="8 30 22 30 22 28 8 28"></polygon>
+                <polygon id="Shape" points="28 22 42 22 42 20 28 20"></polygon>
+                <polygon id="Shape" points="28 12 42 12 42 10 28 10"></polygon>
+                <polygon id="Shape" points="28 26 42 26 42 24 28 24"></polygon>
+                <polygon id="Shape" points="28 30 42 30 42 28 28 28"></polygon>
+                <polygon id="Shape" points="28 8 42 8 42 6 28 6"></polygon>
+                <polygon id="Shape" points="34 17 36 17 36 15 34 15"></polygon>
+                <polygon id="Shape" points="30 17 32 17 32 15 30 15"></polygon>
+                <polygon id="Shape" points="38 17 40 17 40 15 38 15"></polygon>
+                <path d="M48,40 L29.4142136,40 L25.7071068,36.2928932 C25.3165825,35.9023689 24.6834175,35.9023689 24.2928932,36.2928932 L20.5857864,40 L2,40 L2,4 L0,4 L0,41 C0,41.5522847 0.44771525,42 1,42 L21,42 C21.2652165,42 21.5195704,41.8946432 21.7071068,41.7071068 L25,38.4142136 L28.2928932,41.7071068 C28.4804296,41.8946432 28.7347835,42 29,42 L49,42 C49.5522847,42 50,41.5522847 50,41 L50,4 L48,4 L48,40 Z" id="Shape"></path>
+                <path d="M10,8 L10,16 L20,16 L20,8 L10,8 Z M22,6 L22,18 L8,18 L8,6 L22,6 Z" id="Shape"></path>
+                <polygon id="Shape" points="0 64 50 64 50 62 0 62"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

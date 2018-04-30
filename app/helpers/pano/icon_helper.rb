@@ -37,6 +37,7 @@ module Pano
       icon icon_name, options.add_class('xl-icon')
     end
 
+
     # material icons are often named badly, hence this translation layer
     def material_icon_for(i)
       return MaterialIcons[i.to_sym] if MaterialIcons.key? i.to_sym
@@ -48,9 +49,52 @@ module Pano
       false
     end
 
-    futuro_path = 'pano/icons/'
+    cx_path = 'pano/icons/cx/'
+    engage_path = 'pano/icons/engage/'
+
     FuturoIcons = {
-      'take_a_break': futuro_path + 'take_a_break.svg'
+      'benchmarks':               cx_path + 'benchmarks.svg',
+      'custom_attributes':        cx_path + 'custom-attributes.svg',
+      'custom_filters':           cx_path + 'custom-filters.svg',
+      'demo':                     cx_path + 'demo.svg',
+      'enhanced':                 cx_path + 'enhanced.svg',
+      'essential':                cx_path + 'essential.svg',
+      'import_file':              cx_path + 'import.svg',
+      'integrations':             cx_path + 'integrations.svg',
+      'knowledge_base':           cx_path + 'knowledge-base.svg',
+      'lists':                    cx_path + 'lists.svg',
+      'organization':             cx_path + 'organization.svg',
+      'password':                 cx_path + 'password.svg',
+      'radar':                    cx_path + 'radar.svg',
+      'settings':                 cx_path + 'settings.svg',
+      'starter':                  cx_path + 'starter.svg',
+      'suppressions':             cx_path + 'suppressions.svg',
+      'large_survey':             cx_path + 'survey.svg',
+      'tags':                     cx_path + 'tags.svg',
+      'team':                     cx_path + 'team.svg',
+      'you':                      cx_path + 'you.svg',
+      'care_about_people':        engage_path + 'care-about-people.svg',
+      'focus_group':              engage_path + 'focus-group.svg',
+      'future_possibility':       engage_path + 'future-possibility.svg',
+      'goals_achieve':            engage_path + 'goals-achieve.svg',
+      'long_term_vision':         engage_path + 'long-term-vision.svg',
+      'loudspeaker_promotion':    engage_path + 'loudspeaker-promotion.svg',
+      'manager':                  engage_path + 'manager.svg',
+      'market_forecast':          engage_path + 'market-forecast.svg',
+      'math_formula':             engage_path + 'math-formula.svg',
+      'mission_accomplished':     engage_path + 'mission-accomplished.svg',
+      'monitoring_project_data':  engage_path + 'monitoring-project-data.svg',
+      'organization_chart':       engage_path + 'organization-chart.svg',
+      'personal_desk':            engage_path + 'personal-desk.svg',
+      'personal_development':     engage_path + 'personal-development.svg',
+      'schedule_planning':        engage_path + 'schedule-planning.svg',
+      'startup_launch':           engage_path + 'startup-launch.svg',
+      'statistical_analysis':     engage_path + 'statistical-analysis.svg',
+      'success_mission':          engage_path + 'success-mission.svg',
+      'survey_list':              engage_path + 'survey-list.svg',
+      'take_a_break':             engage_path + 'take_a_break.svg',
+      'team-leader':              engage_path + 'team-leader.svg',
+      'winners_podium':           engage_path + 'winners-podium.svg'
     }
 
     MaterialIcons = {

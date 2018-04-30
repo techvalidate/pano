@@ -3,7 +3,7 @@ module Pano
 
     def card(title = '', options = {}, &block)
       klass = options.delete :class
-      if title.nil?
+      if title.empty?
         header = ''
       else
         header = card_header(title, options)
@@ -12,7 +12,7 @@ module Pano
       content = capture(&block)
 
       content_tag :div, class: "card #{klass}" do
-        header + content
+        safe_join([header, content])
       end
     end
 
