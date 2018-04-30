@@ -2,8 +2,8 @@ module Pano
   module EmailHelper
 
     def email_button(button_text:, button_url:, height: '40px', width: '200px', text_color: '#fff', fill_color: '#00a8ff', stroke_color: '#00a8ff', font_size: '16px', css_class: 'btn', style: nil, arc_size: 100)
-      buttons = outlook_button button_text: button_text, button_url: button_url, height: height, width: width, text_color: text_color, fill_color: fill_color, stroke_color: stroke_color, font_size: font_size, arc_size: arc_size
-      buttons += link_to button_text, button_url, class: css_class, style: style
+      # buttons = outlook_button button_text: button_text, button_url: button_url, height: height, width: width, text_color: text_color, fill_color: fill_color, stroke_color: stroke_color, font_size: font_size, arc_size: arc_size
+      buttons = link_to button_text, button_url, class: css_class, style: style
       buttons
     end
 
