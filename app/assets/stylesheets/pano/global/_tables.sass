@@ -18,7 +18,9 @@ table
   tr.title-row
     .table-title
       color: #fff
-
+  tr.row-hover:hover
+    background: $canvas
+    cursor: pointer
   tr:last-child
     th, td
       border-bottom: none
@@ -31,8 +33,7 @@ table
   .flush-right
     padding-right: 0
   td.date
-    font-size: 11px
-    color: $slate
+    text-transform: uppercase
   td.avatar
     width: 32px
 
