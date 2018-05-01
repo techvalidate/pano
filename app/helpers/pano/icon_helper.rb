@@ -93,7 +93,7 @@ module Pano
       'success_mission':          engage_path + 'success-mission.svg',
       'survey_list':              engage_path + 'survey-list.svg',
       'take_a_break':             engage_path + 'take_a_break.svg',
-      'team-leader':              engage_path + 'team-leader.svg',
+      'team_leader':              engage_path + 'team-leader.svg',
       'winners_podium':           engage_path + 'winners-podium.svg'
     }
 

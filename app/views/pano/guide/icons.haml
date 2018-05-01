@@ -16,7 +16,9 @@
 
 
 
-  %h5 icon
+  .featured
+    %pre
+      icon(icon_name, options)
   %p Use this when you just want to output a Material or Futuro icon.
   = haml_example do
     :plain
@@ -24,7 +26,9 @@
       = icon :survey
       = icon :person, class: 'green'
 
-  %h5 icon_to
+  .featured
+    %pre
+      icon_to(icon_name, name, options, html_options)
   %p
     Use this when you want to prepend an icon onto a text link.
   %p.red
@@ -33,13 +37,15 @@
     :plain
       = icon_to :survey, 'Survey', '#'
 
-  %h5 large_icon
+  .featured
+    %pre
+      large_icon(icon_name, options)
   %p Makes a bigger Material icon.
   = haml_example do
     :plain
       = large_icon :survey
       = large_icon :person, class: 'green'
-  %h5 For larger Futuro icons
+  .featured For larger Futuro icons
   %p Add a size attribute to the icon helper
   = haml_example do
     :plain

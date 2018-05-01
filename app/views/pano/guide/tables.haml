@@ -38,6 +38,29 @@
           %td Table Cell
           %td.date 01/01/17
 
+  = haml_example do
+    :plain
+      %table
+        %tr.title-row
+          %td.bg-sabeus{colspan: 3}
+            %span.table-title Title Row
+        %tr
+          %th Table Header
+          %th Table Header
+          %th Table Header
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+        %tr
+          %td Table Cell
+          %td Table Cell
+          %td.date 01/01/17
+
 = box 'Divided Table' do
   = haml_example do
     :plain

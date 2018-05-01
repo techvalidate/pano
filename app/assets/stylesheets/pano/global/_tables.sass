@@ -5,22 +5,19 @@
 table
   width: 100%
   margin-top: 24px
-
+  border: 1px solid $pebble
   th, td
     text-align: left
-    padding: 16px
+    padding: 24px 32px
     +border-bottom
   th
     font-weight: normal
-    font-size: $tiny-font-size
-    line-height: 130%
-    color: $gray
+    color: $charcoal
     text-transform: uppercase
 
-  th:first-child, td:first-child
-    padding-left: 0
-  th:last-child, td:last-child
-    padding-right: 0
+  tr.title-row
+    .table-title
+      color: #fff
 
   tr:last-child
     th, td
@@ -45,13 +42,11 @@ table
 
 table.divided
   th, td
-    padding: 16px !important
     +border-right
   tr:first-child
     th, td
       +border-top
   th:first-child, td:first-child
-    padding-left: 12px
     +border-left
   tr:last-child
     th, td
@@ -62,8 +57,6 @@ table.divided
 //-----------------------------------
 
 table.alternating
-  th, td
-    padding: 12px !important
   tr:nth-child(even)
     th, td
       background: $bg-gray
