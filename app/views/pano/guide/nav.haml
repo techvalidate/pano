@@ -1,0 +1,50 @@
+:ruby
+  @page_title = 'Navigation'
+  @nav        = :ui
+  @subnav     = :nav
+
+// override guide styles
+- logo_url = image_url('app/logos/engage-white.svg')
+:sass
+  .card
+    #nav, #subnav
+      position: relative
+      width: 100%
+    #nav #nav-logo
+        margin-top: 8px
+        text-indent: -99999px
+        width: 106px
+        height: 25px
+        background: url(#{logo_url}) no-repeat left top
+        background-size: 98px 25px
+
+= card 'Global Top Navigation' do
+  = haml_example do
+    :plain
+      #nav
+        #nav-container
+          .inner
+            #nav-logo
+            .nav-links
+              = link_to 'Nav Link 1', '#', class: 'nav-link'
+              = link_to 'Nav Link 2', '#', class: 'nav-link selected'
+              = link_to 'Nav Link 3', '#', class: 'nav-link'
+  %h4 With subnav
+  = haml_example do
+    :plain
+      #nav
+        #nav-container
+          .inner
+            #nav-logo
+            .nav-links
+              = link_to 'Nav Link 1', '#', class: 'nav-link'
+              = link_to 'Nav Link 2', '#', class: 'nav-link selected'
+              = link_to 'Nav Link 3', '#', class: 'nav-link'
+      #subnav
+        #subnav-contents
+          .tabs
+            = link_to 'Subnav link 1', '#', class: 'subnav-link'
+            = link_to 'Subnav link 2', '#', class: 'subnav-link'
+            = link_to 'Subnav link 3', '#', class: 'subnav-link selected'
+
+

@@ -15,7 +15,7 @@
   %h4 List with display and hover variants
   = haml_example do
     :plain
-      %ul.list.list-large.list-hoverable
+      %ul.list.list-display.list-hoverable
         %li I am a list item in a Display List
         %li I am a list item in a Display List
         %li I am a list item in a Display List
@@ -45,7 +45,7 @@
   %h4 Accordian with display variant
   = haml_example do
     :plain
-      %ul.accordian.accordian-large{data: {controller: 'accordian'}}
+      %ul.accordian.accordian-display{data: {controller: 'accordian'}}
         %li.item-open{data: {action: 'click->accordian#toggle'}}
           .item-label
             List Item

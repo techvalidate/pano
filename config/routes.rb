@@ -10,6 +10,7 @@ Pano::Engine.routes.draw do
     :shadows,
     :transforms,
     :grid,
+    :nav,
     :typography,
     :icons,
     :lists,

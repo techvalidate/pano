@@ -9,7 +9,7 @@
     %title= "Pano: #{@page_title}"
   %body{data: {controller: 'modal'}}
 
-    #nav
+    #guide-nav
       .inner
         .nav-logo= icon_to :directions_railway, 'Pano', root_path
         .nav-links
@@ -23,7 +23,7 @@
 
     #main
 
-      #subnav
+      #guide-subnav
         .inner= partial "pano/guide/subnavs/#{@nav}" if @nav
 
       %section#main-column

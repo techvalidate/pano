@@ -7,20 +7,17 @@
 
 #nav
   position: fixed
-  display: relative
   z-index: 300
   left: 0
   top: 0
   width: 100vw
   height: 48px
   color: white
-  // box-shadow: 0 1px 4px 0 rgba(0,0,0,0.05)
-  background: $dark-blue
-  background-image: linear-gradient(to right, rgba(20,121,214,0.5), rgba(29,73,127,0.5))
+  background: $nav-blue
 
   #nav-container
     position: relative
-    height: 40px
+    padding: 16px 32px
     +page-width
 
   a.nav-link
@@ -29,10 +26,11 @@
     float: left
     height: 48px
     padding: 0 16px
-    font-size: 12px
+    font-size: 16px
     line-height: 48px
     color: rgba(255,255,255,0.7)
     letter-spacing: 0.4px
+    font-weight: 300
     +transition(all 0.2s ease-in-out)
 
     +tablet
@@ -41,7 +39,6 @@
     &:hover
       text-decoration: none
       color: white
-      background: rgba(0,0,0,0.05)
 
     &.selected
       color: white
@@ -152,7 +149,7 @@
     border-bottom-right-radius: 3px
     background-clip: border-box
     overflow: hidden
-    font-size: $font-size
+    font-size: 13px
     +accelerated-transforms-base
     +transition(all 0.2s ease-in-out)
     transform: translateY(-24px) scale(0.9)
