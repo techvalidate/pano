@@ -8,7 +8,7 @@ module Pano
       description = options[:description]
 
       options[:data] ||= {}
-      options[:data][:controller] = options[:data][:controller] || 'modals--base'
+      options[:data][:controller] = options[:data][:controller] || 'base'
       controller = options[:data][:controller]
 
       if title.nil?
@@ -31,7 +31,7 @@ module Pano
       options.add_class 'modal-content'
 
       options[:data] ||= {}
-      controller = options[:data][:controller] || 'modals--flyout'
+      controller = options[:data][:controller] || 'flyout'
       options[:data][:controller] = controller
 
       div_tag class: 'drawer modal', id: id, data: options[:data] do

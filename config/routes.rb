@@ -19,6 +19,7 @@ Pano::Engine.routes.draw do
     :tabs,
     :cards,
     :tables,
+    :tooltips,
     :forms,
     :hr,
     :arrows,
