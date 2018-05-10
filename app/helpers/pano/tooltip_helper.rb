@@ -23,7 +23,7 @@ module Pano
 
       span_tag class: "info-tip-toggle #{klass}", data: {controller: 'popover'} do
         ic = icon :info
-        template = render :partial => 'pano/ui/popover_template', locals: {body_text: body_text, header: header, header_icon: header_icon, footer_action: footer_action}
+        template = render :partial => 'pano/components/popover', locals: {body_text: body_text, header: header, header_icon: header_icon, footer_action: footer_action}
 
         safe_join([ic, template])
       end

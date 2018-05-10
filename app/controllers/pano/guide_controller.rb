@@ -1,8 +1,7 @@
 module Pano
   class GuideController < ApplicationController
-
     def index
-      # The home page
+      # Home
     end
 
     def css
@@ -15,6 +14,10 @@ module Pano
 
     def helpers
       # Rails Helpers
+    end
+
+    def datepicker
+      @test_filter = TestFilter.new
     end
   end
 end

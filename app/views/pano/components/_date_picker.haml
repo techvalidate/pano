@@ -1,0 +1,18 @@
+.date-picker{data: {controller: 'datepicker'}}
+
+  = form_with form_args  do |f|
+    .date-picker-header.grid.m-stack
+      .col-6
+        %h2 Select Time Frame
+      .col-6.date-picker-range
+        = f.text_field :start_on, {data: {target: 'datepicker.start'}, placeholder: 'To'}
+        %hr
+        = f.text_field :finish_on, {data: {target: 'datepicker.finish'}, placeholder: 'From'}
+    .calendars.grid.m-stack
+      .col-6
+        .start{data: {target: 'datepicker.startCalendar'}}
+      .col-6
+        .finish{data: {target: 'datepicker.finishCalendar'}}
+    .date-picker-footer
+      = link_to 'Cancel', js_void, class: 'btn btn-outline', data: {action: 'modal#close'}
+      = link_to 'Apply Filter', js_void, class: 'btn btn-primary', data: {action: 'datepicker#apply'}

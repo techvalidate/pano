@@ -8,7 +8,7 @@ module Pano
       description = options[:description]
 
       options[:data] ||= {}
-      options[:data][:controller] = options[:data][:controller] || 'base'
+      options[:data][:controller] = options[:data][:controller] || 'modal'
       controller = options[:data][:controller]
 
       if title.nil?

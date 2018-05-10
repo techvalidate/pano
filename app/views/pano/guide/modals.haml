@@ -11,7 +11,7 @@
         = modal_body_text 'This is modal body text'
         = modal_footer_actions primary: ['Save', '#'], secondary: ['Cancel', '#']
 
-  = btn_to 'Launch Modal', '#basic-modal', data: {action: 'click->modal#open'}, class: 'mt-m'
+  = btn_to 'Launch Modal', '#basic-modal', data: {action: 'click->modals#open'}, class: 'mt-m'
 
 = card 'Modal with Icon' do
   = haml_example do
@@ -20,7 +20,7 @@
         = modal_body_text 'This is modal body text'
         = modal_footer_actions primary: ['Save', '#'], secondary: ['Skip', '#'], tertiary: ['Delete', '#']
 
-  = btn_to 'Launch Modal with Icon', '#icon-modal', data: {action: 'click->modal#open'}, class: 'mt-m'
+  = btn_to 'Launch Modal with Icon', '#icon-modal', data: {action: 'click->modals#open'}, class: 'mt-m'
 
 = card 'Modal with CTA' do
   = haml_example do
@@ -29,7 +29,7 @@
         = modal_body_text 'This is modal body text'
         = modal_footer_cta 'CTA', '#'
 
-  = btn_to 'Launch Modal with CTA', '#cta-modal', data: {action: 'click->modal#open'}, class: 'mt-m'
+  = btn_to 'Launch Modal with CTA', '#cta-modal', data: {action: 'click->modals#open'}, class: 'mt-m'
 
 = card 'Flyout Modal with Ajax' do
   = haml_example do
@@ -60,4 +60,4 @@
                     = f.label :choice_2, 'Checkbox 2'
 
         = modal_footer_actions primary: ['Save', '#', {class: 'btn-wide'}], secondary: ['Skip', '#', {class: 'btn-wide'}]
-  = btn_to 'Launch Flyout Modal', '#flyout-modal', data: {action: 'click->modal#open'}
+  = btn_to 'Launch Flyout Modal', '#flyout-modal', data: {action: 'click->modals#open'}

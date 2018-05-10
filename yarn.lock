@@ -1456,7 +1456,11 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
-core-js@^2.4.0, core-js@^2.5.0:
+core-js@^2.4.0:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.6.tgz#0fe6d45bf3cac3ac364a9d72de7576f4eb221b9d"
+
+core-js@^2.5.0:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.4.tgz#f2c8bf181f2a80b92f360121429ce63a2f0aeae0"
 
@@ -3367,11 +3371,11 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@~4.17.4:
+"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@~4.17.4:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
-lodash@^4.17.5:
+lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -3965,8 +3969,9 @@ pako@~1.0.5:
 
 "pano-js@git+ssh://git@github.com:techvalidate/pano-js":
   version "1.0.0"
-  resolved "git+ssh://git@github.com:techvalidate/pano-js#689dc33ba3590b7fe47ac19fe392d36bee5f81ff"
+  resolved "git+ssh://git@github.com:techvalidate/pano-js#39876002e131c8c874f075a58165be6145280515"
   dependencies:
+    babel-plugin-transform-class-properties "^6.24.1"
     dropzone "^5.4.0"
     fullpage.js "^2.9.6"
     jquery-dropdown "https://github.com/soundasleep/jquery-dropdown#master"
@@ -3982,6 +3987,7 @@ pako@~1.0.5:
     sticky-kit "^1.1.3"
     stimulus "^1.0.1"
     switchery "^0.0.2"
+    velocity-animate "1.5.1"
     whatwg-fetch "^2.0.4"
 
 parallel-transform@^1.1.0:
@@ -5990,6 +5996,10 @@ validate-npm-package-license@^3.0.1:
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
+
+velocity-animate@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/velocity-animate/-/velocity-animate-1.5.1.tgz#606837047bab8fbfb59a636d1d82ecc3f7bd71a6"
 
 vendors@^1.0.0:
   version "1.0.1"

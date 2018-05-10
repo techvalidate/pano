@@ -29,7 +29,8 @@ Pano::Engine.routes.draw do
     :spinners,
     :css,
     :js,
-    :helpers
+    :helpers,
+    :datepicker
   ]
 
   guide_routes.each do |r|

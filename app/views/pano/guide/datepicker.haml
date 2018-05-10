@@ -1,0 +1,16 @@
+:ruby
+  @page_title = 'Date Picker'
+  @nav        = :ui
+  @subnav     = :datepicker
+
+= card do
+  = haml_example do
+    :plain
+      = date_picker(model: @test_filter, url: '/')
+
+  %h5 Datepicker in a modal
+  = haml_example do
+    :plain
+      = modal 'datepicker-modal', class: 'modal-wide' do
+        = date_picker(model: @test_filter, url: '/')
+      = btn_to 'Launch Datepicker', '#datepicker-modal', data: {action: 'modals#open'}
