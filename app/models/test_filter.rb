@@ -8,8 +8,8 @@ class TestFilter
   attr_accessor :start_on, :finish_on
 
   def initialize
-    self.start_on = nil
-    self.finish_on = nil
+    self.start_on = 3.days.ago
+    self.finish_on = 27.days.from_now
   end
 
   def persisted?

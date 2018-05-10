@@ -29,17 +29,34 @@
     text-align: right
 
   .calendars
+    position: relative
     padding: 16px
     border: 1px solid $pebble
-    .start, .finish
-      text-align: center
-    .finish
-      .rd-days
-        border-left: 1px solid $pebble
+    text-align: center
+
+    .calendars-seperator
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 16px
+      margin: auto
+      width: 1px
+      border-right: 1px solid $pebble
+      height: 224px
+      +mobile
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: calc(100% - 32px)
+        height: 1px
+        border-right: 0
+        border-bottom: 1px solid $pebble
     .rd-container
       text-align: center
     .rd-next, .rd-back
       position: relative
+      margin: 0
       &:after
         position: absolute
         top: 0
@@ -75,11 +92,13 @@
 
       .rd-day-body:not(.rd-day-prev-month):not(.rd-day-next-month)
         cursor: pointer
+        &.rd-day-disabled
+          opacity: 0.5
+          cursor: not-allowed
       .in-range
         background: rgba($sabeus, 0.5)
       .rd-day-selected
         background: $sabeus
         color: #fff
-
     .rd-day-prev-month, .rd-day-next-month
       visibility: hidden

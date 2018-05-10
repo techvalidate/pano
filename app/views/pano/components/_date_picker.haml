@@ -8,9 +8,10 @@
         = f.text_field :start_on, {data: {target: 'datepicker.start'}, placeholder: 'To'}
         %hr
         = f.text_field :finish_on, {data: {target: 'datepicker.finish'}, placeholder: 'From'}
-    .calendars.grid.m-stack
+    .calendars.grid.g-8.m-stack
       .col-6
         .start{data: {target: 'datepicker.startCalendar'}}
+      .calendars-seperator
       .col-6
         .finish{data: {target: 'datepicker.finishCalendar'}}
     .date-picker-footer
