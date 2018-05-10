@@ -17,7 +17,7 @@ module Pano
     end
 
     def datepicker
-      @test_filter = TestFilter.new
+      @test_filter = Mocks::Seive.new
     end
   end
 end
