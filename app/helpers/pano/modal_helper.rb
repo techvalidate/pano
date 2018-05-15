@@ -20,7 +20,7 @@ module Pano
       div_tag class: 'modal', id: id, data: options[:data] do
         modal = div_tag class: 'modal-dialog' do
           div_tag class: options[:class] do
-            close_drawer_icon(controller) + header + capture(controller, &block)
+            close_modal_icon(controller) + header + capture(controller, &block)
           end
         end
         modal +  div_tag('', class: 'modal-bg', data: { action: "click->#{controller}#close"})
@@ -37,14 +37,14 @@ module Pano
       div_tag class: 'drawer modal', id: id, data: options[:data] do
         modal = div_tag class: 'modal-dialog' do
           div_tag class: options[:class] do
-            close_drawer_icon(controller) + capture(controller, &block)
+            close_modal_icon(controller) + capture(controller, &block)
           end
         end
         modal +  div_tag('', class: 'modal-bg', data: { action: "click->#{controller}#close" })
       end
     end
 
-    def close_drawer_icon(controller)
+    def close_modal_icon(controller)
       link_to '', js_void, class: 'close-icon', data: { action: "click->#{controller}#close" }
     end
 
@@ -137,7 +137,7 @@ module Pano
       end
     end
 
-    def close_drawer_icon(controller)
+    def close_modal_icon(controller)
       link_to '', js_void, class: 'close-icon', data: { action: "click->#{controller}#close" }
     end
 
