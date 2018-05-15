@@ -53,6 +53,7 @@ module Pano
     engage_path = 'pano/icons/engage/'
 
     FuturoIcons = {
+      'back':                    'pano/icons/arrow.svg',
       'benchmarks':               cx_path + 'benchmarks.svg',
       'custom_attributes':        cx_path + 'custom-attributes.svg',
       'custom_filters':           cx_path + 'custom-filters.svg',
