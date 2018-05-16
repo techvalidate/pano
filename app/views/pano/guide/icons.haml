@@ -6,9 +6,7 @@
 .featured
   = link_to 'Material Icons', '#material'
   |
-  = link_to 'CX Futuro Icons', '#cx'
-  |
-  = link_to 'Engage Futuro Icons', '#engage'
+  = link_to 'SVG Icons', '#svg'
 = card 'Icon Helpers' do
   %p
     The small icons we sprinkle into our pages use the Material icon font.
@@ -45,13 +43,14 @@
     :plain
       = large_icon :survey
       = large_icon :person, class: 'green'
-  .featured For larger Futuro icons
+  .featured Small, Large and XL svg_icons
   %p Add a size attribute to the icon helper
   = haml_example do
     :plain
+      = small_svg_icon :benchmarks
       = svg_icon :benchmarks
-      = svg_icon :benchmarks, size: '48'
-      = svg_icon :benchmarks, size: '32'
+      = large_svg_icon :benchmarks
+      = xl_svg_icon :benchmarks
 
 = card s("<a name='material'></a>Named Material Icons"), header_action: link_to('Back to top', '#top') do
   %p Many Material icons have confusing names, so we have defined our own less-confusing names for some of them in icon_helper.rb:
@@ -69,34 +68,18 @@
             \:
             = i
 
-= card s("<a name='cx'></a>CX Futuro Icons"), header_action: link_to('Back to top', '#top') do
+= card s("<a name='svg'></a>SVG Icons"), header_action: link_to('Back to top', '#top') do
   %table
     %thead
       %th Icon
       %th Name
       %th Symbol
-    - Pano::IconHelper::FuturoIcons.each_with_index do |(key, value), i|
-      - unless i > 19
-        %tr
-          %td= svg_icon key
-          %td= key
-          %td
-            %pre
-              \:
-              = key
-= card s("<a name='engage'></a>Engage Futuro Icons"), header_action: link_to('Back to top', '#top') do
-  %table
-    %thead
-      %th Icon
-      %th Name
-      %th Symbol
-    - Pano::IconHelper::FuturoIcons.each_with_index do |(key, value), i|
-      - unless i < 20
-        %tr
-          %td= svg_icon key
-          %td= key
-          %td
-            %pre
-              \:
-              = key
+    - Pano::IconHelper::FuturoIcons.each do |(key, value)|
+      %tr
+        %td= svg_icon key
+        %td= key
+        %td
+          %pre
+            \:
+            = key
 
