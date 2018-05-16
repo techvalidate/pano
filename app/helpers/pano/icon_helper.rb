@@ -13,16 +13,17 @@ module Pano
     # render an icon
     #--------------------
     def icon(icon_name, options = {})
-      futuro_icon = futuro_icon_for(icon_name)
 
-      if futuro_icon
-        size = options.delete :size || '32'
-        image_tag futuro_icon, options.merge({size: size})
-      else
-        klass = options[:class] ? (options.delete :class) : ''
-        klass += ' material-icons'
-        content_tag :i, material_icon_for(icon_name), options.add_class(klass)
-      end
+      klass = options[:class] ? (options.delete :class) : ''
+      klass += ' material-icons'
+      content_tag :i, material_icon_for(icon_name), options.add_class(klass)
+    end
+
+    def svg_icon(icon_name, options = {})
+      futuro_icon = futuro_icon_for(icon_name)
+      size = options.delete :size || '32'
+
+      image_tag futuro_icon, options.merge({size: size})
     end
 
     def med_icon(icon_name, options = {})
@@ -49,53 +50,52 @@ module Pano
       false
     end
 
-    cx_path = 'pano/icons/cx/'
-    engage_path = 'pano/icons/engage/'
+    icon_path = 'pano/icons/'
 
     FuturoIcons = {
-      'back':                    'pano/icons/arrow.svg',
-      'benchmarks':               cx_path + 'benchmarks.svg',
-      'custom_attributes':        cx_path + 'custom-attributes.svg',
-      'custom_filters':           cx_path + 'custom-filters.svg',
-      'demo':                     cx_path + 'demo.svg',
-      'enhanced':                 cx_path + 'enhanced.svg',
-      'essential':                cx_path + 'essential.svg',
-      'import_file':              cx_path + 'import.svg',
-      'integrations':             cx_path + 'integrations.svg',
-      'knowledge_base':           cx_path + 'knowledge-base.svg',
-      'lists':                    cx_path + 'lists.svg',
-      'organization':             cx_path + 'organization.svg',
-      'password':                 cx_path + 'password.svg',
-      'radar':                    cx_path + 'radar.svg',
-      'settings':                 cx_path + 'settings.svg',
-      'starter':                  cx_path + 'starter.svg',
-      'suppressions':             cx_path + 'suppressions.svg',
-      'large_survey':             cx_path + 'survey.svg',
-      'tags':                     cx_path + 'tags.svg',
-      'team':                     cx_path + 'team.svg',
-      'you':                      cx_path + 'you.svg',
-      'care_about_people':        engage_path + 'care-about-people.svg',
-      'focus_group':              engage_path + 'focus-group.svg',
-      'future_possibility':       engage_path + 'future-possibility.svg',
-      'goals_achieve':            engage_path + 'goals-achieve.svg',
-      'long_term_vision':         engage_path + 'long-term-vision.svg',
-      'loudspeaker_promotion':    engage_path + 'loudspeaker-promotion.svg',
-      'manager':                  engage_path + 'manager.svg',
-      'market_forecast':          engage_path + 'market-forecast.svg',
-      'math_formula':             engage_path + 'math-formula.svg',
-      'mission_accomplished':     engage_path + 'mission-accomplished.svg',
-      'monitoring_project_data':  engage_path + 'monitoring-project-data.svg',
-      'organization_chart':       engage_path + 'organization-chart.svg',
-      'personal_desk':            engage_path + 'personal-desk.svg',
-      'personal_development':     engage_path + 'personal-development.svg',
-      'schedule_planning':        engage_path + 'schedule-planning.svg',
-      'startup_launch':           engage_path + 'startup-launch.svg',
-      'statistical_analysis':     engage_path + 'statistical-analysis.svg',
-      'success_mission':          engage_path + 'success-mission.svg',
-      'survey_list':              engage_path + 'survey-list.svg',
-      'take_a_break':             engage_path + 'take_a_break.svg',
-      'team_leader':              engage_path + 'team-leader.svg',
-      'winners_podium':           engage_path + 'winners-podium.svg'
+      'back':                     icon_path + 'arrow.svg',
+      'benchmarks':               icon_path + 'benchmarks.svg',
+      'custom_attributes':        icon_path + 'custom-attributes.svg',
+      'custom_filters':           icon_path + 'custom-filters.svg',
+      'demo':                     icon_path + 'demo.svg',
+      'enhanced':                 icon_path + 'enhanced.svg',
+      'essential':                icon_path + 'essential.svg',
+      'import_file':              icon_path + 'import.svg',
+      'integrations':             icon_path + 'integrations.svg',
+      'knowledge_base':           icon_path + 'knowledge-base.svg',
+      'lists':                    icon_path + 'lists.svg',
+      'organization':             icon_path + 'organization.svg',
+      'password':                 icon_path + 'password.svg',
+      'radar':                    icon_path + 'radar.svg',
+      'settings':                 icon_path + 'settings.svg',
+      'starter':                  icon_path + 'starter.svg',
+      'suppressions':             icon_path + 'suppressions.svg',
+      'large_survey':             icon_path + 'survey.svg',
+      'tags':                     icon_path + 'tags.svg',
+      'team':                     icon_path + 'team.svg',
+      'you':                      icon_path + 'you.svg',
+      'care_about_people':        icon_path + 'care-about-people.svg',
+      'focus_group':              icon_path + 'focus-group.svg',
+      'future_possibility':       icon_path + 'future-possibility.svg',
+      'goals_achieve':            icon_path + 'goals-achieve.svg',
+      'long_term_vision':         icon_path + 'long-term-vision.svg',
+      'loudspeaker_promotion':    icon_path + 'loudspeaker-promotion.svg',
+      'manager':                  icon_path + 'manager.svg',
+      'market_forecast':          icon_path + 'market-forecast.svg',
+      'math_formula':             icon_path + 'math-formula.svg',
+      'mission_accomplished':     icon_path + 'mission-accomplished.svg',
+      'monitoring_project_data':  icon_path + 'monitoring-project-data.svg',
+      'organization_chart':       icon_path + 'organization-chart.svg',
+      'personal_desk':            icon_path + 'personal-desk.svg',
+      'personal_development':     icon_path + 'personal-development.svg',
+      'schedule_planning':        icon_path + 'schedule-planning.svg',
+      'startup_launch':           icon_path + 'startup-launch.svg',
+      'statistical_analysis':     icon_path + 'statistical-analysis.svg',
+      'success_mission':          icon_path + 'success-mission.svg',
+      'survey_list':              icon_path + 'survey-list.svg',
+      'take_a_break':             icon_path + 'take_a_break.svg',
+      'team_leader':              icon_path + 'team-leader.svg',
+      'winners_podium':           icon_path + 'winners-podium.svg'
     }
 
     MaterialIcons = {
