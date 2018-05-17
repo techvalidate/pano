@@ -1,5 +1,5 @@
 module Pano
-  class MenuItem
+  class FilterMenuItem
     include ERB::Util, ActionView::Helpers::UrlHelper, ActionView::Helpers::NumberHelper
     include Pano::ContentHelper, Pano::IconHelper, Pano::LinkHelper, Pano::NumberHelper
 
@@ -19,6 +19,9 @@ module Pano
       self.count    = options.delete :count
       self.options  = options
       self.options[:remote] = options.key?(:remote) ? options[:remote] : menu.remote?
+      self.options[:data] = {}
+      self.options[:data][:target] = 'filters.filter'
+      self.options[:data][:action] = 'ajax:success->filters#onSuccess click->filters#toggleSelection'
     end
 
     def length
@@ -39,13 +42,15 @@ module Pano
       #
       # s item
 
-      link_text  = content_tag(:span, render_icon, class: 'item-icon')
+      link_text  = content_tag(:input, '', type: 'checkbox', checked: selected?)
       link_text += content_tag(:span, options[:descriptor_icon], class: 'descriptor-icon') if options[:descriptor_icon]
-      link_text += content_tag(:span, @name, class: 'item-text')
+      link_text += content_tag(:label, @name, class: 'item-text')
       link_text += content_tag(:span, delimit(@count), class: 'item-count') if count
 
-      content_tag :li do
-        link_to link_text, @url, @options.selected_if(selected?)
+      content_tag :li, class: 'form-group' do
+        content_tag :div, class: 'checkbox' do
+          link_to link_text, @url, @options.selected_if(selected?)
+        end
       end
 
     end

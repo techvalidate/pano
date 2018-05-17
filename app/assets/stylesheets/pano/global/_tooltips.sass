@@ -31,6 +31,7 @@
     z-index: 3
     max-height: 200px
     min-width: 150px
+    color: #fff
     &:before
       +tip-arrow(15)
       left: 0
@@ -92,7 +93,6 @@
   margin: 0
   li
     margin: 0
-    color: $body-paragraph-color
     span
       display: inline-block
       position: relative
@@ -261,3 +261,7 @@
   &.se-alt:before
     left: auto
     right: 10px
+
+
+.tooltip._biome-tooltip, .tooltip.n
+  visibility: visible
