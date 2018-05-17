@@ -1,5 +1,5 @@
 module Pano
-  class Menu
+  class FilterMenu
     include ActionView::Helpers::TagHelper, ERB::Util, Pano::ContentHelper, Pano::IconHelper
 
     attr_accessor :filtered, :items, :name, :output_buffer, :single_select, :remote, :searchable
