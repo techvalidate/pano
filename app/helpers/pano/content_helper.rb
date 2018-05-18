@@ -31,6 +31,7 @@ module Pano
     end
 
     def humanize_period(period, options = {})
+      return if period.blank?
       month_format = options[:brief] ? '%b.' : '%B'
       if period.first == period.last
         # one day
