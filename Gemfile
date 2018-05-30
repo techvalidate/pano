@@ -9,6 +9,7 @@ gemspec
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
-
+gem 'webpacker'
+gem 'guard-livereload', '2.5.2',  group: [:development]
 # To use a debugger
 # gem 'byebug', group: [:development, :test]

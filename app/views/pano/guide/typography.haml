@@ -3,38 +3,30 @@
   @nav        = :ui
   @subnav     = :typography
 
-= box 'Fonts' do
+= card 'Fonts' do
   %p
     We use SF UI Display for headings and SF UI Text for body fonts.
   %p
     %strong For the fonts to work properly in your app, copy /spec/test_app/public/fonts to the public directory of your app.
 
-= box 'Headings, Paragraphs, and Common Styles' do
-  %p There are 6 heading sizes, in decreasing size, from H1 - H6. Use p tags for paragraphs.
+= card 'Headings, Paragraphs, and Common Styles' do
 
   = haml_example do
     :plain
-      %h1 This is a H1 tag
-      %h2 This is a H2 tag
-      %h3 This is a H3 tag
-      %h4 This is a H4 tag
-      %h5 This is a H5 tag
-      %h6 This is a H6 tag
-      %p This is a paragraph -- use this for body text.
-      %p.intro
-        "intro" text: It's common to want to have a larger introductory paragraph that doesn't quite match our heading styles.
-        In this case, you can use the .intro class.
-      %p.note "Note" text: It's also common to have de-emphasized text. Use .note for this.
 
-= box 'Page Titles' do
-  %p Usually, the only H1 tag on the page should be the page title.
-  %p The page title is almost always set at the top of a view file with the title() helper method, like so:
-  .styleguide-example
-    .code-example
-      :plain
-        = title 'Page Title Here'
+      %h1 This is an H1
+      %h2 This is an H2
+      %h3 This is an H3
+      %h4 This is an H4
+      %h5 This is an H5
+      %p.featured-large This is Large Featured Text
+      %p.featured This is Featured Text
+      %p.note This is Note Text - often used for module descriptions under titles
+      %p This is a paragraph -- use this for body text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras feugiat tincidunt laoreet. Ut venenatis in libero at posuere. Vestibulum ac rhoncus purus. Etiam elementum diam sit amet arcu commodo elementum.
 
-= box 'Spacing' do
+%hr
+%h5.section-title 3.x styles
+= card 'Spacing' do
   %p
     By default, headings and paragraphs have top margin of 16px and no bottom margin.
     As a general rule, is up to each element to decide how far it should be spaced from the content preceding it.
@@ -50,7 +42,7 @@
       %p.mt-s I have the .mt-s class so I have less top margin than normal
       %p I have normal top margin
 
-= box 'Text Alignment' do
+= card 'Text Alignment' do
   %p there are utility classes for text alignment, vertical alignment, nowrap, and indenting
   = haml_example do
     :plain
@@ -63,17 +55,7 @@
       %p.indented .indented: indented 32px
       %p.nowrap .nowrap: white-space: nowrap
 
-= box 'Text Sizes' do
-  %p In addition to sizing text by using headings, you can use css classes.
-  = haml_example do
-    :plain
-      %p.huge I am a p tag with the .huge class
-      %p.larger I am a p tag with the .larger class
-      %h2.normal-size I am a H2 tag with the .normal-size class
-      %p.small I am a small p tag with the .small class
-      %p.tiny I am a very small p tag with the .tiny class
-
-= box 'Weights' do
+= card 'Weights' do
   = haml_example do
     :plain
       %p.normal-weight I am a p tag with the .normal-weight class
@@ -84,21 +66,7 @@
         %strong I am a strong tag inside a p
       %p.uppercase I am a p tag with the .uppercase class
 
-= box 'Overriding Colors and Weights' do
-  %p You can override the color, size and weights of different text elements in several ways.
-  %ul
-    %li Make one element look like a certain heading with styles named after a particular heading (ex: add .h3 to make something look like a h3 tag)
-    %li Override the color of an element with one of the color classes from _colors.sass (ex: %h4.blue)
-    %li Override the weight of an element with one of the font-weight classes (ex: %h4.semibold)
-    %li Override the size of an element with one of the text size classes (ex: %h2.normal-size)
-  = haml_example do
-    :plain
-      %h4.strong.blue I am a strong blue h4 tag
-      %h1.larger.red.semibold I am a h1 tag with overridden size, weight, and color
-      %h2.h5 I am a h2 masquerading as a h5 tag
-      %h4.h2 This h4 looks like a h2
-
-= box 'Misc' do
+= card 'Misc' do
   %h4 HR tags
   = haml_example do
     :plain

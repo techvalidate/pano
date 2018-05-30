@@ -13,7 +13,7 @@ module Pano
     end
 
     def color_swatch(color_name)
-      s "<div class='color-swatch'><span class='color #{color_name}'>&#9679;</span><span class='label'>#{color_name}</span></div>"
+      s "<div class='color-swatch'><span class='color #{color_name}'>&#9632;</span><span class='label'>#{color_name}</span></div>"
     end
 
     def trademark

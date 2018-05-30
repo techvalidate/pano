@@ -1,8 +1,7 @@
 module Pano
   class GuideController < ApplicationController
-
     def index
-      # The home page
+      # Home
     end
 
     def css
@@ -17,5 +16,8 @@ module Pano
       # Rails Helpers
     end
 
+    def datepicker
+      @test_filter = Mocks::Seive.new
+    end
   end
 end

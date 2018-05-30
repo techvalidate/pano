@@ -1,11 +1,90 @@
-= partial 'pano/guide/subnavs/ui', selected_tab: :forms
+:ruby
+  @page_title = 'Forms'
+  @nav        = :ui
+  @subnav     = :forms
 
-= box 'The App Form Helper' do
-  %p app form helper...
+= card 'Text Fields and Areas' do
+  = haml_example do
+    :plain
+      = form_with scope: User.new do |f|
+        .grid
+          .col-6
+            .form-group
+              = f.label :first_name
+              = f.text_field :first_name, value: 'Lisa'
+            .form-group.form-group-optional
+              = f.label :last_name
+              = f.text_field :last_name, placeholder: 'Optional Last Name'
+            .form-group
+              = f.label :email, 'Email with icon'
+              // Icons must be immediately above the input field
+              = icon 'email'
+              = f.email_field :email, placeholder: 'Email'
+            .form-group
+              = f.label :password
+              = f.password_field :password
+              .form-helper-text Your password must be 8-10 characters
 
-= box 'Form Elements' do
-  %p form elements...
+            .form-group
+              = f.label :description
+              = f.text_area :description
+          .col-6
 
-= box 'Form Errors' do
-  %p form errors - ruby and js
-  %p active record errors
+= card 'Select, Checkboxes, and Radios' do
+  = haml_example do
+    :plain
+      = form_with scope: User.new do |f|
+        .grid
+          .col-6
+            .form-group.form-group-optional
+              = f.label :title
+              = f.select :title, options_for_select([['Select a title'], ['Director', 1], ['Manager', 2], ['Founder', 3]])
+              .form-helper-text Helper text
+            .form-group
+              .radio
+                = f.radio_button :choice, 1
+                = f.label :choice, 'Choice 1'
+              .radio
+                = f.radio_button :choice, 1
+                = f.label :choice, 'Choice 2'
+            .form-group
+              .checkbox
+                = f.check_box :choice_1
+                = f.label :choice_1, 'Checkbox 1'
+              .checkbox
+                = f.check_box :choice_2
+                = f.label :choice_2, 'Checkbox 2'
+
+= card 'Form States' do
+  = haml_example do
+    :plain
+      = form_with scope: User.new, data: {controller: 'form'} do |f|
+        .form-group.form-group-focus
+          = f.label :password
+          = f.password_field :password, value: '1234'
+          .form-helper-text Your password must be 8-10 characters
+        .form-group.form-group-error
+          = f.label :email
+          = f.email_field :email, value: 'lisa@freshgreen,demo'
+          .form-helper-text Error!
+        .form-group.form-group-disabled
+          = f.label :disabled
+          = f.text_field :disabled, value: 'Disabled input'
+          .form-helper-text This input is disabled
+        .form-group.form-group-disabled
+          = f.label 'Disabled Select'
+          = f.select :title, options_for_select([['Select a title'], ['Director', 1], ['Manager', 2], ['Founder', 3]])
+        .form-group.form-group-disabled
+          .radio
+            = f.radio_button :choice, 1
+            = f.label :choice, 'Disabled Choice 1'
+          .radio
+            = f.radio_button :choice, 1
+            = f.label :choice, 'Disabled Choice 2'
+        .form-group.form-group-disabled
+          .checkbox
+            = f.check_box :choice_1
+            = f.label :choice_1, 'Disabled Checkbox 1'
+          .checkbox
+            = f.check_box :choice_2
+            = f.label :choice_2, 'Disabled Checkbox 2'

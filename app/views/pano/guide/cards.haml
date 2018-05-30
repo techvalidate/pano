@@ -1,0 +1,36 @@
+:ruby
+  @page_title = 'Cards'
+  @nav        = :ui
+  @subnav     = :cards
+
+
+= card 'Basic Card Styles' do
+  %p You don't have to use the box helper -- at its most basic, a box is just an element with the .box css class.
+  %p To achieve different looks, there are off the shelf styles for different shadow depths, inset boxes, border radius, and hover states for clickable boxes.
+
+  = haml_example do
+    :plain
+      .grid
+        .col-6
+          = card 'Card with Title' do
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
+            = card_footer_with_action ['Primary CTA', '#']
+
+          = small_card 'Card with Subtitle Text' do
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
+        .col-6
+          = card 'Card with Title and Right Action', header_action: icon_to(:file_download, '', '#') do
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
+            = card_footer_with_action ['Primary CTA', '#']
+
+          = card 'Card with Title and Icon', icon: :take_a_break do
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
+            = card_footer_with_actions primary: ['Save', '#'], secondary: ['Skip', '#']
+
+
+= card 'Other Cards' do
+  = haml_example do
+    :plain
+      = divided_card 'Divided Card' do
+        .card-body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
+        = card_footer_with_actions primary: ['Save', '#'], secondary: ['Skip', '#']

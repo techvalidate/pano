@@ -2,6 +2,65 @@
   @page_title = 'CSS'
   @nav = :css
 
-%h4 What to put here?
-%h4 SASS file organization?
-%h4 Coding practices?
+= card 'Naming' do
+  .grid
+    .col-6
+      %a{name: "card_example"}
+      = haml_example do
+        :plain
+          .card
+            .card-header
+              = icon(:take_a_break, class: 'card-icon')
+              %h3.card-title Card with Title and Icon
+            .card-body
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis est vitae odio aliquet, quis efficitur magna elementum.
+            .card-footer
+              = link_to 'Primary CTA', '#'
+  %h4.section-title Components
+  %p A Component can be any piece of UI, but is generally the largest semantic building block of page content.
+  %p Component names should be generally derived from their sketch style-guide source. The above component is a <strong>Card</strong>
+  %hr
+  %h4.section-title Elements
+  %p
+    Elements make up components. Block level elements should be named for the parent component, separated by a dash.
+    The above <strong>Card</strong> is made up of:
+  %ul
+    %li .card-header
+    %li .card-body
+    %li .card-footer
+  %p.featured Nested elements
+  %p
+    Nested Elements may be named in the same way, but do not have to be. For example, if you look at the <a href="#card_example"><strong>Card</strong> example above</a>, <strong>.card-icon</strong> and <strong>.card-title</strong> are nested inside of block level element <strong>.card-header</strong>.
+    In some cases it makes sense to name nested elements for readability and to communicate that the element has a style or purpose specific to its component, different from other elements of its kind (the <strong>.card-icon</strong> is for a <strong>Card</strong>, and the <strong>.modal-icon</strong> is for a <strong>Modal</strong>).
+  %p Otherwise, <strong>the cascade works</strong>. Again in the <a href="#card_example"><strong>Card</strong> example above</a>, you can see that the <strong>Primary CTA</strong> is a link that's text-alignment is defined by <strong>.card-footer</strong>. A link isn't usually aligned one way or the other, but <strong>.card-footer</strong> likes right aligned links. There is no need to name it in that case.
+  %hr
+  %h4.section-title Variants: Modifiers And State
+  %a{name: "variant_example"}
+  .grid
+    .col-6
+      = haml_example do
+        :plain
+          .form-group
+            = label :first_name, 'First Name'
+            = text_field :first_name, 'First Name'
+          .form-group.form-group-disabled
+            = label :first_name, 'First Name'
+            = text_field :first_name, 'First Name'
+            .form-helper-text Disabled
+  %p A variant is a modification to or state of an element or component.
+  %p Above is an example of a block level <strong>Form</strong> element called <strong>.form-group</strong>, and a disabled variant of <strong>.form-group</strong>. A variant should be named and separated with a dash. The disabled variant of <strong>.form-group</strong> is <strong>.form-group-disabled</strong>, and it is appended to the <strong>.form-group</strong> element to modify it.
+  .panel.code-example
+    %pre
+      %code
+        :plain
+          .form-group.form-group-disabled
+  %p It is the same for non block level elements like buttons:
+  .grid
+    .col-6
+      = haml_example do
+        :plain
+          .btn.btn-primary Primary Button
+          .btn.btn-outline Outline Button
+
+
+

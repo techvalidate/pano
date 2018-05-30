@@ -1,0 +1,63 @@
+:ruby
+  @page_title = 'Modals'
+  @nav        = :ui
+  @subnav     = :modals
+
+
+= card 'Basic Modal' do
+  = haml_example do
+    :plain
+      = modal 'basic-modal', title: 'This is modal title text', description: 'This is modal description text' do
+        = modal_body_text 'This is modal body text'
+        = modal_footer_actions primary: ['Save', '#'], secondary: ['Cancel', '#']
+
+  = btn_to 'Launch Modal', '#basic-modal', data: {action: 'click->modals#open'}, class: 'mt-m'
+
+= card 'Modal with Icon' do
+  = haml_example do
+    :plain
+      = modal 'icon-modal', title: 'This is modal title text', icon: :take_a_break, description: 'This is modal description text' do
+        = modal_body_text 'This is modal body text'
+        = modal_footer_actions primary: ['Save', '#'], secondary: ['Skip', '#'], tertiary: ['Delete', '#']
+
+  = btn_to 'Launch Modal with Icon', '#icon-modal', data: {action: 'click->modals#open'}, class: 'mt-m'
+
+= card 'Modal with CTA' do
+  = haml_example do
+    :plain
+      = modal 'cta-modal', title: 'This is modal title text', description: 'This is modal description text' do
+        = modal_body_text 'This is modal body text'
+        = modal_footer_cta 'CTA', '#'
+
+  = btn_to 'Launch Modal with CTA', '#cta-modal', data: {action: 'click->modals#open'}, class: 'mt-m'
+
+= card 'Flyout Modal with Ajax' do
+  = haml_example do
+    :plain
+      = flyout_modal 'flyout-modal' do
+        = modal_header 'Flyout Modal', icon: :take_a_break
+        = modal_body do
+          = form_with scope: 'guide' do |f|
+            .grid
+              .col-6
+                .form-group.form-group--optional
+                  = f.label :title
+                  = f.select :title, options_for_select([['Select a title'], ['Director', 1], ['Manager', 2], ['Founder', 3]])
+                  .form-helper-text Helper text
+                .form-group
+                  .radio
+                    = f.radio_button :choice, 1
+                    = f.label :choice, 'Choice 1'
+                  .radio
+                    = f.radio_button :choice, 1
+                    = f.label :choice, 'Choice 2'
+                .form-group
+                  .checkbox
+                    = f.check_box :choice_1
+                    = f.label :choice_1, 'Checkbox 1'
+                  .checkbox
+                    = f.check_box :choice_2
+                    = f.label :choice_2, 'Checkbox 2'
+
+        = modal_footer_actions primary: ['Save', '#', {class: 'btn-wide'}], secondary: ['Skip', '#', {class: 'btn-wide'}]
+  = btn_to 'Launch Flyout Modal', '#flyout-modal', data: {action: 'click->modals#open'}

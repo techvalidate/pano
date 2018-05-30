@@ -7,21 +7,19 @@
 
 #nav
   position: fixed
-  display: relative
   z-index: 300
   left: 0
   top: 0
   width: 100vw
   height: 48px
   color: white
-  // box-shadow: 0 1px 4px 0 rgba(0,0,0,0.05)
-  background: $dark-blue
-  background-image: linear-gradient(to right, rgba(20,121,214,0.5), rgba(29,73,127,0.5))
+  background: $nav-blue
 
   #nav-container
+    +clearfix
+    margin: 0
     position: relative
-    height: 40px
-    +page-width
+    padding: 0 32px
 
   a.nav-link
     position: relative
@@ -29,10 +27,11 @@
     float: left
     height: 48px
     padding: 0 16px
-    font-size: 12px
+    font-size: 16px
     line-height: 48px
     color: rgba(255,255,255,0.7)
     letter-spacing: 0.4px
+    font-weight: normal
     +transition(all 0.2s ease-in-out)
 
     +tablet
@@ -41,7 +40,6 @@
     &:hover
       text-decoration: none
       color: white
-      background: rgba(0,0,0,0.05)
 
     &.selected
       color: white
@@ -61,6 +59,7 @@
     float: left
     width: 96px
     height: 48px
+    margin-right: 68px
     position: relative
     z-index: 10
     background: image-url('logos/cx-logo-white.svg') no-repeat 0 12px
@@ -152,7 +151,7 @@
     border-bottom-right-radius: 3px
     background-clip: border-box
     overflow: hidden
-    font-size: $font-size
+    font-size: 13px
     +accelerated-transforms-base
     +transition(all 0.2s ease-in-out)
     transform: translateY(-24px) scale(0.9)
@@ -221,7 +220,7 @@
         float: none
         &.selected
           background: $bg-gray
-          color: $text-color
+          color: $body-paragraph-color
           font-weight: bold
 
     .nav-dropdown
