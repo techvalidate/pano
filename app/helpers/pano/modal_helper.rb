@@ -90,7 +90,7 @@ module Pano
 
     def modal_footer_cta(text, url, options = {})
       content_tag :div, class: 'modal-footer' do
-        btn_to text, url, class: 'btn modal-action--cta', data: {action: 'modals#open'}
+        btn_to text, url, class: 'btn modal-action--cta', data: {action: 'modals#open modal#close'}
       end
     end
 
