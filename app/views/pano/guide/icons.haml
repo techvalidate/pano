@@ -6,9 +6,7 @@
 .featured
   = link_to 'Material Icons', '#material'
   |
-  = link_to 'CX Futuro Icons', '#cx'
-  |
-  = link_to 'Engage Futuro Icons', '#engage'
+  = link_to 'SVG Icons', '#svg'
 = card 'Icon Helpers' do
   %p
     The small icons we sprinkle into our pages use the Material icon font.
@@ -18,17 +16,17 @@
 
   .featured
     %pre
-      icon(icon_name, options)
+      icon and svg_icon
   %p Use this when you just want to output a Material or Futuro icon.
   = haml_example do
     :plain
-      = icon :benchmarks, size: '32'
+      = svg_icon :benchmarks, size: '32'
       = icon :survey
       = icon :person, class: 'green'
 
   .featured
     %pre
-      icon_to(icon_name, name, options, html_options)
+      icon_to
   %p
     Use this when you want to prepend an icon onto a text link.
   %p.red
@@ -39,19 +37,20 @@
 
   .featured
     %pre
-      large_icon(icon_name, options)
+      large_icon
   %p Makes a bigger Material icon.
   = haml_example do
     :plain
       = large_icon :survey
       = large_icon :person, class: 'green'
-  .featured For larger Futuro icons
+  .featured Small, Large and XL svg_icons
   %p Add a size attribute to the icon helper
   = haml_example do
     :plain
-      = icon :benchmarks
-      = icon :benchmarks, size: '48'
-      = icon :benchmarks, size: '32'
+      = small_svg_icon :benchmarks
+      = svg_icon :benchmarks
+      = large_svg_icon :benchmarks
+      = xl_svg_icon :benchmarks
 
 = card s("<a name='material'></a>Named Material Icons"), header_action: link_to('Back to top', '#top') do
   %p Many Material icons have confusing names, so we have defined our own less-confusing names for some of them in icon_helper.rb:
@@ -69,34 +68,18 @@
             \:
             = i
 
-= card s("<a name='cx'></a>CX Futuro Icons"), header_action: link_to('Back to top', '#top') do
+= card s("<a name='svg'></a>SVG Icons"), header_action: link_to('Back to top', '#top') do
   %table
     %thead
       %th Icon
       %th Name
       %th Symbol
-    - Pano::IconHelper::FuturoIcons.each_with_index do |(key, value), i|
-      - unless i > 19
-        %tr
-          %td= icon key
-          %td= key
-          %td
-            %pre
-              \:
-              = key
-= card s("<a name='engage'></a>Engage Futuro Icons"), header_action: link_to('Back to top', '#top') do
-  %table
-    %thead
-      %th Icon
-      %th Name
-      %th Symbol
-    - Pano::IconHelper::FuturoIcons.each_with_index do |(key, value), i|
-      - unless i < 20
-        %tr
-          %td= icon key
-          %td= key
-          %td
-            %pre
-              \:
-              = key
+    - Pano::IconHelper::FuturoIcons.each do |(key, value)|
+      %tr
+        %td= svg_icon key
+        %td= key
+        %td
+          %pre
+            \:
+            = key
 
