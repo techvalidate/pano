@@ -1,0 +1,28 @@
+#app-top-nav
+  #nav-container
+
+    = link_to icon(:menu), '#', class: 'js-show-mobile-nav', id: 'mobile-nav-trigger'
+    #mobile-nav.nav-dropdown
+      - main_links.each do |link|
+        = nav_link link[:name], link[:url]
+
+    #nav-logo= link_to 'Home', app_root_path
+
+    #nav-links
+      - main_links.each do |link|
+        = nav_link link[:name], link[:url]
+
+    #nav-right-links
+
+      #cur-user-dropdown-trigger
+        .user-name= @current_user.name
+        .org-name= @organization.name
+        = user_avatar @current_user
+
+      = nav_link icon(:help), '#support-modal', data: {action: 'modals#open'}, class: 'right-icon-link js-tooltip', title: 'Help & Support'
+
+    #cur-user-dropdown.nav-dropdown
+      - user_links.each do |link|
+        = icon_to link[:icon], link[:name], link[:url], class: link[:class]
+
+#app-top-nav-shim
