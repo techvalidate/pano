@@ -86,7 +86,7 @@ module Pano
         header = section_header(title, options)
       end
 
-      content_tag :section, class: 'mt-xl' do
+      content_tag :section, options.add_class('mt-xl') do
         safe_join([header, capture(&block)])
       end
     end
