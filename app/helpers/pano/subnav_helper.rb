@@ -1,6 +1,11 @@
 module Pano
   module SubnavHelper
 
+    def subnav_link(name, url, options = {})
+      key = options.delete(:key) || name.parameterize.underscore.to_sym
+      link_to name, url, options.add_class('subnav-link').selected_if(@subnav == key)
+    end
+
     # todo: will this only be used by CX survey pages?
     def subnav_header(&block)
       content_for :subnav_header do

@@ -23,16 +23,6 @@ module Pano
       'Javascript:void(0)'
     end
 
-    def nav_link(name, url, options = {})
-      key = options.delete(:key) || name.parameterize.underscore.to_sym
-      options = options.selected_if(@nav == key).add_class 'nav-link'
-      if icon = options.delete(:icon)
-        icon_to icon, name, url, options
-      else
-        link_to name, url, options
-      end
-    end
-
     def popup_link_to(name, link, options = {})
       link_to name, link, options.merge(target: '_blank')
     end
@@ -49,9 +39,5 @@ module Pano
       condition ? 'selected' : ''
     end
 
-    def subnav_link(name, url, options = {})
-      key = options.delete(:key) || name.parameterize.underscore.to_sym
-      link_to name, url, options.add_class('subnav-link').selected_if(@subnav == key)
-    end
   end
 end
