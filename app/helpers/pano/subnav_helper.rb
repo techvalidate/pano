@@ -19,7 +19,7 @@ module Pano
 
     def subnav(&block)
       content_for :subnav do
-        str = div_tag id: 'subnav' do
+        str = div_tag id: 'subnav', data: {target: 'merge.render', id: 'subnav'} do
           div_tag id: 'subnav-contents' do
             capture(&block)
           end
