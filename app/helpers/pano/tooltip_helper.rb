@@ -1,5 +1,10 @@
 module Pano
   module TooltipHelper
+    def simple_tooltip(text = '', options = {})
+      content_tag :div, options.add_class('tooltip tooltip-simple') do
+        content_tag :div, text, class: 'tooltip-body'
+      end
+    end
 
     def info_tooltip(text = '', options = {}, &block)
       klass = options.delete :class

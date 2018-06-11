@@ -118,6 +118,26 @@
       color: $sabeus
 .tooltip-template
   display: none
+
+
+// Tooltip Types
+
+.tooltip.tooltip-simple
+  min-width: 10px
+  padding: 8px
+  box-shadow: none
+  .tooltip-body
+    min-width: 10px
+    font-size: 12px
+    &:before
+      +tip-arrow(8)
+      bottom: -12px
+      box-shadow: none
+    &:after
+      +tip-arrow(8)
+      bottom: -13px
+      box-shadow: none
+
 //----------------
 // Popovers
 //----------------
@@ -265,3 +285,5 @@
 
 .tooltip._biome-tooltip, .tooltip.n
   visibility: visible
+
+
