@@ -2,7 +2,7 @@ module Pano
   module CardHelper
 
     def card(title = '', options = {}, &block)
-      klass = options.delete :class
+
       if title.empty?
         header = ''
       else
@@ -11,7 +11,7 @@ module Pano
 
       content = capture(&block)
 
-      content_tag :div, class: "card #{klass}" do
+      content_tag :div, options.add_class('card') do
         safe_join([header, content])
       end
     end
@@ -26,6 +26,12 @@ module Pano
       content_tag :div, class: 'card' do
         header + content
       end
+    end
+
+    def skinny_card(options = {}, &block)
+      content = capture(&block)
+
+      content_tag :div, content, options.add_class('card p-0')
     end
 
     def divided_card(*args, &block)
