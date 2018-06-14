@@ -8,7 +8,7 @@ module Pano
 
     def info_tooltip(text = '', options = {}, &block)
       klass = options.delete :class
-      if text.empty?
+      if block_given?
         span_tag class: "info-tip-toggle #{klass}", data: {controller: 'tooltip'} do
           ic = icon :info
           template = content_tag :div, capture(&block), {class: 'tooltip-template', data: {target: 'tooltip.template'}}
