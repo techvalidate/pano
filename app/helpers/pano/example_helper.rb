@@ -28,7 +28,7 @@ module Pano
           # Format the plain code text in a pre tag
           plain_code = div_tag class: 'panel code-example hidden' do
             content_tag :pre do
-              content_tag :code, &block
+              content_tag :code, block
             end
           end
 
