@@ -28,10 +28,19 @@ module Pano
       end
     end
 
-    def skinny_card(options = {}, &block)
+    def skinny_card(title = '', options = {}, &block)
+      header_action = options.delete :header_action
+      if title.empty?
+        header = ''
+      else
+        header = card_header(title, header_action: header_action)
+      end
+
       content = capture(&block)
 
-      content_tag :div, content, options.add_class('card p-0')
+      content_tag :div, options.add_class('card card-divided') do
+        safe_join([header, content])
+      end
     end
 
     def divided_card(*args, &block)
@@ -66,7 +75,7 @@ module Pano
         end
       end
 
-      content_tag :div, class: 'card-header' do
+      content_tag :div, options.add_class('card-header') do
         safe_join([ic, title, tertiary_action])
       end
     end
