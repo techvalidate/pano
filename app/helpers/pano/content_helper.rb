@@ -93,7 +93,7 @@ module Pano
 
     def section_header(title, options = {})
       action = options.delete :header_action
-      title = h2_tag title
+      title = h5_tag title
       tertiary_action = ''
 
       unless action.nil?

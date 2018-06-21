@@ -122,19 +122,17 @@
 
 .tooltip.tooltip-simple
   min-width: 10px
-  padding: 8px
+  padding: 4px 6px
   box-shadow: none
   .tooltip-body
     min-width: 10px
     font-size: 12px
     &:before
       +tip-arrow(8)
-      bottom: -12px
+      bottom: -8px
       box-shadow: none
     &:after
-      +tip-arrow(8)
-      bottom: -13px
-      box-shadow: none
+      display: none
 
 //----------------
 // Popovers

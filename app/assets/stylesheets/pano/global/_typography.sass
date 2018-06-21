@@ -80,7 +80,11 @@ html, body
 p, .p
   font-weight: normal
 
-
+h1, h2, h3, h4, h5, p
+  margin: $p-spacing 0 0 0
+  line-height: $line-height
+  &:first-child
+    margin-top: 0
 
 // -----------------------------
 // Title styles
@@ -202,14 +206,6 @@ h5, .h5, .section-title
 .featured-large
   +featured-large
 
-p
-  +body-paragraph
-
-h1, h2, h3, h4, h5, p
-  margin: $p-spacing 0 0 0
-  line-height: $line-height
-  &:first-child
-    margin-top: 0
 // ------------------------------------------
 // text sizes -- for when you can't just use headings
 // ------------------------------------------
@@ -230,14 +226,17 @@ h1, h2, h3, h4, h5, p
   line-height: $line-height
 
 .featured-huge-number
+  font-family: $heading-font-stack
   font-size: 64px
   line-height: 64px
   font-weight: bold
 .featured-large-number
+  font-family: $heading-font-stack
   font-size: 40px
   line-height: 40px
   font-weight: bold
 .featured-number
+  font-family: $heading-font-stack
   font-size: 28px
   line-height: 28px
   font-weight: bold
