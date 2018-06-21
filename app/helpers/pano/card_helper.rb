@@ -6,7 +6,9 @@ module Pano
       if title.empty?
         header = ''
       else
-        header = card_header(title, options)
+        header_opts = {}
+        header_opts[:header_action] = options.delete :header_action
+        header = card_header(title, header_opts)
       end
 
       content = capture(&block)
