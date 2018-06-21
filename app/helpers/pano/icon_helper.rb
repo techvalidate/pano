@@ -12,12 +12,13 @@ module Pano
     #--------------------
     # render an icon
     #--------------------
-
     def icon(icon_name, options = {})
       klass = options[:class] ? (options.delete :class) : ''
       klass += ' material-icons'
       content_tag :i, material_icon_for(icon_name), options.add_class(klass)
     end
+
+
 
     def med_icon(icon_name, options = {})
       icon icon_name, options.add_class('med-icon')
@@ -31,11 +32,46 @@ module Pano
       icon icon_name, options.add_class('xl-icon')
     end
 
+
     # material icons are often named badly, hence this translation layer
     def material_icon_for(i)
       return MaterialIcons[i.to_sym] if MaterialIcons.key? i.to_sym
       i.to_s
     end
+
+    #--------------------
+    # render an svg icon
+    #--------------------
+
+    def svg_icon(icon_name, options = {})
+      futuro_icon = futuro_icon_for(icon_name)
+      size = options.delete :size
+      options.add_class('svg-icon')
+      options.merge({size: size}) unless size.nil?
+
+      image_tag "pano/icons/#{futuro_icon}.svg", options
+    end
+
+    def small_svg_icon(icon_name, options = {})
+      options.add_class('svg-icon-small')
+      svg_icon(icon_name, options)
+    end
+
+    def large_svg_icon(icon_name, options = {})
+      options.add_class('svg-icon-large')
+      svg_icon(icon_name, options)
+    end
+
+    def xl_svg_icon(icon_name, options = {})
+      options.add_class('svg-icon-xl')
+      svg_icon(icon_name, options)
+    end
+
+    def futuro_icon_for(i)
+      i.to_s if FuturoIcons.include? i.to_s
+    end
+
+    FuturoIcons = Dir.glob(Pano::Engine.root.to_s + '/app/assets/images/pano/icons/*.svg').collect{|icon| icon.match(/(?!\/)(\w+).(?=\.svg$)/)[0]}.sort
 
     MaterialIcons = {
       angle_up: 'keyboard_arrow_up',

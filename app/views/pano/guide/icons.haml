@@ -3,21 +3,30 @@
   @nav        = :ui
   @subnav     = :icons
 
-= box 'Material Icons' do
+.featured
+  = link_to 'Material Icons', '#material'
+  |
+  = link_to 'SVG Icons', '#svg'
+= card 'Icon Helpers' do
   %p
     The small icons we sprinkle into our pages use the Material icon font.
-    They can be specified in HTML manually, or via :before content, but usually they're inserted with one of our helper methods.
+    They can be specified in HTML manually, or via :before content, but usually they're inserted with one of our helper methods. For larger icons, we use the Futuro library. Futuro icons are inserted with a helper method.
 
-  %h4 Icon Helpers
 
-  %h5 icon
-  %p Use this when you just want to output an icon.
+
+  .featured
+    %pre
+      icon and svg_icon
+  %p Use this when you just want to output a Material or Futuro icon.
   = haml_example do
     :plain
+      = svg_icon :benchmarks, size: '32'
       = icon :survey
       = icon :person, class: 'green'
 
-  %h5 icon_to
+  .featured
+    %pre
+      icon_to
   %p
     Use this when you want to prepend an icon onto a text link.
   %p.red
@@ -26,21 +35,51 @@
     :plain
       = icon_to :survey, 'Survey', '#'
 
-  %h5 large_icon
-  %p Makes a bigger icon.
+  .featured
+    %pre
+      large_icon
+  %p Makes a bigger Material icon.
   = haml_example do
     :plain
       = large_icon :survey
       = large_icon :person, class: 'green'
+  .featured Small, Large and XL svg_icons
+  %p Add a size attribute to the icon helper
+  = haml_example do
+    :plain
+      = small_svg_icon :benchmarks
+      = svg_icon :benchmarks
+      = large_svg_icon :benchmarks
+      = xl_svg_icon :benchmarks
 
-= box 'Named Material Icons' do
+= card s("<a name='material'></a>Named Material Icons"), header_action: link_to('Back to top', '#top') do
   %p Many Material icons have confusing names, so we have defined our own less-confusing names for some of them in icon_helper.rb:
-  %ul
+  %table
+    %thead
+      %th Icon
+      %th Name
+      %th Symbol
     - Pano::IconHelper::MaterialIcons.each_key do |i|
-      %li
-        = icon i
-        %span.note= i
+      %tr
+        %td= icon i
+        %td= i
+        %td
+          %pre
+            \:
+            = i
 
-= box 'TODO: Larger Icons (SVG)' do
-  %p Give examples
-  %p discuss which icon libraries we use
+= card s("<a name='svg'></a>SVG Icons"), header_action: link_to('Back to top', '#top') do
+  %table
+    %thead
+      %th Icon
+      %th Name
+      %th Symbol
+    - Pano::IconHelper::FuturoIcons.each do |(key, value)|
+      %tr
+        %td= svg_icon key
+        %td= key
+        %td
+          %pre
+            \:
+            = key
+

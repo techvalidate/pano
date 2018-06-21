@@ -1,4 +1,4 @@
-$button-radius: 3px
+$button-radius: 2px
 
 //=========================================
 // base button mixin. used by the .btn class, <button> tags, and also dropdowns
@@ -14,9 +14,10 @@ $button-radius: 3px
   transition: all 0.2s ease-in-out
   border: solid 1px transparent
   border-radius: $button-radius
+  text-transform: uppercase
 
-  +btn_dimensions(32px, 12px, $font-size)
-  +btn_colors($blue, transparent, white)
+  +btn_dimensions(32px, 8px, $font-size)
+  +btn_colors($sabeus, transparent, white)
 
   // button spacing
   margin-right: 4px
@@ -35,6 +36,8 @@ $button-radius: 3px
   .material-icons
     margin-right: 4px
     vertical-align: text-top
+    font-size: 1.5em
+    line-height: 0.75em
   &.icon-rt
     .material-icons
       margin-right: 0
@@ -53,7 +56,7 @@ $button-radius: 3px
 = btn_dimensions($height, $side-padding, $font-size)
   height: $height
   min-width: $height
-  line-height: $height - 2px // accounts for the border width
+  line-height: $height
   padding: 0 $side-padding
   font-size: $font-size
 
@@ -67,12 +70,16 @@ $button-radius: 3px
   border-color: $border-color
   &:hover
     text-decoration: none
-    background-color: darken($bg-color, 5%)
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2)
+    color: lighten($text_color, 10%)
+    border-color: lighten($border-color, 10%)
+    background-color: lighten($bg-color, 10%)
   &:active, &.selected
     transition: none
     background-color: darken($bg-color, 10%)
-    box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.2)
+    border-color: darken($border-color, 10%)
+    color: darken($text_color, 10%)
+    cursor: grab
+
 
 
 
@@ -88,67 +95,64 @@ $button-radius: 3px
   //=========================================
 
   &.btn-primary
-    +btn_colors($green, transparent, white)
+    +btn_colors($sabeus, transparent, white)
 
   &.btn-warning
-    +btn_colors($error-color, transparent, white)
+    +btn_colors(transparent, $warning-color, $warning-color)
 
   &.btn-white
-    +btn_colors(white, $light-gray, $text-color)
+    +btn_colors(white, $light-gray, $body-paragraph-color)
 
   &.btn-gray
-    +btn_colors($lighter-gray, $gray, $text-color)
+    +btn_colors($lighter-gray, $gray, $body-paragraph-color)
 
   &.btn-outline
-    +btn_colors(transparent, $link-color, $link-color)
+    +btn_colors(transparent, $slate, $charcoal)
     &:hover
-      background-color: $link-color
-      color: white
-    &:active
-      background-color: darken($link-color, 10%)
-      border-color: darken($link-color, 10%)
-      color: white
+      text-decoration: none
+      color: lighten($charcoal, 30%)
+      border-color: lighten($slate, 30%)
+    &:active, &.selected
+      border-color: darken($slate, 10%)
+      color: darken($charcoal, 10%)
+
+  &.btn-full-width
+    width: 100%
 
   // for when you want a white outline button on a dark bg
   &.btn-outline-white
-    +btn_colors(transparent, rgba(255,255,255,0.7), rgba(255,255,255,0.8))
+    +btn_colors(transparent, rgba(255,255,255,0.7), white)
     &:hover, &:active
-      background-color: rgba(255,255,255,0.3)
       color: white
       border-color: white
+    &:active
+      color: rgba(255,255,255,0.8)
 
   // todo: is this necessary?
   &.btn-cancel
     +btn_colors(white, $light-gray, $slate)
 
-  //=========================================
-  // pill buttons
-  //=========================================
+  &.btn-disabled
+    opacity: 0.3
+    cursor: not-allowed
+    transition: none
+    &:hover, &:active
+      color: auto
+      background-color: auto
+      border-color: auto
 
-  &.btn-pill
-    border-radius: 100px
-    &.btn-tiny
-      padding: 0 8px
 
   //=========================================
   // button sizes
   //=========================================
-
-  &.btn-huge
-    +btn_dimensions(48px, 16px, 20px)
-    .material-icons
-      font-size: 24px
-
   &.btn-large
     +btn_dimensions(40px, 16px, 16px)
+
     .material-icons
       font-size: 20px
 
   &.btn-small
     +btn_dimensions(24px, 8px, $small-font-size)
-
-  &.btn-tiny
-    +btn_dimensions(20px, 4px, $tiny-font-size)
 
   //=========================================
   // button alignment styles
@@ -181,7 +185,7 @@ $button-radius: 3px
 
 .btn-group
   .btn
-    +btn_colors(white, $light-gray, $text-color)
+    +btn_colors(white, $light-gray, $body-paragraph-color)
     margin-right: -5px
     border-radius: 0
     &:hover
@@ -215,7 +219,7 @@ $button-radius: 3px
   // gray
   &.btn-gray
     .btn
-      +btn_colors($lighter-gray, $gray, $text-color)
+      +btn_colors($lighter-gray, $gray, $body-paragraph-color)
       &:hover
         box-shadow: none
 
@@ -237,7 +241,9 @@ $button-radius: 3px
         color: white
         border-color: white
 
-// todo: is this necessary?
+
+
+  // todo: is this necessary?
 .dropdown-btn-group
   +clearfix
   display: inline-block
@@ -291,4 +297,4 @@ $button-radius: 3px
           border-bottom: 1px solid rgba(0,0,0,0.10)
           &:hover
             background: $lighter-gray
-            color: $text-color
+            color: $body-paragraph-color

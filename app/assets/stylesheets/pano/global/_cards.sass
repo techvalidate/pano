@@ -1,6 +1,55 @@
-.card
-  +box
+@card-padding: 32px
+=card
+  margin-top: 32px
+  padding: 32px
+  background: #fff
+  border-radius: 3px
+  background-clip: border-box
+  border: 1px solid $pebble
+  +clearfix
+  +mobile
+    padding: 16px
+    margin-top: 16px
 
+.card
+  +card
+  &:first-child
+    margin-top: 0
+  .card-header
+    position: relative
+    margin-bottom: 16px
+    .card-icon
+      display: block
+      width: 32px
+    .card-title
+      display: inline-block
+    .card-header-action
+      position: absolute
+      right: 0
+      top: 0
+      text-align: right
+
+  .card-footer
+    margin-top: 24px
+    text-align: right
+
+
+.card.card-divided
+  padding: 0
+  .card-header, .card-body, .card-footer
+    padding: 8px 24px
+    position: relative
+  .card-header
+    display: flex
+    align-items: center
+    border-bottom: 1px solid $pebble
+    .card-header-action
+      margin-left: auto
+      order: 2
+      position: relative
+
+  .card-footer
+    border-top: 1px solid $pebble
 
 .settings-cards-container
   max-width: 1056px
@@ -9,6 +58,7 @@
   @media all and (max-width: 1056px)
     max-width: 682px
 
+// TODO - 3.x Card, do we still need?
 .settings-card
   padding: 40px 32px 16px 32px
   text-align: center

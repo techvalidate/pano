@@ -13,7 +13,9 @@ spec/test_app/tmp/
 /pano.iml
 
 /node_modules
-
+/spec/test_app/public/packs
+/spec/test_app/node_modules
+GuardFile
 tags
 **/tags
 *.swp

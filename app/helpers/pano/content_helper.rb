@@ -78,5 +78,31 @@ module Pano
       @title = html_escape t
     end
 
+    def section(options = {}, &block)
+      title = options.delete :title
+      header = ''
+
+      unless title.nil?
+        header = section_header(title, options)
+      end
+
+      content_tag :section, options do
+        safe_join([header, capture(&block)])
+      end
+    end
+
+    def section_header(title, options = {})
+      action = options.delete :header_action
+      title = h2_tag title
+      tertiary_action = ''
+
+      unless action.nil?
+        tertiary_action = content_tag :span, action, class: 'section-header-action'
+      end
+
+      content_tag :div, class: 'section-header' do
+        safe_join([title, tertiary_action])
+      end
+    end
   end
 end

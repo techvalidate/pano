@@ -10,24 +10,27 @@ Pano::Engine.routes.draw do
     :shadows,
     :transforms,
     :grid,
+    :nav,
     :typography,
     :icons,
     :lists,
     :links,
     :buttons,
     :tabs,
-    :boxes,
+    :cards,
     :tables,
+    :tooltips,
     :forms,
     :hr,
     :arrows,
     :banners,
+    :modals,
     :flash_messages,
     :spinners,
-
     :css,
     :js,
-    :helpers
+    :helpers,
+    :datepicker
   ]
 
   guide_routes.each do |r|

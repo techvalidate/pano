@@ -3,10 +3,71 @@
   @nav        = :ui
   @subnav     = :lists
 
-= box 'Basic Lists' do
-  %p Basic list styling is very simple: ULs are bulleted, OLs are numbered, and list items are spaced out the same as paragraph text.
+= card 'Styled Lists' do
+  %h4 List
+  = haml_example do
+    :plain
+      %ul.list
+        %li I am a list item in a List
+        %li I am a list item in a List
+        %li I am a list item in a List
 
-  %h4 UL
+  %h4 List with display and hover variants
+  = haml_example do
+    :plain
+      %ul.list.list-display.list-hoverable
+        %li I am a list item in a Display List
+        %li I am a list item in a Display List
+        %li I am a list item in a Display List
+
+= card 'Accordians' do
+  = haml_example do
+    :plain
+      %ul.accordian{data: {controller: 'accordian'}}
+        %li.item-open{data: {action: 'click->accordian#toggle'}}
+          .item-label
+            List Item
+          .item-content
+            %h3 Content
+            %p Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten ribeyepancetta sho Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten
+        %li{data: {action: 'click->accordian#toggle'}}
+          .item-label
+            List Item
+          .item-content
+            %h3 Content
+            %p Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten ribeyepancetta sho Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten
+        %li{data: {action: 'click->accordian#toggle'}}
+          .item-label
+            List Item
+          .item-content
+            %h3 Content
+            %p Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten ribeyepancetta sho Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten
+  %h4 Accordian with display variant
+  = haml_example do
+    :plain
+      %ul.accordian.accordian-display{data: {controller: 'accordian'}}
+        %li.item-open{data: {action: 'click->accordian#toggle'}}
+          .item-label
+            List Item
+          .item-content
+            %h3 Content
+            %p Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten ribeyepancetta sho Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten
+        %li{data: {action: 'click->accordian#toggle'}}
+          .item-label
+            List Item
+          .item-content
+            %h3 Content
+            %p Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten ribeyepancetta sho Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten
+        %li{data: {action: 'click->accordian#toggle'}}
+          .item-label
+            List Item
+          .item-content
+            %h3 Content
+            %p Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten ribeyepancetta sho Bacon ipsum dolor amet jerky alcatra salami, short ribs drumstick pancetta ten
+= card 'Basic Lists' do
+  %p Basic list styling is very simple: ULs are bulleted, OLs are numbered, and list items are spaced out the same as paragraph text.
+  %pre
+    %h4 UL
 
   = haml_example do
     :plain
@@ -14,8 +75,8 @@
         %li I am a list item in a UL
         %li I am a list item in a UL
         %li I am a list item in a UL
-
-  %h4 OL
+  %pre
+    %h4 OL
 
   = haml_example do
     :plain
@@ -23,8 +84,7 @@
         %li I am a list item in a OL
         %li I am a list item in a OL
         %li I am a list item in a OL
-
-= box 'Unstyled Lists' do
+= card 'Unstyled Lists' do
   %p
     When you need to create custom lists, you can remove the default list styling
     with the +plain-list mixin, and then add your own styling on top.

@@ -78,25 +78,21 @@
   z-index: 199
   left: 0
   width: 100vw
-  height: 40px
   color: white
+  padding: 0 16px
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1)
   background: white
-
   &.sticky-subnav
     position: static
     width: 100%
 
 
   #subnav-contents
-    +page-width
     .tabs
       border-bottom: none
-
       .dropdown-btn-group
         margin-top: 8px
         font-size: 10px
-
         i
           vertical-align: middle
         a
@@ -118,12 +114,11 @@
     padding-top: 8px
     padding-bottom: 8px
     color: $dark-blue
-    font-size: 12px
     position: relative
     +less-than-widescreen
       font-size: 11px
     &.selected
-      color: $blue
+      color: $sabeus
     &.with-right-arrow
       &:after
         content: '\E5CC'

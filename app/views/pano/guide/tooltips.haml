@@ -1,2 +1,49 @@
-%h3 Tooltips
-%p when and where to use 'tipsy-style tooltips, and how'
+:ruby
+  @page_title = 'Tooltips and Popovers'
+  @nav        = :ui
+  @subnav     = :tooltips
+
+= card 'Tooltips' do
+  %h4 Simple Info Icon Tooltip
+  = haml_example do
+    :plain
+      Statement that requires more info
+      = info_tooltip 'Lorem ipsum dolor sit amet, conctetur adipiscing elit, sed do'
+  %h4 Tooltip with html
+  = haml_example do
+    :plain
+      Statement that requires more info
+      = info_tooltip do
+        .tooltip-header
+          %p Rating: 4/5 Strongly Agree
+        .tooltip-body
+          .text-center
+            .featured-large.sabeus.mt-m 20%
+            %p 26 responses
+
+
+= card 'Popovers' do
+  %h4 Popover with required title and text
+  = haml_example do
+    :plain
+      Statement that requires more info
+      - popover_title = 'What\'s a subfactor?'
+      - popover_text = 'Think of subfactors as the unit of action for your engagement program. Core Factors break down into their building blocks to make it easier for you to pinpoint problems and plan action.'
+      = info_popover popover_title, popover_text
+
+  %h4 Popover with icon
+  = haml_example do
+    :plain
+      Statement that requires more info
+      - popover_title = 'What\'s a subfactor?'
+      - popover_text = 'Think of subfactors as the unit of action for your engagement program. Core Factors break down into their building blocks to make it easier for you to pinpoint problems and plan action.'
+      = info_popover popover_title, popover_text, icon: icon(:market_forecast, size: '42')
+
+  %h4 Popover with icon and action
+  = haml_example do
+    :plain
+      Statement that requires more info
+      - popover_title = 'What\'s a subfactor?'
+      - popover_text = 'Think of subfactors as the unit of action for your engagement program. Core Factors break down into their building blocks to make it easier for you to pinpoint problems and plan action.'
+      = info_popover popover_title, popover_text, icon: icon(:market_forecast, size: '42'), action: ['Learn More', '#']
+

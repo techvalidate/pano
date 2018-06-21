@@ -3,7 +3,7 @@
   @nav        = :ui
   @subnav     = :buttons
 
-= box 'Button Types' do
+= card 'Button Types' do
 
   %p The default and Primary are the most-commonly used button colors.
 
@@ -11,18 +11,16 @@
 
   = haml_example do
     :plain
-      = btn_to 'Default Button', '#'
-      = btn_to 'Primary Button', '#', class: 'btn-primary'
-      = btn_to 'Warning Button', '#', class: 'btn-warning'
-      = btn_to 'White Button', '#', class: 'btn-white'
-      = btn_to 'Gray Button', '#', class: 'btn-gray'
-      = btn_to 'Outline Button', '#', class: 'btn-outline'
-      .box.bg-dark-blue
+      = btn_to 'Default Button',  '#'
+      = btn_to 'Warning Button',  '#', class: 'btn-warning'
+      = btn_to 'Outline Button',  '#', class: 'btn-outline'
+      = btn_to 'Disabled Button', '#', class: 'btn-disabled'
+      .box.bg-slate
         = btn_to 'Outline White Button', '#', class: 'btn-outline-white'
         %span.white
           &larr; use this one only on a dark bg
 
-= box 'Button Sizes' do
+= card 'Button Sizes' do
 
   %p There are 3 button sizes, and each has a helper method for convenience.
   %p All button helpers can take an options hash just like link_to so you can specify custom css classes and attributes.
@@ -32,13 +30,42 @@
 
   = haml_example do
     :plain
-      = huge_btn_to 'Huge Button', '#'
       = large_btn_to 'Large Button', '#'
       = btn_to 'Default Button', '#'
       = small_btn_to 'Small Button', '#'
-      = tiny_btn_to 'Tiny Button', '#'
 
-= box 'Button Groups' do
+= card 'Buttons with Icons' do
+  %p Buttons can have icons in them, either on the right or the left.
+  %p Icons in buttons use the same oolor as the button text.
+  %p Buttons can even have only an icon inside. In this case, use the icon_btn helper.
+
+  = haml_example do
+    :plain
+      %p buttons with icons AND text labels
+      %p
+        = icon_btn_to 'add', 'New Survey', '#', class: 'btn-primary'
+        = icon_btn_to 'sort', 'Sort', '#', class: 'btn-white'
+        = icon_btn_to 'keyboard_arrow_right', 'Continue', '#', right: true
+      -# %p buttons that are icons only
+      -# %p
+      -#   = icon_btn :file_download, '#', class: 'btn-white', title: 'Download'
+      -#   = icon_btn :delete, '#', class: 'btn-gray', title: 'Delete item'
+      -# %p buttons groups that are icons only
+      -# %p
+      -#   .btn-group
+      -#     = icon_btn :file_download, '#', class: 'btn-white', title: 'Download'
+      -#     = icon_btn :delete, '#', class: 'btn-white', title: 'Delete item'
+      -# %p
+      -#   .btn-group.btn-slate
+      -#     = icon_btn :file_download, '#', title: 'Download'
+      -#     = icon_btn :delete, '#', title: 'Delete item'
+      -# %p
+      -#   .btn-group.btn-gray
+      -#     = icon_btn :file_download, '#', title: 'Download'
+      -#     = icon_btn :delete, '#', title: 'Delete item'
+%hr
+%h5.section-title 3.x button styles
+= card 'Button Groups' do
   = haml_example do
     :plain
       %p
@@ -73,47 +100,9 @@
           = icon_btn_to :add, "Option 2", '#', class: 'selected'
           = icon_btn_to :delete, "Option 3", '#'
 
-= box '"Pill" Buttons' do
-  %p Some buttons, especially on login/signup pages, and in emails, currently use a pill shape. This style can be applied to all colors and sizes of buttons.
-  %p Extra minimum left/right padding is applied, and these buttons are often also made fixed-width.
-
-  = haml_example do
-    :plain
-      = btn_to 'Primary Button', '#', class: 'btn-primary btn-pill'
-      = btn_to 'Standard Button', '#', class: 'btn-pill'
-      = btn_to 'Outline Button', '#', class: 'btn-outline btn-pill'
-      = btn_to 'Tiny Button', '#', class: 'btn-tiny btn-pill'
 
 
-= box 'Buttons with Icons' do
-  %p Buttons can have icons in them, either on the right or the left.
-  %p Icons in buttons use the same oolor as the button text.
-  %p Buttons can even have only an icon inside. In this case, use the icon_btn helper.
 
-  = haml_example do
-    :plain
-      %p buttons with icons AND text labels
-      %p
-        = icon_btn_to 'add', 'New Survey', '#', class: 'btn-primary'
-        = icon_btn_to 'sort', 'Sort', '#', class: 'btn-white'
-        = icon_btn_to 'keyboard_arrow_right', 'Continue', '#', right: true
-      %p buttons that are icons only
-      %p
-        = icon_btn :file_download, '#', class: 'btn-white', title: 'Download'
-        = icon_btn :delete, '#', class: 'btn-gray', title: 'Delete item'
-      %p buttons groups that are icons only
-      %p
-        .btn-group
-          = icon_btn :file_download, '#', class: 'btn-white', title: 'Download'
-          = icon_btn :delete, '#', class: 'btn-white', title: 'Delete item'
-      %p
-        .btn-group.btn-slate
-          = icon_btn :file_download, '#', title: 'Download'
-          = icon_btn :delete, '#', title: 'Delete item'
-      %p
-        .btn-group.btn-gray
-          = icon_btn :file_download, '#', title: 'Download'
-          = icon_btn :delete, '#', title: 'Delete item'
 
 = box 'Other Button Styles' do
   %h5 Full-width Buttons (display: block)

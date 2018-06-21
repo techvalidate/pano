@@ -13,9 +13,9 @@ module Pano
       return "#{dimension}: #{selected}" if dimension == 'Sort By'
       return "#{dimension}: #{selected.truncate(60)}" if selected.is_a?(String)
       if selected.size > 2
-        "#{dimension}: #{selected.size} Selected"
+        "#{self.dimension}: #{selected.size} selected"
       else
-        "#{dimension}: #{selected.to_sentence(words_connector: ' or ', two_words_connector: ' or ', last_word_connector: ' or ').truncate(60)}"
+        "#{selected.to_sentence(words_connector: ' or ', two_words_connector: ' or ', last_word_connector: ' or ').truncate(60)}"
       end
     end
 

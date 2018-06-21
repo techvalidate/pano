@@ -1,0 +1,11 @@
+.tooltip-template{data: {target: 'popover.template'}}
+  - unless header.nil?
+    .popover-header
+      - unless header_icon.nil?
+        = header_icon
+      %h3= header
+  .popover-body
+    %p= body_text
+  - unless footer_action.nil?
+    .popover-footer
+      = action_btn footer_action
