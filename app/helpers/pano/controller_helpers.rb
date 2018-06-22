@@ -39,6 +39,17 @@ module Pano
       end
     end
 
+    def render_filtered(action)
+      respond_to do |format|
+        format.html
+        format.json {
+          render json: {
+            html: render_to_string(action)
+          }
+        }
+      end
+    end
+
     def set_nav
       # To be overridden in subclasses
     end
