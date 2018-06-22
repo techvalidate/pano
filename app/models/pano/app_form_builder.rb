@@ -11,8 +11,10 @@ module Pano
     # For checkboxes and radio buttons, we don't put them into their own form-groups.
     # You can put multiple checkboxes and radios into a group manually.
     def check_box(name, label_text, options = {}, checked_value = '1', unchecked_value = '0')
-      content_tag :div, class: 'checkbox' do
-        label name, safe_join([super(name, options, checked_value, unchecked_value), label_text])
+      content_tag :div, class: 'form-group' do
+        content_tag :div, class: 'checkbox' do
+          safe_join([super(name, options, checked_value, unchecked_value), label(name, label_text)])
+        end
       end
     end
 
