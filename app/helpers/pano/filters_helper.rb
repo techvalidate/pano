@@ -10,6 +10,10 @@ module Pano
       end)
     end
 
+    def filter_menu(search, name)
+      search.send("#{name.downcase}_menu")
+    end
+
     def filter_menu_title(menu)
       filtered_count = menu.items.count(&:selected)
       title = filtered_count > 0 ? "#{menu.name} (#{filtered_count})" : menu.name
