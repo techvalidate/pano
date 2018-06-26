@@ -191,6 +191,13 @@ h5, .h5, .section-title
   line-height: 18px
   color: $body-paragraph-color
 
+= label
+  font-family: $font-stack
+  font-size: 13px
+  font-weight: 500
+  color: $charcoal
+  text-transform: uppercase
+
 .note
   +note
 
@@ -206,6 +213,8 @@ h5, .h5, .section-title
 .featured-large
   +featured-large
 
+.label
+  +label
 // ------------------------------------------
 // text sizes -- for when you can't just use headings
 // ------------------------------------------
@@ -235,10 +244,17 @@ h5, .h5, .section-title
   font-size: 40px
   line-height: 40px
   font-weight: bold
+
 .featured-number
   font-family: $heading-font-stack
   font-size: 28px
   line-height: 28px
+  font-weight: bold
+
+.featured-number-32
+  font-family: $heading-font-stack
+  font-size: 32px
+  line-height: 32px
   font-weight: bold
 // ------------------------------------------
 // font weights
