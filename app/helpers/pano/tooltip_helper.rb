@@ -21,12 +21,19 @@ module Pano
       end
     end
 
-    def info_popover(header, body_text, options = {})
+    def info_popover(header, body_text = '', options = {}, &block)
       klass         = options.delete :class
       header_icon   = options.delete :icon
       footer_action = options.delete :action
+      width         = options.delete :width
 
-      span_tag class: "info-tip-toggle #{klass}", data: {controller: 'popover'} do
+      if block_given?
+        body_text = capture(&block)
+      end
+
+      data = width.nil? ? {controller: 'popover'} : {controller: 'popover', 'popover-width': width}
+
+      span_tag class: "info-tip-toggle #{klass}", data: data do
         ic = icon :info
         template = render :partial => 'pano/components/popover', locals: {body_text: body_text, header: header, header_icon: header_icon, footer_action: footer_action}
 
