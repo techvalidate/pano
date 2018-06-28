@@ -89,6 +89,9 @@ h1, h2, h3, h4, h5, p
 // -----------------------------
 // Title styles
 // -----------------------------
+=vertical-aligner
+  display: flex
+  align-items: center
 
 =h1
   font-family: $heading-font-stack
@@ -96,6 +99,7 @@ h1, h2, h3, h4, h5, p
   color: $charcoal
   line-height: 40px
   font-weight: bold
+  +vertical-aligner
   +mobile
     font-size: 24px
     line-height: 32px
@@ -346,3 +350,6 @@ span.trademark
 
 .indented
   margin-left: 32px
+
+.no-line-height
+  line-height: normal !important
