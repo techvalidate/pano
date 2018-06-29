@@ -14,6 +14,7 @@
   border: 1px solid $flint
   border-radius: 2px
   font-weight: normal
+  box-sizing : border-box
   +transition(all ease-in-out 0.15s)
 
   &[disabled]
@@ -69,33 +70,41 @@ textarea
 // use :before or :after on an input element
 .search-field-container
   position: relative
-
-  input[type="search"]
-    padding-left: 32px
-
-  &:before
+  width: 250px
+  &:after
+    display: flex
+    justify-content: center
     content: '\e8b6'
     position: absolute
-    margin-left: 11px
-    margin-top: 3px
-    font-size: 18px
+    right: 0
+    top: 0
+    margin: auto
+    font-size: 16px
+    height: 30px
+    width: 30px
+    line-height: 30px
     pointer-events: none
     font-family: 'Material Icons'
-    color: $gray
+    color: $stone
+    border-radius: 2px
 
-input[type="search"]
-  -webkit-appearance: none
-  +box-sizing(border-box)
-  border-radius: 48px
-  background: #fff
-  border: solid 1px #ccc
-  padding: 4px 12px
-  box-shadow: inset 0 0 2px rgba(0,0,0,0.15)
-  outline: none
-  transition: all 0.30s ease-in-out
+  input[type="search"]
+    display: block
+    line-height: 30px
+    height: 30px
+    font-size: 14px
+    text-align: left
+    background: transparent
+    border: 0
+    border-radius: 0
+    &.selected, &:focus, &:active
+      color: $charcoal
+      border-bottom: 1px solid $pebble
+  &:hover
+    &:after
+      background: $pebble
 
-  &.selected
-    border: 1px solid $sabeus
+
 
 
 
