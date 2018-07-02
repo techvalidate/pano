@@ -1,6 +1,5 @@
 module Pano
   module PaginationHelper
-
     def pagination_of(name, collection)
       [pagination_numbers_for(collection), name].join(' ')
     end

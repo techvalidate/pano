@@ -45,10 +45,7 @@ module Pano
 
     def svg_icon(icon_name, options = {})
       futuro_icon = futuro_icon_for(icon_name)
-      size = options.delete :size
-      options.add_class('svg-icon')
-      options.merge({size: size}) unless size.nil?
-
+      options.add_class('svg-icon') unless options[:size]
       image_tag "pano/icons/#{futuro_icon}.svg", options
     end
 
