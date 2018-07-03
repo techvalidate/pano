@@ -1,5 +1,20 @@
 module Pano
   module TooltipHelper
+    def tooltip(toggle_text, options = {}, &block)
+      text = options.delete :text
+      options[:data] = {controller: 'tooltip'}
+
+      if block_given?
+        content_tag :div, options do
+          toggle = p_tag toggle_text, data: {target: 'tooltip.toggle'}
+          body = tooltip_template(&block)
+          safe_join([toggle, body])
+        end
+      else
+        content_tag :div, text, options
+      end
+    end
+
     def simple_tooltip(text = '', options = {})
       content_tag :div, options.add_class('tooltip tooltip-simple') do
         content_tag :div, text, class: 'tooltip-body'
@@ -38,6 +53,12 @@ module Pano
         template = render :partial => 'pano/components/popover', locals: {body_text: body_text, header: header, header_icon: header_icon, footer_action: footer_action}
 
         safe_join([ic, template])
+      end
+    end
+
+    def tooltip_template(&block)
+      content_tag :div, class: 'tooltip-template', data: {target: 'tooltip.template'} do
+        capture &block
       end
     end
   end

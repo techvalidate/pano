@@ -18,7 +18,7 @@
   background: $charcoal
   color: #fff
   font-size: 13px
-  padding: 8px 16px
+  padding: 24px
   z-index: 100
   visibility: hidden
   position: absolute
@@ -31,42 +31,50 @@
     z-index: 3
     min-width: 150px
     color: #fff
-    &:before
+  &:before
       +tip-arrow(15)
       left: 0
       right: 0
-      bottom: -14px
+      bottom: -7px
       margin: auto
       background: $charcoal
       transform: rotate(45deg)
       z-index: 2
-    &:after
-      +tip-arrow(15)
-      left: 0
-      right: 0
-      bottom: -15px
-      margin: auto
-      background: transparent
-      transform: rotate(45deg)
-      /* Prefixes... */
-      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4)
-      z-index: 0
+  &:after
+    +tip-arrow(15)
+    left: 0
+    right: 0
+    bottom: -8px
+    margin: auto
+    background: transparent
+    transform: rotate(45deg)
+    /* Prefixes... */
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    z-index: 0
+  &.tooltip-white
+    background: #fff
+    .tooltip-body
+      color: $charcoal
+      p
+        color: $charcoal
+    &:after, &:before
+      background: #fff
   &.align-right
     .tooltip-body
-      &:before
-        right: auto
-        bottom: 0
-        top: 0
-        left: -8px
-        background: #fff
-        transform: rotate(135deg)
-      &:after
-        right: auto
-        bottom: 0
-        top: 0
-        left: -9px
-        background: #cecece
-        transform: rotate(135deg)
+    &:before
+      right: auto
+      bottom: 0
+      top: 0
+      left: -8px
+      background: #fff
+      transform: rotate(135deg)
+    &:after
+      right: auto
+      bottom: 0
+      top: 0
+      left: -9px
+      background: #cecece
+      transform: rotate(135deg)
 
 .tooltip .tooltip-header
   text-align: left
@@ -127,12 +135,12 @@
   .tooltip-body
     min-width: 10px
     font-size: 12px
-    &:before
-      +tip-arrow(8)
-      bottom: -8px
-      box-shadow: none
-    &:after
-      display: none
+  &:before
+    +tip-arrow(8)
+    bottom: -8px
+    box-shadow: none
+  &:after
+    display: none
 
 //----------------
 // Popovers
