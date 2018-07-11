@@ -19,6 +19,15 @@ module Pano
     end
 
     def small_card(title, options = {}, &block)
+      header = card_header(title, options)
+
+      content = capture(&block)
+
+      content_tag :div, class: 'card card-small' do
+        header + content
+      end
+    end
+    def subtitle_card(title, options = {}, &block)
       options[:small_title] = true
 
       header = card_header(title, options)
