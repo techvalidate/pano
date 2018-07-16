@@ -13,7 +13,7 @@ module Pano
 
       options.add_class 'logo'
 
-      image_tag logo.url(size), options
+      image_tag logo.url, options
     end
 
   end
