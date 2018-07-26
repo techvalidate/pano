@@ -34,7 +34,7 @@ module Pano
 
       content = capture(&block)
 
-      content_tag :div, class: 'card' do
+      content_tag :div, class: 'card card-small' do
         header + content
       end
     end
