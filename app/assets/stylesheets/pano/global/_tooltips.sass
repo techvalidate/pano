@@ -108,6 +108,7 @@
       width: 8px
       height: 8px
       border-radius: 50%
+      /* FIXME - Remove application specific styles*/
       &[data-color="detractors"]
         border: 2px solid $detractor-color
       &[data-color="passives"]
@@ -137,10 +138,21 @@
     font-size: 12px
   &:before
     +tip-arrow(8)
-    bottom: -4px
+    bottom: -3px
     box-shadow: none
   &:after
     display: none
+  &.edge-right
+    border-bottom-right-radius: 2px
+    &:before
+      left: auto
+      right: 2px
+  &.edge-left
+    border-radius-bottom-left: 2px
+    &:before
+      right: auto
+      left: 2px
+
 
 //----------------
 // Popovers
@@ -177,7 +189,8 @@
     z-index: 2
   &:after
     left: -9px
-    background: rgba(0, 0, 0, 0.1)
+    background: rgba(0, 0, 0, 0.05)
+    border: 0
 
 
 //----------------
