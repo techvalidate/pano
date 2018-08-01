@@ -97,9 +97,11 @@ $button-radius: 2px
   //=========================================
 
   &.btn-primary
-    +btn_colors($sabeus, transparent, white)
+    color: white
+    background-color: $sabeus
+    border-color: transparent
     &:hover
-      background-color: #00D17A
+      background-color: #00D17A !important
 
   &.btn-warning
     +btn_colors(transparent, $warning-color, $warning-color)
