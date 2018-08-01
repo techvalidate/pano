@@ -91,17 +91,16 @@ $button-radius: 2px
 
 .btn, input[type='submit'], button
   +btn
-
+  &:hover
+      background-color: #00D17A
   //=========================================
   // different colored buttons
   //=========================================
 
   &.btn-primary
-    color: white
-    background-color: $sabeus
-    border-color: transparent
+    +btn_colors($sabeus, transparent, white)
     &:hover
-      background-color: #00D17A !important
+      background-color: #00D17A
 
   &.btn-warning
     +btn_colors(transparent, $warning-color, $warning-color)
