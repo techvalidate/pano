@@ -129,7 +129,7 @@ module Pano
       end
 
       if primary_args
-        btns.append action_submit_btn(form, primary_args)
+        btns.append action_submit_btn(form, *primary_args)
       end
 
       content_tag :div, class: 'modal-footer' do

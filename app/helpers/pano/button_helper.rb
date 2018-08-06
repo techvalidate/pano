@@ -65,7 +65,6 @@ module Pano
     def action_btn(args, options = {})
       text, url, opts = args
       klass = options.delete :class
-
       btn_to text, (url || js_void), (opts || {}).add_class(klass)
     end
 

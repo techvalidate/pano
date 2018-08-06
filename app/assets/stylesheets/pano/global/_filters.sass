@@ -14,14 +14,24 @@
       padding: 0 16px
       .delete
         font-size: 12px
-        font-weight: normal
+        font-weight: 500
         float: right
     .active-filters
       max-width: 262px
       .tag
         display: inline-block
-        white-space: nowrap
         margin: 0 4px 4px 0
+        line-height: 24px
+        .tag-label
+          display: inline-block
+          max-width: 115px
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          line-height: inherit
+        .material-icons
+          line-height: inherit
+          vertical-align: top
     .available-filters, .filter-options
       li
         a
@@ -31,6 +41,9 @@
         &:hover
           background: $pebble
           cursor: pointer
+        .active-filter
+          color: #ffffff
+          margin-top: 8px
     .available-filters
       li
         a
@@ -56,26 +69,23 @@
           position: relative
           color: $slate
           margin-bottom: 16px
-          padding: 0 16px
           a.filters-home
             position: relative
             color: $charcoal
-            img
-              position: relative
-              top: 2px
-              margin-right: 10px
+            .material-icons
+              font-size: 20px
+              margin-right: 8px
+              color: $slate
             &:hover
               text-decoration: none
           .loading-dots
             position: absolute
-            right: -5px
-            top: 4px
+            right: -24px
+            top: 12px
             visibility: hidden
             opacity: 0
             transition: all 0.2s
           .clear-filter
-            font-weight: normal
-            font-size: 13px
             transition: all 0.2s
 
         .filter-options
