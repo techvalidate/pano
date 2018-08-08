@@ -11,7 +11,7 @@ module Pano
           safe_join([toggle, body])
         end
       else
-        content_tag :div, text, options
+        content_tag :div, toggle_text, options
       end
     end
 
