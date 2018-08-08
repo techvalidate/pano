@@ -1,9 +1,27 @@
 
 .flash
-  position: relative
+  z-index: 198
+  position: fixed
+  width: 100%
+  bottom: 32px
+  right: 32px
+
+.flash:not(.flash-notice)
+  margin: 0
+  border-radius: 0
+
+.flash:not(.flash-notice)
+  margin: 0
+  border-radius: 0
+
+.flash
   overflow: hidden
-  padding: 10px 40px 10px 16px
-  margin-bottom: 32px
+  z-index: 198
+  position: fixed
+  width: 100%
+  right: 96px
+  width: 350px
+  padding: 16px
   border-radius: 3px
   color: white
   text-align: left
@@ -14,10 +32,15 @@
   +accelerated-transforms-base
   transition: all 0.2s ease-in-out
   background: rgba(10,80,139,0.8)
-
+  background: $charcoal
+  color: #fff
   +mobile
     font-size: 13px
 
+  p
+    color: #fff
+  &:hover
+    background: darken($charcoal, 20%)
   &:hover
     background: rgba(10,80,139,1.0)
     cursor: pointer
@@ -40,45 +63,18 @@
     top: 8px
     color: rgba(255,255,255,0.5)
 
+  .flash-icon
+    font-size: 18px
+    color: $sabeus
+    line-height: 24px
   // flash-alert and flash-error are the same thing.
   // keeping both because people will use either, and
   // expect it to work, and not check in the browser that
   // the message actually renders properly.
-  &.flash-alert
-    font-size: 14px
-    background: rgba(192,11,40,0.9)
-    &:hover
-      background: rgba(192,11,40,1.0)
 
-  &.flash-error
-    font-size: 14px
-    background: rgba(192,11,40,0.9)
-    &:hover
-      background: rgba(192,11,40,1.0)
-
-  // yellow warning messages
-  &.flash-warning
-    background: rgba(220,179,0,0.9)
-    &:hover
-      background: rgba(220,179,0,1.0)
-
-  // notice messages are fixed-position and fade out automatically.
-  // other messages are at the top of the page and do not fade out
-  // automatically.
-  &.flash-notice
-    position: fixed
-    z-index: 100
-    right: 24px
-    bottom: 24px
-    margin: 0
-    max-width: 440px
-    min-width: 240px
-    background: $green
-    &:hover
-      background: darken($green, 10%)
-    animation-name: noticeSlideUp
-    &.hiding
-      animation-name: noticeFadeOut
+  &.flash-error, &.flash-alert, &.flash-error
+    .flash-icon
+      color: $bengal
 
 @keyframes slideDown
   0%
