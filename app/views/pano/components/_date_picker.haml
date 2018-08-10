@@ -1,15 +1,14 @@
 .date-picker{data: {controller: 'datepicker'}}
-
-  = form_with form_args  do |f|
+  = form_with form_args.merge({builder: Pano::DateFormBuilder}) do |f|
     .date-picker-header.grid.m-stack
       .col-6
         %h2 Select Time Frame
       .col-6.date-picker-range
         .form-group.inline-block
-          = f.text_field start_attr.to_sym, {data: {target: 'datepicker.start', action: 'change->datepicker#setStartCal'}, placeholder: 'To'}
+          = f.formatted_date_field start_attr.to_sym, {data: {target: 'datepicker.start', action: 'change->datepicker#setStartCal'}, format: 'MMM D, YYYY'}
         %hr
         .form-group.inline-block
-          = f.text_field finish_attr.to_sym, {data: {target: 'datepicker.finish', action: 'change->datepicker#setStartCal'}, placeholder: 'From'}
+          = f.formatted_date_field finish_attr.to_sym, {data: {target: 'datepicker.finish', action: 'change->datepicker#setFinishCal'}, format: 'MMM D, YYYY'}
     .calendars.grid.g-8.m-stack
       .col-6
         .start{data: {target: 'datepicker.startCalendar'}}

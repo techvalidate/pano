@@ -1,5 +1,5 @@
 module Pano
-  class AppFormBuilder < ActionView::Helpers::FormBuilder
+  class AppFormBuilder < DateFormBuilder
     include ActionView::Helpers::FormTagHelper, Pano::ContentHelper, Pano::IconHelper
 
     delegate :content_tag, :capture, to: :@template
@@ -21,6 +21,13 @@ module Pano
     def collection_select(name, label_text, collection, value_method, text_method, options = {})
       group_for name, label_text, options do
         super name, collection, value_method, text_method, options, options
+      end
+    end
+
+    def formatted_date_field(name, label_text, options = {})
+      options[:icon] = :calendar
+      group_for name, label_text, options do
+        super(name, options)
       end
     end
 
@@ -217,7 +224,6 @@ module Pano
         end
       end
     end
-
   end
 
 end

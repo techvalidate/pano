@@ -45,7 +45,8 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="tel"],
-input[type="color"]
+input[type="color"],
+date-input,
   +input-base
 
 label
@@ -60,7 +61,8 @@ textarea
   min-height: 96px
 
 
-
+date-input
+  padding: 0
 // ------------------------------------------
 // search fields
 // ------------------------------------------
@@ -245,7 +247,7 @@ input[type="checkbox"],
   &:first-child
     margin-top: 0
 
-  label, input, select, textarea
+  label, input, select, textarea, date-input
     margin-top: 4px
   label
     margin-right: 8px
@@ -262,11 +264,11 @@ input[type="checkbox"],
     z-index: 5
 
     & + input,
+    & + date-input,
     & + .field_with_errors input,
     & + select,
     & + .field_with_errors select
       padding-left: 32px
-
 
 // ------------------------------------------
 // form group states
@@ -285,9 +287,9 @@ input[type="checkbox"],
     border-color: $success-color
 
 .form-group-error
-  label, input, textarea, .form-helper-text, select
+  label, input, textarea, .form-helper-text, select, date-input
     color: $error-color
-  input, select
+  input, select, date-input
     border-color: $error-color
 
 .form-group-disabled
