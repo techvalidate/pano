@@ -18,6 +18,7 @@ spec/test_app/tmp/
 GuardFile
 tags
 **/tags
+/tags
 *.swp
 *.swo
 *.swn

@@ -20,5 +20,16 @@ module Pano
 
       title
     end
+
+    def filter_switch_toggle_to(options = {})
+      label    = options.delete :label
+      url      = options.delete :url
+      selected = options.delete :selected
+      builder  = Pano::SwitchHelper::ToggleBuilder.new(self)
+
+      content_tag :div, class: 'switch-toggle', data: {controller: 'switch'} do
+        link_to builder.toggle(label, selected), url, options
+      end
+    end
   end
 end

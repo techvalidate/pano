@@ -1,9 +1,9 @@
 module Pano
   class FilterMenuItem
     include ERB::Util, ActionView::Helpers::UrlHelper, ActionView::Helpers::NumberHelper
-    include Pano::ContentHelper, Pano::IconHelper, Pano::LinkHelper, Pano::NumberHelper
+    include Pano::ContentHelper, Pano::IconHelper, Pano::LinkHelper, Pano::NumberHelper, Pano::FiltersHelper, Pano::SwitchHelper, Pano::ComponentHelper, Pano::PartialHelper
 
-    attr_accessor :count, :menu, :name, :options, :output_buffer, :selected, :url
+    attr_accessor :count, :menu, :name, :options, :output_buffer, :selected, :url, :show_toggle
 
     # During initialization, these option keys are exctracted to init attr_accessors:
     #
@@ -17,7 +17,9 @@ module Pano
       self.url      = url
       self.selected = options.delete :selected
       self.count    = options.delete :count
+      self.show_toggle  = options.delete :toggle || false
       self.options  = options
+
       self.options[:remote] = options.key?(:remote) ? options[:remote] : menu.remote?
       self.options[:data] = {}
       self.options[:data][:target] = 'filters.filter'
@@ -52,7 +54,6 @@ module Pano
           link_to link_text, @url, @options.selected_if(selected?)
         end
       end
-
     end
 
     def render_icon
@@ -66,6 +67,9 @@ module Pano
       @selected
     end
 
+    def component(name, options = {})
+      partial "components/#{name}", options
+    end
     # used in sorting menus
     def <=>(other)
       if selected? == other.selected?

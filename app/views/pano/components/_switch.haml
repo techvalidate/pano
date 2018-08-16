@@ -1,0 +1,8 @@
+- unless label.empty?
+  %p.toggle-label= label
+.switch{class: (selected ? 'on' : ''), data: {action: 'click->switch#select'}}
+  .toggle
+  .switch-background
+  - if controller
+    .hidden
+      = controller
