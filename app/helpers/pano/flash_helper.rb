@@ -27,7 +27,7 @@ module Pano
               <li>#{icon flash_icon, class: 'flash-icon'}</li>
               <li>
                 <p class='featured'>#{flash_title}</p>
-                <p class='mt-s'>#{h flash[key]}</p>
+                <p class='mt-s'>#{h flash[key].html_safe}</p>
               </li>
           </div>"
 
