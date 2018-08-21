@@ -5,10 +5,10 @@
         %h2 Select Time Frame
       .col-6.date-picker-range
         .form-group.inline-block
-          = f.formatted_date_field start_attr.to_sym, {data: {target: 'datepicker.start', action: 'change->datepicker#setStartCal'}, format: 'MMM D, YYYY'}
+          = f.formatted_date_field start_attr.to_sym, {data: {target: 'datepicker.start', action: 'change->datepicker#setStartCal active->datepicker#disableSubmit'}, format: 'MMM D, YYYY'}
         %hr
         .form-group.inline-block
-          = f.formatted_date_field finish_attr.to_sym, {data: {target: 'datepicker.finish', action: 'change->datepicker#setFinishCal'}, format: 'MMM D, YYYY'}
+          = f.formatted_date_field finish_attr.to_sym, {data: {target: 'datepicker.finish', action: 'change->datepicker#setFinishCal active->datepicker#disableSubmit'}, format: 'MMM D, YYYY'}
     .calendars.grid.g-8.m-stack
       .col-6
         .start{data: {target: 'datepicker.startCalendar'}}
