@@ -1,3 +1,5 @@
+$height-with-subnav: calc(100% - 48px)
+
 #new-filters
   position: relative
   width: 262px
@@ -34,7 +36,7 @@
           line-height: inherit
           vertical-align: top
     .available-filters, .filter-options
-      height: 100%
+      height: $height-with-subnav
       overflow-x: hidden
       overflow-y: scroll
       li
@@ -73,7 +75,7 @@
         opacity: 0
         background: #fff
         padding: 24px 0
-        height: 100vh
+        height: 100%
         width: 262px
         transition: all 0.2s
         transition-timing-function: ease-out
@@ -103,9 +105,6 @@
 
         .filter-options
           @extend .list
-          height: 100%
-          overflow-x: hidden
-          overflow-y: scroll
           padding-left: 0
           .checkbox
             margin-top: 0
