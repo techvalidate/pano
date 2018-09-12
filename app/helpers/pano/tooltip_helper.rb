@@ -2,7 +2,7 @@ module Pano
   module TooltipHelper
     def tooltip(toggle_text, options = {}, &block)
       text = options.delete :text
-      options[:data] = {controller: 'tooltip'}
+      options = options.merge({'data-controller': 'tooltip'})
 
       if block_given?
         content_tag :div, options do
@@ -23,14 +23,15 @@ module Pano
 
     def info_tooltip(text = '', options = {}, &block)
       klass = options.delete :class
+      options = options.merge({'data-controller': 'tooltip'})
       if block_given?
-        span_tag class: "info-tip-toggle #{klass}", data: {controller: 'tooltip'} do
+        span_tag options.add_class("info-tip-toggle #{klass}") do
           ic = icon :info
           template = content_tag :div, capture(&block), {class: 'tooltip-template', data: {target: 'tooltip.template'}}
           safe_join([ic, template])
         end
       else
-        span_tag title: text, class: "info-tip-toggle #{klass}", data: {controller: 'tooltip'} do
+        span_tag options.merge({title: text, class: "info-tip-toggle #{klass}"}) do
           icon :info
         end
       end
