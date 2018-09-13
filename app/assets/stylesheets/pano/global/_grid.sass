@@ -34,7 +34,7 @@
   @return $gutterWidth - ($gutterWidth * columnRatio($columnUnits, $totalColumns))
 
 @function columnWidth($columnUnits, $gutterWidth, $totalColumns)
-  @return unquote("#{percentage(columnRatio($columnUnits, $totalColumns))} - #{gutterAdjustment($columnUnits, $gutterWidth, $totalColumns)}")
+  @return unquote("#{round(percentage(columnRatio($columnUnits, $totalColumns)))} - #{round(gutterAdjustment($columnUnits, $gutterWidth, $totalColumns))}")
 
 =column($columnUnits, $gutterWidth, $totalColumns)
   float: left
