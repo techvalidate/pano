@@ -1,5 +1,5 @@
 each = require('lodash-es/each').default
-
+rome = require('rome/dist/rome.standalone.js')
 ##################################################
 # Date Picker
 # "rome" is a customizeable datepicker plugin
