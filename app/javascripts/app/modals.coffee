@@ -1,3 +1,4 @@
+isFunction = require('lodash-es/isFunction').default
 # =====================================================
 # Click handlers that show and hide modals.
 #
@@ -77,7 +78,7 @@ window.Modals =
           Modals.show($("##{id}"))
 
         if callbacks && callbacks.length
-          callbacks.forEach((callback) -> if _.isFunction(callback) then callback(htmlResponse))
+          callbacks.forEach((callback) -> if isFunction(callback) then callback(htmlResponse))
 
         $('body').css('overflow', 'hidden')
 

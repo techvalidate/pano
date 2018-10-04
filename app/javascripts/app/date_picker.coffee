@@ -1,3 +1,5 @@
+each = require('lodash-es/each').default
+
 ##################################################
 # Date Picker
 # "rome" is a customizeable datepicker plugin
@@ -90,6 +92,6 @@ UI.load ->
   $('form').submit (evt) ->
     datepickers = $('[data-datepicker]')
 
-    _.each datepickers, (datepicker) ->
+    each datepickers, (datepicker) ->
       if $(datepicker).val().length
         $(datepicker).val moment($(datepicker).val())
