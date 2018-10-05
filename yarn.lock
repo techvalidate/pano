@@ -14,6 +14,12 @@ bullseye@1.4.6:
     seleccion "2.0.0"
     sell "^1.0.0"
 
+coffee-script@1.8:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/coffee-script/-/coffee-script-1.8.0.tgz#9c9f1d2b4a52a000ded15b659791703648263c1d"
+  dependencies:
+    mkdirp "~0.3.5"
+
 contra@1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/contra/-/contra-1.9.1.tgz#60e498274b3d2d332896d60f82900aefa2ecac8c"
@@ -86,6 +92,10 @@ js-cookie@^2.1.4:
 jstz@^1.0.10:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/jstz/-/jstz-1.0.11.tgz#70e83e55c9621bfa706cdc8aa73f2a03931de7d9"
+
+mkdirp@~0.3.5:
+  version "0.3.5"
+  resolved "http://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz#de3e5f8961c88c787ee1368df849ac4413eca8d7"
 
 moment@^2.8.2:
   version "2.22.2"
