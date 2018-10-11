@@ -2,7 +2,7 @@ module Pano
   class Menu
     include ActionView::Helpers::TagHelper, ERB::Util, Pano::ContentHelper, Pano::IconHelper
 
-    attr_accessor :filtered, :items, :name, :output_buffer, :single_select, :remote, :searchable
+    attr_accessor :filtered, :items, :name, :output_buffer, :single_select, :remote, :searchable, :sorted, :noun
 
     # During initialization, these option keys are exctracted to init attr_accessors:
     #
@@ -19,6 +19,8 @@ module Pano
       self.single_select = options.delete :single_select
       self.remote        = options.delete :remote
       self.searchable    = options.delete :searchable
+      self.sorted        = options.delete :sorted
+      self.noun          = options.delete(:noun) || 'response'
     end
 
     delegate :<<,     to: :items
@@ -38,11 +40,25 @@ module Pano
       output << render_search_field if searchable?
       if empty?
         output << render_empty_message
+      elsif sorted
+        # sorted menus put selected items first,
+        # then all items with a non-zero count,
+        # then items with a zero count of matching objects.
+        # if there are items with a zero count, a separator is rendered before them.
+        sort
+        output << selected_items.collect(&:render)
+        output << unselected_items_with_count.collect(&:render)
+        output << render_zero_count_separator unless unselected_items_with_zero_count.empty?
+        output << unselected_items_with_zero_count.collect(&:render)
       else
         output << items.collect(&:render)
       end
 
       content_tag :ul, safe_join(output), html_options
+    end
+
+    def remote?
+      @remote
     end
 
     def render_empty_message
@@ -56,12 +72,8 @@ module Pano
       content_tag :li, class: 'empty-menu-message' do
         icon(:filter_list) +
         content_tag(:h3, "Can't filter by #{ActionController::Base.helpers.sanitize name.singularize}") +
-        content_tag(:p, "No #{qualifier} survey responses have #{ActionController::Base.helpers.sanitize name.singularize.down_articleize}.")
+        content_tag(:p, "No #{qualifier} #{noun.pluralize} have #{ActionController::Base.helpers.sanitize name.singularize.down_articleize}.")
       end
-    end
-
-    def remote?
-      @remote
     end
 
     def render_search_field
@@ -70,6 +82,11 @@ module Pano
         icon(:search) +
         content_tag(:input, '', type: 'text', size: search_field_length, placeholder: 'Search', class: 'menu-search-field')
       end
+    end
+
+    def render_zero_count_separator
+      # <li class='zero-count-separator'>Zero</li>
+      content_tag :li, "#{name.pluralize} with 0 matching #{noun.pluralize}", class: 'zero-count-separator'
     end
 
     def searchable?
@@ -83,6 +100,18 @@ module Pano
 
     def selected
       select &:selected
+    end
+
+    def selected_items
+      items.select {|i| i.selected?}
+    end
+
+    def unselected_items_with_count
+      items.select {|i| i.with_count? && !i.selected?}
+    end
+
+    def unselected_items_with_zero_count
+      items.select {|i| i.with_zero_count? && !i.selected?}
     end
 
     def selected?
