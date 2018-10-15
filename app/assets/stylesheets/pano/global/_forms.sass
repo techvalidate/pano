@@ -67,27 +67,12 @@ date-input
 // search fields
 // ------------------------------------------
 
-// search icons inside search fields. the container is because we can't
+// search icon is :after the form button because we can't
 // use :before or :after on an input element
 .search-field-container
+
   position: relative
   width: 250px
-  &:after
-    display: flex
-    justify-content: center
-    content: '\e8b6'
-    position: absolute
-    right: 0
-    top: 0
-    margin: auto
-    font-size: 16px
-    height: 30px
-    width: 30px
-    line-height: 30px
-    pointer-events: none
-    font-family: 'Material Icons'
-    color: $stone
-    border-radius: 2px
 
   input[type="search"]
     display: block
@@ -102,9 +87,36 @@ date-input
       color: $charcoal
       border-bottom: 1px solid $pebble
 
-  &:hover
+  button[type="submit"]
+    margin: 0
+    padding: 0
+    width: 0
+    height: 0
+    border: 0
+    position: absolute
+    bottom: 0
+    right: 0
+
     &:after
-      background: $pebble
+      display: flex
+      justify-content: center
+      content: '\e8b6'
+      position: absolute
+      bottom: 0
+      right: 0
+      margin: auto
+      font-size: 16px
+      height: 30px
+      width: 30px
+      line-height: 30px
+      font-family: 'Material Icons'
+      color: $stone
+      border-radius: 2px
+
+  &:hover
+    button[type="submit"]
+      &:after
+        background: $pebble
 
 
 

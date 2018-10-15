@@ -1,5 +1,5 @@
 module Pano
-  class AppFormBuilder < DateFormBuilder
+  class AppFormBuilder < PanoFormBuilder
     include ActionView::Helpers::FormTagHelper, Pano::ContentHelper, Pano::IconHelper
 
     delegate :content_tag, :capture, to: :@template
