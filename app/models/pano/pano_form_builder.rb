@@ -6,12 +6,18 @@ module Pano
       @template.safe_join([hidden_field, date])
     end
 
-    def sanitize_to_id(name)
-      name.to_s.delete("]").tr("^-a-zA-Z0-9:.", "_")
+    # Overrides ActionView::Helpers::FormHelper search_field()
+    def search_field(method, options = {})
+      submit_button = @template.button_tag(type: 'submit') do
+        @template.icon(:search)
+      end
+      super + submit_button
     end
 
-    def search_field(method, options = {})
-      super + @template.button_tag('')
+    private
+
+    def sanitize_to_id(name)
+      name.to_s.delete("]").tr("^-a-zA-Z0-9:.", "_")
     end
   end
 end

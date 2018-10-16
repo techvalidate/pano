@@ -67,8 +67,6 @@ date-input
 // search fields
 // ------------------------------------------
 
-// search icon is :after the form button because we can't
-// use :before or :after on an input element
 .search-field-container
 
   position: relative
@@ -76,8 +74,8 @@ date-input
 
   input[type="search"]
     display: block
-    line-height: 30px
-    height: 30px
+    line-height: 32px
+    height: 32px
     font-size: 14px
     text-align: left
     background: transparent
@@ -88,34 +86,32 @@ date-input
       border-bottom: 1px solid $pebble
 
   button[type="submit"]
-    margin: 0
-    padding: 0
-    width: 0
-    height: 0
-    border: 0
     position: absolute
     bottom: 0
     right: 0
+    background: transparent
+    border: 0
+    margin: 0
+    padding: 0
+    width: 32px
+    height: 32px
+    line-height: 32px
 
-    &:after
-      display: flex
-      justify-content: center
-      content: '\e8b6'
-      position: absolute
-      bottom: 0
-      right: 0
-      margin: auto
+    i
+      position: static
       font-size: 16px
-      height: 30px
-      width: 30px
+      font-weight: 600
       line-height: 30px
-      font-family: 'Material Icons'
+      height: 32px
+      width: 32px
+      border: 0
+      margin: 0
+      padding: 0
       color: $stone
-      border-radius: 2px
 
   &:hover
     button[type="submit"]
-      &:after
+      i
         background: $pebble
 
 
