@@ -36,7 +36,6 @@ module Pano
       form_for object, url: url, remote: remote, html: {method: :get, class: css_class}, builder: Pano::PanoFormBuilder do |f|
         output = embed_fields_for object
         output += f.search_field :query, placeholder: 'Search', class: selected_if(active)
-        # output += clear_search_icon(url) if active
         output
       end
     end
