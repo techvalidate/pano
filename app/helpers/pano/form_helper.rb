@@ -32,10 +32,10 @@ module Pano
     def search_form_for(object, url, options = {})
       remote = options.delete(:remote) ? true : false
       active = object.query.present?
-      css_class = "search-form #{options[:class]}"
-      form_for object, url: url, remote: remote, html: {method: :get, class: css_class} do |f|
-        output = f.search_field :query, placeholder: 'Search', class: selected_if(active)
-        # output += clear_search_icon(url) if active
+      css_class = "search-field-container #{options[:class]}"
+      form_for object, url: url, remote: remote, html: {method: :get, class: css_class}, builder: Pano::PanoFormBuilder do |f|
+        output = embed_fields_for object
+        output += f.search_field :query, placeholder: 'Search', class: selected_if(active)
         output
       end
     end
