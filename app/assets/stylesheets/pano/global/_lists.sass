@@ -100,11 +100,10 @@ ul.inline
   +plain-list
   display: flex !important
   flex-direction: row
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
-    max-width: 56%
 
   li
     display: flex
     flex-direction: column
+    flex: 1 // helps prevent overflow in IE11
     margin-right: 16px
     justify-content: center
