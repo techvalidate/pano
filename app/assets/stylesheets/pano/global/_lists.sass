@@ -96,6 +96,7 @@ ul.accordian
 ol.plain, ul.plain
   +plain-list
 
+// FIXME:
 ul.inline
   +plain-list
   display: flex !important
@@ -103,7 +104,6 @@ ul.inline
 
   li
     display: flex
-    flex-direction: column
-    flex: 1 // helps prevent overflow in IE11
+    flex-flow: column wrap
     margin-right: 16px
     justify-content: center
