@@ -1,0 +1,16 @@
+ul.flex-row
+  display: flex !important
+  flex-direction: row
+
+  .vertically-centered-column
+    display: flex
+    flex-flow: column wrap
+    margin-right: 16px
+    justify-content: center
+
+    // Wrap content horizontally in IE11
+    // Only use when the relative column sizes are predictable
+    // If only one flex-row child column has .wrapping-column, it will expand to fill any remaining row space. If more than one child column has .wrapping-column, the row is split according to flex-grow rules.
+    &.wrapping-column
+      flex: 1
+      flex-wrap: nowrap
