@@ -12,4 +12,8 @@ UI.click '[data-behavior~=clickable]', (e, el) ->
     e.stopPropagation()
     return true
   href = $(el).data('href')
-  window.location.href = href if href
+  # here we check to see if we are using Turbolinks and pass the click to that if so
+  if Turbolinks
+    Turbolinks.visit(href) if href
+  else
+    window.location.href = href if href
