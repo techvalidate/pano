@@ -81,10 +81,13 @@ date-input
     background: transparent
     border: 0
     border-radius: 0
+    // prevent search input from hiding behind search icon
+    padding-right: 34px
     &.selected, &:focus, &:active
       color: $charcoal
       border-bottom: 1px solid $pebble
 
+  // Hide x clear button for IE11
   input[type="search"]::-ms-clear
     display: none
 
