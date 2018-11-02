@@ -9,7 +9,7 @@ $height-with-subnav: calc(100% - 48px)
     width: 262px
     top: 48px
     bottom: 0
-    padding: 24px 0
+    padding: 24px 0 150px // bottom padding to encourage overflow scroll on long filter lists
     background: #fff
     overflow: hidden
     .filters-header
@@ -37,7 +37,7 @@ $height-with-subnav: calc(100% - 48px)
           line-height: inherit
           vertical-align: top
     .available-filters, .filter-options
-      max-height: calc(100% - 150px)
+      height: 100%
       overflow-x: hidden
       overflow-y: auto
       li
