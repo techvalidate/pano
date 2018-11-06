@@ -23,9 +23,9 @@ module Pano
         content +=
           "<div class='flash flash-#{h key}' data-controller='flash'>
             #{icon(:close, class: 'close-icon', data: {action: 'click->flash#close'})}
-            <ul class='inline align-items-top'>
+            <ul class='plain flex-row align-items-top'>
               <li>#{icon flash_icon, class: 'flash-icon'}</li>
-              <li>
+              <li class='justify-center-column'>
                 <p class='featured'>#{flash_title}</p>
                 <p class='mt-s'>#{h flash[key].html_safe}</p>
               </li>
