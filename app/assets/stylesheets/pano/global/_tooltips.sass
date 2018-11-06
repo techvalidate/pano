@@ -5,85 +5,95 @@
   width: #{$size}px
   content: ''
 
-  
-.tooltip
+
+//----------------
+// Tooltips & Popovers
+//----------------
+
+.tooltip, .popover
   min-width: 165px
   position: relative
   padding: 0
   border-radius: 3px
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2)
-  border: 1px solid #cecece
-  background: #fff
+  background: $charcoal
   color: #fff
-  font-size: 12px
+  font-size: 13px
+  padding: 24px
   z-index: 100
+  visibility: hidden
+  position: absolute
+  opacity: 0
+  transition: opacity 0.2s
+  &.visible
+    opacity: 1
+    visibility: visible
   .tooltip-body
     z-index: 3
-    &:before
+    min-width: 150px
+    color: #fff
+  &:before
       +tip-arrow(15)
       left: 0
       right: 0
-      bottom: -8px
+      bottom: -7px
       margin: auto
-      background: #fff
+      background: $charcoal
       transform: rotate(45deg)
       z-index: 2
-    &:after
-      +tip-arrow(15)
-      left: 0
-      right: 0
-      bottom: -9px
-      margin: auto
-      background: #cecece
-      transform: rotate(45deg)
-      /* Prefixes... */
-      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4)
-      z-index: 0
-  //TODO: ADD BOTTOM AND LEFT ALIGNMENTS
+  &:after
+    +tip-arrow(15)
+    left: 0
+    right: 0
+    bottom: -8px
+    margin: auto
+    background: transparent
+    transform: rotate(45deg)
+    /* Prefixes... */
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    z-index: 0
+  &.tooltip-white
+    background: #fff
+    .tooltip-body
+      color: $charcoal
+      p
+        color: $charcoal
+    &:after, &:before
+      background: #fff
   &.align-right
     .tooltip-body
-      &:before
-        right: auto
-        bottom: 0
-        top: 0
-        left: -8px
-        background: #fff
-        transform: rotate(135deg)
-      &:after
-        right: auto
-        bottom: 0
-        top: 0
-        left: -9px
-        background: #cecece
-        transform: rotate(135deg)
+    &:before
+      right: auto
+      bottom: 0
+      top: 0
+      left: -8px
+      background: #fff
+      transform: rotate(135deg)
+    &:after
+      right: auto
+      bottom: 0
+      top: 0
+      left: -9px
+      background: #cecece
+      transform: rotate(135deg)
 
 .tooltip .tooltip-header
-  padding: 5px 8px
   text-align: left
-  background: $lighter-gray
-  color: $text-color
-  font-weight: bold
-  border-bottom: 1px solid #cecece
-  line-height: 15px
-
-.tooltip .tooltip-body
-  position: relative
-  padding: 14px
-  z-index: 2
-  color: $text-color
-  text-align: left
-
-  .number
-    font-size: 18px
-
-  .sentiment-responses
-    color: $light-gray
-
-.tooltip p
-  margin: 0
-  font-size: 12px
+  margin-bottom: 8px
   color: #fff
-  text-align: center
+  h1, h2, h3, h4, h5, h6, p
+    color: #fff
+
+.tooltip .tooltip-body, .popover.popover-body
+  position: relative
+  z-index: 2
+  color: #fff
+  text-align: left
+  line-height: 18px
+  p
+    color: #fff
+    line-height: 18px
+
 
 .tooltip ul
   list-style-type: none
@@ -91,7 +101,6 @@
   margin: 0
   li
     margin: 0
-    color: $text-color
     span
       display: inline-block
       position: relative
@@ -100,6 +109,7 @@
       width: 8px
       height: 8px
       border-radius: 50%
+      /* FIXME - Remove application specific styles*/
       &[data-color="detractors"]
         border: 2px solid $detractor-color
       &[data-color="passives"]
@@ -109,6 +119,14 @@
       &[data-color="total"], &[data-color="nps"]
         border: 2px solid $blue
 
+.info-tip-toggle
+  .material-icons
+    color: $flint
+  &:hover
+    .material-icons
+      color: $sabeus
+.tooltip-template
+  display: none
 .plot.tooltip
   margin-top: 25px
   &:before

@@ -19,6 +19,10 @@ module Pano
       content_tag :i, material_icon_for(icon_name), options.add_class(klass)
     end
 
+    def small_icon(icon_name, options = {})
+      icon icon_name, options.add_class('small-icon')
+    end
+
     def med_icon(icon_name, options = {})
       icon icon_name, options.add_class('med-icon')
     end

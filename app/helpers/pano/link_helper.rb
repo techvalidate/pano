@@ -29,6 +29,10 @@ module Pano
       end
     end
 
+    def js_void
+      'Javascript:void(0)'
+    end
+
     def popup_link_to(name, link, options = {})
       link_to name, link, options.merge(target: '_blank')
     end

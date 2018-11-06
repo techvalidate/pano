@@ -3,7 +3,7 @@ module Pano
 
     def kebab_dropdown(id, **options)
       builder = DropdownBuilder.new(self)
-      toggle = link_to med_icon(:more_vert), js_void, class: 'dropdown-toggle slate', data: {action: 'dropdown#toggle'}
+      toggle = link_to small_icon(:more_vert), js_void, class: 'dropdown-toggle slate', data: {action: 'dropdown#toggle' }
       contents = dropdown_menu_filter id, options do
         capture(builder, &Proc.new)
       end
@@ -11,7 +11,8 @@ module Pano
     end
 
     def dropdown_menu_filter(id, options = {}, &block)
-      options[:data] = {id: id, target: 'dropdown.menu'}
+      close_on_mouse_leave = options.delete :hover
+      options[:data] = {id: id, target: 'dropdown.menu', action: close_on_mouse_leave ? 'mouseleave->dropdown#hide': ''}
       content_tag :ul, options.add_class('dropdown-menu') do
         capture(&block)
       end
