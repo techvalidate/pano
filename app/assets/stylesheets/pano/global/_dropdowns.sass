@@ -1,0 +1,45 @@
+//-------------------------------------
+// Home grown dropdowns
+//-------------------------------------
+.dropdown
+  position: relative
+  display: inline-block
+  // Dropdown Buttons Types //////////////////////////////////
+  .dropdown-btn, .dropdown-btn-page-title, .dropdown-btn-title
+    padding-left: 8px
+    padding-right: 16px
+    height: 32px
+    line-height: 32px
+    background: transparent
+    color: $text-color
+    text-transform: none
+    text-align: left
+    &:hover
+      background: $pebble
+    &:after
+      position: absolute
+      right: 8px
+      content: '\e313'
+      font-family: "Material Icons"
+      color: $charcoal
+      font-size: 16px
+      &:hover
+        &:after
+          color: $stone
+  .dropdown-btn-page-title
+    +h1
+    padding-right: 24px
+    height: 48px
+    line-height: 48px
+    margin: 0
+    &:after
+      font-size: 32px
+  .dropdown-btn-title
+    +h3
+    height: 32px
+    line-height: 32px
+    margin: 0
+    &:after
+      font-size: 18px
+  .dropdown-btn
+    border: 1px solid $pebble
