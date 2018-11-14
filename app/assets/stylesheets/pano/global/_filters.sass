@@ -4,6 +4,9 @@ $height-with-subnav: calc(100% - 48px)
   position: relative
   width: 262px
   height: 100vh
+  transition: all -0.2s
+  .filters-toggle
+    visibility: hidden
   .filters-container
     position: fixed
     width: 262px
@@ -132,3 +135,52 @@ $height-with-subnav: calc(100% - 48px)
   #new-filters
     .filters-container
       top: 87px
+
++tablet
+  #new-filters
+    top: -48px
+    transform: translate(-92%, 0)
+    z-index: 1
+    +thin-shadow
+    transition: all 0.2s
+    .filters-toggle
+      visibility: visible
+      position: absolute
+      right: 0
+      top: 0
+      width: 15px
+      height: 100vh
+      padding: 5px
+      background: #fff
+      border-top-right-radius: 3px
+      border-bottom-right-radius: 3px
+      z-index: 2
+      transition: all 0.2s
+      .open, .closed
+        position: relative
+        top: 48px
+        writing-mode: tb-rl
+        white-space: nowrap
+        font-size: 11px
+      .closed
+        visibility: visible
+      .open
+        visibility: hidden
+      &:hover
+        background: $canvas
+    &.open
+      transform: translate(0, 0)
+      +thick-shadow
+      .filters-toggle
+        background: $canvas
+        .open
+          visibility: visible
+        .closed
+          visibility: hidden
+        &:hover
+          background: $pebble
+
+    &:hover
+      +thick-shadow
+
+
