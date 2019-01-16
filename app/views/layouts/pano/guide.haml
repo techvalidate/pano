@@ -5,7 +5,11 @@
 
     = material_icons
     = stylesheet_link_tag    'pano/guide', 'data-turbolinks-track': 'reload', media: 'all'
-    = javascript_pack_tag     'app', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'pano', 'data-turbolinks-track': 'reload', media: 'all'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.2.0/custom-elements-es5-adapter.js'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.3/webcomponents-bundle.js'
+    = javascript_pack_tag    'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag    'pano', 'data-turbolinks-track': 'reload'
     %title= "Pano: #{@page_title}"
   %body{data: {controller: 'modals'}}
 

@@ -13,6 +13,12 @@ module Mocks
       self.finish_on = 27.days.from_now
     end
 
+    def id
+      rand(10)
+    end
+    def read_attribute(name)
+      self.send(name)
+    end
     def persisted?
       false
     end

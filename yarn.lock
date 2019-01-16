@@ -3288,6 +3288,12 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
+lightpick@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/lightpick/-/lightpick-1.2.8.tgz#2a2346694c9e21468398a4ae10ebf2c130c77e39"
+  dependencies:
+    moment "^2.22.2"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -3617,6 +3623,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
 moment@^2.18.1, moment@^2.8.2:
   version "2.22.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
+
+moment@^2.22.2, moment@^2.23.0:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
 
 move-concurrently@^1.0.1:
   version "1.0.1"

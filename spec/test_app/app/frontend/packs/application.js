@@ -10,15 +10,16 @@ import 'core-js/fn/array/from'
 import 'core-js/fn/symbol' // polyfill for dropzone source
 import 'element-closest'
 
-import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
+import application from 'stimulus_application'
+
 import { Controllers, registerControllers } from 'pano-js'
+import { DateInput } from 'biome'
 
-const application = Application.start()
-const context = require.context('../guide/controllers', true, /\.js$/)
+delete Controllers['DatePickerController']
 
-application.load(definitionsFromContext(context))
+customElements.define('date-input', DateInput, { extends: 'input' })
 
 registerControllers(application, Controllers)
+
 
 require('../guide/index')

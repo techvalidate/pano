@@ -3,6 +3,7 @@ Pano::Engine.routes.draw do
   guide_routes = [
     :utilities,
     :colors,
+    :components,
     :browsers,
     :breakpoints,
     :images,

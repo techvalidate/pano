@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+module <%= module_name %>
+  <% if Rails.application.nil? %>
+    extend ComponentHelper
+  <% else %>
+    extend Pano::ComponentHelper
+  <%end %>
+end

@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.5.0/bin/node /usr/local/bin/yarn webpack
+  /usr/local/Cellar/node/9.5.0/bin/node /usr/local/bin/yarn add babel-plugin-env
 
 PATH: 
   /Users/mattl/.rvm/gems/ruby-2.3.1/bin:/Users/mattl/.rvm/gems/ruby-2.3.1@global/bin:/Users/mattl/.rvm/rubies/ruby-2.3.1/bin:/Users/mattl/Downloads/google-cloud-sdk/bin:/Users/mattl/cmus/bin:/Users/mattl/.yarn/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/mattl/Downloads/google-cloud-sdk/bin:/Users/mattl/cmus/bin:/Users/mattl/.yarn/bin:/usr/local/bin/elasticsearch:/usr/bin/java:/usr/local/opt/mysql/bin:/Users/mattl/.fzf/bin:/usr/local/bin/elasticsearch:/usr/bin/java:/usr/local/opt/mysql/bin:/Users/mattl/.rvm/bin
@@ -22,6 +22,9 @@ npm manifest:
     "license": "MIT",
     "dependencies": {
       "@rails/webpacker": "^3.4.1",
+      "babel-core": "6.26.3",
+      "babel-loader": "7.0",
+      "babel-plugin-transform-class-properties": "^6.24.1",
       "core-js": "^2.5.4",
       "element-closest": "^2.0.2",
       "jquery": "3.2.1",
@@ -363,6 +366,30 @@ Lockfile:
       esutils "^2.0.2"
       js-tokens "^3.0.2"
   
+  babel-core@6.26.3:
+    version "6.26.3"
+    resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.3.tgz#b2e2f09e342d0f0c88e2f02e067794125e75c207"
+    dependencies:
+      babel-code-frame "^6.26.0"
+      babel-generator "^6.26.0"
+      babel-helpers "^6.24.1"
+      babel-messages "^6.23.0"
+      babel-register "^6.26.0"
+      babel-runtime "^6.26.0"
+      babel-template "^6.26.0"
+      babel-traverse "^6.26.0"
+      babel-types "^6.26.0"
+      babylon "^6.18.0"
+      convert-source-map "^1.5.1"
+      debug "^2.6.9"
+      json5 "^0.5.1"
+      lodash "^4.17.4"
+      minimatch "^3.0.4"
+      path-is-absolute "^1.0.1"
+      private "^0.1.8"
+      slash "^1.0.0"
+      source-map "^0.5.7"
+  
   babel-core@^6.26.0:
     version "6.26.0"
     resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.0.tgz#af32f78b31a6fcef119c87b0fd8d9753f03a0bb8"
@@ -500,6 +527,14 @@ Lockfile:
     dependencies:
       babel-runtime "^6.22.0"
       babel-template "^6.24.1"
+  
+  babel-loader@7.0:
+    version "7.0.0"
+    resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.0.0.tgz#2e43a66bee1fff4470533d0402c8a4532fafbaf7"
+    dependencies:
+      find-cache-dir "^0.1.1"
+      loader-utils "^1.0.2"
+      mkdirp "^0.5.1"
   
   babel-loader@^7.1.2:
     version "7.1.4"
@@ -1091,9 +1126,9 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   
-  bullseye@1.4.6:
-    version "1.4.6"
-    resolved "https://registry.yarnpkg.com/bullseye/-/bullseye-1.4.6.tgz#b73f606f7b4273be80ac65acd75295d62606fe24"
+  bullseye@^1.4.3:
+    version "1.5.0"
+    resolved "https://registry.yarnpkg.com/bullseye/-/bullseye-1.5.0.tgz#81a6786581948df47bb1d690bdbf4844cb860b8c"
     dependencies:
       crossvent "^1.3.1"
       seleccion "2.0.0"
@@ -1468,9 +1503,22 @@ Lockfile:
       atoa "1.0.0"
       ticky "1.0.0"
   
+  contra@^1.9.4:
+    version "1.9.4"
+    resolved "https://registry.yarnpkg.com/contra/-/contra-1.9.4.tgz#f53bde42d7e5b5985cae4d99a8d610526de8f28d"
+    dependencies:
+      atoa "1.0.0"
+      ticky "1.0.1"
+  
   convert-source-map@^1.5.0:
     version "1.5.1"
     resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
+  
+  convert-source-map@^1.5.1:
+    version "1.6.0"
+    resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.6.0.tgz#51b537a8c43e0f04dec1993bffcdd504e758ac20"
+    dependencies:
+      safe-buffer "~5.1.1"
   
   cookie-signature@1.0.6:
     version "1.0.6"
@@ -1561,13 +1609,7 @@ Lockfile:
       shebang-command "^1.2.0"
       which "^1.2.9"
   
-  crossvent@1.5.0:
-    version "1.5.0"
-    resolved "https://registry.yarnpkg.com/crossvent/-/crossvent-1.5.0.tgz#3779c1242699e19417f0414e61b144753a52fd6d"
-    dependencies:
-      custom-event "1.0.0"
-  
-  crossvent@^1.3.1:
+  crossvent@^1.2.0, crossvent@^1.3.1:
     version "1.5.5"
     resolved "https://registry.yarnpkg.com/crossvent/-/crossvent-1.5.5.tgz#ad20878e4921e9be73d9d6976f8b2ecd0f71a0b1"
     dependencies:
@@ -1705,10 +1747,6 @@ Lockfile:
     dependencies:
       array-find-index "^1.0.1"
   
-  custom-event@1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/custom-event/-/custom-event-1.0.0.tgz#2e4628be19dc4b214b5c02630c5971e811618062"
-  
   custom-event@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/custom-event/-/custom-event-1.0.1.tgz#5d02a46850adf1b4a317946a3928fccb5bfd0425"
@@ -1733,7 +1771,7 @@ Lockfile:
     version "0.1.4"
     resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   
-  debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.6, debug@^2.6.8:
+  debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
     version "2.6.9"
     resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
     dependencies:
@@ -2281,6 +2319,14 @@ Lockfile:
       parseurl "~1.3.2"
       statuses "~1.4.0"
       unpipe "~1.0.0"
+  
+  find-cache-dir@^0.1.1:
+    version "0.1.1"
+    resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-0.1.1.tgz#c8defae57c8a52a8a784f9e31c57c742e993a0b9"
+    dependencies:
+      commondir "^1.0.1"
+      mkdirp "^0.5.1"
+      pkg-dir "^1.0.0"
   
   find-cache-dir@^1.0.0:
     version "1.0.0"
@@ -4016,9 +4062,10 @@ Lockfile:
   
   "pano-js@git+ssh://git@github.com:techvalidate/pano-js":
     version "1.0.0"
-    resolved "git+ssh://git@github.com:techvalidate/pano-js#39876002e131c8c874f075a58165be6145280515"
+    resolved "git+ssh://git@github.com:techvalidate/pano-js#5a6d6dadeb8a434175eba66d4549cd5ad5382906"
     dependencies:
       babel-plugin-transform-class-properties "^6.24.1"
+      contra "^1.9.4"
       dropzone "^5.4.0"
       fullpage.js "^2.9.6"
       jquery-dropdown "https://github.com/soundasleep/jquery-dropdown#master"
@@ -4030,7 +4077,7 @@ Lockfile:
       jstz "^1.0.10"
       lodash "^4.17.5"
       moment "^2.18.1"
-      rome "^2.1.22"
+      rome "2.1.20"
       sticky-kit "^1.1.3"
       stimulus "^1.0.1"
       switchery "^0.0.2"
@@ -4177,6 +4224,12 @@ Lockfile:
       browserslist "^2.0.0"
       postcss "^6.0.0"
       reduce-css-calc "^1.2.7"
+  
+  pkg-dir@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-1.0.0.tgz#7a4b508a8d5bb2d629d447056ff4e9c9314cf3d4"
+    dependencies:
+      find-up "^1.0.0"
   
   pkg-dir@^2.0.0:
     version "2.0.0"
@@ -4718,7 +4771,7 @@ Lockfile:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   
-  private@^0.1.6, private@^0.1.7:
+  private@^0.1.6, private@^0.1.7, private@^0.1.8:
     version "0.1.8"
     resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
   
@@ -5175,13 +5228,13 @@ Lockfile:
       hash-base "^2.0.0"
       inherits "^2.0.1"
   
-  rome@^2.1.22:
-    version "2.1.22"
-    resolved "https://registry.yarnpkg.com/rome/-/rome-2.1.22.tgz#4bf25318cc0522ae92dd090472ce7a6e0b1f5e02"
+  rome@2.1.20:
+    version "2.1.20"
+    resolved "https://registry.yarnpkg.com/rome/-/rome-2.1.20.tgz#c2bc2c0ecb842546503cecac1bb637638d9c54e5"
     dependencies:
-      bullseye "1.4.6"
+      bullseye "^1.4.3"
       contra "1.9.1"
-      crossvent "1.5.0"
+      crossvent "^1.2.0"
       moment "^2.8.2"
   
   run-queue@^1.0.0, run-queue@^1.0.3:
@@ -5787,6 +5840,10 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/ticky/-/ticky-1.0.0.tgz#e87f38ee0491ea32f62e8f0567ba9638b29f049c"
   
+  ticky@1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/ticky/-/ticky-1.0.1.tgz#b7cfa71e768f1c9000c497b9151b30947c50e46d"
+  
   timers-browserify@^2.0.4:
     version "2.0.6"
     resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.6.tgz#241e76927d9ca05f4d959819022f5b3664b64bae"
@@ -6335,16 +6392,14 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 255
-  Command: sh
-  Arguments: -c /Users/mattl/Development/solutions/pano/spec/test_app/node_modules/.bin/webpack
-  Directory: /Users/mattl/Development/solutions/pano/spec/test_app
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:160:13)
-      at maybeClose (internal/child_process.js:943:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+  Error: https://registry.yarnpkg.com/babel-plugin-env: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:65019:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:132430:22)
+      at Request.emit (events.js:160:13)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:133413:10)
+      at Request.emit (events.js:160:13)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:133333:12)
+      at Object.onceWrapper (events.js:255:19)
+      at IncomingMessage.emit (events.js:165:20)
+      at endReadableNT (_stream_readable.js:1101:12)
+      at process._tickCallback (internal/process/next_tick.js:152:19)

@@ -1,5 +1,9 @@
+require "pano/configuration"
 require "pano/engine"
 
 module Pano
-  # Your code goes here...
+
+  def self.config
+    Pano::Configuration.config
+  end
 end
