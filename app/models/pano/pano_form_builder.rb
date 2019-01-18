@@ -21,13 +21,14 @@ module Pano
     end
 
     def get_date_value(name)
-      # get name attribute or invode name method for date value
+      # get name attribute or invoke name method for datetime value
+      # value should be in the local timezone with the timezone specified
       value = @object.read_attribute(name) || @object.send(name)
-      if !value.nil?
-        # Format date so IE11 new Date() can parse it. Use to_time not to_date, to prevent date misalignment
-        value = value.to_time.iso8601
-      end
-      value
+
+      # NOTE: If value does not have timezone info, value.iso8601 will not contain timezone info either.
+      # This can cause problems when the client assumes value is in UTC (although it may already be in the local timezone), and then converts it from UTC to the local timezone
+      # Format to iso8601 so IE11 new Date() can parse it
+      value.present? ? value.iso8601 : value
     end
   end
 end
