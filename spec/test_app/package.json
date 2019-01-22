@@ -10,7 +10,6 @@
     "babel-env": "^2.4.1",
     "babel-loader": "7.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "biome": "https://5660b3908b0c5955f5563e3fcd2a6cd98a34977e@github.com/techvalidate/biome#v0.4.3",
     "core-js": "^2.5.4",
     "element-closest": "^2.0.2",
     "jquery": "3.2.1",
