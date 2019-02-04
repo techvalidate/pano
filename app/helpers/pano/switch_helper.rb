@@ -39,13 +39,13 @@ module Pano
         end
         controller = @form.check_box *arguments
 
-        @template.component 'switch', controller: @template.safe_join([controller]), label: label || ''
+        @template.component_deprecated 'switch', controller: @template.safe_join([controller]), label: label || ''
       end
 
       def toggle(label, selected = false)
         actions = 'change->switch#toggle'
         data = {data: {target: 'switch.checkbox', action: actions}}
-        @template.component 'switch', label: label, data: data, selected: selected
+        @template.component_deprecated 'switch', label: label, data: data, selected: selected
       end
     end
   end
