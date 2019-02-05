@@ -39,8 +39,8 @@ module Pano
     end
 
     initializer 'pano.autoload', before: :set_autoload_paths do |app|
-      app.config.autoload_paths << app.config.root.join(frontend_path)
       app.config.autoload_paths << Pano::Engine.root.join(frontend_path)
+      app.config.autoload_paths << app.config.root.join(frontend_path)
     end
 
     config.generators do |g|
