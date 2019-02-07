@@ -3,18 +3,14 @@ include Pano::PartialHelper
 
 module Pano
   module SwitchHelper
-    def switch_toggle(form, **options)
-      label            = options.delete :label || ''
-      attribute        = options.delete :attribute
-      submit_on_change = options.delete :submit_on_change
-
+    def switch_toggle(form, on_label: '', off_label: '', attribute: nil, submit_on_change: false, label_class: :left)
       builder = ToggleBuilder.new(self, form)
 
       content_tag :div, class: 'switch-toggle', data: {controller: 'switch'} do
         if block_given?
           capture(builder, &Proc.new)
         else
-          builder.with_checkbox attribute, label, submit_on_change
+          builder.with_checkbox attribute: attribute, on_label: on_label, off_label: off_label, submit_on_change: submit_on_change, label_class: label_class
         end
       end
     end
@@ -25,7 +21,7 @@ module Pano
         @template = template
       end
 
-      def with_checkbox(attribute, label = '', submit_on_change = false)
+      def with_checkbox(on_label: '', off_label: '', attribute: nil, submit_on_change: false, label_class: :left)
         actions = 'change->switch#toggle'
         actions += ' change->switch#submit' if submit_on_change
         # Work around for different app_form_for vs form_with checkbox templates
@@ -39,13 +35,13 @@ module Pano
         end
         controller = @form.check_box *arguments
 
-        @template.component 'switch', controller: @template.safe_join([controller]), label: label || ''
+        @template.component 'switch', controller: @template.safe_join([controller]), on_label: on_label || '', off_label: off_label || '', label_class: label_class
       end
 
-      def toggle(label, selected = false)
+      def toggle(on_label, off_label, selected = false, label_class: :left)
         actions = 'change->switch#toggle'
         data = {data: {target: 'switch.checkbox', action: actions}}
-        @template.component 'switch', label: label, data: data, selected: selected
+        @template.component 'switch', on_label: on_label, off_label: off_label, data: data, selected: selected, label_class: label_class
       end
     end
   end
