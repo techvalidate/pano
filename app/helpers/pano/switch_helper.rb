@@ -41,7 +41,7 @@ module Pano
       def toggle(on_label, off_label, selected = false, label_class: :left)
         actions = 'change->switch#toggle'
         data = {data: {target: 'switch.checkbox', action: actions}}
-        @template.component 'switch', on_label: on_label, off_label: off_label, data: data, selected: selected, label_class: label_class
+        @template.component 'switch', on_label: on_label || '', off_label: off_label || '', data: data, selected: selected, label_class: label_class
       end
     end
   end
