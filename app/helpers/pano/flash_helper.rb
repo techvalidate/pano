@@ -15,11 +15,9 @@ module Pano
           when 'info'
             flash_icon = :info
           else
-            flash_icon = nil
+            flash_icon = ''
           end
 
-        # behavior = 'hide-flash'
-        # behavior += ' transient-flash' if [:notice, :transient].include? key.to_sym
         content +=
           "<div class='flash flash-#{h key}' data-controller='flash'>
             #{icon(:close, class: 'close-icon', data: {action: 'click->flash#close'})}
