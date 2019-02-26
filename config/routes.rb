@@ -38,6 +38,8 @@ Pano::Engine.routes.draw do
     get "guide/#{r}", as: "guide_#{r}", to: "guide##{r}"
   end
 
-  root to: 'guide#index'
+  get 'wds', as: 'wds', to: 'wds#index'
+  
+  root to: 'wds#index'
 
 end

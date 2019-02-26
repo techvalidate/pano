@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'webpacker'
-  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'sqlite3', '~> 1.3', '< 1.4'
   s.add_development_dependency 'web-console'
   s.add_development_dependency 'guard-livereload'
 end
