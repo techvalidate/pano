@@ -38,8 +38,14 @@ Pano::Engine.routes.draw do
     get "guide/#{r}", as: "guide_#{r}", to: "guide##{r}"
   end
 
-  get 'wds', as: 'wds', to: 'wds#index'
-  
+  wds_routes = [
+    :button
+  ]
+
+  wds_routes.each do |r|
+    get "wds/#{r}", as: "wds_#{r}", to: "wds##{r}"
+  end
+
   root to: 'wds#index'
 
 end
