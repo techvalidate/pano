@@ -40,7 +40,8 @@ Pano::Engine.routes.draw do
 
   wds_routes = [
     :button,
-    :card
+    :card,
+    :input
   ]
 
   wds_routes.each do |r|

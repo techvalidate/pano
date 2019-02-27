@@ -1,0 +1,26 @@
+%h2 Defaut
+= component 'wds/input'
+%h2 Label
+%p It is best practice to compliment a text input with a label.
+= component 'wds/input', label: 'First name'
+%h2 Placeholder
+%p All inputs can have placeholder text that goes away once a value is given.
+= component 'wds/input', placeholder: 'First name only'
+%h2 Prefilled
+%p All inputs can be pre-filled by supplying it a value.
+= component 'wds/input', value: 'I have a pre-filled value'
+%h2 Sizes
+%p Text inputs come with tree sizes available to them: small, medium (default), and large.
+= component 'wds/input', size: 'lg', value: 'Large'
+= component 'wds/input', size: 'md', value: 'Medium'
+= component 'wds/input', size: 'sm', value: 'Small'
+%h2 Colors
+%p Any input can have a success or warning color.
+= component 'wds/input', color: 'warning', value: 'Warning'
+= component 'wds/input', color: 'success', value: 'Success'
+%h2 Disable
+%p Any and all inputs items can be disabled, even if it is pre-filled.
+= component 'wds/input', disabled: true
+%h2 Stretch
+%p All text input variances can be stretched to be the full width of its parent container.
+= component 'wds/input', stretched: true
