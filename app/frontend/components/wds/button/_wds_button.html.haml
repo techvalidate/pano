@@ -4,8 +4,14 @@
 
 - if @href.blank?
   %button{class: klass, type: @button_type}
-    = yield
+    - if !@text.blank?
+      = @text
+    - else
+      = yield
 
 - else
   %a{class: klass, href: @href}
-    = yield
+    - if !@text.blank?
+      = @text
+    - else
+      = yield
