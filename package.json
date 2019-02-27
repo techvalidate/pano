@@ -9,7 +9,7 @@
     "@rails/webpacker": "^3.4.1",
     "lightpick": "^1.2.8",
     "moment": "^2.23.0",
-    "pano-js": "https://git@github.com/techvalidate/pano-js"
+    "pano-js": "git+ssh://git@github.com:techvalidate/pano-js"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.1"
