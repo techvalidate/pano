@@ -4,14 +4,8 @@
 
 - if @href.blank?
   %button{class: klass, type: @button_type, data: {controller: 'button---wds-button', action: 'click->button---wds-button#onClick'}}
-    - if !@text.blank?
-      = @text
-    - else
-      = yield
+    = yield
 
 - else
   %a{class: klass, href: @href}
-    - if !@text.blank?
-      = @text
-    - else
-      = yield
+    = yield

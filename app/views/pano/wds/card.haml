@@ -6,6 +6,13 @@ Title Region
 = component 'wds/card', title: 'The monkey was curious.' do
     Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
+- button = component 'wds/button' do
+    Yo
+
 Addon Region
-= component 'wds/card', title: 'The monkey was curious.', add_on: component('wds/button', text: 'Yo') do
+= component 'wds/card', title: 'The monkey was curious.', add_on: button do
+    Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Addon Region no Title
+= component 'wds/card', add_on: button do
     Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
