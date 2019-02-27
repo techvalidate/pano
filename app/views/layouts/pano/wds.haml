@@ -4,9 +4,25 @@
     %title "WDS Rails"
     %link{rel:"stylesheet", href:"https://cdn.smassets.net/assets/wds-react/wds-react.3_0_1.min.css", media: "screen"}
   %body
+    %link{rel:"preload", href:"https://cdn.smassets.net/assets/wds-react/wds-react.3_0_1.min.css", as:"style"}
+    = csrf_meta_tag
+
+    = material_icons
+    = stylesheet_link_tag    'pano/guide', 'data-turbolinks-track': 'reload', media: 'all'
+    = stylesheet_link_tag    'pano', 'data-turbolinks-track': 'reload', media: 'alltitle= "WDS Rails: #{@page_title}"'
+  %body{data: {controller: 'modals'}}
+
+    #guide-nav
+      .inner
+        .nav-logo= icon_to :directions_railway, 'WDS Rails', root_path
+
+        .nav-version
+          version:
+          -#= Pano::VERSION
+
     #main
       #main-column
 
-        %h1.page-title WDS
+        %h1.page-title= @page_title
 
         #page-content= yield
