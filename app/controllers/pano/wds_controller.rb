@@ -3,6 +3,7 @@ module Pano
       def index
         # Home
       end
+
     end
   end
   
