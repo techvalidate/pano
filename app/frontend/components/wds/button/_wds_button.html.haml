@@ -3,9 +3,9 @@
   - klass << ' wds-button--stretched'
 
 - if @href.blank?
-	%button{class: klass, type: @button_type}
-    = @children
+  %button{class: klass, type: @button_type}
+    = yield
 
 - else
-	%a{class: klass, href: @href}
-    = @children
+  %a{class: klass, href: @href}
+    = yield
