@@ -1,0 +1,9 @@
+
+- klass = "wds-input #{@class_name} wds-input--#{@size} wds-input--#{@color} }"
+- if @stretched
+  - klass << ' wds-input--stretched'
+
+
+- unless @label.blank?
+  %label=  @label
+%input{class: klass, disabled: @disabled, id: @id, name: @name, value: @value, placeholder: @placeholder}
