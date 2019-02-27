@@ -1,0 +1,11 @@
+- klass = "wds-button #{@class_name} wds-button--#{@size} wds-button--#{@color} wds-button--#{@variant}"
+- if @stretched
+  - klass << ' wds-button--stretched'
+
+- if @href.blank?
+	%button{class: klass, type: @button_type}
+    = @children
+
+- else
+	%a{class: klass, href: @href}
+    = @children
