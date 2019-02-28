@@ -4,10 +4,10 @@
 
 - if @href.blank?
   - if @disabled
-    %button{disabled: '', class: klass, type: @button_type, data: {controller: 'button---wds-button', action: 'click->button---wds-button#onClick'}}
+    %button{disabled: '', class: klass, type: @button_type, data: {action: @action}}
       = yield
   - else
-    %button{class: klass, type: @button_type, data: {controller: 'button---wds-button', action: 'click->button---wds-button#onClick'}}
+    %button{class: klass, type: @button_type, data: {action: @action}}
       = yield
 
 - else
@@ -15,5 +15,5 @@
     %a{class: klass, href: @href, disabled: ''}
       = yield
   - else
-    %a{class: klass, href: @href}
+    %a{class: klass, href: @href, data: {action: @action}}
       = yield

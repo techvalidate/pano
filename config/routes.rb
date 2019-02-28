@@ -43,7 +43,7 @@ Pano::Engine.routes.draw do
     :card,
     :input,
     :tabs,
-    :modals
+    :modal
   ]
 
   wds_routes.each do |r|
