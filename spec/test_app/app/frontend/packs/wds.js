@@ -1,4 +1,4 @@
-
+import 'components/index'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
 import application from 'stimulus_application'
 
@@ -6,4 +6,3 @@ import application from 'stimulus_application'
 const context = require.context('components/wds/', true, /_controller\.js$/)
 console.log(definitionsFromContext(context))
 application.load(definitionsFromContext(context))
-
