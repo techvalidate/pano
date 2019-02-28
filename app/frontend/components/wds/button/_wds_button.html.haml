@@ -3,14 +3,6 @@
   - klass << ' wds-button--stretched'
 
 - if @href.blank?
-<<<<<<< HEAD
-  %button{class: klass, type: @button_type, data: {action: @action}}
-    = yield
-
-- else
-  %a{class: klass, href: @href, data: {action: @action}}
-    = yield
-=======
   - if @disabled
     %button{disabled: '', class: klass, type: @button_type, data: {controller: 'button---wds-button', action: 'click->button---wds-button#onClick'}}
       = yield
@@ -25,4 +17,3 @@
   - else
     %a{class: klass, href: @href}
       = yield
->>>>>>> pano-wds
