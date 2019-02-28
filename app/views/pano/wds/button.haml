@@ -1,2 +1,182 @@
-= component 'wds/button' do 
-    Yo
+.container{style: 'background-color: #f7f8fa; padding: 24px; min-height: 100vh'}
+  %h1 Button
+
+  %h2 Variants
+  %p We have three variants of our buttons which transform its structure.
+  = component 'wds/button', variant: 'solid' do
+    SOLID
+  = component 'wds/button', variant: 'ghost' do
+    GHOST
+  = component 'wds/button', variant: 'text' do
+    TEXT
+  %br
+  %br
+
+  %h2 Colors
+  %p Each one of our semantic brand and state colors are allowed to be used with our buttons.
+  = component 'wds/button' do
+    PRIMARY
+  = component 'wds/button', color: 'alt' do
+    ALT
+  = component 'wds/button', color: 'secondary' do
+    SECONDARY
+  = component 'wds/button', color: 'muted' do
+    MUTED
+  = component 'wds/button', color: 'warning' do
+    WARNING
+  = component 'wds/button', color: 'upgrade' do
+    UPGRADE
+  = component 'wds/button', color: 'link' do
+    LINK
+  = component 'wds/button', color: 'info' do
+    INFO
+  %br
+  %br
+  = component 'wds/button', variant:'ghost' do
+    PRIMARY
+  = component 'wds/button', variant:'ghost', color: 'alt' do
+    ALT
+  = component 'wds/button', variant:'ghost', color: 'secondary' do
+    SECONDARY
+  = component 'wds/button', variant:'ghost', color: 'muted' do
+    MUTED
+  = component 'wds/button', variant:'ghost', color: 'warning' do
+    WARNING
+  = component 'wds/button', variant:'ghost', color: 'upgrade' do
+    UPGRADE
+  = component 'wds/button', variant:'ghost', color: 'link' do
+    LINK
+  = component 'wds/button', variant:'ghost', color: 'info' do
+    INFO
+  %br
+  %br
+  = component 'wds/button', variant:'text' do
+    PRIMARY
+  = component 'wds/button', variant:'text', color: 'alt' do
+    ALT
+  = component 'wds/button', variant:'text', color: 'secondary' do
+    SECONDARY
+  = component 'wds/button', variant:'text', color: 'muted' do
+    MUTED
+  = component 'wds/button', variant:'text', color: 'warning' do
+    WARNING
+  = component 'wds/button', variant:'text', color: 'upgrade' do
+    UPGRADE
+  = component 'wds/button', variant:'text', color: 'link' do
+    LINK
+  = component 'wds/button', variant:'text', color: 'info' do
+    INFO
+  %br
+  %br
+
+  %h2 Sizes
+  %p Small, medium (default), and large sizes are available. Any size can be applied to any button type or theme.
+  = component 'wds/button', size: 'lg' do
+    LARGE
+  = component 'wds/button' do
+    MEDIUM
+  = component 'wds/button', size: 'sm' do
+    SMALL
+  %br
+  %br
+
+  %h2 Stretch
+  %p Make a button span the full width of its container.
+  = component 'wds/button', stretched: true do
+    BUTTON
+  %br
+  = component 'wds/button', stretched: true, color: 'upgrade' do
+    BUTTON
+  %br
+
+  / TODO
+  /%p Using the grid to manage the width of a stretch button is ideal
+  %br
+
+  %h2 Disable
+  %p Disabled can be applied to any button type or theme, and stops the user from being able to interact with it.
+  = component 'wds/button', disabled: true do
+    BUTTON
+  = component 'wds/button', disabled: true, color: 'alt' do
+    BUTTON
+  = component 'wds/button', disabled: true, color: 'secondary' do
+    BUTTON
+  = component 'wds/button', disabled: true, color: 'muted' do
+    BUTTON
+  = component 'wds/button', disabled: true, color: 'warning' do
+    BUTTON
+  = component 'wds/button', disabled: true, color: 'upgrade' do
+    BUTTON
+  = component 'wds/button', disabled: true, color: 'link' do
+    BUTTON
+  = component 'wds/button', disabled: true, color: 'info' do
+    BUTTON
+  %br
+  %br
+
+  %h2 Icons
+  %p Add an icon to any button type, size, or theme. Icons can be added to the left or right of the button text. Read more about Icons.
+  = component 'wds/button' do
+    = icon 'add_circle_outline'
+    BUTTON
+  = component 'wds/button', variant: 'ghost' do
+    = icon 'add_circle_outline'
+    BUTTON
+  = component 'wds/button', variant: 'text' do
+    = icon 'add_circle_outline'
+    BUTTON
+  %br
+
+  %p Buttons with icons can be of any size to our standard button.
+  = component 'wds/button', size: 'lg' do
+    = icon 'add_circle_outline'
+    BUTTON
+  = component 'wds/button' do
+    = icon 'add_circle_outline'
+    BUTTON
+  = component 'wds/button', size: 'sm' do
+    = icon 'add_circle_outline'
+    BUTTON
+  %br
+
+  %p Or, add the icon to the right of the button instead; has the same flexibility as standard button.
+  = component 'wds/button' do
+    BUTTON
+    = icon 'add_circle_outline'
+  = component 'wds/button', variant: 'ghost' do
+    BUTTON
+    = icon 'add_circle_outline'
+  = component 'wds/button', variant: 'text' do
+    BUTTON
+    = icon 'add_circle_outline'
+  %br
+  %br
+
+  %h2 Icon-only
+  = component 'wds/button' do
+    = icon 'add_circle_outline'
+  = component 'wds/button', variant: 'ghost' do
+    = icon 'add_circle_outline'
+  = component 'wds/button', variant: 'text' do
+    = icon 'add_circle_outline'
+  %br
+  %br
+  = component 'wds/button', size: 'lg' do
+    = icon 'add_circle_outline'
+  = component 'wds/button' do
+    = icon 'add_circle_outline'
+  = component 'wds/button', size: 'sm' do
+    = icon 'add_circle_outline'
+  %br
+  %br
+
+  %h2 Anchor Tag
+  %p= 'Buttons are styled to work on the <button> HTML element by default. However, you may also style <a> tags as buttons in the cases that need an href="".'
+  = component 'wds/button', href: '#', size: 'lg' do
+    LINK
+  = component 'wds/button', href: '#' do
+    LINK
+  = component 'wds/button', href: '#', size: 'sm' do
+    LINK
+  %br
+  %br
