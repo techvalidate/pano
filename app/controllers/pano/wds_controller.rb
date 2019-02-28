@@ -1,9 +1,8 @@
 module Pano
-    class WdsController < ApplicationController
+    class WdsController < ActionController::Base
       def index
         # Home
       end
-
     end
   end
   

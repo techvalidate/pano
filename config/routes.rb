@@ -53,6 +53,7 @@ Pano::Engine.routes.draw do
     get "wds/#{r}", as: "wds_#{r}", to: "wds##{r}"
   end
 
+  
   root to: 'wds#index'
 
 end
