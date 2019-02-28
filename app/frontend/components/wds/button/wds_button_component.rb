@@ -11,5 +11,6 @@ module WdsButtonComponent
   property :variant, default: 'solid' # solid, ghost, text
   property :href, default: nil
   property :disabled, default: false
-
+  property :icon_position, default: 'icon-left' # icon-left, icon-right, icon-only; Not React prop, but we need this for styling
+  # Note: icons need the class .wds-icon-svg
 end

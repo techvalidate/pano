@@ -1,0 +1,47 @@
+.container{style: 'background-color: #f7f8fa; padding: 24px; min-height: 100vh'}
+  :css
+    .material-icons {
+      font-size: 16px;
+    }
+
+  - icon_class = 'wds-icon-svg'
+
+  %h1 Checkbox
+
+  %h2 Default
+  = component 'wds/checkbox', label: 'I like the color blue'
+  %br
+  %br
+
+  %h2 Pre-checked
+  %p Checkboxes can be pre-checked on page load.
+  %h3 Uncontrolled
+  = component 'wds/checkbox', label: 'I like the color blue', default_checked: true, id: 'uncontrolled'
+  %h3 Controlled
+  = component 'wds/checkbox', label: 'I like the color blue', checked: true, id: 'controlled'
+  %br
+  %br
+
+  %h2 Disable
+  %p Checkboxes can be disabled on page load.
+  = component 'wds/checkbox', label: 'I like the color blue', disabled: true
+  %br
+  %br
+
+  %h2 No Label
+  %p Checkbox items do not require text labels.
+  = component 'wds/checkbox'
+  %br
+  %br
+
+  %h2 Label Length
+  %p Checkbox labels should be kept to 1 sentence; do not make them too long.
+  = component 'wds/checkbox', label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt sed do eiusmod tempor incididunt.'
+  %br
+  %br
+
+  %h2 Indeterminate Checkbox
+  %p For an 'in between' state you can use the Indeterminate option.
+  = component 'wds/checkbox', label: 'I like the color blue', indeterminate: true, checked: true
+  %br
+  %br
