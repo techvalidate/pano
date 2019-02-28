@@ -3,9 +3,17 @@
   - klass << ' wds-button--stretched'
 
 - if @href.blank?
-  %button{class: klass, type: @button_type, data: {controller: 'button---wds-button', action: 'click->button---wds-button#onClick'}}
-    = yield
+  - if @disabled
+    %button{disabled: '', class: klass, type: @button_type, data: {controller: 'button---wds-button', action: 'click->button---wds-button#onClick'}}
+      = yield
+  - else
+    %button{class: klass, type: @button_type, data: {controller: 'button---wds-button', action: 'click->button---wds-button#onClick'}}
+      = yield
 
 - else
-  %a{class: klass, href: @href}
-    = yield
+  - if @disabled
+    %a{class: klass, href: @href, disabled: ''}
+      = yield
+  - else
+    %a{class: klass, href: @href}
+      = yield

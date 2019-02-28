@@ -3,7 +3,6 @@
 - if @stretched
   - klass << ' wds-input--stretched'
 
-
 - unless @label.blank?
-  %label=  @label
+  %label.wds-label=  @label
 %input{class: klass, disabled: @disabled, id: @id, name: @name, value: @value, placeholder: @placeholder}
