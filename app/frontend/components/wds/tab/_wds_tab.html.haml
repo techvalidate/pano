@@ -1,0 +1,17 @@
+- klass = 'wds-tab__tab'
+- if @selected
+  - klass << ' wds-tab__tab--selected'
+- if @disabled
+  - klass << ' wds-tab__tab--disabled'
+%li{class: klass, data: {id: @id, target: 'tabs---wds-tabs.tab'}}
+  / Skip button id
+  - if @disabled
+    %button.wds-tab__tab-btn{disabled: '', value: @value, role: 'tab', tabindex:'0', 'aria-selected':"#{@selected}", id: @id, data: {id: @id, action: 'click->tabs---wds-tabs#onClick'}}
+      = @title
+  - else
+    %button.wds-tab__tab-btn{value: @value, role: 'tab', tabindex:'0', 'aria-selected':"#{@selected}", id: @id, data: {id:@id, action: 'click->tabs---wds-tabs#onClick'}}
+      = @title
+
+- if block_given_to_component?
+  .wds-tab__tab-content{data: {target: 'tabs---wds-tabs.content', id: @id}}
+    = yield
