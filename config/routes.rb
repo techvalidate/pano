@@ -40,10 +40,13 @@ Pano::Engine.routes.draw do
 
   wds_routes = [
     :button,
+    :button_group,
     :card,
+    :checkbox,
     :input,
     :tabs,
-    :modals
+    :modal,
+    :react_example
   ]
 
   wds_routes.each do |r|

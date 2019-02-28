@@ -1,0 +1,29 @@
+- content = capture_haml do
+  %span.wds-checkbox__faux
+    %svg{class: 'wds-icon-svg wds-icon-svg--light', preserveAspectRatio: 'xMidYMid meet', viewBox: '0 0 16 16', title: 'Check'}
+      %title Check
+      %g
+        %path{d: 'm6.4372 13.125a.7475.7475 0 0 1 -.53-.22l-5.6247-5.6242a.75.75 0 0 1 1.0605-1.0608l5.0942 5.0942 8.22-8.22a.75.75 0 0 1 1.0605 1.0605l-8.75 8.75a.7476.7476 0 0 1 -.5305.2203z'}
+  %span.wds-checkbox__label
+    %label.wds-label.wds-label--muted{for: @id}>
+      = @label
+
+- klass = "wds-checkbox #{@class_name}"
+- if @indeterminate
+  - klass << 'wds-checkbox--indeterminate'
+
+%span{class: klass}
+  - if @checked || @default_checked
+    - if @disabled
+      %input.wds-checkbox__native{type: 'checkbox', id: @id, tabindex: '0', checked: '', disabled: ''}
+        = content
+    - else
+      %input.wds-checkbox__native{type: 'checkbox', id: @id, tabindex: '0', checked: ''}
+        = content
+  - else
+    - if @disabled
+      %input.wds-checkbox__native{type: 'checkbox', id: @id, tabindex: '0', disabled: ''}
+        = content
+    - else
+      %input.wds-checkbox__native{type: 'checkbox', id: @id, tabindex: '0'}
+        = content
