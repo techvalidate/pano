@@ -42,6 +42,7 @@ Pano::Engine.routes.draw do
     :button,
     :button_group,
     :card,
+    :checkbox,
     :input,
     :tabs
   ]
