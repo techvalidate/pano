@@ -1,0 +1,13 @@
+- klass = "wds-tab wds-tab--#{@align} wds-tab--#{@color}"
+%div{class: klass, data: {controller: 'tabs---wds-tabs'}}
+  %ul.wds-tab__tabs{role: 'tablist'}
+    = yield
+
+  / Container for panes specified in tabs
+  - if @full_width
+    .wds-tab__panes
+      .wds-pane.wds-pane--transparent{data: {target: 'tabs---wds-tabs.pane'}}
+  - else
+    .wds-tab__panes
+      .wds-pane
+        .wds-pane__body{data: {target: 'tabs---wds-tabs.pane'}}
