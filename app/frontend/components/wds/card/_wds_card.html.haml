@@ -1,0 +1,15 @@
+.wds-card
+  - unless @title.blank?
+    %header.wds-card__header
+      .wds-type--card-title
+        = @title
+
+      - unless @add_on.blank?
+        .wds-card__addon
+          = @add_on
+  - else
+    - unless @add_on.blank?
+      .wds-card__addon
+        = @add_on
+  .wds-card__body
+    = yield
