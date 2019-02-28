@@ -4,9 +4,10 @@ import { Controller } from "stimulus";
  * When tab is clicked, pane's content is replaced with the tab's content
 */
 export default class extends Controller {
-  static targets = ['pane', 'tab', 'content']
+  static targets = ['paneContainer', 'pane', 'tab', 'content']
 
-  HIDDEN = 'wds-tab__tab-content--hidden'
+  PANE_HIDDEN = 'wds-tab__panes--hidden'
+  TAB_HIDDEN = 'wds-tab__tab-content--hidden'
   SELECTED = 'wds-tab__tab--selected'
 
   ID = 'data-id'
@@ -35,13 +36,15 @@ export default class extends Controller {
   }
 
   showContent(contentId) {
-    this.contentTargets.forEach((content) => {
-      if (contentId === content.getAttribute(this.ID)) {
-        content.classList.remove(this.HIDDEN)
-      } else {
-        content.classList.add(this.HIDDEN)
-      }
-    })
+    if (this.hasContentTarget) {
+      this.contentTargets.forEach((content) => {
+        if (contentId === content.getAttribute(this.ID)) {
+          content.classList.remove(this.TAB_HIDDEN)
+        } else {
+          content.classList.add(this.TAB_HIDDEN)
+        }
+      })
+    }
   }
 
   isSelected(tab) {
@@ -49,11 +52,14 @@ export default class extends Controller {
   }
 
   connect() {
-    // Move all tab contents to be in the pane, but hidden initially
-    this.contentTargets.forEach((content) => {
-      // NOTE: This adds an extra div between the pane and the actual content, compared to React WDS
-      this.paneTarget.appendChild(content)
-    })
+    if (this.hasContentTarget) {
+      // Move all tab contents to be in the pane, but hidden initially
+      this.contentTargets.forEach((content) => {
+        // NOTE: This adds an extra div between the pane and the actual content, compared to React WDS
+        this.paneTarget.appendChild(content)
+      })
+      this.paneContainerTarget.classList.remove(this.PANE_HIDDEN)
+    }
 
     // Show initially selected content
     this.tabTargets.forEach((tab) => {

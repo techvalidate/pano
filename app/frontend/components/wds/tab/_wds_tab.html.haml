@@ -12,5 +12,6 @@
     %button.wds-tab__tab-btn{value: @value, role: 'tab', tabindex:'0', 'aria-selected':"#{@selected}", id: @id, data: {id:@id, action: 'click->tabs---wds-tabs#onClick'}}
       = @title
 
-.wds-tab__tab-content{data: {target: 'tabs---wds-tabs.content', id: @id}}
-  = yield
+- if block_given_to_component?
+  .wds-tab__tab-content{data: {target: 'tabs---wds-tabs.content', id: @id}}
+    = yield

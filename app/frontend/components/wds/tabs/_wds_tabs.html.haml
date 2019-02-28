@@ -3,11 +3,10 @@
   %ul.wds-tab__tabs{role: 'tablist'}
     = yield
 
-  / Container for panes specified in tabs
-  - if @full_width
-    .wds-tab__panes
+  / Container for panes specified in tabs; hidden unless there is content
+  .wds-tab__panes.wds-tab__panes--hidden{data: {target: 'tabs---wds-tabs.paneContainer'}}
+    - if @full_width
       .wds-pane.wds-pane--transparent{data: {target: 'tabs---wds-tabs.pane'}}
-  - else
-    .wds-tab__panes
+    - else
       .wds-pane
         .wds-pane__body{data: {target: 'tabs---wds-tabs.pane'}}
