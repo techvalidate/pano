@@ -1,16 +1,11 @@
 !!! 5
 %html
   %head
-    %title "WDS Rails"
-    %link{rel:"stylesheet", href:"https://cdn.smassets.net/assets/wds-react/wds-react.3_0_1.min.css", media: "screen"}
-    = javascript_pack_tag 'wds', 'data-turbolinks-track': 'reload'
-  %body
+    %title Wrench Rails
     %link{rel:"stylesheet", href:"https://cdn.smassets.net/assets/wds-react/wds-react.3_0_1.min.css", media: "screen"}
     = csrf_meta_tag
-
     = material_icons
-    = stylesheet_link_tag    'pano/guide', 'data-turbolinks-track': 'reload', media: 'all'
-    = stylesheet_link_tag    'pano', 'data-turbolinks-track': 'reload', media: 'alltitle= "WDS Rails: #{@page_title}"'
+    = javascript_pack_tag 'wds', 'data-turbolinks-track': 'reload'
   %body{data: {controller: 'modals'}}
 
     #guide-nav
