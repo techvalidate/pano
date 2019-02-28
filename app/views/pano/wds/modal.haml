@@ -1,0 +1,19 @@
+%h2 React Modal
+= react_component 'modal', {text: 'This is the react modal'}
+%h2 Default
+= component 'wds/button', action: 'modals#open', href: '#wds-default-modal' do 
+  Show Modal
+= component 'wds/modal', id: 'wds-default-modal'
+
+
+%h2 Header
+
+= component 'wds/button', action: 'modals#open', href: '#wds-header-modal' do 
+  Show Modal with Header
+= component 'wds/modal', id: 'wds-header-modal', header: 'Modal Title'
+
+%h2 Subheader
+
+= component 'wds/button', action: 'modals#open', href: '#wds-subheader-modal' do 
+  Show Modal with Header
+= component 'wds/modal', id: 'wds-subheader-modal', header: 'Modal Title', subheader: 'subHeader'

@@ -11,5 +11,6 @@ module TestApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += Dir[Rails.root.join("pano", "app", "models", "{*/}")]
+    config.react.server_renderer_directories = ["/app/frontend/components/react"]
   end
 end

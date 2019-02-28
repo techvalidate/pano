@@ -7,9 +7,14 @@
   "license": "MIT",
   "dependencies": {
     "@rails/webpacker": "^3.4.1",
+    "@sm/wds-core": "^3.0.0",
+    "@sm/wds-react": "^3.0.1",
     "lightpick": "^1.2.8",
     "moment": "^2.23.0",
-    "pano-js": "git+ssh://git@github.com:techvalidate/pano-js"
+    "pano-js": "git+ssh://git@github.com:techvalidate/pano-js",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react_ujs": "^2.4.4"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.1"

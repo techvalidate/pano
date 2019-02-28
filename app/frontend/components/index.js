@@ -1,2 +1,1 @@
-// import "./datepicker/datepicker"
-// import "./components/wds/button/wds_button"
+import './wds/modal/wds_modal'

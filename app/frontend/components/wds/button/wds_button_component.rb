@@ -10,7 +10,7 @@ module WdsButtonComponent
   property :button_type, default: 'button' # button, reset, submit
   property :variant, default: 'solid' # solid, ghost, text
   property :href, default: nil
-  property :children, default: ''
+  property :action, default: ''
   
 end
   

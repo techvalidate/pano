@@ -1,0 +1,21 @@
+%div.pano-modal{id: @id}
+  .wds-overlay.wds-modal__overlay.wds-fade--normal.wds-fade--enter
+  .wds-modal.wds-modal--sm.wds-slide--down.wds-slide--speed-fast.wds-slide--distance-near.wds-slide--enter
+    .wds-modal__modal{role: "dialog", tabindex: "-1"}
+      - if @header
+        %header.wds-modal__head
+          .wds-modal__title
+            %h1.wds-modal__text= @header
+            - if @subheader
+              %p.wds-modal__sub-text= @subheader
+
+      %section.wds-modal__body
+        %button.wds-close.wds-close--dark{type: 'button', 'aria-label': "Close Modal", data: {action: 'click->modals#close'}}
+          %span.wds-close__icon
+            = icon :close, style: 'font-size: 18px'
+          %span.wds-close__text
+            Close modal
+
+        .wds-pane.wds-pane--transparent
+          .wds-pane__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          
