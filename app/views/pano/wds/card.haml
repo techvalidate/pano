@@ -1,18 +1,30 @@
-Default
-= component 'wds/card' do
+.container{style: 'background-color: #f7f8fa; padding: 24px; min-height: 100vh'}
+
+  %h1 Card
+  %h2 Default
+  = component 'wds/card' do
     Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-Title Region
-= component 'wds/card', title: 'The monkey was curious.' do
+  %br
+  %br
+
+  %h2 Title Region
+  = component 'wds/card', title: 'The monkey was curious.' do
     Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-- button = component 'wds/button' do
+  %br
+  %br
+
+  - button = component 'wds/button' do
     Yo
 
-Addon Region
-= component 'wds/card', title: 'The monkey was curious.', add_on: button do
+  %h2 Addon Region
+  = component 'wds/card', title: 'The monkey was curious.', add_on: button do
     Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-Addon Region no Title
-= component 'wds/card', add_on: button do
+  %br
+  %br
+
+  %h2 Addon Region no Title
+  = component 'wds/card', add_on: button do
     Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
