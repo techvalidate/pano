@@ -14,7 +14,8 @@
     "pano-js": "git+ssh://git@github.com:techvalidate/pano-js",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react_ujs": "^2.4.4"
+    "react_ujs": "^2.4.4",
+    "stimulus": "^1.1.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.1"

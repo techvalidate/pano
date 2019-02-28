@@ -11,6 +11,6 @@ module WdsButtonComponent
   property :variant, default: 'solid' # solid, ghost, text
   property :href, default: nil
   property :action, default: ''
-  
+  property :disabled, default: false
+
 end
-  

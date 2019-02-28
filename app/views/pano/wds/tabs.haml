@@ -1,3 +1,170 @@
-%h2 Tabs with React
 
-= react_component 'tabs'
+
+.container{style: 'background-color: #f7f8fa; padding: 24px; min-height: 100vh'}
+  %h1 Tab
+    
+  %h2 Tabs with React
+
+    = react_component 'tabs'
+
+  %h2 Default
+  %p Our default tabs have a white background with primary color accents.
+  = component 'wds/tabs' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+  %br
+
+  %h2 Alignment
+  %p Change which side tabs will anchor themselves to, which can help with difficult information trees.
+  %p Align tabs to the left (default).
+  = component 'wds/tabs', align: 'left' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  %p Evenly distribute and align tabs across the width of the tab parent container.
+  = component 'wds/tabs', align: 'even' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  %p Align tabs to the right.
+  = component 'wds/tabs', align: 'right' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  %p Center tabs.
+  = component 'wds/tabs', align: 'center' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+  %br
+
+  %h2 Colors
+  %p Change the color of your tab to transparent (no background color).
+  = component 'wds/tabs', color:'transparent' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  %p Change the color of your tab to our primary brand color.
+  = component 'wds/tabs', color:'primary' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  %p Change the color of your tab to a darker contrast.
+  = component 'wds/tabs', color:'dark' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  %p Change the color of your tab to a light contrast (default).
+  = component 'wds/tabs', color:'light' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic'
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+  %br
+
+  %h2 Disabled
+  %p
+    You can make a tab disabled which does not let a user navigate or interact with that tab button. In these examples below we have disabled the
+    %strong Logic
+    tab.
+  = component 'wds/tabs', color:'transparent' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic', disabled: true
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  = component 'wds/tabs', color:'primary' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic', disabled: true
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  = component 'wds/tabs', color:'dark' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic', disabled: true
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+
+  = component 'wds/tabs', color:'light' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true
+    = component 'wds/tab', title: 'OPTIONS', id: 'options'
+    = component 'wds/tab', title: 'LOGIC', id: 'logic', disabled: true
+    = component 'wds/tab', title: 'COPY', id: 'copy'
+  %br
+  %br
+
+  %h2 Icons
+  %p In some cases you may want to use an icon.
+  = component 'wds/tabs', color:'light' do
+    = component 'wds/tab', title: icon('folder'), id: 'edit', selected: true
+    = component 'wds/tab', title: icon('lock'), id: 'options'
+    = component 'wds/tab', title: icon('search'), id: 'logic'
+    = component 'wds/tab', title: icon('bell'), id: 'copy'
+  %br
+
+  = component 'wds/tabs', color:'primary' do
+    = component 'wds/tab', title: icon('folder'), id: 'edit', selected: true
+    = component 'wds/tab', title: icon('lock'), id: 'options'
+    = component 'wds/tab', title: icon('search'), id: 'logic'
+    = component 'wds/tab', title: icon('bell'), id: 'copy'
+  %br
+
+  = component 'wds/tabs', color:'dark' do
+    = component 'wds/tab', title: icon('folder'), id: 'edit', selected: true
+    = component 'wds/tab', title: icon('lock'), id: 'options'
+    = component 'wds/tab', title: icon('search'), id: 'logic'
+    = component 'wds/tab', title: icon('bell'), id: 'copy'
+  %br
+  %br
+
+  %h2 Panes
+  %p Change the content of a tab based on which tab you have selected.
+  = component 'wds/tabs' do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true do
+      Edit Pane
+    = component 'wds/tab', title: 'OPTIONS', id: 'options' do
+      Options Pane
+    = component 'wds/tab', title: 'LOGIC', id: 'logic' do
+      Logic Pane
+    = component 'wds/tab', title: 'COPY', id: 'copy' do
+      Copy Pane
+  %br
+
+  %p You can turn off padding and make it transparent to have more customization of the design of the Pane content.
+  = component 'wds/tabs', full_width: true do
+    = component 'wds/tab', title: 'EDIT', id: 'edit', selected: true do
+      Edit Pane
+    = component 'wds/tab', title: 'OPTIONS', id: 'options' do
+      Options Pane
+    = component 'wds/tab', title: 'LOGIC', id: 'logic' do
+      Logic Pane
+    = component 'wds/tab', title: 'COPY', id: 'copy' do
+      Copy Pane
+  %br
