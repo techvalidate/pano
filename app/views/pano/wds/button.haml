@@ -1,4 +1,11 @@
 .container{style: 'background-color: #f7f8fa; padding: 24px; min-height: 100vh'}
+  :css
+    .material-icons {
+      font-size: 16px;
+    }
+
+  - icon_class = 'wds-icon-svg'
+
   %h1 Button
 
   %h2 Variants
@@ -116,57 +123,57 @@
 
   %h2 Icons
   %p Add an icon to any button type, size, or theme. Icons can be added to the left or right of the button text. Read more about Icons.
-  = component 'wds/button' do
-    = icon 'add_circle_outline'
+  = component 'wds/button', icon_position: 'icon-left' do
+    = icon 'add_circle_outline', class: icon_class
     BUTTON
-  = component 'wds/button', variant: 'ghost' do
-    = icon 'add_circle_outline'
+  = component 'wds/button', icon_position: 'icon-left', variant: 'ghost' do
+    = icon 'add_circle_outline', class: icon_class
     BUTTON
-  = component 'wds/button', variant: 'text' do
-    = icon 'add_circle_outline'
+  = component 'wds/button', icon_position: 'icon-left', variant: 'text' do
+    = icon 'add_circle_outline', class: icon_class
     BUTTON
   %br
 
   %p Buttons with icons can be of any size to our standard button.
-  = component 'wds/button', size: 'lg' do
-    = icon 'add_circle_outline'
+  = component 'wds/button', icon_position: 'icon-left', size: 'lg' do
+    = icon 'add_circle_outline', class: icon_class
     BUTTON
-  = component 'wds/button' do
-    = icon 'add_circle_outline'
+  = component 'wds/button', icon_position: 'icon-left' do
+    = icon 'add_circle_outline', class: icon_class
     BUTTON
-  = component 'wds/button', size: 'sm' do
-    = icon 'add_circle_outline'
+  = component 'wds/button', icon_position: 'icon-left', size: 'sm' do
+    = icon 'add_circle_outline', class: icon_class
     BUTTON
   %br
 
   %p Or, add the icon to the right of the button instead; has the same flexibility as standard button.
-  = component 'wds/button' do
+  = component 'wds/button', icon_position: 'icon-right' do
     BUTTON
-    = icon 'add_circle_outline'
-  = component 'wds/button', variant: 'ghost' do
+    = icon 'add_circle_outline', class: icon_class
+  = component 'wds/button', icon_position: 'icon-right', variant: 'ghost' do
     BUTTON
-    = icon 'add_circle_outline'
-  = component 'wds/button', variant: 'text' do
+    = icon 'add_circle_outline', class: icon_class
+  = component 'wds/button', icon_position: 'icon-right', variant: 'text' do
     BUTTON
-    = icon 'add_circle_outline'
+    = icon 'add_circle_outline', class: icon_class
   %br
   %br
 
   %h2 Icon-only
-  = component 'wds/button' do
-    = icon 'add_circle_outline'
-  = component 'wds/button', variant: 'ghost' do
-    = icon 'add_circle_outline'
-  = component 'wds/button', variant: 'text' do
-    = icon 'add_circle_outline'
+  = component 'wds/button', icon_position: 'icon-only' do
+    = icon 'add_circle_outline', class: icon_class
+  = component 'wds/button', icon_position: 'icon-only', variant: 'ghost' do
+    = icon 'add_circle_outline', class: icon_class
+  = component 'wds/button', icon_position: 'icon-only', variant: 'text' do
+    = icon 'add_circle_outline', class: icon_class
   %br
   %br
-  = component 'wds/button', size: 'lg' do
-    = icon 'add_circle_outline'
-  = component 'wds/button' do
-    = icon 'add_circle_outline'
-  = component 'wds/button', size: 'sm' do
-    = icon 'add_circle_outline'
+  = component 'wds/button', icon_position: 'icon-only', size: 'lg' do
+    = icon 'add_circle_outline', class: icon_class
+  = component 'wds/button', icon_position: 'icon-only' do
+    = icon 'add_circle_outline', class: icon_class
+  = component 'wds/button', icon_position: 'icon-only', size: 'sm' do
+    = icon 'add_circle_outline', class: icon_class
   %br
   %br
 

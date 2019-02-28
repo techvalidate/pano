@@ -1,18 +1,2 @@
-%h2 Styles
-%h2 Layout
-%h2 Components
-.wds-grid.wds-grid--no-bleeds
-  .wds-grid__row
-    .wds-grid__col-12.wds-grid__col-md-6.wds-grid__col-lg-3
-      .docs-card
-        = component 'wds/button'
-        Button
-    .wds-grid__col-12.wds-grid__col-md-6.wds-grid__col-lg-3
-      .docs-card
-        Input
-    .wds-grid__col-12.wds-grid__col-md-6.wds-grid__col-lg-3
-      .docs-card
-        Checkbox
-    .wds-grid__col-12.wds-grid__col-md-6.wds-grid__col-lg-3
-      .docs-cards
-        Radio
+.container{style: 'background-color: #f7f8fa; padding: 24px; min-height: 100vh'}
+  = react_component 'index_page'
