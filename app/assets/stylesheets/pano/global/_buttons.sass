@@ -89,10 +89,13 @@ $button-radius: 2px
 // the actual button classes
 //=========================================
 
-.btn, input[type='submit'], button
+.btn, input[type='submit']
   +btn
   &:hover
       background-color: #00D17A
+.wds-tab__tab-btn button
+  &:hover
+    background-color: none !important
   //=========================================
   // different colored buttons
   //=========================================

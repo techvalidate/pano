@@ -2,12 +2,13 @@
 
   - icon_class = 'wds-icon-svg'
 
-  = component 'wds/button', href: '../../' do
+  = component 'wds/button', href: '/style-guide' do
     = icon 'arrow_back_ios', class: icon_class
     BACK
 
   %h2 React Modal
-  = react_component 'modal', {text: 'This is the react modal'}
+  = react_component 'modal', {text: 'This is the react modal', buttonText: 'Show'}
+  
   %h2 Default
   = component 'wds/button', action: 'modals#open', href: '#wds-default-modal' do 
     Show Modal
