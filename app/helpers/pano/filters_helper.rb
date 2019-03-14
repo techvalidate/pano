@@ -1,7 +1,7 @@
 module Pano
   module FiltersHelper
-    def clear_filters_link(url, remote: false)
-      link_to 'Clear All', url, class: 'delete', title: 'Clear all selected filters', remote: remote
+    def clear_filters_link(url)
+      link_to 'Clear All', url, class: 'delete', title: 'Clear all selected filters', remote: true, data: {action: 'ajax:success->merge#onSuccess'}
     end
 
     def list_filters(filters, remote: false)

@@ -23,7 +23,7 @@ module Pano
       self.options[:remote] = options.key?(:remote) ? options[:remote] : menu.remote?
       self.options[:data] = {}
       self.options[:data][:target] = 'filters.filter'
-      self.options[:data][:action] = 'ajax:success->filters#onSuccess click->filters#toggleSelection'
+      self.options[:data][:action] = 'ajax:success->merge#onSuccess click->filters#toggleSelection'
     end
 
     def length
