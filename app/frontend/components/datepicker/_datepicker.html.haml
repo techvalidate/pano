@@ -11,7 +11,7 @@
         %hr
         .form-group.inline-block
           = f.formatted_date_field @finish_attr.to_sym, {data: {target: 'datepicker.finish', action: 'active->datepicker#disableSubmit'}, format: 'MMM d, yyyy', placeholder: 'MM/DD/YYYY'}
-    .calendars.grid.g-8.m-stack.calendar-parent
+    .calendars.grid.g-8.m-stack.calendar-parent{data: {target: 'datepicker.parentNode'}}
     .date-picker-footer
       = link_to 'Cancel', js_void, class: 'btn btn-outline', data: {action: 'modals#close'}
       = link_to @submit_label, js_void, class: 'btn btn-primary', data: {target: 'datepicker.submit', action: 'datepicker#apply'}
