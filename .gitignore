@@ -22,3 +22,6 @@ tags
 *.swp
 *.swo
 *.swn
+
+.ruby-gemset
+.ruby-version
