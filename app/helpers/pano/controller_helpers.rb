@@ -39,12 +39,14 @@ module Pano
       end
     end
 
-    def render_filtered(action)
+    def render_filtered(action, params = {})
       respond_to do |format|
-        format.html
+        format.html {
+          render params
+        }
         format.json {
           render json: {
-            html: render_to_string(action)
+            html: render_to_string(action, params)
           }
         }
       end
