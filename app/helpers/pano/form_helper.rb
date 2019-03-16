@@ -33,10 +33,13 @@ module Pano
       remote = options.delete(:remote) ? true : false
       active = object.query.present?
       css_class = "search-field-container #{options[:class]}"
-      form_for object, url: url, remote: remote, html: {method: :get, class: css_class}, builder: Pano::PanoFormBuilder do |f|
-        f.search_field :query, placeholder: 'Search', class: selected_if(active)
+      # use form controller for form submission
+      use_controller = options.delete(:use_controller)
+      form_data = use_controller ? {controller: 'form'} : {}
+      button_data = use_controller ? {action: 'click->form#submit'} : {}
+      form_for object, url: url, remote: remote, html: {method: :get, class: css_class}, builder: Pano::PanoFormBuilder, data: form_data do |f|
+        f.search_field :query, placeholder: 'Search', class: selected_if(active), use_controller: use_controller
       end
     end
-
   end
 end
