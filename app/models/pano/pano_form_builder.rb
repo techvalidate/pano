@@ -8,8 +8,15 @@ module Pano
 
     # Overrides ActionView::Helpers::FormHelper search_field()
     def search_field(method, options = {})
-      submit_button = @template.button_tag(type: 'submit') do
-        @template.icon(:search)
+      use_controller = options.delete(:use_controller)
+      if use_controller
+        submit_button = @template.button_tag(type: 'button', data: {action: 'form#submit'}) do
+          @template.icon(:search)
+        end
+      else
+        submit_button = @template.button_tag(type: 'submit') do
+          @template.icon(:search)
+        end
       end
       super + submit_button
     end
