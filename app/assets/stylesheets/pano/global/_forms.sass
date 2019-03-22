@@ -68,10 +68,8 @@ date-input
 // ------------------------------------------
 
 .search-field-container
-
   position: relative
   width: 250px
-
   input[type="search"]
     display: block
     line-height: 32px
@@ -84,6 +82,7 @@ date-input
     // prevent search input from hiding behind search icon
     padding-right: 34px
     &.selected, &:focus, &:active
+      background: #fff
       color: $charcoal
       border-bottom: 1px solid $pebble
 
@@ -91,7 +90,7 @@ date-input
   input[type="search"]::-ms-clear
     display: none
 
-  button[type="submit"]
+  button[type="submit"], a.submit
     position: absolute
     bottom: 0
     right: 0
@@ -102,7 +101,7 @@ date-input
     width: 32px
     height: 32px
     line-height: 32px
-
+    text-align: center
     i
       position: static
       font-size: 16px
@@ -116,7 +115,7 @@ date-input
       color: $stone
 
   &:hover
-    button[type="submit"]
+    button[type="submit"], a.submit
       i
         background: $pebble
 

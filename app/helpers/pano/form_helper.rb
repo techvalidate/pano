@@ -37,12 +37,19 @@ module Pano
 
       options_data = options.delete(:data) || {}
       use_controller = options.delete(:use_controller)
-      # use form controller for form submission
-      form_data = use_controller ? options_data.merge({controller: 'form'}) : {}
+      stimulus_controller = use_controller
+      form_data = {}
+      button_data = {}
 
-      button_data = use_controller ? {action: 'click->form#submit'} : {}
+      # use form controller for form submission
+      if use_controller
+        stimulus_controller = options_data[:controller] || 'form'
+        form_data = options_data[:controller] ? options_data : options_data.merge({controller: 'form'})
+        button_data = {action: "click->#{stimulus_controller}#submit"}
+      end
+
       form_for object, options.merge({url: url, remote: remote, html: {method: :get, class: css_class}, builder: Pano::PanoFormBuilder, data: form_data}) do |f|
-        f.search_field :query, placeholder: 'Search', class: selected_if(active), use_controller: use_controller
+        f.search_field :query, placeholder: 'Search', class: selected_if(active), controller: stimulus_controller, button_data: button_data
       end
     end
   end
