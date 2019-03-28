@@ -237,7 +237,8 @@ input[type="checkbox"],
     background: white
     border-radius: 2px
     vertical-align: middle
-  input[type="checkbox"]:checked + label:before
+  &.disabled.appear-checked label:before, input[type="checkbox"]:checked + label:before
+    /* .disabled.appear-checked makes the label appear checked even if the input itself is not */
     font-family: 'Material Icons'
     content: '\e876'
     background-color: $sabeus
