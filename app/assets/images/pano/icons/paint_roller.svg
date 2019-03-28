@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="64px" viewBox="0 0 52 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>32-paint-roller-decoration</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IA-Fixes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="32-paint-roller-decoration" transform="translate(1.000000, 1.000000)" stroke="#00BF6F" stroke-width="2">
+            <path d="M43,15 L43,31 C43,32.656 41.657,34 40,34 C38.343,34 37,32.656 37,31 L37,22 C37,20.896 36.104,20 35,20 C33.896,20 33,20.896 33,22 L33,22 C33,23.656 31.657,25 30,25 C28.343,25 27,23.656 27,22 L27,22 C27,20.896 26.104,20 25,20 C23.896,20 23,20.896 23,22 L23,25 C23,26.656 21.657,28 20,28 C18.343,28 17,26.656 17,25 L17,25 C17,23.344 15.657,22 14,22 C12.343,22 11,23.344 11,25 L11,30 C11,31.104 10.104,32 9,32 C7.896,32 7,31.104 7,30 L7,15" id="Path"></path>
+            <polygon id="Path" points="29 38 21 38 21 40 23 42 21 45 21 62 29 62 29 45 27 42 29 40"></polygon>
+            <rect id="Rectangle" x="0" y="4" width="4" height="4"></rect>
+            <path d="M46,10 C46,11.104 45.104,12 44,12 L6,12 C4.896,12 4,11.104 4,10 L4,2 C4,0.895 4.896,0 6,0 L44,0 C45.104,0 46,0.895 46,2 L46,10 Z" id="Path"></path>
+            <path d="M46,6 L48,6 C49.104,6 50,6.896 50,8 L50,17 L25,33 L25,38" id="Path"></path>
+            <path d="M21,58 L29,58" id="Path"></path>
+            <path d="M20,6 L22,6" id="Path"></path>
+            <path d="M24,6 L26,6" id="Path"></path>
+            <path d="M28,6 L30,6" id="Path"></path>
+        </g>
+    </g>
+</svg>
