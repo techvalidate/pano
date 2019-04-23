@@ -21,7 +21,7 @@ module Pano
           @template.icon(:search)
         end
 
-        super + submit_button
+        super(method) + submit_button
       end
     end
 
