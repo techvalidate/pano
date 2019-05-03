@@ -40,16 +40,25 @@ module Pano
       stimulus_controller = use_controller
       form_data = {}
       button_data = {}
+      search_field_data = {}
+      autocomplete = "on" # browser default is also on
 
       # use form controller for form submission
       if use_controller
         stimulus_controller = options_data[:controller] || 'form'
         form_data = options_data[:controller] ? options_data : options_data.merge({controller: 'form'})
         button_data = {action: "click->#{stimulus_controller}#submit"}
+
+      elsif options.delete(:prevent_autocomplete_override)
+        # Set autocomplete to off initially: Prevent the browser from updating (during page load) the input value to the last entered value
+        # autocomplete causes input value to mismatch page content when navigating back/forward between searches
+        # Turn autcomplete back on after page loads
+        autocomplete = "off"
+        search_field_data = {controller: 'enable-autocomplete'}
       end
 
       form_for object, options.merge({url: url, remote: remote, html: {method: :get, class: css_class}, builder: Pano::PanoFormBuilder, data: form_data}) do |f|
-        f.search_field :query, placeholder: 'Search', class: selected_if(active), controller: stimulus_controller, button_data: button_data
+        f.search_field :query, placeholder: 'Search', class: selected_if(active), controller: stimulus_controller, button_data: button_data, data: search_field_data, autocomplete: autocomplete
       end
     end
   end
