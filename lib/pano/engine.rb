@@ -1,4 +1,3 @@
-require 'bourbon'
 require 'haml'
 require 'jquery-rails'
 require 'turbolinks'
