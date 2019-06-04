@@ -32,7 +32,7 @@ module Pano
         end
       else
         span_tag options.merge({title: text, class: "info-tip-toggle #{klass}"}) do
-          icon :info
+          icon :info_outline
         end
       end
     end
