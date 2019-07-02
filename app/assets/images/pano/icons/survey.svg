@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="64px" viewBox="0 0 46 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 49.1 (51145) - http://www.bohemiancoding.com/sketch -->
+    <title>survey-blue</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="CX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-pt-lines-size-48px-and-up" transform="translate(-177.000000, -534.000000)" fill="#00BF6F" fill-rule="nonzero">
+            <g id="survey-blue" transform="translate(177.000000, 534.000000)">
+                <path d="M44,6 L44,62 L2,62 L2,6 L12,6 L12,4 L1,4 C0.44771525,4 0,4.44771525 0,5 L0,63 C0,63.5522847 0.44771525,64 1,64 L45,64 C45.5522847,64 46,63.5522847 46,63 L46,5 C46,4.44771525 45.5522847,4 45,4 L34,4 L34,6 L44,6 Z" id="Shape"></path>
+                <path d="M13,2 L13,10 L33,10 L33,2 L13,2 Z M12,0 L34,0 C34.5522847,0 35,0.44771525 35,1 L35,11 C35,11.5522847 34.5522847,12 34,12 L12,12 C11.4477153,12 11,11.5522847 11,11 L11,1 C11,0.44771525 11.4477153,0 12,0 Z" id="Shape"></path>
+                <path d="M39,52 L7,52 L7,10 L9,10 L9,8 L6,8 C5.44771525,8 5,8.44771525 5,9 L5,53 C5,53.5522847 5.44771525,54 6,54 L40,54 C40.5522847,54 41,53.5522847 41,53 L41,9 C41,8.44771525 40.5522847,8 40,8 L37,8 L37,10 L39,10 L39,52 Z M17,6 L17,4 L15,4 L15,7 C15,7.55228475 15.4477153,8 16,8 L30,8 C30.5522847,8 31,7.55228475 31,7 L31,4 L29,4 L29,6 L17,6 Z" id="Shape"></path>
+                <polygon id="Shape" points="35 16 25 16 25 18 35 18"></polygon>
+                <polygon id="Shape" points="35 21 11 21 11 23 35 23"></polygon>
+                <polygon id="Shape" points="35 25 11 25 11 27 35 27"></polygon>
+                <polygon id="Shape" points="35 29 11 29 11 31 35 31"></polygon>
+                <polygon id="Shape" points="35 33 11 33 11 35 35 35"></polygon>
+                <polygon id="Shape" points="35 37 11 37 11 39 35 39"></polygon>
+                <polygon id="Shape" points="25 41 11 41 11 43 25 43"></polygon>
+                <polygon id="Shape" points="1 60 45 60 45 58 1 58"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
