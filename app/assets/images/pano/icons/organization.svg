@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="64px" viewBox="0 0 62 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 49.1 (51145) - http://www.bohemiancoding.com/sketch -->
+    <title>organization-blue</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="CX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-pt-lines-size-48px-and-up" transform="translate(-288.000000, -409.000000)" fill="#00BF6F" fill-rule="nonzero">
+            <g id="organization-blue" transform="translate(288.000000, 409.000000)">
+                <polygon id="Shape" points="22 10 40 10 40 50 42 50 42 8 20 8 20 50 22 50"></polygon>
+                <polygon id="Shape" points="4 50 10 50 10 48 4 48"></polygon>
+                <polygon id="Shape" points="12 50 18 50 18 48 12 48"></polygon>
+                <polygon id="Shape" points="4 46 10 46 10 44 4 44"></polygon>
+                <polygon id="Shape" points="12 46 18 46 18 44 12 44"></polygon>
+                <polygon id="Shape" points="4 42 10 42 10 40 4 40"></polygon>
+                <polygon id="Shape" points="12 42 18 42 18 40 12 40"></polygon>
+                <polygon id="Shape" points="4 38 18 38 18 36 4 36"></polygon>
+                <polygon id="Shape" points="4 34 10 34 10 32 4 32"></polygon>
+                <polygon id="Shape" points="12 34 18 34 18 32 12 32"></polygon>
+                <polygon id="Shape" points="44 50 50 50 50 48 44 48"></polygon>
+                <polygon id="Shape" points="52 50 58 50 58 48 52 48"></polygon>
+                <polygon id="Shape" points="44 46 50 46 50 44 44 44"></polygon>
+                <polygon id="Shape" points="52 46 58 46 58 44 52 44"></polygon>
+                <polygon id="Shape" points="44 42 58 42 58 40 44 40"></polygon>
+                <polygon id="Shape" points="44 38 50 38 50 36 44 36"></polygon>
+                <polygon id="Shape" points="52 38 58 38 58 36 52 36"></polygon>
+                <polygon id="Shape" points="44 34 50 34 50 32 44 32"></polygon>
+                <polygon id="Shape" points="52 34 58 34 58 32 52 32"></polygon>
+                <polygon id="Shape" points="44 30 50 30 50 28 44 28"></polygon>
+                <polygon id="Shape" points="52 30 58 30 58 28 52 28"></polygon>
+                <polygon id="Shape" points="44 26 50 26 50 24 44 24"></polygon>
+                <polygon id="Shape" points="52 26 58 26 58 24 52 24"></polygon>
+                <polygon id="Shape" points="24 50 38 50 38 48 24 48"></polygon>
+                <polygon id="Shape" points="24 46 30 46 30 44 24 44"></polygon>
+                <polygon id="Shape" points="32 46 38 46 38 44 32 44"></polygon>
+                <polygon id="Shape" points="24 42 30 42 30 40 24 40"></polygon>
+                <polygon id="Shape" points="32 42 38 42 38 40 32 40"></polygon>
+                <polygon id="Shape" points="24 38 30 38 30 36 24 36"></polygon>
+                <polygon id="Shape" points="32 38 38 38 38 36 32 36"></polygon>
+                <polygon id="Shape" points="24 34 30 34 30 32 24 32"></polygon>
+                <polygon id="Shape" points="32 34 38 34 38 32 32 32"></polygon>
+                <polygon id="Shape" points="24 30 38 30 38 28 24 28"></polygon>
+                <polygon id="Shape" points="24 26 30 26 30 24 24 24"></polygon>
+                <polygon id="Shape" points="32 26 38 26 38 24 32 24"></polygon>
+                <polygon id="Shape" points="24 22 30 22 30 20 24 20"></polygon>
+                <polygon id="Shape" points="32 22 38 22 38 20 32 20"></polygon>
+                <polygon id="Shape" points="24 18 30 18 30 16 24 16"></polygon>
+                <polygon id="Shape" points="32 18 38 18 38 16 32 16"></polygon>
+                <polygon id="Shape" points="24 14 30 14 30 12 24 12"></polygon>
+                <polygon id="Shape" points="32 14 38 14 38 12 32 12"></polygon>
+                <path d="M6,26 L6,28 L16,28 L16,26 L6,26 Z M18,24 L18,30 L4,30 L4,24 L18,24 Z M46,18 L46,20 L56,20 L56,18 L46,18 Z M58,16 L58,22 L44,22 L44,16 L58,16 Z M26,8 L36,8 L36,6 L26,6 L26,8 Z M38,4 L38,10 L24,10 L24,4 L38,4 Z" id="Shape"></path>
+                <polygon id="Shape" points="32 5 32 0 30 0 30 5"></polygon>
+                <polygon id="Shape" points="2 62 2 30 21 30 21 28 0 28 0 64 5 64 5 62"></polygon>
+                <polygon id="Shape" points="60 62 57 62 57 64 62 64 62 20 41 20 41 22 60 22"></polygon>
+                <path d="M6,62 L56,62 L56,54 L6,54 L6,62 Z M58,52 L58,64 L4,64 L4,52 L58,52 Z" id="Shape"></path>
+                <polygon id="Shape" points="20 56 20 63 22 63 22 56"></polygon>
+                <polygon id="Shape" points="40 56 40 63 42 63 42 56"></polygon>
+                <polygon id="Shape" points="5 60 57 60 57 58 5 58"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

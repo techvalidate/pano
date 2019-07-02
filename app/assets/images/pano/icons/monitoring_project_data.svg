@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="67px" viewBox="0 0 66 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 49.1 (51145) - http://www.bohemiancoding.com/sketch -->
+    <title>46-monitoring-project-data</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="Engage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-pt-lines-size-48px-and-up" transform="translate(-152.000000, -856.000000)" stroke="#00BF6F" stroke-width="2">
+            <g id="46-monitoring-project-data" transform="translate(153.000000, 856.000000)">
+                <path d="M14.4516129,6.30024774 C19.4900645,2.97324387 25.5205161,1.03741935 32,1.03741935 C49.6732903,1.03741935 64,15.4357626 64,33.1974194 C64,50.9590761 49.6732903,65.3574194 32,65.3574194 C28.0020645,65.3574194 24.1754839,64.6208516 20.6472258,63.2753187" id="Shape"></path>
+                <g id="Group" transform="translate(0.000000, 10.374194)">
+                    <rect id="Rectangle-path" x="11.3548387" y="32.1589626" width="4.12903226" height="22.8232258"></rect>
+                    <path d="M13.4193548,32.1589626 L13.4193548,28.0092852 C20.8309677,28.0092852 26.8387097,21.9715045 26.8387097,14.5228335 C26.8387097,7.07416258 20.8309677,1.03638194 13.4193548,1.03638194 C6.00774194,1.03638194 0,7.0752 0,14.523871 C0,20.1331974 3.40851613,24.943711 8.25703226,26.9760155" id="Shape"></path>
+                </g>
+                <path d="M32,1.03638194 L32,33.1963819" id="Shape"></path>
+                <path d="M32,33.1974194 L19.6129032,45.6464516" id="Shape"></path>
+                <path d="M32,33.1963819 L44.3870968,33.1963819" id="Shape"></path>
+                <path d="M32,33.1974194 L54.7096774,56.0206452" id="Shape"></path>
+                <ellipse id="Oval" cx="13.4193548" cy="24.8980645" rx="9.29032258" ry="9.33677419"></ellipse>
+                <path d="M32,5.18709677 C47.3930323,5.18709677 59.8709677,17.7274219 59.8709677,33.1974194 C59.8709677,48.6674168 47.3930323,61.2077419 32,61.2077419" id="Shape"></path>
+                <path d="M46.4516129,33.1963819 L48.516129,33.1963819" id="Shape"></path>
+                <path d="M50.5806452,33.1963819 L52.6451613,33.1963819" id="Shape"></path>
+                <path d="M54.7096774,33.1963819 L56.7741935,33.1963819" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

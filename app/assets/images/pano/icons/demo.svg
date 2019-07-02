@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 49.1 (51145) - http://www.bohemiancoding.com/sketch -->
+    <title>demo-blue</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs></defs>
+    <g id="CX" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-pt-lines-size-48px-and-up" transform="translate(-289.000000, -285.000000)" fill="#00BF6F" fill-rule="nonzero">
+            <g id="demo-blue" transform="translate(289.000000, 285.000000)">
+                <path d="M2,62 L1.42653766,62.1807681 L1.68477777,62 L2,62 Z M2,61.7793444 L21.6847778,48 L60,48 C61.1037153,48 62,47.1037153 62,46 L62,4 C62,2.89628475 61.1037153,2 60,2 L4,2 C2.89628475,2 2,2.89628475 2,4 L2,61.7793444 Z M1.68477777,62 L1,62 L2,63 L2,61.7793444 L1.68477777,62 Z M22.3152222,50 L2.31522223,64 L0,64 L0,4 C0,1.79171525 1.79171525,0 4,0 L60,0 C62.2082847,0 64,1.79171525 64,4 L64,46 C64,48.2082847 62.2082847,50 60,50 L22.3152222,50 Z" id="Shape"></path>
+                <path d="M6,6 L6,36 L58,36 L58,6 L6,6 Z M60,4 L60,38 L4,38 L4,4 L60,4 Z" id="Shape"></path>
+                <path d="M26,15 L25.5259002,14.8804711 L25.7478824,15 L26,15 Z M25.5259002,27.1195289 L26,27 L25.7478824,27 L25.5259002,27.1195289 Z M36.8907396,21 L26,15.1357556 L26,26.8642444 L36.8907396,21 Z M24,29 L24,13 L26.2521176,13 L41.1092604,21 L26.2521176,29 L24,29 Z" id="Shape"></path>
+                <polygon id="Shape" points="4 43 16 43 16 41 4 41"></polygon>
+                <polygon id="Shape" points="22 43 48 43 48 41 22 41"></polygon>
+                <polygon id="Shape" points="50 43 52 43 52 41 50 41"></polygon>
+                <polygon id="Shape" points="54 43 56 43 56 41 54 41"></polygon>
+                <polygon id="Shape" points="58 43 60 43 60 41 58 41"></polygon>
+                <polygon id="Shape" points="18 40 18 44 20 44 20 40"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
