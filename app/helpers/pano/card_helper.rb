@@ -19,11 +19,15 @@ module Pano
     end
 
     def small_card(title, options = {}, &block)
-      header = card_header(title, options)
+      header_options = options.delete :header_options
+      if !header_options
+        header_options = {}
+      end 
+      header = card_header(title, header_options)
 
       content = capture(&block)
 
-      content_tag :div, class: 'card card-small' do
+      content_tag :div, options.add_class('card card-small') do
         header + content
       end
     end
