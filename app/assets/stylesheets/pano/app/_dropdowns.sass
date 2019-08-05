@@ -65,6 +65,16 @@ ul.jq-dropdown-menu
     &:last-child
       border-bottom: none
 
+    &.zero-count-separator
+      display: block
+      color: $text-color
+      text-decoration: none
+      line-height: 16px
+      padding: 8px 6px
+      background-color: #F8F8F8
+      font-weight: bold
+
+
   a
     display: block
     display: table-row
@@ -124,6 +134,8 @@ ul.jq-dropdown-menu
     padding: 8px 7px
 
     input
+      min-height: 32px
+      height: 32px
       font-size: 12px
       padding: 4px 4px 4px 26px
       outline: none

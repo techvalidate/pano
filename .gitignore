@@ -7,6 +7,9 @@ spec/test_app/db/*.sqlite3
 spec/test_app/db/*.sqlite3-journal
 spec/test_app/log/*.log
 spec/test_app/tmp/
+spec/test_app/node_modules
+spec/test_app/public/*
+spec/test_app/Guardfile
 
 .sass-cache
 

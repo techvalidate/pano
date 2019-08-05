@@ -1,3 +1,5 @@
+last = require('lodash-es/last').default
+
 UI.click '[show-calendar-modal]', (e, el) ->
   e.preventDefault()
   e.stopPropagation()
@@ -42,9 +44,9 @@ bindCalendars = (rangeStart, rangeEnd, data) ->
   )
 
   $('.custom_range_form')
-  .on('ajax:complete', -> Modals.close(_.last(Modals.currentModals)))
+  .on('ajax:complete', -> Modals.close(last(Modals.currentModals)))
   .on('ajax:error', ->
-    Modals.close(_.last(Modals.currentModals))
+    Modals.close(last(Modals.currentModals))
     alert("Sorry, an error occurred in processing your request. Please contact support if the error persists.")
   )
 
