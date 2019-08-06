@@ -8,19 +8,16 @@ Gem::Specification.new do |s|
   s.name        = 'pano'
   s.version     = Pano::VERSION
   s.authors     = ['Jordan McKible', 'Jon Wolfe']
-  s.email       = ['jordan@techvalidate.com', 'jon@techvalidate.com']
   s.homepage    = 'https://github.com/techvalidate/pano'
-  s.summary     = 'Shared CSS, Javascript, and helpers for SurveyMonkey Solutions'
+  s.summary     = 'Shared helpers for SurveyMonkey Solutions'
 
   s.files = Dir["{app,config,db,lib}/**/*", 'Rakefile', 'README.md']
 
   s.add_runtime_dependency 'bourbon',      '4.3.4'
-  s.add_runtime_dependency 'coffee-rails', '4.2.2'
   s.add_runtime_dependency 'haml',         '~> 5.0.1'
   s.add_runtime_dependency 'jquery-rails', '4.3.1'
   s.add_runtime_dependency 'rails',        '~> 5.1'
   s.add_runtime_dependency 'sass-rails',   '5.0.7'
-  s.add_runtime_dependency 'turbolinks',   '5.1.1'
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'sqlite3'
