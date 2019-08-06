@@ -8,7 +8,6 @@ Gem::Specification.new do |s|
   s.name        = 'pano'
   s.version     = Pano::VERSION
   s.authors     = ['Jordan McKible', 'Jon Wolfe']
-  s.email       = ['jordan@techvalidate.com', 'jon@techvalidate.com']
   s.homepage    = 'https://github.com/techvalidate/pano'
   s.summary     = 'Shared CSS, Javascript, and helpers for SurveyMonkey Solutions'
 
