@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Pano::VERSION
   s.authors     = ['Jordan McKible', 'Jon Wolfe']
   s.homepage    = 'https://github.com/techvalidate/pano'
-  s.summary     = 'Shared CSS, Javascript, and helpers for SurveyMonkey Solutions'
+  s.summary     = 'Shared helpers for SurveyMonkey Solutions'
 
   s.files = Dir["{app,config,db,lib}/**/*", 'Rakefile', 'README.md']
 
