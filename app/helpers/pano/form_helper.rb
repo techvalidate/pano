@@ -22,11 +22,11 @@ module Pano
     end
 
     def loading_spinner
-      s "<div id='loading-overlay-container' class='hidden'><div id='loading-overlay'>#{image_tag('spinners/basic-spinner.svg', alt: 'Loading', size: '48x48', class: 'loading-spinner')}</div></div>"
+      s "<div id='loading-overlay-container' class='hidden'><div id='loading-overlay'>#{image_pack_tag('spinners/basic-spinner.svg', alt: 'Loading', size: '48x48', class: 'loading-spinner')}</div></div>"
     end
 
     def inline_indeterminate_progress
-      s "<div id='inline-progress'>#{image_tag('spinners/basic-spinner.svg', alt: 'Loading', size: '48x48', class: 'loading-spinner')}</div>"
+      s "<div id='inline-progress'>#{image_pack_tag('spinners/basic-spinner.svg', alt: 'Loading', size: '48x48', class: 'loading-spinner')}</div>"
     end
 
     def search_form_for(object, url, options = {})

@@ -6,7 +6,7 @@ module Pano
         content = []
         content << header_data[:back_link] if header_data[:back_link]
         content << header_data[:right_button] if header_data[:right_button]
-        content << image_tag(header_data[:icon], class: 'header-icon') if header_data[:icon]
+        content << image_pack_tag(header_data[:icon], class: 'header-icon') if header_data[:icon]
         content << header_data[:image] if header_data[:image]
         content << h1_tag(header_data[:title])
         content << p_tag(header_data[:subtitle], class: 'intro') if header_data[:subtitle]

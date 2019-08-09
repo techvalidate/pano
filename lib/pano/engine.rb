@@ -1,5 +1,6 @@
 require 'bourbon'
 require 'haml'
+require 'turbolinks'
 
 require 'pano/version' # So the version number is available in the mounted style guide
 
@@ -12,6 +13,8 @@ module Pano
         pano/guide.css
         pano/mailers.css
         pano/marketing.css
+
+        pano/guide.js
       )
     end
 
