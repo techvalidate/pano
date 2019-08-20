@@ -1,6 +1,6 @@
 module Pano
   class EmailValidator < ActiveModel::EachValidator
-    EMAIL_REGEX = /\A[a-z0-9][a-z0-9._%+-]*(?<!\.)@(?:[-a-z0-9]+\.)+[a-z]{2,}\z/i
+    EMAIL_REGEX = /\A([\w+\-].?)+(?<!\.)@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\z/i
 
     def validate_each(object,attribute,value)
       if value.blank?
