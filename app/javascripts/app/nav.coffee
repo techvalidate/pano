@@ -65,7 +65,7 @@ UI.click '#cur-user-dropdown-trigger', (e, el) ->
 UI.load ->
   topOffset = $('#nav').height()
 
-  if $('#subnav-header-alert').height()
+  if $('#subnav-header-alert')
     topOffset += $('#subnav-header-alert').height()
 
   $("#subnav.sticky-subnav").stick_in_parent(bottoming: false, offset_top: topOffset)
