@@ -9,7 +9,9 @@
 # Spinner won't be shown in Safari on submit, due to the way JavaScript is handled on POST
 # TODO: find a better workaround than click handling and event.preventDefault() on submit.
 UI.submit 'form', (e, el) ->
-  if $(el).valid() && !$(el).data('remote')
+  element = $(el)
+
+  if (element.hasClass('js-novalidate') == false && element.valid() || element.hasClass('js-novalidate')) && !element.data('remote')
     showLoadingSpinner()
     true # let the form submission go through
 
