@@ -69,7 +69,7 @@ jquery-ujs@^1.2.2:
   dependencies:
     jquery ">=1.8.0"
 
-jquery-validation@^1.17.0:
+jquery-validation@1.17.0:
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.17.0.tgz#ab66b6b583d7740b9bbd148993e50e8ac041f35b"
   dependencies:
@@ -87,9 +87,9 @@ jstz@^1.0.10:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/jstz/-/jstz-1.0.11.tgz#70e83e55c9621bfa706cdc8aa73f2a03931de7d9"
 
-moment@^2.18.1, moment@^2.8.2:
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
+moment@^2.29.2, moment@^2.8.2:
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
 
 rome@^2.1.22:
   version "2.1.22"
